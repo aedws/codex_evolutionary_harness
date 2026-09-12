@@ -629,7 +629,8 @@
     ],
     "relation_refs": [
       "REL-20260913-ASSURANCE-001",
-      "REL-20260913-ASSURANCE-002"
+      "REL-20260913-ASSURANCE-002",
+      "REL-20260913-ASSURANCE-005"
     ],
     "unknowns": [
       "Runtime enforcement and empirical improvement unverified"
@@ -796,6 +797,46 @@
       "project",
       "seed-maintenance",
       "contract-3"
+    ]
+  },
+  {
+    "id": "EVD-20260913-ASSURANCE-REMOTE",
+    "type": "evidence",
+    "name": "Private tagged clone and package reuse verification",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ASSURANCE-001/remote-verification.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-005",
+      "REL-20260913-ASSURANCE-006"
+    ],
+    "unknowns": [
+      "Runtime and empirical optimization unverified"
+    ],
+    "tags": [
+      "private",
+      "contract_seed"
+    ]
+  },
+  {
+    "id": "HARNESS-RELEASE-0.3.0",
+    "type": "release",
+    "name": "Published private contract seed v0.3.0",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-ASSURANCE-REMOTE",
+      "HARNESS-CHANGE-20260913-005"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-006"
+    ],
+    "unknowns": [
+      "Runtime and empirical optimization unverified"
+    ],
+    "tags": [
+      "private",
+      "contract_seed"
     ]
   }
 ]

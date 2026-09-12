@@ -1,0 +1,274 @@
+{
+  "evidence_id": "EVD-20260913-ASSURANCE-REMOTE",
+  "task_id": "TASK-20260913-ASSURANCE-001",
+  "execution_id": "EXE-20260913-ASSURANCE-001",
+  "created_at": "2026-09-12T18:15:50.412686+00:00",
+  "result": "pass",
+  "repo": {
+    "isPrivate": true,
+    "nameWithOwner": "aedws/codex_evolutionary_harness",
+    "url": "https://github.com/aedws/codex_evolutionary_harness"
+  },
+  "release": {
+    "assets": [
+      {
+        "apiUrl": "https://api.github.com/repos/aedws/codex_evolutionary_harness/releases/assets/559722169",
+        "contentType": "application/zip",
+        "createdAt": "2026-09-12T18:14:49Z",
+        "digest": "sha256:bc27c2a0c0f085253d5ba46b5cf0f050eecc116b36cf396dcb898b07d7b491d8",
+        "downloadCount": 0,
+        "id": "RA_kwDOUYLum84hXK65",
+        "label": "",
+        "name": "evolutionary-harness-seed-0.3.0.zip",
+        "size": 98741,
+        "state": "uploaded",
+        "updatedAt": "2026-09-12T18:14:49Z",
+        "url": "https://github.com/aedws/codex_evolutionary_harness/releases/download/v0.3.0/evolutionary-harness-seed-0.3.0.zip"
+      },
+      {
+        "apiUrl": "https://api.github.com/repos/aedws/codex_evolutionary_harness/releases/assets/559722170",
+        "contentType": "text/plain; charset=utf-8",
+        "createdAt": "2026-09-12T18:14:49Z",
+        "digest": "sha256:62714db0ab59b29b004499e28f8be2da5cedc6d26669c7abf5b224f639cb95b6",
+        "downloadCount": 0,
+        "id": "RA_kwDOUYLum84hXK66",
+        "label": "",
+        "name": "SHA256SUMS.txt",
+        "size": 102,
+        "state": "uploaded",
+        "updatedAt": "2026-09-12T18:14:49Z",
+        "url": "https://github.com/aedws/codex_evolutionary_harness/releases/download/v0.3.0/SHA256SUMS.txt"
+      }
+    ],
+    "isDraft": false,
+    "isPrerelease": true,
+    "tagName": "v0.3.0",
+    "url": "https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.3.0"
+  },
+  "tested_commit": "dcbb1705e3d91a5a29b8514ac784d6e4290073fe",
+  "manifest_sha256": "b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087",
+  "zip_sha256": "bc27c2a0c0f085253d5ba46b5cf0f050eecc116b36cf396dcb898b07d7b491d8",
+  "tests_passed": 25,
+  "seed_files": 26,
+  "goals": 17,
+  "clauses": 23,
+  "review_areas": 7,
+  "planned_scenarios": 21,
+  "operation_receipts": [
+    {
+      "key": "seed-v0.3.0-source-push",
+      "outcome": "observed",
+      "commit": "dcbb1705e3d91a5a29b8514ac784d6e4290073fe",
+      "tag": "v0.3.0"
+    },
+    {
+      "key": "seed-v0.3.0-private-prerelease",
+      "outcome": "observed",
+      "url": "https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.3.0",
+      "zip_sha256": "bc27c2a0c0f085253d5ba46b5cf0f050eecc116b36cf396dcb898b07d7b491d8"
+    }
+  ],
+  "commands": [
+    {
+      "label": "private-repo",
+      "command": [
+        "gh",
+        "repo",
+        "view",
+        "aedws/codex_evolutionary_harness",
+        "--json",
+        "nameWithOwner,isPrivate,url"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "stdout": "{\"isPrivate\":true,\"nameWithOwner\":\"aedws/codex_evolutionary_harness\",\"url\":\"https://github.com/aedws/codex_evolutionary_harness\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "release",
+      "command": [
+        "gh",
+        "release",
+        "view",
+        "v0.3.0",
+        "--repo",
+        "aedws/codex_evolutionary_harness",
+        "--json",
+        "url,tagName,isPrerelease,isDraft,assets"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "stdout": "{\"assets\":[{\"apiUrl\":\"https://api.github.com/repos/aedws/codex_evolutionary_harness/releases/assets/559722169\",\"contentType\":\"application/zip\",\"createdAt\":\"2026-09-12T18:14:49Z\",\"digest\":\"sha256:bc27c2a0c0f085253d5ba46b5cf0f050eecc116b36cf396dcb898b07d7b491d8\",\"downloadCount\":0,\"id\":\"RA_kwDOUYLum84hXK65\",\"label\":\"\",\"name\":\"evolutionary-harness-seed-0.3.0.zip\",\"size\":98741,\"state\":\"uploaded\",\"updatedAt\":\"2026-09-12T18:14:49Z\",\"url\":\"https://github.com/aedws/codex_evolutionary_harness/releases/download/v0.3.0/evolutionary-harness-seed-0.3.0.zip\"},{\"apiUrl\":\"https://api.github.com/repos/aedws/codex_evolutionary_harness/releases/assets/559722170\",\"contentType\":\"text/plain; charset=utf-8\",\"createdAt\":\"2026-09-12T18:14:49Z\",\"digest\":\"sha256:62714db0ab59b29b004499e28f8be2da5cedc6d26669c7abf5b224f639cb95b6\",\"downloadCount\":0,\"id\":\"RA_kwDOUYLum84hXK66\",\"label\":\"\",\"name\":\"SHA256SUMS.txt\",\"size\":102,\"state\":\"uploaded\",\"updatedAt\":\"2026-09-12T18:14:49Z\",\"url\":\"https://github.com/aedws/codex_evolutionary_harness/releases/download/v0.3.0/SHA256SUMS.txt\"}],\"isDraft\":false,\"isPrerelease\":true,\"tagName\":\"v0.3.0\",\"url\":\"https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.3.0\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "fresh-clone",
+      "command": [
+        "git",
+        "clone",
+        "--branch",
+        "v0.3.0",
+        "--depth",
+        "1",
+        "https://github.com/aedws/codex_evolutionary_harness.git",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Cloning into 'C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source'...\nwarning: refs/tags/v0.3.0 aefa96719fecac578dd39a6ceacd489270be72a7 is not a commit!\nNote: switching to 'dcbb1705e3d91a5a29b8514ac784d6e4290073fe'.\n\nYou are in 'detached HEAD' state. You can look around, make experimental\nchanges and commit them, and you can discard any commits you make in this\nstate without impacting any branches by switching back to a branch.\n\nIf you want to create a new branch to retain commits you create, you may\ndo so (now or later) by using -c with the switch command. Example:\n\n  git switch -c <new-branch-name>\n\nOr undo this operation with:\n\n  git switch -\n\nTurn off this advice by setting config variable advice.detachedHead to false\n\n"
+    },
+    {
+      "label": "tag-commit",
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "dcbb1705e3d91a5a29b8514ac784d6e4290073fe\n",
+      "stderr": ""
+    },
+    {
+      "label": "seed-check",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "check"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"checked\", \"version\": \"0.3.0\", \"files\": 26, \"manifest_sha256\": \"b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "contract-check",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"pass\", \"goals\": 17, \"clauses\": 23, \"links\": 20, \"review_areas\": 7, \"planned_review_scenarios\": 21, \"scope\": \"structural coverage and safe distribution defaults; not runtime goal verification\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "tests",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_all_goals_and_clauses_resolve_without_runtime_claim (test_contracts.ContractDistributionTests.test_all_goals_and_clauses_resolve_without_runtime_claim) ... ok\ntest_dangling_clause_rejected (test_contracts.ContractDistributionTests.test_dangling_clause_rejected) ... ok\ntest_duplicate_goal_rejected (test_contracts.ContractDistributionTests.test_duplicate_goal_rejected) ... ok\ntest_fake_runtime_verification_rejected (test_contracts.ContractDistributionTests.test_fake_runtime_verification_rejected) ... ok\ntest_inherited_submission_authority_rejected (test_contracts.ContractDistributionTests.test_inherited_submission_authority_rejected) ... ok\ntest_missing_goal_rejected (test_contracts.ContractDistributionTests.test_missing_goal_rejected) ... ok\ntest_origin_evidence_not_shipped_in_example (test_contracts.ContractDistributionTests.test_origin_evidence_not_shipped_in_example) ... ok\ntest_planned_review_cannot_claim_observed_runtime_success (test_contracts.ContractDistributionTests.test_planned_review_cannot_claim_observed_runtime_success) ... ok\ntest_review_area_cannot_be_omitted (test_contracts.ContractDistributionTests.test_review_area_cannot_be_omitted) ... ok\ntest_review_rejection_case_cannot_be_removed (test_contracts.ContractDistributionTests.test_review_rejection_case_cannot_be_removed) ... ok\ntest_review_template_cannot_drop_uncertainty_field (test_contracts.ContractDistributionTests.test_review_template_cannot_drop_uncertainty_field) ... ok\ntest_review_template_cannot_inherit_an_approver (test_contracts.ContractDistributionTests.test_review_template_cannot_inherit_an_approver) ... ok\ntest_changed_project_records_are_not_reinstalled (test_seed.SeedTests.test_changed_project_records_are_not_reinstalled) ... ok\ntest_conflict_checks_all_files_before_writing (test_seed.SeedTests.test_conflict_checks_all_files_before_writing) ... ok\ntest_dry_run_does_not_create_target (test_seed.SeedTests.test_dry_run_does_not_create_target) ... ok\ntest_install_preserves_unrelated_file_and_replay_is_noop (test_seed.SeedTests.test_install_preserves_unrelated_file_and_replay_is_noop) ... ok\ntest_installation_inside_distributor_is_rejected (test_seed.SeedTests.test_installation_inside_distributor_is_rejected) ... ok\ntest_non_directory_ancestor_does_not_write (test_seed.SeedTests.test_non_directory_ancestor_does_not_write) ... ok\ntest_partial_write_remains_visible_and_retry_is_blocked (test_seed.SeedTests.test_partial_write_remains_visible_and_retry_is_blocked) ... ok\ntest_pending_installation_blocks_competing_writer (test_seed.SeedTests.test_pending_installation_blocks_competing_writer) ... ok\ntest_receipt_mismatch_cannot_overwrite_installation (test_seed.SeedTests.test_receipt_mismatch_cannot_overwrite_installation) ... ok\ntest_reparse_point_is_rejected_before_writing (test_seed.SeedTests.test_reparse_point_is_rejected_before_writing) ... ok\ntest_seed_is_clean_and_archive_contains_only_seed_and_receipt (test_seed.SeedTests.test_seed_is_clean_and_archive_contains_only_seed_and_receipt) ... ok\ntest_source_tamper_and_unsupported_manifest_are_rejected (test_seed.SeedTests.test_source_tamper_and_unsupported_manifest_are_rejected) ... ok\ntest_unsafe_paths_are_rejected (test_seed.SeedTests.test_unsafe_paths_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 2.643s\n\nOK\n"
+    },
+    {
+      "label": "dry-run",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\project",
+        "--dry-run"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"planned\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\remote-smoke-v0.3.0\\\\project\", \"files\": [\"AGENTS.md\", \"BOOTSTRAP_PROMPT.md\", \"docs/harness/README.md\", \"docs/harness/checkpoint.md\", \"docs/harness/contract.md\", \"docs/harness/contracts/README.md\", \"docs/harness/contracts/coverage.json\", \"docs/harness/contracts/evolution.md\", \"docs/harness/contracts/execution.md\", \"docs/harness/contracts/feedback.md\", \"docs/harness/contracts/review-cases.json\", \"docs/harness/contracts/review-protocol.md\", \"docs/harness/contracts/views-state.md\", \"docs/harness/events.jsonl\", \"docs/harness/evidence/README.md\", \"docs/harness/feedback/config.json\", \"docs/harness/objects.json\", \"docs/harness/overlays/project.json\", \"docs/harness/policy.md\", \"docs/harness/relations.json\", \"docs/harness/releases/current-harness.json\", \"docs/harness/source-authority.md\", \"docs/harness/templates/README.md\", \"docs/harness/templates/assurance-review.example.json\", \"docs/harness/templates/feedback-candidate.example.json\", \"docs/harness/templates/skill-observation.example.json\"], \"dry_run\": true}\n",
+      "stderr": ""
+    },
+    {
+      "label": "install",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\project"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"installed\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\remote-smoke-v0.3.0\\\\project\", \"files\": 26, \"manifest_sha256\": \"b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "replay",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\project"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"unchanged\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\remote-smoke-v0.3.0\\\\project\", \"dry_run\": false}\n",
+      "stderr": ""
+    },
+    {
+      "label": "download",
+      "command": [
+        "gh",
+        "release",
+        "download",
+        "v0.3.0",
+        "--repo",
+        "aedws/codex_evolutionary_harness",
+        "--pattern",
+        "evolutionary-harness-seed-0.3.0.zip",
+        "--pattern",
+        "SHA256SUMS.txt",
+        "--dir",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\assets"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "prior-tags-retained",
+      "command": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/tags/v0.1.0^{}",
+        "refs/tags/v0.2.0^{}"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "stdout": "db0a0e2924723f4f9544292b64a44726d038c58b\trefs/tags/v0.1.0^{}\n59c4cc828e5bdf8ca7fc4daea153699e2f253b33\trefs/tags/v0.2.0^{}\n",
+      "stderr": ""
+    },
+    {
+      "label": "source-clean",
+      "command": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.3.0\\source",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "limitations": [
+    "25 tests cover distribution and structural contracts, not 21 planned runtime scenarios",
+    "No runtime policy/canary/renderer or empirical cross-project optimization verification",
+    "No human final design acceptance implied"
+  ]
+}

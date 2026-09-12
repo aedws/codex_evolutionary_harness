@@ -279,5 +279,29 @@
     ],
     "observed_at": "2026-09-12T18:14:13.859207+00:00",
     "applicable_snapshot": "b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087"
+  },
+  {
+    "relation_id": "REL-20260913-ASSURANCE-005",
+    "from": "TASK-20260913-ASSURANCE-001",
+    "to": "EVD-20260913-ASSURANCE-REMOTE",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-ASSURANCE-REMOTE"
+    ],
+    "observed_at": "2026-09-12T18:16:45.410458+00:00",
+    "applicable_snapshot": "dcbb1705e3d91a5a29b8514ac784d6e4290073fe"
+  },
+  {
+    "relation_id": "REL-20260913-ASSURANCE-006",
+    "from": "HARNESS-RELEASE-0.3.0",
+    "to": "EVD-20260913-ASSURANCE-REMOTE",
+    "type": "observed_by",
+    "basis": "confirmed_by_runtime",
+    "source_refs": [
+      "EVD-20260913-ASSURANCE-REMOTE"
+    ],
+    "observed_at": "2026-09-12T18:16:45.410458+00:00",
+    "applicable_snapshot": "dcbb1705e3d91a5a29b8514ac784d6e4290073fe"
   }
 ]
