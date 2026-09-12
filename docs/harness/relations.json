@@ -351,5 +351,53 @@
     ],
     "observed_at": "2026-09-12T18:24:05.226535+00:00",
     "applicable_snapshot": "834b6b3fb88d3c7b1212ea4bba4a408dfadf89ab"
+  },
+  {
+    "relation_id": "REL-20260913-DECISION-001",
+    "from": "TASK-20260913-DECISION-001",
+    "to": "EXE-20260913-DECISION-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-DECISION-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T19:15:25.330876+00:00",
+    "applicable_snapshot": "3377020cbb83a97b720990b45f52cfcea2dfefa863b1c8a438558fda07c1401a"
+  },
+  {
+    "relation_id": "REL-20260913-DECISION-002",
+    "from": "TASK-20260913-DECISION-001",
+    "to": "EVD-20260913-DECISION-VALIDATION",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-DECISION-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T19:15:25.330876+00:00",
+    "applicable_snapshot": "3377020cbb83a97b720990b45f52cfcea2dfefa863b1c8a438558fda07c1401a"
+  },
+  {
+    "relation_id": "REL-20260913-DECISION-003",
+    "from": "HCHANGE-20260913-DECISION-001",
+    "to": "HARNESS-REQ-20260913-006",
+    "type": "addresses",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "EVD-20260913-DECISION-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T19:15:25.330876+00:00",
+    "applicable_snapshot": "3377020cbb83a97b720990b45f52cfcea2dfefa863b1c8a438558fda07c1401a"
+  },
+  {
+    "relation_id": "REL-20260913-DECISION-004",
+    "from": "HCHANGE-20260913-DECISION-001",
+    "to": "DEC-20260913-DECISION-001",
+    "type": "governed_by",
+    "basis": "confirmed_by_user",
+    "source_refs": [
+      "EVD-20260913-DECISION-AUTHORIZATION"
+    ],
+    "observed_at": "2026-09-12T19:15:25.330876+00:00",
+    "applicable_snapshot": "3377020cbb83a97b720990b45f52cfcea2dfefa863b1c8a438558fda07c1401a"
   }
 ]

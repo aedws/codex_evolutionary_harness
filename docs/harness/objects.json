@@ -956,5 +956,180 @@
       "private",
       "documentation"
     ]
+  },
+  {
+    "id": "TASK-20260913-DECISION-001",
+    "type": "task",
+    "name": "Audit full decision contracts and repair goal-reachability gaps",
+    "schema_version": 1,
+    "source_refs": [
+      "user:full-decision-contract-improvement"
+    ],
+    "relation_refs": [
+      "REL-20260913-DECISION-001",
+      "REL-20260913-DECISION-002"
+    ],
+    "unknowns": [
+      "Empirical final-goal outcomes, independent cross-domain evaluations and human acceptance remain unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EXE-20260913-DECISION-001",
+    "type": "execution",
+    "name": "Decision composition audit and contract revision",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-DECISION-BASELINE"
+    ],
+    "relation_refs": [
+      "REL-20260913-DECISION-001"
+    ],
+    "unknowns": [
+      "Empirical final-goal outcomes, independent cross-domain evaluations and human acceptance remain unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-DECISION-BASELINE",
+    "type": "evidence",
+    "name": "Pre-change baseline",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-DECISION-001/baseline.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Runtime implementation scope interview pending; empirical final-goal outcome unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "HARNESS-REQ-20260913-006",
+    "type": "harness_requirement",
+    "name": "Make end-to-end gates decidable without conflating claims and observations",
+    "schema_version": 1,
+    "source_refs": [
+      "user:full-decision-contract-improvement"
+    ],
+    "relation_refs": [
+      "REL-20260913-DECISION-003"
+    ],
+    "unknowns": [
+      "Empirical final-goal outcomes, independent cross-domain evaluations and human acceptance remain unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-DECISION-AUTHORIZATION",
+    "type": "evidence",
+    "name": "Explicit minimum runtime implementation authorization",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-DECISION-001/authorization.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [],
+    "tags": [
+      "project",
+      "confirmed_by_user"
+    ]
+  },
+  {
+    "id": "EVD-20260913-DECISION-VALIDATION",
+    "type": "evidence",
+    "name": "59 tests and installed local runtime validation",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-DECISION-001/validation.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-DECISION-002"
+    ],
+    "unknowns": [
+      "Full V2/V3/V4 operating outcomes and independent assessment remain unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "local_core_preview"
+    ]
+  },
+  {
+    "id": "EVD-20260913-DECISION-PUBLICATION-INTENT",
+    "type": "evidence",
+    "name": "Exact private v0.4.0 publication intent",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-DECISION-001/publication-intent.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Full V2/V3/V4 operating outcomes and independent assessment remain unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "local_core_preview"
+    ]
+  },
+  {
+    "id": "DEC-20260913-DECISION-001",
+    "type": "decision",
+    "name": "Ship bounded local core with end-to-end decision contracts",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0005-end-to-end-decision-system.md",
+      "EVD-20260913-DECISION-AUTHORIZATION"
+    ],
+    "relation_refs": [
+      "REL-20260913-DECISION-004"
+    ],
+    "unknowns": [
+      "Full V2/V3/V4 operating outcomes and independent assessment remain unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "local_core_preview"
+    ]
+  },
+  {
+    "id": "HCHANGE-20260913-DECISION-001",
+    "type": "harness_change",
+    "name": "Contract 4 and minimum local evidence runtime",
+    "schema_version": 1,
+    "source_refs": [
+      "HARNESS-REQ-20260913-006",
+      "EVD-20260913-DECISION-VALIDATION"
+    ],
+    "relation_refs": [
+      "REL-20260913-DECISION-003",
+      "REL-20260913-DECISION-004"
+    ],
+    "unknowns": [
+      "Full V2/V3/V4 operating outcomes and independent assessment remain unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "local_core_preview"
+    ]
   }
 ]

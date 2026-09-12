@@ -1,4 +1,4 @@
-# Overlay composition, evaluation and propagation — contract 3
+# Overlay composition, evaluation and propagation — contract 4
 
 ## E01 — Composition and compatibility
 

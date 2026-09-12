@@ -1,10 +1,10 @@
-# Execution, policy, evidence and recovery — contract 3
+# Execution, policy, evidence and recovery — contract 4
 
 ## X01 — Evidence lifecycle and storage ownership
 
 Use globally unambiguous IDs and record schema versions. Bind evidence to code/tree and relevant dirty/untracked/data/config/test/toolchain/skill inputs, not commit alone. Content digests require canonical path/byte manifests; source refs identify who is authoritative and what was observed. Include exit/outcome, start/end, producer, artifacts+hash/size and limits. Corrupted/missing bytes are integrity failures, never skipped to derive a pass.
 
-The seed's JSON/JSONL records have no multi-file transaction engine. A single authorized writer owns a mutation scope; preflight revisions/hashes, write uniquely named evidence first, append material events, then update indexes/projections. An index/projection mismatch is partial/unknown until reconstructed. Do not write computed status into the object index as independent truth. Evidence referenced by events is retained; corrections use supersession/invalidation. Garbage collection and retention weakening are not automatic seed operations.
+The manual JSON/JSONL records have no multi-file transaction engine; the optional local core commits its own ledger events transactionally without automatically importing those manual files. A single authorized writer owns a mutation scope; preflight revisions/hashes, write uniquely named evidence first, append material events, then update indexes/projections. An index/projection mismatch is partial/unknown until reconstructed. Do not write computed status into the object index as independent truth. Evidence referenced by events is retained; corrections use supersession/invalidation. Garbage collection and retention weakening are not automatic seed operations.
 
 Filesystem writes require canonical target boundaries and preservation of unrelated/manual content. Symlinks/junctions, case collisions and path escapes are conflicts. Check the current input and ownership immediately before writing. An absent lock/transaction implementation remains an explicit limitation; a Markdown policy cannot provide crash durability.
 
@@ -23,7 +23,7 @@ For each action, derive effective permission from actor, authority source, exact
 
 Represent permission request, approval, expiration/revocation and enforcement observations separately. Existing authorization is reused within scope; unknown scope triggers a targeted interview. Report the exact conflicting instruction/source rather than inventing policy barriers. No credentials are stored in packets or copied from upstream. No background scheduler or unpaid/paid runner is assumed; budgets and execution host are explicit before autonomous jobs.
 
-Important controls should move to tool capability checks, policy gates, scoped credentials and sandbox/egress boundaries. For each claimed control, record whether it is documented_only, configured, tested or runtime_observed. Seed v0.3.0 remains documented_only for policy enforcement.
+Important controls should move to tool capability checks, policy gates, scoped credentials and sandbox/egress boundaries. For each claimed control, record whether it is documented_only, configured, tested or runtime_observed. The local core enforces pinned command/policy/input checks within its own run command. OS sandboxing, principal separation, protected autonomous promotion and external-effect enforcement remain documented_only.
 
 Bind proposer, evaluator, approver and effect executor to authenticated principal IDs and explicit capability grants, not role names alone. The proposer writes candidate code and proposed eval inputs; the evaluator reads a frozen candidate and writes evidence without changing candidate/grader/acceptance; the approver issues a decision for the exact diff/eval/target; the executor performs only that decision's scoped action. Record principal overlap and conflicts of interest. Renaming the same agent/session is not independence. High-risk self-approval is forbidden; human approval must come from an authorized human. Low-risk combined roles require an existing explicit policy and disclose the lack of independent evaluation.
 

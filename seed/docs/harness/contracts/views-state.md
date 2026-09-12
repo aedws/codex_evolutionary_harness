@@ -1,4 +1,4 @@
-# Object views, derivation and context — contract 3
+# Object views, derivation and context — contract 4
 
 ## V01 — Whole-project OOP surface
 
@@ -38,7 +38,7 @@ Keep intent, progress, verification, delivery, acceptance and blockers separate.
 | Artifact bytes created without publication/target observation | artifact_prepared only; released needs a publication receipt, deployed needs a target observation |
 | Machine pass with subjective acceptance outstanding | human/mixed acceptance remains pending |
 
-Order attempts/events by declared monotonic sequence/attempt lineage, not wall-clock arrival. Where the seed has no sequencer, serialize writers and record explicit predecessor/attempt links; ambiguity becomes conflict. An accepted no-test exception requires its own authority and rationale. Corrections/invalidation append new evidence; no history rewriting.
+Order attempts/events by declared monotonic sequence/attempt lineage, not wall-clock arrival. The local core uses committed SQLite event sequence numbers; where a manual workflow has no sequencer, serialize writers and record explicit predecessor/attempt links; ambiguity becomes conflict. An accepted no-test exception requires its own authority and rationale. Corrections/invalidation append new evidence; no history rewriting.
 
 Each generated View has an explanation manifest: view/object ID, view schema, generator/template digest, effective Core/Domain/Project composition digest, derivation input tuple, generated output digest, generated/manual field ownership map, and claim-level lineage. Each claim names exact input records/digests and transformation/rule IDs, accepted and rejected/missing evidence with reasons, intermediate dependencies, result and limitations. The manifest binds the output digest without making the output embed its own hash. Intent/manual prose cites its authoritative source instead of pretending it was derived.
 

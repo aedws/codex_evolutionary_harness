@@ -1,10 +1,10 @@
-# Minimum contract — version 3
+# Minimum contract — version 4
 
 Detailed operational obligations are routed through [contracts/README.md](contracts/README.md): feedback/skills, OOP views/state, execution/policy and overlays/evolution. [coverage.json](contracts/coverage.json) maps G01–G17 to clauses and planned acceptance scenarios. The detailed contracts are mandatory within the authorized task scope; their presence is not a claim that automation is implemented.
 
 ## 1. Scope and authority
 
-This is a reusable data and operating contract. No runtime validator, reducer, database, policy engine, promotion service or canary controller is implied. A local agent may follow it manually while leaving automatic enforcement unverified.
+This is a reusable data and operating contract with a minimal local core in harness.py. The core supplies scoped record validation, a transactional event ledger, configured local test execution and version-bound task-state derivation. Full identity/policy isolation, external effect controllers, promotion and canary are not supplied. Manual workflows remain available with their enforcement limits explicit.
 
 Common core: source authority, identity, evidence/provenance, derivation boundary, policy, eval, promotion and rollback. Domain/project specialization adds rules, tools and evals through overlays without silently editing the common core.
 
@@ -26,7 +26,7 @@ Each state claim identifies subject, target snapshot, evidence refs, rule versio
 | overlays/project.json | Local sources/rules/tools/evals and restrictions | Project owner/authorized agent |
 | releases/current-harness.json | Distribution identity and explicit capability limits | Seed release process |
 
-No multi-file atomicity or concurrent writer safety is supplied. Use one authorized writer at a time. If interrupted, compare records and source snapshots, retain original bytes, mark partial/unknown and repair with a new execution. Do not silently skip corrupted events or overwrite unrelated changes.
+The manual JSON/JSONL workflow supplies no multi-file atomicity or concurrent writer safety. Use one authorized writer at a time. If interrupted, compare records and source snapshots, retain original bytes, mark partial/unknown and repair with a new execution. Do not silently skip corrupted events or overwrite unrelated changes.
 
 Correction is a new record/event with supersedes or invalidates refs. Raw evidence remains immutable. A broken or stale historical projection stays explainable against its original inputs; it does not need to be rewritten into today's truth.
 
@@ -61,7 +61,7 @@ An Eval should be reproducible independently of the proposing agent's explanatio
 
 Separate intent/progress/verification/delivery/acceptance/blockers. Treat unknown, unverified, stale, conflicted and blocked as normal. `ready` requires known prerequisites; `verified` requires current implementation evidence, known required tests, matching target versions, passing required runs and no relevant stale/blocking evidence. No known test list is not an empty passing suite.
 
-Same inputs+event watermark+rule version+evaluation time must yield the same state. Until a reducer exists, record the manual derivation rule and evidence explicitly, and do not claim deterministic automation has been tested. Latest failed/current attempts must not be hidden by older successful runs.
+Same inputs+event watermark+rule version+evaluation time must yield the same state. For manual records, record the derivation rule and evidence explicitly. Runtime-managed tasks use the tested local-verification rule with its narrower declared-input/process scope; this does not validate every future rule. Latest failed/current attempts must not be hidden by older successful runs.
 
 Human-verifiable and mixed acceptance require explicit authorized human judgment for subjective dimensions. Tests cannot certify fun, taste or value by changing the acceptance classification. Artifact production and deployment are distinct; remote deployment needs observed target identity.
 
@@ -93,6 +93,8 @@ Rollback is not deletion of later history. Distinguish projection rebuild, harne
 
 Register the first task only when asked to work on this project. Inspect authority sources and ask concise interviews for missing goals/tests/domain or genuine conflicts. Do not copy the seed author's tasks or authorization.
 
-Distribution 0.3.0 / contract 3 means these documents, feedback configuration, draft record shapes and empty project records were supplied. It does not mean V2 automation works. V2 trust infrastructure, V3 local self-improvement and V4 hierarchical evolution must each earn verified capabilities through recorded eval/runtime evidence. Contract 1 adopters must review the new feedback/skill and operational obligations while preserving their project records and scoped permissions.
+Distribution 0.4.0 / contract 4 supplies these contracts, a minimal local core, blank configuration examples and empty project records. It does not certify the complete V2 capability level. V2 trust infrastructure, V3 local self-improvement and V4 hierarchical evolution must each earn verified capabilities through recorded eval/runtime evidence. Contract 1 adopters must review the new feedback/skill and operational obligations while preserving their project records and scoped permissions.
 
 Contract 3 strengthens the existing V01/V03/E01/E02/E03/E04/X02 obligations with field-level lineage, whole-wiki journeys, explicit composition operators, independent-context applicability, canary decision rules, principal/gate boundaries and comparable cost accounting. Contract 2 adopters also need reviewed migration. Seven-area review packets and planned cases support that review without pretending an automated engine or successful runtime eval exists.
+
+Contract 4 adds [D01–D08 decision composition](contracts/decision-system.md), the explicit [lifecycle graph](contracts/lifecycle.json), and [local runtime use/limits](runtime/README.md). Runtime-owned task/run observations live in .harness/ledger.sqlite3; legacy/manual records remain separate sources and may link to that evidence without duplicating its state authority. Engine/policy pins and storage versions require reviewed migration; no automatic import of historical approvals or passes.

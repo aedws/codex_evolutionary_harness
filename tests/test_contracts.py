@@ -33,7 +33,7 @@ class ContractDistributionTests(unittest.TestCase):
 
     def test_all_goals_and_clauses_resolve_without_runtime_claim(self):
         result = check_contracts.check(self.root)
-        self.assertEqual((result["goals"], result["clauses"]), (17, 23))
+        self.assertEqual((result["goals"], result["clauses"]), (17, 31))
 
     def test_missing_goal_rejected(self):
         self.change_json("docs/harness/contracts/coverage.json", lambda x: x["goals"].pop())
@@ -97,6 +97,29 @@ class ContractDistributionTests(unittest.TestCase):
         self.change_json("docs/harness/templates/assurance-review.example.json",
                          lambda x: x["areas"]["A07"].pop("margins_estimator_uncertainty"))
         with self.assertRaisesRegex(SeedError, "unobserved fields unknown"):
+            check_contracts.check(self.root)
+
+    def test_lifecycle_cannot_drop_required_gate(self):
+        self.change_json("docs/harness/contracts/lifecycle.json", lambda x: x["gates"].pop())
+        with self.assertRaisesRegex(SeedError, "16 required gates"):
+            check_contracts.check(self.root)
+
+    def test_lifecycle_dependency_cycle_rejected(self):
+        self.change_json("docs/harness/contracts/lifecycle.json",
+                         lambda x: x["gates"][0].update(depends_on=["goal_assessment"]))
+        with self.assertRaisesRegex(SeedError, "dependency cycle"):
+            check_contracts.check(self.root)
+
+    def test_detached_promotion_path_rejected(self):
+        self.change_json("docs/harness/contracts/lifecycle.json",
+                         lambda x: x["gates"][-1].update(depends_on=["acceptance"]))
+        with self.assertRaisesRegex(SeedError, "reachability"):
+            check_contracts.check(self.root)
+
+    def test_runtime_example_cannot_inherit_command_grants(self):
+        self.change_json("docs/harness/runtime/policy.example.json",
+                         lambda x: x["commands"].update(external={"argv": ["unwanted"], "timeout_seconds": 1}))
+        with self.assertRaisesRegex(SeedError, "execution grants"):
             check_contracts.check(self.root)
 
 

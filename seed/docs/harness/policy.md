@@ -9,3 +9,5 @@ Prefer tested Tool Capability → Policy Check → Credential Scope → Sandbox/
 Retries: safe_retry; state_check_before_retry; human_approval_before_retry; not_retryable. Timeouts do not prove that a remote operation had no effect. Preserve the same operation key and inspect the target before retrying ambiguous effects.
 
 Never automatically change root source authority, expand destructive/credential scope, weaken audit/evidence/eval retention, remove rollback or convert human-verifiable acceptance to machine truth.
+
+The optional local core checks its pinned configured argv and input policy before its own run dispatch. This is an application boundary, not OS isolation or authentication of a policy authority_ref. Keep protected autonomous/external actions blocked until their actual enforcement adapters and authority exist.

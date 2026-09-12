@@ -27,6 +27,6 @@ Keep the common core unchanged; specialize through `docs/harness/overlays/projec
 
 Ask a concise interview question when intent, authoritative sources, required tests or conflicting policy cannot be resolved from evidence. Continue independent work while waiting. Do not ask again for an already authorized action.
 
-This seed supplies contracts, not an automatic policy or state engine. Report enforcement as unverified until actual execution-layer controls are tested.
+This seed supplies contracts and a minimal local core; see docs/harness/runtime/README.md when using it. Its policy/input checks govern only its own configured run entry point. Record/full-state/identity/OS/external enforcement beyond that boundary remains unverified. Never use a test-process pass as full product or human acceptance.
 
 Completion report only: changed; verified; unverified/stale; blocked/conflicts; evidence created; events recorded; external actions; harness friction/improvement candidates; next allowed action.

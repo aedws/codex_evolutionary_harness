@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "contract_version": 3,
+  "contract_version": 4,
   "coverage_kind": "documented_contract",
   "runtime_status": "unverified",
   "goals": [
@@ -14,6 +14,10 @@
         {
           "id": "V02",
           "path": "views-state.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "A wiki task view shows purpose, evidence links and next action without making its label authoritative.",
@@ -29,6 +33,14 @@
         {
           "id": "X01",
           "path": "execution.md"
+        },
+        {
+          "id": "D01",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D03",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "An agent says done without an applicable TestRun: verification remains unverified.",
@@ -40,6 +52,10 @@
         {
           "id": "V03",
           "path": "views-state.md"
+        },
+        {
+          "id": "D02",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "An old pass for different data cannot verify the current snapshot.",
@@ -55,6 +71,10 @@
         {
           "id": "V03",
           "path": "views-state.md"
+        },
+        {
+          "id": "D02",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Editing an object status or wiki sentence cannot create a passing TestRun.",
@@ -70,6 +90,18 @@
         {
           "id": "X04",
           "path": "execution.md"
+        },
+        {
+          "id": "D01",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D02",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D08",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Conflicting results and unobservable remote effects stay conflicted/unknown.",
@@ -85,6 +117,10 @@
         {
           "id": "F03",
           "path": "feedback.md"
+        },
+        {
+          "id": "D06",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Replace a skill/tool and recheck its input/output/failure boundary before trusting outcomes.",
@@ -104,6 +140,10 @@
         {
           "id": "V05",
           "path": "views-state.md"
+        },
+        {
+          "id": "D03",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Resume a task and reconstruct the state from the exact inputs, watermark and rule digest.",
@@ -115,6 +155,14 @@
         {
           "id": "E01",
           "path": "evolution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "A project overlay attempting to widen protected permissions produces a conflict.",
@@ -130,6 +178,14 @@
         {
           "id": "E03",
           "path": "evolution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "One local pass permits a candidate submission but not domain/core promotion.",
@@ -153,6 +209,14 @@
         {
           "id": "E04",
           "path": "evolution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Trace a harness change from observed failure to scoped decision, eval, release and return observation.",
@@ -172,6 +236,10 @@
         {
           "id": "E03",
           "path": "evolution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "A proposing agent cannot approve a high-risk change or change its grader to manufacture a pass.",
@@ -191,6 +259,14 @@
         {
           "id": "E04",
           "path": "evolution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D08",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Autonomous submission requires explicit scope and unknown effects prevent duplicate retries.",
@@ -206,6 +282,14 @@
         {
           "id": "X03",
           "path": "execution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D06",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Documented policy is displayed as documented_only until a real enforcement test exists.",
@@ -249,6 +333,10 @@
         {
           "id": "E06",
           "path": "evolution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "After skill/error feedback is adopted, observe the originating problem again; do not close on PR status alone.",
@@ -268,6 +356,10 @@
         {
           "id": "E02",
           "path": "evolution.md"
+        },
+        {
+          "id": "D08",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "A rule/context reduction is considered improvement only with unchanged trust gates.",
@@ -291,6 +383,14 @@
         {
           "id": "E06",
           "path": "evolution.md"
+        },
+        {
+          "id": "D01",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Machine tests pass but subjective acceptance stays pending until an authorized human decision.",
@@ -314,6 +414,14 @@
         {
           "id": "X05",
           "path": "execution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
         }
       ],
       "acceptance_scenario": "Measure reproducibility, intervention and rollback evidence rather than counting automation steps.",

@@ -2,7 +2,7 @@
   "id": null,
   "version": 1,
   "scope": "project",
-  "base_contract_version": 3,
+  "base_contract_version": 4,
   "domain_overlay": null,
   "source_refs": [],
   "additions": {

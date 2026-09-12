@@ -52,3 +52,5 @@ Version labels describe verified capabilities, not documentation claims.
 When uncertain, use `unknown`, `unverified`, `stale`, `blocked`, or `conflicted`. Do not invent certainty.
 
 Current contract 3 adds [seven-area audit RFC-0004](../rfcs/RFC-0004-seven-area-assurance-audit.md) and a blank review protocol. Earlier contract-2 design evidence is retained, not promoted into runtime assurance.
+
+Current v0.4.0 / contract 4 includes a minimal local core and [end-to-end decision RFC-0005](../rfcs/RFC-0005-end-to-end-decision-system.md). Its record/test/state/restore checks are scoped local mechanisms; full V2/V3/V4 and external/identity enforcement remain unverified.

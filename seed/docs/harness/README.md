@@ -8,8 +8,10 @@ Every project starts from a common core and specializes through overlays. Projec
 
 Read [source authority](source-authority.md), [policy](policy.md), [checkpoint](checkpoint.md), then the [minimum contract](contract.md). The empty registries contain no inherited project tasks or verification claims.
 
-The distribution version is 0.3.0, contract version 3. V2 evidence-driven execution, V3 project self-improvement and V4 hierarchical evolution are capability targets. This seed does not implement their automatic engines, a wiki UI or the proposed `eh` CLI. Important policies still need tested tool-level enforcement.
+The distribution version is 0.4.0, contract version 4. V2 evidence-driven execution, V3 project self-improvement and V4 hierarchical evolution are capability targets. This seed includes a minimal local ledger/test/state core, but does not implement the full capability levels, wiki UI, isolated human authority or external rollout controllers. Its tested checks mediate only its own configured run command.
 
 [Contract routing](contracts/README.md) covers self-feedback and skill ownership, whole-project views/state, execution/policy/recovery and evaluated promotion/canary/adoption. Feedback starts local-only; fill its destination and permission references only within explicit project authority. Draft candidate/skill record shapes are available in [templates](templates/README.md).
 
 `overlays/project.json` belongs to this project. Populate it only with observed or explicitly confirmed facts. Core contract changes should be proposed upstream rather than silently forked.
+
+[Minimal local core: setup, commands and boundaries](runtime/README.md) connects configured tests to immutable events, version-bound status, local candidates and isolated restore. The complete lifecycle gates remain explicit, with unimplemented adapters shown as missing capabilities.

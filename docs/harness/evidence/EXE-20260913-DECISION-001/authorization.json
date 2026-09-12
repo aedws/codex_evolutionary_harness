@@ -1,0 +1,11 @@
+{
+  "evidence_id": "EVD-20260913-DECISION-AUTHORIZATION",
+  "task_id": "TASK-20260913-DECISION-001",
+  "execution_id": "EXE-20260913-DECISION-001",
+  "recorded_at": "2026-09-12T19:09:29.384836+00:00",
+  "basis": "confirmed_by_user",
+  "source": "current conversation interview reply",
+  "user_reply": "최소 실행 코어까지 구현하고 검증",
+  "authorized_scope": "Local minimum runtime implementation and validation; project seed-maintenance; existing private distribution authorization persists",
+  "excluded": "No implicit OS/IAM privileges, external deployment, human acceptance, autonomous promotion or cross-domain verification"
+}

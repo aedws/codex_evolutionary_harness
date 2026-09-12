@@ -46,3 +46,12 @@ Each decision should include: Decision ID, Status, Context, Decision, Alternativ
 - Alternatives: retain coarse goal-to-clause mapping; implement full runtime now. The former misses concrete decision rules, the latter exceeds current seed scope.
 - Cost observation: clause IDs remain 23; shipped Markdown grows from 52,314 to 66,763 bytes. Relevant-area reading limits intended context load, but actual context/time savings are unmeasured. No optimization superiority or same-trust operating result claimed.
 - Effective scope: seven-area contract documentation and structural distribution checks only. Existing evidence, tag identities and stability anchors are preserved.
+
+## DEC-20260913-DECISION-001 — End-to-end contracts and minimum local core
+
+- Authority: EVD-20260913-DECISION-AUTHORIZATION; explicit user implementation/validation reply; prior private distribution scope persists.
+- Decision: ship v0.4.0 / contract 4 with strict local records, SQLite events, configured test dispatch, version-bound status/Task View, local candidates and isolated ledger restore. Add D01–D08 and 16 lifecycle gates.
+- Evidence: EVD-20260913-DECISION-VALIDATION, 59 local unit/integration tests, including installed-seed CLI and real concurrent dispatch rejection.
+- Scope: project seed-maintenance. This does not authenticate human roles, sandbox child processes, promote itself or establish full V2/V3/V4 outcomes. Human acceptance remains separate.
+- Alternatives/tradeoffs: RFC-0005 section 6. Better fit for reproducible CLI decisions than document-only seed; increased code and operating setup. Net context/time/trust optimization remains unmeasured.
+- Recovery: preserve older tags and manual history; new runtime has its own explicit initialization; policy/engine migration is not automatic; restore never overwrites later active events or transfers authority to a new workspace.

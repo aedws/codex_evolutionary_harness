@@ -1,4 +1,4 @@
-"""Small, offline contract-seed distributor; not the proposed eh runtime."""
+"""Offline seed distributor; the separately supplied harness.py implements the local core."""
 from __future__ import annotations
 
 import argparse
@@ -52,7 +52,8 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     no_links(manifest_path)
     raw = manifest_path.read_bytes()
     manifest = json.loads(raw)
-    if manifest.get("schema_version") != 1 or manifest.get("contract_version") not in (1, 2, 3):
+    if (type(manifest.get("schema_version")) is not int or manifest["schema_version"] != 1
+            or type(manifest.get("contract_version")) is not int or manifest["contract_version"] not in (1, 2, 3, 4)):
         raise SeedError(2, "Unsupported seed manifest/contract version; use a compatible distributor")
     files = manifest.get("files")
     if not isinstance(files, dict) or not files:
@@ -82,10 +83,18 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     if payload["docs/harness/events.jsonl"].strip():
         raise SeedError(2, "Seed must not contain project events")
     release = json.loads(payload["docs/harness/releases/current-harness.json"])
+    local_core = manifest["contract_version"] == 4
     if (release.get("distribution_version") != manifest.get("distribution_version")
-            or release.get("contract_version") != manifest["contract_version"] or release.get("capability_level") != "seed"
-            or release.get("verified_capabilities") != [] or release.get("automated_enforcement") != []):
+            or release.get("contract_version") != manifest["contract_version"]
+            or release.get("capability_level") != ("local_core_preview" if local_core else "seed")
+            or release.get("verified_capabilities") != []
+            or release.get("automated_enforcement") != (["configured_test_dispatch_within_local_cli"] if local_core else [])):
         raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+    if local_core and ("harness.py" not in payload or "docs/harness/runtime/README.md" not in payload
+                       or release.get("distribution_kind") != "contract_seed_with_local_core"
+                       or release.get("implemented_mechanisms") != ["strict_local_record_validation", "transactional_event_ledger",
+                           "pinned_test_process_capture", "version_bound_task_status", "local_feedback_candidate", "isolated_ledger_restore"]):
+        raise SeedError(2, "Local core files and declared scope must be supplied together")
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}

@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "contract_version": 4,
+  "profile_id": "hierarchical-sdlc-v1",
+  "profile_kind": "normative_lifecycle_contract",
+  "runtime_status": "unverified",
+  "constraints": [
+    "Dependencies define information flow, not inherited authority",
+    "Required gates cannot be removed by a caller",
+    "Manual observations are allowed only when the specific gate profile permits them",
+    "A documentation-only seed-maintenance release is not empirical project/domain/core promotion",
+    "Object/status counts are not final-goal completion percentages"
+  ],
+  "gates": [
+    {
+      "id": "seed_integrity",
+      "depends_on": [],
+      "required_inputs": [
+        "seed manifest",
+        "payload hashes",
+        "supported contract version"
+      ],
+      "owner_role": "seed maintainer",
+      "evaluator_contract": "distribution check",
+      "output": "checked seed source",
+      "failure_or_unknown": "integrity/unsupported -> reject",
+      "downstream_consumer": "bootstrap",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "project_bindings",
+      "depends_on": [
+        "seed_integrity"
+      ],
+      "required_inputs": [
+        "project identity",
+        "authoritative sources",
+        "acceptance classes",
+        "tool/test bindings",
+        "scope and budget boundaries"
+      ],
+      "owner_role": "project owner",
+      "evaluator_contract": "bootstrap inspection",
+      "output": "versioned project bindings with explicit unknowns",
+      "failure_or_unknown": "missing required binding -> unknown; interview only the missing fact",
+      "downstream_consumer": "task planning",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "task_ready",
+      "depends_on": [
+        "project_bindings"
+      ],
+      "required_inputs": [
+        "stable task and execution IDs",
+        "frozen target and acceptance",
+        "required test selection",
+        "preconditions",
+        "applicable scoped authority"
+      ],
+      "owner_role": "task executor",
+      "evaluator_contract": "readiness and authority evaluator",
+      "output": "eligible action request with exact scope",
+      "failure_or_unknown": "deny/conflict/missing prerequisite -> block dependent mutation",
+      "downstream_consumer": "execution",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "execution_observed",
+      "depends_on": [
+        "task_ready"
+      ],
+      "required_inputs": [
+        "allowed action request",
+        "operation key",
+        "input snapshot",
+        "raw outputs",
+        "effect readback or explicit no external effect"
+      ],
+      "owner_role": "scoped executor",
+      "evaluator_contract": "execution adapter",
+      "output": "observed attempts and bound evidence",
+      "failure_or_unknown": "timeout/partial/unobservable -> reconcile, never blind replay",
+      "downstream_consumer": "verification",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "verification",
+      "depends_on": [
+        "execution_observed"
+      ],
+      "required_inputs": [
+        "known required test set",
+        "latest selected attempts",
+        "matching input and acceptance digests",
+        "intact applicable evidence"
+      ],
+      "owner_role": "test evaluator",
+      "evaluator_contract": "verification reducer",
+      "output": "independent verification axis and reasons",
+      "failure_or_unknown": "failed/running/stale/conflict/unknown remain visible",
+      "downstream_consumer": "acceptance",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "acceptance",
+      "depends_on": [
+        "verification"
+      ],
+      "required_inputs": [
+        "acceptance classification",
+        "machine result",
+        "scoped human decision when human/mixed"
+      ],
+      "owner_role": "acceptance authority",
+      "evaluator_contract": "acceptance evaluator",
+      "output": "accepted scope or pending human judgment",
+      "failure_or_unknown": "machine pass never substitutes for subjective acceptance",
+      "downstream_consumer": "project completion",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "feedback_candidate",
+      "depends_on": [
+        "execution_observed"
+      ],
+      "required_inputs": [
+        "failure/friction/skill observations",
+        "classification",
+        "recurrence or structural/severity basis",
+        "origin and normalized identity"
+      ],
+      "owner_role": "project contributor",
+      "evaluator_contract": "bounded feedback review",
+      "output": "candidate/duplicate/deferred/no_candidate",
+      "failure_or_unknown": "no evidence of generality -> keep local; no forced candidate",
+      "downstream_consumer": "candidate evaluation",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "candidate_eval",
+      "depends_on": [
+        "feedback_candidate"
+      ],
+      "required_inputs": [
+        "frozen baseline/candidate/grader",
+        "original failure and counterexamples",
+        "all runs and populations",
+        "trust and whole-cost metrics",
+        "recovery/compatibility cases"
+      ],
+      "owner_role": "evaluation authority",
+      "evaluator_contract": "isolated eval adapter",
+      "output": "scoped comparison and uncertainty",
+      "failure_or_unknown": "noncomparable/contaminated/failed -> reject or inconclusive",
+      "downstream_consumer": "promotion",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "promotion",
+      "depends_on": [
+        "candidate_eval"
+      ],
+      "required_inputs": [
+        "applicability predicate",
+        "independent project/domain matrix for requested scope",
+        "exact change digest",
+        "scoped decision authority"
+      ],
+      "owner_role": "scope maintainer",
+      "evaluator_contract": "promotion evaluator",
+      "output": "accepted_for_scope/rejected/deferred decision",
+      "failure_or_unknown": "local pass does not imply Core; maintenance decision remains distinct",
+      "downstream_consumer": "release",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "release",
+      "depends_on": [
+        "promotion"
+      ],
+      "required_inputs": [
+        "accepted exact change",
+        "immutable source and artifact identity",
+        "supported versions",
+        "migration/recovery plans",
+        "release authority"
+      ],
+      "owner_role": "release maintainer",
+      "evaluator_contract": "release adapter plus readback",
+      "output": "published immutable release receipt",
+      "failure_or_unknown": "prepared bytes without publication -> artifact_prepared",
+      "downstream_consumer": "compatibility",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "compatibility_recovery",
+      "depends_on": [
+        "release",
+        "project_bindings"
+      ],
+      "required_inputs": [
+        "pinned current and proposed compositions",
+        "reader/schema compatibility",
+        "preserved project records",
+        "verified restore/compensation route"
+      ],
+      "owner_role": "adopting project owner",
+      "evaluator_contract": "compatibility and recovery evaluators",
+      "output": "eligible rollout input or pinned/blocked",
+      "failure_or_unknown": "missing or unsafe recovery -> no autonomous enrollment",
+      "downstream_consumer": "canary",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "canary",
+      "depends_on": [
+        "compatibility_recovery"
+      ],
+      "required_inputs": [
+        "eligible cohorts and enrollment authority",
+        "preset minimum duration AND work",
+        "maximum budget/deadline",
+        "complete telemetry",
+        "stop/rollback authority"
+      ],
+      "owner_role": "rollout authority",
+      "evaluator_contract": "rollout controller or labeled manual observations",
+      "output": "eligible expansion/paused/aborted/rollback_pending",
+      "failure_or_unknown": "trust breach stops; missing telemetry cannot pass",
+      "downstream_consumer": "adoption",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "adoption",
+      "depends_on": [
+        "canary"
+      ],
+      "required_inputs": [
+        "exact release/cohort decision",
+        "observed per-project application",
+        "required verification and acceptance",
+        "preserved history"
+      ],
+      "owner_role": "adopting project owner",
+      "evaluator_contract": "application adapter and readback",
+      "output": "adopted/pinned/unknown/rolled_back per project",
+      "failure_or_unknown": "closed PR or withdrawn release is not observed adoption/rollback",
+      "downstream_consumer": "origin follow-up",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "origin_followup",
+      "depends_on": [
+        "adoption",
+        "candidate_eval"
+      ],
+      "required_inputs": [
+        "origin candidate linkage",
+        "same failure and cost workload after adoption",
+        "recurrence/regression observations"
+      ],
+      "owner_role": "origin project evaluator",
+      "evaluator_contract": "follow-up comparison",
+      "output": "observed benefit/regression/inconclusive linked to candidate",
+      "failure_or_unknown": "missing follow-up keeps loop open",
+      "downstream_consumer": "new evidence or next candidate",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "optimization",
+      "depends_on": [
+        "candidate_eval"
+      ],
+      "required_inputs": [
+        "preset comparable workload and horizon",
+        "hard trust and non-inferiority results",
+        "all context/rule/human/migration/recovery costs",
+        "uncertainty and tradeoff authority"
+      ],
+      "owner_role": "evaluation authority",
+      "evaluator_contract": "trust-preserving comparison",
+      "output": "optimized/non_regressed/regressed/tradeoff_pending/inconclusive",
+      "failure_or_unknown": "missing baseline or noise budget -> inconclusive",
+      "downstream_consumer": "benefit claim",
+      "runtime_evidence_refs": []
+    },
+    {
+      "id": "goal_assessment",
+      "depends_on": [
+        "acceptance",
+        "origin_followup",
+        "optimization"
+      ],
+      "required_inputs": [
+        "implemented V2 mechanisms and runtime proofs",
+        "within-project V3 improvement",
+        "independent multi-domain V4 propagation evidence",
+        "applicable human acceptance"
+      ],
+      "owner_role": "project and harness owners",
+      "evaluator_contract": "capability-specific evidence assessment",
+      "output": "supported capability claims with scope and residual unknowns",
+      "failure_or_unknown": "documentation/install/synthetic samples cannot alone complete final goal",
+      "downstream_consumer": "continue bounded evolution",
+      "runtime_evidence_refs": []
+    }
+  ]
+}

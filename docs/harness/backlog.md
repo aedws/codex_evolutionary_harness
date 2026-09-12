@@ -1,5 +1,8 @@
 # Backlog
 
+## Prepared
+- TASK-20260913-DECISION-001: contract 4 and minimum local runtime, 59 tests passed; private publication readback pending.
+
 ## Delivered
 - TASK-20260913-ADOPTION-001: README usage pinned first; generic adoption/goal limitations documented and published. Exact README commands and 3 synthetic layouts plus existing-policy conflict checked. EVD-20260913-ADOPTION-VALIDATION / PUBLISHED. Seed payload unchanged.
 - TASK-20260913-ASSURANCE-001: seven-area contract gaps addressed in private v0.3.0 / contract 3. EVD-20260913-ASSURANCE-VALIDATION and REMOTE: 25 local/fresh-clone tests, 7 areas / 21 planned scenarios. Runtime verification is explicitly not claimed.
@@ -9,7 +12,7 @@
 ## Deferred
 - HARNESS-REQ-20260913-005 follow-up: exercise seven-area scenarios against actual mechanisms and collect whole-cost/trust evidence. Document review alone cannot close these runtime gates.
 - Observe real-project feedback/adoption outcomes for HARNESS-REQ-20260913-004; contract coverage alone does not prove lower error rate, context cost or cross-domain generality.
-- Full CLI implementation from RFC-0001; V2 reducer/validator/policy enforcement; V3/V4 controllers.
+- Remaining full CLI/adapter and OS/IAM policy enforcement beyond the local v0.4.0 reducer/validator; V3/V4 controllers.
 - Human review of detailed runtime choices and whole-wiki UI implementation.
 
 ## Historical

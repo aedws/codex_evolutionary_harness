@@ -1,6 +1,6 @@
 # Policy
 
-Default allowed: read repo/records, inspect code/config/tests/docs, run local/static tests, create local evidence/projections, propose decisions and harness improvements.
+Default allowed: read repo/records and inspect code/config/tests/docs. Within an authorized mutable task, run applicable local/static tests, create local evidence/projections and propose decisions/harness improvements. Query/analysis remain read-only.
 
 Explicit authorization required unless already granted: commit/push/merge, production deploy, destructive external writes, public publishing, paid resources, credential changes, external deletion.
 

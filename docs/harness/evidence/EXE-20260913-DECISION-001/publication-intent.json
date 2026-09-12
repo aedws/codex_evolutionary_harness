@@ -1,0 +1,33 @@
+{
+  "evidence_id": "EVD-20260913-DECISION-PUBLICATION-INTENT",
+  "created_at": "2026-09-12T19:15:25.330876+00:00",
+  "repository": {
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "isPrivate": true,
+    "nameWithOwner": "aedws/codex_evolutionary_harness",
+    "url": "https://github.com/aedws/codex_evolutionary_harness"
+  },
+  "version": "v0.4.0",
+  "contract_version": 4,
+  "operation_keys": [
+    "seed-v0.4.0-source-push",
+    "seed-v0.4.0-private-prerelease"
+  ],
+  "manifest_sha256": "3377020cbb83a97b720990b45f52cfcea2dfefa863b1c8a438558fda07c1401a",
+  "assets": {
+    "evolutionary-harness-seed-0.4.0.zip": "5d55a29d6f038ccd4f0efdfb2a019bbd9b5697145b9b34027a59d51c3bd45873",
+    "SHA256SUMS-v0.4.0.txt": "4c4357444228bed97dd2524cde8d7ac53a13f0673c56f20b69d6851283e9a749"
+  },
+  "preserved_remote_tags": [
+    "3ef4250dde6306c5261a41c72d056de5beb81646\trefs/tags/v0.1.0",
+    "db0a0e2924723f4f9544292b64a44726d038c58b\trefs/tags/v0.1.0^{}",
+    "a7bc80e80088a6442a581089646f9a0ea23dc00b\trefs/tags/v0.2.0",
+    "59c4cc828e5bdf8ca7fc4daea153699e2f253b33\trefs/tags/v0.2.0^{}",
+    "aefa96719fecac578dd39a6ceacd489270be72a7\trefs/tags/v0.3.0",
+    "dcbb1705e3d91a5a29b8514ac784d6e4290073fe\trefs/tags/v0.3.0^{}"
+  ],
+  "authorization": "User requested reusable private GitHub seed; explicit minimum runtime implementation and validation reply",
+  "release_kind": "prerelease; local_core_preview; not full V2/V3/V4 certification"
+}

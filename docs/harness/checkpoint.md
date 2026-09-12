@@ -3,29 +3,29 @@
 Projection only; consult version-bound evidence and events.
 
 ## Current Work
-- TASK-20260913-ADOPTION-001 / EXE-20260913-ADOPTION-001.
-- README usage pinned first; generic-project adoption and final-goal reachability assessed. Documentation only; immutable seed v0.3.0 / contract 3 retained.
+- TASK-20260913-DECISION-001 / EXE-20260913-DECISION-001: full decision-contract audit and explicitly authorized minimum runtime implementation.
+- v0.4.0 / contract 4 prepared for private prerelease. Publication is not yet observed in this checkpoint.
 
 ## Verified
-- EVD-20260913-ADOPTION-VALIDATION: exact README PowerShell blocks run against a fresh v0.3.0 clone; three synthetic Python/JavaScript/data layouts install with existing files preserved; replay no-op; existing AGENTS conflict blocks without writes.
-- EVD-20260913-ADOPTION-DOCS: first-section position and local links checked.
-- Seed/scripts/tests/manifest unchanged; 38 previous evidence files preserved.
+- EVD-20260913-DECISION-VALIDATION: 59 tests passed on Windows/Python 3.13; exact source hashes, 17 goals / 31 clauses / 16 lifecycle gates structurally checked.
+- Installed seed executes real checks, reflects failure/drift, preserves failed replay exit codes, blocks competing dispatch, records local candidates and restores exact event history separately without authority transfer.
+- Historical evidence and original event bytes preserved. UTF-8 redirected output including Korean tested.
 
 ## Unverified / Stale
-- No real product bootstrap or application execution, long-term improvement, cross-domain generalization, Linux/macOS or additional Python-version run performed.
-- Current seed supplies contracts and manual workflow starting points. Final V2/V3/V4 requires actual adapters, validator/reducer, policy gates, evaluations and rollout mechanisms plus evidence.
-- Prior v0.3.0 release verification remains valid for its unchanged payload; it does not verify new README prose or future runtime work.
+- Full wiki rendering, OS/IAM role separation, external deployment/promotion/Canary controllers, real user-product acceptance, independent domain evidence and long-term cost/trust improvement.
+- 21 broad review scenarios remain planned, not all executed by the narrower runtime suite. Local core preview is not V4 certification.
 
 ## Blocked / Conflicts
-- No blocker to documentation delivery. Final automated harness is not supplied by installation; missing runtime mechanisms remain a separate work scope.
+- No blocker to tested local seed release. Policy/engine drift needs reviewed migration; uncertain descendant effects need operator reconciliation.
 
 ## Evidence / Events / External Actions
-- Baseline, exact-command validation and documentation checks under EXE-20260913-ADOPTION-001.
-- EVT-20260913-ADOPTION-001 through 004: started, inspected/verified, private documentation push intent, verified publication and delivery.
-- EVD-20260913-ADOPTION-PUBLISHED: private main README and docs/ADOPTION.md readback match commit 834b6b3fb88d3c7b1212ea4bba4a408dfadf89ab. Seed tags/assets remain unchanged.
+- Authorization, source-bound validation/logs and exact private publication intent under EXE-20260913-DECISION-001.
+- EVT-20260913-DECISION-001 through 004: audit start, scope authorization, validation, publication preparation.
+- No v0.4.0 remote publication outcome claimed before readback.
 
 ## Harness Friction / Improvement
-- Feedback linked to HARNESS-REQ-20260913-005: distinguish contract/install coverage from operating outcomes. No new common-rule candidate from this usage-layout change.
+- HARNESS-REQ-20260913-006 addressed by HCHANGE-20260913-DECISION-001 in the tested local scope. Full-goal gates remain open for real-project observation.
+- Corrections during verification: policy mutation final check, scenario-count regression, Windows CLI UTF-8. No recursive feedback candidate proliferation.
 
 ## Next Allowed Action
-- Follow README to install pinned v0.3.0, then explicitly request bootstrap in a user-selected project. Actual V2 implementation needs its own scoped work; the final runtime goal is not achieved by installation alone.
+- Publish the tested private prerelease and verify a fresh pinned download. Then bind the seed to a user-selected project with real checks and acceptance evidence.

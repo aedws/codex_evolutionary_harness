@@ -2,7 +2,7 @@
 
 - 상태: seed baseline design; 사용자 목표는 확인됨. 아키텍처 전 기능의 구현·검증·인간 수락 선언은 아님.
 - 기준: [REQ-HARNESS-VISION-001과 G01–G17](../requirements/HARNESS-GOALS.md)
-- 이번 산출물: contract seed v0.3.0 / contract 3. V2/V3/V4와 배포 SemVer를 구분한다.
+- 이번 산출물: seed with local core v0.4.0 / contract 4. V2/V3/V4와 배포 SemVer를 구분한다.
 - 범위: 공통 seed 설계, 최초 project 검증. 여러 프로젝트·도메인에서 검증된 core 승격으로 표현하지 않는다.
 - 하위 문서: [RFC-0001 CLI 제품 계약](RFC-0001-evolutionary-harness-cli.md). 그 문서의 DB·단일 writer·명령 이름은 후속 제안이며 이번 씨앗의 필수 구현이 아니다.
 
@@ -10,7 +10,7 @@
 
 목적은 프로젝트마다 하네스를 새로 만드는 비용을 줄이면서 실제 운영에서 얻은 개선을 검증 가능한 공통 규격으로 축적하는 것이다. CLI, 위키, 에이전트는 같은 계약을 쓰는 인터페이스와 실행 주체다. 어떤 하나도 상태의 최종 진실이 아니다.
 
-씨앗은 신뢰 규칙과 빈 기록을 제공한다. AI가 문서를 지킨다는 기대만으로 강제 보장이 생기지는 않는다. 실제 정책 집행, 결정적 reducer, sandbox와 canary controller는 후속 구현이며 능력 manifest에 미구현으로 표시한다.
+씨앗은 신뢰 규칙과 빈 기록을 제공한다. AI가 문서를 지킨다는 기대만으로 강제 보장이 생기지는 않는다. 로컬 검사 정책/input gate와 좁은 Task 판정 코어는 contract 4에 포함된다. 전체 정책 격리, 범용 reducer, sandbox와 canary controller는 후속 구현이며 능력 manifest에 한계를 표시한다.
 
 ## 2. 계층과 의존 방향
 
@@ -122,7 +122,7 @@ Canary 계획에는 대상과 제외 이유, baseline, 기간/작업 수, 신뢰
 
 ## 11. 버전·재시도·복구의 씨앗 범위
 
-배포 SemVer와 contract_version, V2/V3/V4 capability level을 분리한다. 현행 v0.3.0의 contract_version은 3이며 자동 강제 능력은 없다. unsupported manifest/version은 복사 전에 거부한다.
+배포 SemVer와 contract_version, V2/V3/V4 capability level을 분리한다. 현행 v0.4.0의 contract_version은 4이며 자체 로컬 검사 진입점의 정책/input gate만 구현한다. 전체 정책 격리 능력은 없다. unsupported manifest/version은 복사 전에 거부한다.
 
 init는 전체 사전 점검 후 allowlist 파일만 신규 생성한다. 기존 대상 파일은 덮지 않는다. 같은 요청은 설치 영수증과 원본 파일 해시가 모두 일치할 때만 no-op이다. 부분 설치나 이후 프로젝트 변경은 conflict로 표시하고 재설치로 지우지 않는다. dry-run은 쓰기를 하지 않는다. 복사 중 OS 장애는 부분 상태로 명시하며 디렉터리 전체를 삭제하는 자동 rollback은 제공하지 않는다.
 
@@ -141,7 +141,7 @@ V3/V4의 자동 실행은 나중에 구현하지만 관련 레코드의 ID·scop
 
 ## 13. 인터뷰와 남은 선택
 
-이미 명시된 목표와 private 배포 권한은 재질문하지 않는다. 대상 프로젝트의 원본 권위·필수 검사·도메인·기존 AGENTS 충돌은 bootstrap 때 필요한 범위만 묻는다. 실제 runtime DB, wiki 구현, 자동 승격 범위, Canary 수치·기간은 후속 구현 시 결정하며 이번 씨앗이 임의로 확정하지 않는다.
+이미 명시된 목표와 private 배포 권한은 재질문하지 않는다. 대상 프로젝트의 원본 권위·필수 검사·도메인·기존 AGENTS 충돌은 bootstrap 때 필요한 범위만 묻는다. 로컬 runtime DB와 검사 경로는 RFC-0005의 승인된 최소 코어로 구체화했다. 전체 wiki 구현, 자동 승격 범위, Canary 수치·기간은 실제 프로젝트와 후속 구현에서 결정한다.
 
 ## 14. 목표와 운영 계약의 연결
 
@@ -199,3 +199,13 @@ v0.2.0의 contract 2는 사용자가 요청한 설계 공백의 유지보수 릴
 7. 모든 시도를 포함한 같은 workload에서 신뢰 하한·불확실성·규칙/문맥/인간 시간·이전/복구 비용을 비교한다. 충분한 측정이 없으면 최적화 판단은 inconclusive다(E02).
 
 [검토 절차](../../seed/docs/harness/contracts/review-protocol.md)와 7영역·21시나리오 패킷은 이 의무의 기록 도구다. 실제 엔진이나 승인 권한은 제공하지 않는다. contract 3의 추가 의무는 이전 프로젝트에 자동 적용하지 않으며 [migration 절차](../REUSE.md)를 따른다.
+
+## 17. Contract 4와 실행 가능한 최소 경로
+
+[RFC-0005](RFC-0005-end-to-end-decision-system.md)는 전체 판정 조합을 재감사하고 D01–D08 및 16개 lifecycle gate를 추가한다. 총 31개 조항이 17개 목표에 연결된다. gate에는 입력·소유자·평가기·출력·실패/unknown·후속 소비자가 정의되며 최종 목표까지 연결되지 않은 경로와 의존성 cycle은 배포 검사에서 거부한다. 이 그래프 검사가 실제 목표 달성을 인증하지는 않는다.
+
+사용자의 별도 인터뷰 승인에 따라 `harness.py` 최소 로컬 코어를 제공한다. 고정된 검사 정책/입력 → 실행 시작의 durable event → 실제 프로세스 결과 → hash/계보 검증 → 상태/Task View → 로컬 후보 → 원장 백업/별도 복원 경로가 구현됐다. 세부 보장은 [runtime 가이드](../../seed/docs/harness/runtime/README.md)를 따른다.
+
+수동 문서/기록 모드와 runtime-owned 원장 모드를 구분한다. 기존 수동 JSON/JSONL을 신뢰된 검사/승인으로 자동 이관하거나 전체 원본 권위를 대체하지 않는다. runtime이 관리하는 관측은 원장에 두고 문서는 그 근거를 설명하는 projection으로 연결한다.
+
+이 코어가 강제하는 것은 자신의 로컬 검사 진입점에 대한 argv·policy/input pin·pending 상태다. OS sandbox, 인간 신원 인증, 다른 shell/API 호출, 전체 위키 권한, 교차 도메인 평가나 외부 rollout을 자동 보장하지 않는다. 이 경계에 필요한 adapter와 독립 운영 증거 없이 전체 V2/V3/V4를 verified로 올리지 않는다.

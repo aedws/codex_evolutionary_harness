@@ -1,0 +1,125 @@
+{
+  "evidence_id": "EVD-20260913-DECISION-VALIDATION",
+  "task_id": "TASK-20260913-DECISION-001",
+  "execution_id": "EXE-20260913-DECISION-001",
+  "created_at": "2026-09-12T19:13:47.042461+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+  "base_commit": "8beee4e62aebf623ce77a1a0b1c84fb2a271408b",
+  "source_sha256": {
+    "docs/ADOPTION.md": "93b12031afdc8f810eabf5e99cb0b7c0311261b50eb87aff149e351f0988533a",
+    "docs/requirements/HARNESS-GOALS.md": "cc8abcd3b966fb8355274d9b7c67e5ce4116eb938fb3d725338eee290de30672",
+    "docs/REUSE.md": "041f2c96ea17864b0329880046d96c2b182e87cba4597322a14e9ba7619c7608",
+    "docs/rfcs/RFC-0001-evolutionary-harness-cli.md": "d1872f898355c0b0e8c4cf43aa0b1eb80ab08235b00e9ab3ab0858b8045f9d40",
+    "docs/rfcs/RFC-0002-hierarchical-evolutionary-architecture.md": "5ced86e7e99e7c0eddf29b16bf9b1a4b1db96cc03a0ae80b2dda08df6cce9ac8",
+    "docs/rfcs/RFC-0003-feedback-common-contract.md": "b06cfcae6830400e757428f1eff4087f66476309dac470af81556868487123fa",
+    "docs/rfcs/RFC-0004-seven-area-assurance-audit.md": "95c4917fae3f14d141b1ff85fd76e4776c8675415d52f66431b77f927f096431",
+    "docs/rfcs/RFC-0005-end-to-end-decision-system.md": "b2b9865305ec2d2da23e5ae321a580732a4b5ef757e774e047d709a02c769c3d",
+    "README.md": "7e7cb605d587028d9e2b0b89fdd8b3a5921d32de24a7c6c11a051d58db821aff",
+    "scripts/check_contracts.py": "018d255143255fd01f5e29b69cb61d5fe3a085df0a7452fa069fb4f176010384",
+    "scripts/seed.py": "c779190d69573daa25cceb2ae367e9c330a74cbcc5bb40458c476c5c0f9c1b69",
+    "seed/AGENTS.md": "4493498421367c81cc1a76c28134733553f46c221f94ee21bef2921f3bdb809b",
+    "seed/BOOTSTRAP_PROMPT.md": "6d430b1b60b5272e7c9e0e908504e5a9497f93efcc796781fc1f4cd826b1780e",
+    "seed/docs/harness/checkpoint.md": "ac41715825b1e2533f80879fc3052203a3dcb046b3ecb048a536efae85db2bb6",
+    "seed/docs/harness/contract.md": "7c8343890a2c491a004f5f6ab1abe989dea311a1cda50741d59aee89a75df553",
+    "seed/docs/harness/contracts/coverage.json": "414da456d02fca9959acd0429556b74fbf4ed9120c0ca58b6b42efc678cc1f2c",
+    "seed/docs/harness/contracts/decision-system.md": "6d05ac060a1e056ac7bf4b2b7899726392bcc96c8ab59c0e352c174899295009",
+    "seed/docs/harness/contracts/evolution.md": "c46feea44b1881eda77450f10bbdc42f8f7a5eb5a7a9a7d3c816011e47883ecb",
+    "seed/docs/harness/contracts/execution.md": "45854072fc957665080016345efa4b4ce8433a872e69cd5fcc95a268acf32a95",
+    "seed/docs/harness/contracts/feedback.md": "03d6975b54a0d0177d6cec784d06509a325710dd52adec59fd750b265e3cdabd",
+    "seed/docs/harness/contracts/lifecycle.json": "fcab32d3fd91f52d1bf5bbcee9cbd6d0f312bae3f896b9d7ed65e3a656838ed9",
+    "seed/docs/harness/contracts/README.md": "f82b1636a5be4e7f3a863140d267eb1970315d09544578059e0f6d520127d2bb",
+    "seed/docs/harness/contracts/review-cases.json": "c178234b96ff284dc0ff1437022caecc16f929fb076ae5cb0e12e91aa43908ec",
+    "seed/docs/harness/contracts/review-protocol.md": "eb6ea4c0a0b8ba64e133daf18f6eb01829908850c62848602fe780aaffcd1702",
+    "seed/docs/harness/contracts/views-state.md": "fa154c54a59fb1583040bfaedc7f64cba7116787bda8a824fd5c9f7f0c326741",
+    "seed/docs/harness/events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "seed/docs/harness/evidence/README.md": "553c59c3fc25c21ed40880986e28dc4138e9e654d3d021d424143221d7309853",
+    "seed/docs/harness/feedback/config.json": "a15ef8d9678ec6fc052d376013d002dd2c4bb5370fbb4d160a05f2da6d03845e",
+    "seed/docs/harness/objects.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "seed/docs/harness/overlays/project.json": "017767332e9fc3bd8a9b273d5223f56bf9a5b281a92326676b326a017817e0ca",
+    "seed/docs/harness/policy.md": "1f32ba703ab5bef69cfa95d018f3d3a9fb91c7b9164cf4cf9fc54ef7439dd35c",
+    "seed/docs/harness/README.md": "78f1b8f1b3ba8734ca5f13ab2397292d9948bb8d26a9611d8c404883ce3259ae",
+    "seed/docs/harness/relations.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "seed/docs/harness/releases/current-harness.json": "a218591d0f7f16b633d2a0eec1d9b12673ad5c55c172aadc0b8ee3d5ccd060ac",
+    "seed/docs/harness/runtime/candidate.example.json": "c0ef5280bd3e5f2f1a5339d0919aa5caac43d6ef35bf5a118144da79a0b5a666",
+    "seed/docs/harness/runtime/policy.example.json": "5a43ebd5083591787db5320aa42fb49e685442a4bd2bfda6d4d33fafd7e50ef7",
+    "seed/docs/harness/runtime/README.md": "1b5113dcab6d4ad4fe0228a4d6c8024b66813ff963bd3632b3465abc90b89d83",
+    "seed/docs/harness/runtime/task.example.json": "50bb525e8cd3820f4f4f6539445a02e96e8722b5801cfa99d6866a4353a39c8a",
+    "seed/docs/harness/source-authority.md": "5d17dba72551a2085ccb39114e585819f314f7158d4637e7f20ed30c6be36ef6",
+    "seed/docs/harness/templates/assurance-review.example.json": "3d2e0556783a57809943826f6776fbd3fcbafeac3e18352367dcf214e74fc0bd",
+    "seed/docs/harness/templates/feedback-candidate.example.json": "b01a9c99dd94ca2ed6c5b2cb9ab0fa771f45404037b94ce17e354c3365a786bf",
+    "seed/docs/harness/templates/README.md": "3a130abed4cb15684c4ed8c1c71f51a42d794c81d5093320aa9659c26eb20dcf",
+    "seed/docs/harness/templates/skill-observation.example.json": "f386ace374bdb1bd0a2864e0e89a96d1c9e35edbfb60532f08b609716001da46",
+    "seed/harness.py": "ee1c46f57dc5fc98aabcd8b8939cb539bd647411c1e3e367fbbcf1a090f439ad",
+    "seed-manifest.json": "3377020cbb83a97b720990b45f52cfcea2dfefa863b1c8a438558fda07c1401a",
+    "tests/test_contracts.py": "fea04be0d5f20107e04bd45debf1307aea877f2800264525a74c4fc6b9f914e1",
+    "tests/test_runtime.py": "0c48412b8dd74d9e9e4c3e212583bda6d48df3abc447ca8ed6164856d7c559ca",
+    "tests/test_runtime_cli.py": "f28771eb6bb1666a35e97c2a36ed17d9af7a6ec0421823162e9cab77cf1ae36b",
+    "tests/test_seed.py": "f58ea1797ce6f7a5d699b37aaa7ff8e2cab74d2f8c0854afc143c358e500bf81"
+  },
+  "checks": [
+    {
+      "name": "seed",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-DECISION-001/seed.log",
+      "sha256": "daa7f3567318681cc3a58d47ed67024a4456820aa3bd3e622ecd2e808d631988"
+    },
+    {
+      "name": "contracts",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-DECISION-001/contracts.log",
+      "sha256": "8aedf9485ca86cb0fdb3eb11abf382043322f68638c2ac5442be047f22ed5a8b"
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-DECISION-001/tests.log",
+      "sha256": "8ff6e8587fc5d0e40c34d1433229f847bc9389c87343e8905467aec0668e9993"
+    }
+  ],
+  "unit_and_integration_tests": 59,
+  "structural_coverage": {
+    "goals": 17,
+    "clauses": 31,
+    "lifecycle_gates": 16,
+    "planned_not_executed_broad_scenarios": 21
+  },
+  "historical_evidence_files_preserved": 42,
+  "event_history_prefix_preserved": true,
+  "runtime_scope": "Real local subprocesses, strict ledger/reducer, failures/drift/pending/idempotency, installed-seed CLI and two concurrent CLI processes, local candidate and isolated restore; synthetic product fixtures",
+  "audit_method": "Same-author contract/code/adversarial-test cross-check; no independent reviewer claim",
+  "repaired_during_validation": [
+    "Contract checker accidentally required 4 instead of 3 scenario dispositions; corrected",
+    "Policy changed during a running successful process could leave original completion successful; final policy recheck now stales it with exit 6",
+    "Windows cp949 redirected Markdown output failed; CLI now emits UTF-8, including Korean titles"
+  ],
+  "unverified": [
+    "Real user product acceptance",
+    "Independent project/domain generalization",
+    "OS/IAM isolation and external adapter enforcement",
+    "Full wiki renderer and external promotion/canary controllers",
+    "Long-term reliability and total human/context/cost reduction",
+    "Linux/macOS and other Python versions"
+  ]
+}
