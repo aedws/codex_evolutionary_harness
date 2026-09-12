@@ -1,4 +1,4 @@
-# Execution, policy, evidence and recovery — contract 2
+# Execution, policy, evidence and recovery — contract 3
 
 ## X01 — Evidence lifecycle and storage ownership
 
@@ -23,7 +23,13 @@ For each action, derive effective permission from actor, authority source, exact
 
 Represent permission request, approval, expiration/revocation and enforcement observations separately. Existing authorization is reused within scope; unknown scope triggers a targeted interview. Report the exact conflicting instruction/source rather than inventing policy barriers. No credentials are stored in packets or copied from upstream. No background scheduler or unpaid/paid runner is assumed; budgets and execution host are explicit before autonomous jobs.
 
-Important controls should move to tool capability checks, policy gates, scoped credentials and sandbox/egress boundaries. For each claimed control, record whether it is documented_only, configured, tested or runtime_observed. Seed v0.2.0 remains documented_only for policy enforcement.
+Important controls should move to tool capability checks, policy gates, scoped credentials and sandbox/egress boundaries. For each claimed control, record whether it is documented_only, configured, tested or runtime_observed. Seed v0.3.0 remains documented_only for policy enforcement.
+
+Bind proposer, evaluator, approver and effect executor to authenticated principal IDs and explicit capability grants, not role names alone. The proposer writes candidate code and proposed eval inputs; the evaluator reads a frozen candidate and writes evidence without changing candidate/grader/acceptance; the approver issues a decision for the exact diff/eval/target; the executor performs only that decision's scoped action. Record principal overlap and conflicts of interest. Renaming the same agent/session is not independence. High-risk self-approval is forbidden; human approval must come from an authorized human. Low-risk combined roles require an existing explicit policy and disclose the lack of independent evaluation.
+
+For each protected operation retain an enforcement map: principal/capability/target, policy and approval digests, actual gate/adapter location, credential boundary (identifier only), pre-dispatch check, denial and revocation evidence, and bypass-test refs. Recheck exact payload/base, expiry/revocation and target revision at dispatch. Test direct API/CLI/tool invocation, replayed/stale approval, changed payload, wrong role/target, missing policy service and disallowed egress; UI refusal alone is insufficient. The proposer must not alter these gates, protected evals or audit storage as part of its candidate.
+
+Without observed enforcement, protected autonomous execution is blocked and marked documented_only. An already-authorized human-supervised manual path may proceed within its scope, with that limitation recorded; it must not be labeled runtime-enforced. Do not ask again merely because an existing applicable authorization is recorded outside a particular template. Unknown or conflicting authority requires a targeted interview, not invented grants or silent escalation.
 
 ## X03 — Verifiable module/tool/skill black boxes
 

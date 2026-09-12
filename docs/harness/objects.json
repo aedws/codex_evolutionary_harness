@@ -618,5 +618,184 @@
       "contract_seed",
       "seed-maintenance"
     ]
+  },
+  {
+    "id": "TASK-20260913-ASSURANCE-001",
+    "type": "task",
+    "name": "Audit and strengthen seven architecture contract areas",
+    "schema_version": 1,
+    "source_refs": [
+      "user:seven-architecture-areas"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-001",
+      "REL-20260913-ASSURANCE-002"
+    ],
+    "unknowns": [
+      "Runtime enforcement and empirical improvement unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EXE-20260913-ASSURANCE-001",
+    "type": "execution",
+    "name": "Contract 3 assurance review and private seed release",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-ASSURANCE-BASELINE"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-001"
+    ],
+    "unknowns": [
+      "Runtime enforcement and empirical improvement unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-ASSURANCE-BASELINE",
+    "type": "evidence",
+    "name": "Version-bound pre-change snapshot",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ASSURANCE-001/baseline.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Runtime enforcement and empirical improvement unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-ASSURANCE-NEWGAME",
+    "type": "evidence",
+    "name": "Newgame whole-wiki structure source inspection",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ASSURANCE-001/newgame-structure.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Runtime enforcement and empirical improvement unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "HARNESS-REQ-20260913-005",
+    "type": "harness_requirement",
+    "name": "Replace coarse coverage claims with operational review obligations",
+    "schema_version": 1,
+    "source_refs": [
+      "user:seven-architecture-areas",
+      "EVD-20260913-ASSURANCE-NEWGAME"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-003"
+    ],
+    "unknowns": [
+      "Runtime enforcement and empirical improvement unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "HARNESS-CHANGE-20260913-005",
+    "type": "harness_change",
+    "name": "Contract 3 seven-area decision obligations",
+    "schema_version": 1,
+    "source_refs": [
+      "HARNESS-REQ-20260913-005",
+      "DEC-20260913-ASSURANCE-001",
+      "seed-manifest.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-003",
+      "REL-20260913-ASSURANCE-004"
+    ],
+    "unknowns": [
+      "Runtime and human acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-3"
+    ]
+  },
+  {
+    "id": "DEC-20260913-ASSURANCE-001",
+    "type": "decision",
+    "name": "Authorized seven-area seed maintenance",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/decisions.md"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-004"
+    ],
+    "unknowns": [
+      "Runtime and human acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-3"
+    ]
+  },
+  {
+    "id": "EVD-20260913-ASSURANCE-VALIDATION",
+    "type": "evidence",
+    "name": "Contract and distribution checks with explicit limits",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ASSURANCE-001/validation.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-ASSURANCE-002"
+    ],
+    "unknowns": [
+      "Runtime and human acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-3"
+    ]
+  },
+  {
+    "id": "EVD-20260913-ASSURANCE-INTENT",
+    "type": "evidence",
+    "name": "Scoped private v0.3.0 release intent",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ASSURANCE-001/publication-intent.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Runtime and human acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-3"
+    ]
   }
 ]

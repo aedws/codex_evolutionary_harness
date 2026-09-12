@@ -2,7 +2,7 @@
 
 - 상태: seed baseline design; 사용자 목표는 확인됨. 아키텍처 전 기능의 구현·검증·인간 수락 선언은 아님.
 - 기준: [REQ-HARNESS-VISION-001과 G01–G17](../requirements/HARNESS-GOALS.md)
-- 이번 산출물: contract seed v0.2.0 / contract 2. V2/V3/V4와 배포 SemVer를 구분한다.
+- 이번 산출물: contract seed v0.3.0 / contract 3. V2/V3/V4와 배포 SemVer를 구분한다.
 - 범위: 공통 seed 설계, 최초 project 검증. 여러 프로젝트·도메인에서 검증된 core 승격으로 표현하지 않는다.
 - 하위 문서: [RFC-0001 CLI 제품 계약](RFC-0001-evolutionary-harness-cli.md). 그 문서의 DB·단일 writer·명령 이름은 후속 제안이며 이번 씨앗의 필수 구현이 아니다.
 
@@ -122,7 +122,7 @@ Canary 계획에는 대상과 제외 이유, baseline, 기간/작업 수, 신뢰
 
 ## 11. 버전·재시도·복구의 씨앗 범위
 
-배포 SemVer와 contract_version, V2/V3/V4 capability level을 분리한다. 현행 v0.2.0의 contract_version은 2이며 자동 강제 능력은 없다. unsupported manifest/version은 복사 전에 거부한다.
+배포 SemVer와 contract_version, V2/V3/V4 capability level을 분리한다. 현행 v0.3.0의 contract_version은 3이며 자동 강제 능력은 없다. unsupported manifest/version은 복사 전에 거부한다.
 
 init는 전체 사전 점검 후 allowlist 파일만 신규 생성한다. 기존 대상 파일은 덮지 않는다. 같은 요청은 설치 영수증과 원본 파일 해시가 모두 일치할 때만 no-op이다. 부분 설치나 이후 프로젝트 변경은 conflict로 표시하고 재설치로 지우지 않는다. dry-run은 쓰기를 하지 않는다. 복사 중 OS 장애는 부분 상태로 명시하며 디렉터리 전체를 삭제하는 자동 rollback은 제공하지 않는다.
 
@@ -184,4 +184,18 @@ Project error fix / skill observation
 
 자동 hook이 없는 씨앗에서는 AGENTS의 작업 종료 의무와 사람이 실행 가능한 기록 절차로 시작한다. 스킬은 그 방법을 도울 수 있지만 호출 여부를 보장하는 실행 엔진이 아니다. 실제 hook/collector/submitter는 후속 V2/V3 기능이다. 이미 승인된 로컬 개선과 후보 준비는 불필요한 인터뷰 없이 진행하며, 필요한 외부 경계가 미정일 때만 묻는다.
 
-이번 contract 2는 사용자가 요청한 설계 공백의 유지보수 릴리스다. 교차 도메인 운영에서 검증된 Core 승격이나 성능 최적화 완료로 주장하지 않는다. 모든 목표에 계약과 수락 시나리오를 연결했지만, 알려지지 않은 운영 failure mode까지 완전히 열거했다는 주장은 하지 않는다.
+v0.2.0의 contract 2는 사용자가 요청한 설계 공백의 유지보수 릴리스다. 교차 도메인 운영에서 검증된 Core 승격이나 성능 최적화 완료로 주장하지 않는다. 모든 목표에 계약과 수락 시나리오를 연결했지만, 알려지지 않은 운영 failure mode까지 완전히 열거했다는 주장은 하지 않는다.
+
+## 16. 일곱 핵심 영역의 contract 3 심화
+
+[RFC-0004 재감사](RFC-0004-seven-area-assurance-audit.md)는 이전 목표 연결 검사를 의미적 충분성 검증으로 확대 해석하지 않고 다음을 보완한다.
+
+1. Newgame 위키 전체의 내비게이션을 참조하여 문서 중심 상·하위 탐색, 역할별 객체→관계→행동→근거 여정, 스크립트 실패 대안과 원자료/검색 권한을 V01/V02로 계약화한다.
+2. 각 View는 generator/template·유효 overlay·입력·규칙·output digest와 claim별 채택/기각 근거를 설명한다. 같은 표시값도 생성 규칙이 바뀌면 재평가한다(V03).
+3. 여러 Domain의 DAG/순서와 확장별 schema/owner/merge 연산을 고정한다. 불명확한 조합은 conflict 영수증으로 차단한다(E01).
+4. 인과 가설의 일반화·전제 제거·적용/제외 predicate·반증·독립 프로젝트 matrix와 holdout을 명시한다(E03).
+5. Canary는 대표 대상·관찰 기간 AND 작업량·최대 기한·관측 완전성·응급 권한을 사전에 정한다. release 철회와 각 프로젝트 복구 관측을 분리한다(E04).
+6. 제안/평가/승인/실행 principal과 write 경계를 고정하고 직접 호출·철회·payload 변동을 실제 gate에서 검사해야 enforcement로 인정한다(X02).
+7. 모든 시도를 포함한 같은 workload에서 신뢰 하한·불확실성·규칙/문맥/인간 시간·이전/복구 비용을 비교한다. 충분한 측정이 없으면 최적화 판단은 inconclusive다(E02).
+
+[검토 절차](../../seed/docs/harness/contracts/review-protocol.md)와 7영역·21시나리오 패킷은 이 의무의 기록 도구다. 실제 엔진이나 승인 권한은 제공하지 않는다. contract 3의 추가 의무는 이전 프로젝트에 자동 적용하지 않으며 [migration 절차](../REUSE.md)를 따른다.

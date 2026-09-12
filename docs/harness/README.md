@@ -50,3 +50,5 @@ Version labels describe verified capabilities, not documentation claims.
 
 ## Core Rule
 When uncertain, use `unknown`, `unverified`, `stale`, `blocked`, or `conflicted`. Do not invent certainty.
+
+Current contract 3 adds [seven-area audit RFC-0004](../rfcs/RFC-0004-seven-area-assurance-audit.md) and a blank review protocol. Earlier contract-2 design evidence is retained, not promoted into runtime assurance.

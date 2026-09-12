@@ -64,3 +64,5 @@ Universal Core → Domain → Project       호환성·Canary·Rollback을 거�
 `REQ-HARNESS-CONTRACT-COVERAGE-001`: 자가피드백 계약을 완성한 뒤 G01–G17을 상위 설계와 재사용 계약에 대조하여 빠진 운영 의무를 보완한다. 문서 연결의 완전성과 실제 능력의 검증은 구분한다. [상위 RFC의 보완표](../rfcs/RFC-0002-hierarchical-evolutionary-architecture.md#14-목표와-운영-계약의-연결)와 [검사 가능한 연결표](../../seed/docs/harness/contracts/coverage.json)를 유지한다.
 
 이번 수락은 mixed다. 빈 씨앗·참조·권한 기본값·배포 재사용은 기계 검사하며, 아키텍처의 적합성·실제 운영 개선·도메인 간 일반성은 별도 인간 판단과 실행 증거를 요구한다.
+
+`REQ-HARNESS-ASSURANCE-001`: 사용자 지정 일곱 영역을 Newgame의 전체 위키 정보구조와 현행 씨앗에 대조하고, 선언만 있는 의무를 구체적인 입력·판정·권한·반례·불확실성 기록 계약으로 보완한다. [RFC-0004](../rfcs/RFC-0004-seven-area-assurance-audit.md)에 전후 판단과 증거 한계를 기록한다. 일곱 영역의 문서 검토를 runtime 기능 검증이나 성능 우위로 주장하지 않는다.

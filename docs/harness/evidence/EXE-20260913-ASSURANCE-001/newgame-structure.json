@@ -1,0 +1,142 @@
+{
+  "evidence_id": "EVD-20260913-ASSURANCE-NEWGAME",
+  "created_at": "2026-09-12T18:04:16.436535+00:00",
+  "project": "Newgame",
+  "commit": "be23c7cad570c47e117d7521d998f5062ee23ec0",
+  "basis": "inferred_by_static_analysis",
+  "scope": "whole navigation and knowledge-map inventory plus relevant source-document inspection; not every wiki paragraph or live rendered UI",
+  "sources": {
+    "mkdocs.yml": "6c38fdb266b45b5e6fc643499f79f90be7f965ce81714f27fad4c19f86d15857",
+    "docs/architecture/project-ontology.md": "25f55805e3817729427e227d453de4e538d7c5a0301393c33afe31e645bab771",
+    "docs/design/wiki-collaboration-workflow.md": "a9a2010850fd3219a106ac1d2de3438ea0e6a351b7e604affa0f39c49642ccb9",
+    "docs/getting-started/search-wiki.md": "4103f0a5bdc175f107384532c07ccee6a7eb2d673c590c08f1ec8cddf3854927",
+    "docs/architecture/wiki-role-auth.md": "e40fa5e9c31aa62608cf78bd53609c1ad1645d6f0fbe84cdb5b6f194e6b579d4",
+    "docs/assets/knowledge-map.json": "fe3d02f8a7f6c5d1f9af1c8978a620219448b49b9085e692ea3e98e163886277",
+    "docs/assets/owner-decision-registry.json": "e4b4f52ef1f2c02fd366d2c8318c2a5d0aa5ce8a6c9f6eef1ed80db9936f2619"
+  },
+  "navigation_files": 105,
+  "missing_navigation_targets": [],
+  "knowledge_categories": [
+    {
+      "id": "project",
+      "groups": [
+        {
+          "id": "current-build",
+          "documents": 2
+        },
+        {
+          "id": "role-workspaces",
+          "documents": 5
+        }
+      ]
+    },
+    {
+      "id": "getting-started",
+      "groups": [
+        {
+          "id": "onboarding",
+          "documents": 5
+        },
+        {
+          "id": "collaboration",
+          "documents": 5
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "groups": [
+        {
+          "id": "core-design",
+          "documents": 9
+        },
+        {
+          "id": "visual-direction",
+          "documents": 1
+        }
+      ]
+    },
+    {
+      "id": "architecture",
+      "groups": [
+        {
+          "id": "module-contracts",
+          "documents": 6
+        },
+        {
+          "id": "scene-signals",
+          "documents": 2
+        },
+        {
+          "id": "asset-governance",
+          "documents": 1
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "groups": [
+        {
+          "id": "performance-budget",
+          "documents": 2
+        },
+        {
+          "id": "player-qa",
+          "documents": 6
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "groups": [
+        {
+          "id": "feature-hub",
+          "documents": 1
+        },
+        {
+          "id": "world-operations",
+          "documents": 12
+        },
+        {
+          "id": "combat-controls",
+          "documents": 15
+        },
+        {
+          "id": "equipment",
+          "documents": 11
+        },
+        {
+          "id": "loot",
+          "documents": 9
+        },
+        {
+          "id": "growth",
+          "documents": 9
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "groups": [
+        {
+          "id": "troubleshooting",
+          "documents": 1
+        },
+        {
+          "id": "decisions",
+          "documents": 3
+        }
+      ]
+    }
+  ],
+  "docs_markdown_count": 105,
+  "observations": [
+    "Hierarchy and document-first navigation precede optional graph exploration",
+    "Role workspaces, purpose, bidirectional relations, action guards and source freshness connect whole wiki",
+    "Authorization includes protected search/graph/JSON; hiding buttons is insufficient"
+  ],
+  "limits": [
+    "Source documents describe behaviors; current runtime not exercised",
+    "No Newgame content, credentials, domain rules or standing authority copied into seed"
+  ]
+}

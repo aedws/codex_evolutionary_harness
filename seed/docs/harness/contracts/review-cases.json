@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "contract_version": 3,
+  "coverage_kind": "planned_review_scenarios",
+  "runtime_status": "unverified",
+  "areas": [
+    {
+      "id": "A01",
+      "title": "Whole-wiki object navigation",
+      "clause_refs": [
+        {
+          "id": "V01",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V02",
+          "path": "views-state.md"
+        }
+      ],
+      "required_fields": [
+        "navigation_inventory",
+        "included_excluded_population",
+        "role_journeys",
+        "parent_child_fallback",
+        "search_corpus_and_ranking",
+        "relation_directions",
+        "action_and_evidence_routes",
+        "read_access_boundary"
+      ],
+      "scenarios": [
+        {
+          "kind": "accept",
+          "given": "Authorized reader follows overview/topic/detail, both relation directions, action preconditions and evidence, then returns with graph scripts unavailable.",
+          "expected": "document-first journey and fallback supported",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "reject",
+          "given": "Hidden page is still exposed by a search snippet or raw graph edge.",
+          "expected": "reject read-isolation claim",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "inconclusive",
+          "given": "No complete navigation inventory or role journey observations exist.",
+          "expected": "navigation coverage unknown",
+          "runtime_status": "planned_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "A02",
+      "title": "View explanation lineage",
+      "clause_refs": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        }
+      ],
+      "required_fields": [
+        "view_and_output_digest",
+        "generator_template_digest",
+        "composition_digest",
+        "derivation_inputs",
+        "manual_generated_field_map",
+        "claim_input_rule_trace",
+        "rejected_missing_evidence",
+        "reproduction_observation"
+      ],
+      "scenarios": [
+        {
+          "kind": "accept",
+          "given": "Pinned inputs, generator, effective overlay and rule replay identical canonical claims with resolvable reasons.",
+          "expected": "reproducibility supported for exact inputs",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "reject",
+          "given": "Rule changes but the old view is shown as current because its state label is unchanged.",
+          "expected": "invalidate materialization; reject freshness claim",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "inconclusive",
+          "given": "Claim cites a summary but its underlying input or generator is unavailable.",
+          "expected": "explanation_incomplete",
+          "runtime_status": "planned_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "A03",
+      "title": "Pinned overlay composition",
+      "clause_refs": [
+        {
+          "id": "E01",
+          "path": "evolution.md"
+        }
+      ],
+      "required_fields": [
+        "pinned_packages",
+        "dependency_dag_and_domain_order",
+        "extension_schemas_and_owners",
+        "per_key_merge_operators",
+        "effective_grants_and_denials",
+        "conflict_receipts",
+        "effective_manifest_digest",
+        "compatibility_cases"
+      ],
+      "scenarios": [
+        {
+          "kind": "accept",
+          "given": "Two domains use different namespaced IDs; exact pins and declared merge operators produce the same effective digest.",
+          "expected": "compatible composition supported",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "reject",
+          "given": "Domains assign unequal values to one ID; order silently chooses a winner or a lower grant expands denied scope.",
+          "expected": "conflict; block dependent effects",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "inconclusive",
+          "given": "Required extension schema or resolved content pin is missing.",
+          "expected": "unsupported or unknown composition",
+          "runtime_status": "planned_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "A04",
+      "title": "Generalization and independent evaluation",
+      "clause_refs": [
+        {
+          "id": "E03",
+          "path": "evolution.md"
+        }
+      ],
+      "required_fields": [
+        "causal_invariant",
+        "removed_parameterized_assumptions",
+        "applicability_and_exclusions",
+        "counterexamples_and_falsifiers",
+        "project_domain_matrix",
+        "ancestry_fixture_independence",
+        "frozen_holdout",
+        "eligible_failures_and_uncertainty",
+        "scoped_decision_authority"
+      ],
+      "scenarios": [
+        {
+          "kind": "accept",
+          "given": "Independent eligible contexts in the required scope pass a frozen matrix including holdout/non-applicable cases; decision binds exact scope.",
+          "expected": "eligible for authorized scoped promotion",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "reject",
+          "given": "Two renamed forks count as independent, or a failing eligible project is omitted after results.",
+          "expected": "reject generality claim",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "inconclusive",
+          "given": "Cross-domain evidence is restricted, missing or contaminated.",
+          "expected": "needs_evidence; no Core promotion",
+          "runtime_status": "planned_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "A05",
+      "title": "Canary and withdrawal",
+      "clause_refs": [
+        {
+          "id": "E04",
+          "path": "evolution.md"
+        }
+      ],
+      "required_fields": [
+        "eligible_population_and_selection",
+        "cohorts_controls_exclusions",
+        "enrollment_and_emergency_authority",
+        "baseline_target_and_blast_radius",
+        "minimum_duration_and_work",
+        "maximum_deadline_and_budget",
+        "telemetry_and_delayed_effects",
+        "thresholds_and_decision_table",
+        "rollback_compensation_proof",
+        "per_project_withdrawal_receipts"
+      ],
+      "scenarios": [
+        {
+          "kind": "accept",
+          "given": "Both preset elapsed duration and completed work minima are met with complete observations, all gates pass and separate expansion authority is present.",
+          "expected": "eligible for scoped expansion",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "reject",
+          "given": "Hard trust breach is observed or rollback proof is missing at enrollment.",
+          "expected": "stop/block activation; inspect authorized recovery",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "inconclusive",
+          "given": "Time elapsed but low traffic leaves work minimum unmet, or a cohort is unreachable.",
+          "expected": "pause/inconclusive; no expansion",
+          "runtime_status": "planned_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "A06",
+      "title": "Roles and execution enforcement",
+      "clause_refs": [
+        {
+          "id": "X02",
+          "path": "execution.md"
+        }
+      ],
+      "required_fields": [
+        "principal_roles_and_overlap",
+        "capability_grants_and_authority",
+        "frozen_candidate_eval_decision",
+        "gate_adapter_and_credential_boundary",
+        "dispatch_digest_revision_and_revocation",
+        "direct_bypass_denial_tests",
+        "enforcement_level_and_evidence",
+        "manual_or_autonomous_scope"
+      ],
+      "scenarios": [
+        {
+          "kind": "accept",
+          "given": "Authenticated actors and fixed digests pass scoped gates; direct forbidden call and revoked-approval tests are denied at the actual tool boundary.",
+          "expected": "tested enforcement for observed boundary only",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "reject",
+          "given": "Proposer self-approves high-risk change, or direct tool call bypasses the disabled UI action.",
+          "expected": "reject approval/enforcement; block autonomous effect",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "inconclusive",
+          "given": "Only Markdown instructions exist and direct boundary behavior is unobserved.",
+          "expected": "documented_only; protected autonomy blocked",
+          "runtime_status": "planned_not_executed"
+        }
+      ]
+    },
+    {
+      "id": "A07",
+      "title": "Trust-preserving cost improvement",
+      "clause_refs": [
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        }
+      ],
+      "required_fields": [
+        "workload_strata_and_matched_inputs",
+        "pins_order_and_repetitions",
+        "metrics_units_and_all_attempts",
+        "hard_trust_results",
+        "margins_estimator_uncertainty",
+        "rule_text_and_complexity",
+        "total_context_across_attempts",
+        "human_count_time_and_rework",
+        "eval_migration_maintenance_recovery_cost",
+        "horizon_budgets_and_tradeoffs",
+        "comparison_decision_authority"
+      ],
+      "scenarios": [
+        {
+          "kind": "accept",
+          "given": "All hard gates and preset non-inferiority criteria pass; cumulative context improves meaningfully while total work costs stay within frozen budgets.",
+          "expected": "optimized only for declared workload and horizon",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "reject",
+          "given": "Fewer prompt tokens hide more retries/human minutes, or any false_verified remains.",
+          "expected": "reject unqualified optimization; regress/tradeoff as evidenced",
+          "runtime_status": "planned_not_executed"
+        },
+        {
+          "kind": "inconclusive",
+          "given": "Only one success or absent baseline, denominator, variance or adequate sample exists.",
+          "expected": "inconclusive; no same-trust claim",
+          "runtime_status": "planned_not_executed"
+        }
+      ]
+    }
+  ]
+}

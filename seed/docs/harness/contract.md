@@ -1,4 +1,4 @@
-# Minimum contract — version 2
+# Minimum contract — version 3
 
 Detailed operational obligations are routed through [contracts/README.md](contracts/README.md): feedback/skills, OOP views/state, execution/policy and overlays/evolution. [coverage.json](contracts/coverage.json) maps G01–G17 to clauses and planned acceptance scenarios. The detailed contracts are mandatory within the authorized task scope; their presence is not a claim that automation is implemented.
 
@@ -93,4 +93,6 @@ Rollback is not deletion of later history. Distinguish projection rebuild, harne
 
 Register the first task only when asked to work on this project. Inspect authority sources and ask concise interviews for missing goals/tests/domain or genuine conflicts. Do not copy the seed author's tasks or authorization.
 
-Distribution 0.2.0 / contract 2 means these documents, feedback configuration, draft record shapes and empty project records were supplied. It does not mean V2 automation works. V2 trust infrastructure, V3 local self-improvement and V4 hierarchical evolution must each earn verified capabilities through recorded eval/runtime evidence. Contract 1 adopters must review the new feedback/skill and operational obligations while preserving their project records and scoped permissions.
+Distribution 0.3.0 / contract 3 means these documents, feedback configuration, draft record shapes and empty project records were supplied. It does not mean V2 automation works. V2 trust infrastructure, V3 local self-improvement and V4 hierarchical evolution must each earn verified capabilities through recorded eval/runtime evidence. Contract 1 adopters must review the new feedback/skill and operational obligations while preserving their project records and scoped permissions.
+
+Contract 3 strengthens the existing V01/V03/E01/E02/E03/E04/X02 obligations with field-level lineage, whole-wiki journeys, explicit composition operators, independent-context applicability, canary decision rules, principal/gate boundaries and comparable cost accounting. Contract 2 adopters also need reviewed migration. Seven-area review packets and planned cases support that review without pretending an automated engine or successful runtime eval exists.

@@ -1,0 +1,32 @@
+{
+  "evidence_id": "EVD-20260913-ASSURANCE-VALIDATION",
+  "created_at": "2026-09-12T18:13:10.789359+00:00",
+  "producer": "Codex recording observed exec_command results",
+  "tool_output_refs": [
+    "exec_command:0be041",
+    "exec_command:0554a7"
+  ],
+  "test_command": "python -B -m unittest discover -s tests -v",
+  "test_observation": {
+    "exit_code": 0,
+    "tests": 25,
+    "elapsed_seconds": 2.773,
+    "result": "OK"
+  },
+  "seed_check": {
+    "outcome": "checked",
+    "files": 26,
+    "version": "0.3.0"
+  },
+  "contract_check": {
+    "result": "pass",
+    "goals": 17,
+    "clauses": 23,
+    "review_areas": 7,
+    "planned_review_scenarios": 21
+  },
+  "limits": [
+    "This is a structured observation of tool outputs, not a copied full subprocess log",
+    "Remote tagged verification will retain full subprocess stdout/stderr separately"
+  ]
+}

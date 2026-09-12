@@ -70,6 +70,35 @@ class ContractDistributionTests(unittest.TestCase):
         with self.assertRaisesRegex(SeedError, "live identities or evidence"):
             check_contracts.check(self.root)
 
+    def test_review_area_cannot_be_omitted(self):
+        self.change_json("docs/harness/contracts/review-cases.json", lambda x: x["areas"].pop())
+        with self.assertRaisesRegex(SeedError, "Seven review areas"):
+            check_contracts.check(self.root)
+
+    def test_review_rejection_case_cannot_be_removed(self):
+        self.change_json("docs/harness/contracts/review-cases.json",
+                         lambda x: x["areas"][0]["scenarios"].pop(1))
+        with self.assertRaisesRegex(SeedError, "accept/reject/inconclusive"):
+            check_contracts.check(self.root)
+
+    def test_planned_review_cannot_claim_observed_runtime_success(self):
+        self.change_json("docs/harness/contracts/review-cases.json",
+                         lambda x: x["areas"][0]["scenarios"][0].update(runtime_status="passed"))
+        with self.assertRaisesRegex(SeedError, "planned accept"):
+            check_contracts.check(self.root)
+
+    def test_review_template_cannot_inherit_an_approver(self):
+        self.change_json("docs/harness/templates/assurance-review.example.json",
+                         lambda x: x["areas"]["A06"].update(capability_grants_and_authority="owner-approved"))
+        with self.assertRaisesRegex(SeedError, "unobserved fields unknown"):
+            check_contracts.check(self.root)
+
+    def test_review_template_cannot_drop_uncertainty_field(self):
+        self.change_json("docs/harness/templates/assurance-review.example.json",
+                         lambda x: x["areas"]["A07"].pop("margins_estimator_uncertainty"))
+        with self.assertRaisesRegex(SeedError, "unobserved fields unknown"):
+            check_contracts.check(self.root)
+
 
 if __name__ == "__main__":
     unittest.main()

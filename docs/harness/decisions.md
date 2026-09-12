@@ -36,3 +36,13 @@ Each decision should include: Decision ID, Status, Context, Decision, Alternativ
 - Evidence: EVD-20260913-FEEDBACK-BASELINE; local validation and remote publication evidence are recorded separately when observed.
 - Scope: project seed-maintenance baseline; no cross-domain-proven promotion and no root authority/stability-anchor weakening.
 - Supersedes: contract-1 distribution default for new users only. Old tags, evidence and installed projects remain intact.
+
+## DEC-20260913-ASSURANCE-001 — Seven-area contract assurance
+
+- Status: user-authorized seed maintenance; runtime and human design acceptance unverified.
+- Authority: user's explicit seven-area audit and seed improvement request; prior private distribution authorization persists.
+- Decision: strengthen V01/V03/E01/E02/E03/E04/X02 and ship contract 3 / v0.3.0 with blank review packet and planned cases. Existing contract 1/2 users review migration; no automatic adoption or permissions transfer.
+- Evidence: EVD-20260913-ASSURANCE-NEWGAME; EVD-20260913-ASSURANCE-VALIDATION; RFC-0004.
+- Alternatives: retain coarse goal-to-clause mapping; implement full runtime now. The former misses concrete decision rules, the latter exceeds current seed scope.
+- Cost observation: clause IDs remain 23; shipped Markdown grows from 52,314 to 66,763 bytes. Relevant-area reading limits intended context load, but actual context/time savings are unmeasured. No optimization superiority or same-trust operating result claimed.
+- Effective scope: seven-area contract documentation and structural distribution checks only. Existing evidence, tag identities and stability anchors are preserved.

@@ -8,7 +8,7 @@ Every project starts from a common core and specializes through overlays. Projec
 
 Read [source authority](source-authority.md), [policy](policy.md), [checkpoint](checkpoint.md), then the [minimum contract](contract.md). The empty registries contain no inherited project tasks or verification claims.
 
-The distribution version is 0.2.0, contract version 2. V2 evidence-driven execution, V3 project self-improvement and V4 hierarchical evolution are capability targets. This seed does not implement their automatic engines, a wiki UI or the proposed `eh` CLI. Important policies still need tested tool-level enforcement.
+The distribution version is 0.3.0, contract version 3. V2 evidence-driven execution, V3 project self-improvement and V4 hierarchical evolution are capability targets. This seed does not implement their automatic engines, a wiki UI or the proposed `eh` CLI. Important policies still need tested tool-level enforcement.
 
 [Contract routing](contracts/README.md) covers self-feedback and skill ownership, whole-project views/state, execution/policy/recovery and evaluated promotion/canary/adoption. Feedback starts local-only; fill its destination and permission references only within explicit project authority. Draft candidate/skill record shapes are available in [templates](templates/README.md).
 

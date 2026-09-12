@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "contract_version": 3,
+  "template_only": true,
+  "review_id": null,
+  "execution_id": null,
+  "change_digest": null,
+  "reviewer_principal": null,
+  "review_level": null,
+  "evidence_refs": [],
+  "areas": {
+    "A01": {
+      "status": "unknown",
+      "evidence_refs": [],
+      "navigation_inventory": null,
+      "included_excluded_population": null,
+      "role_journeys": null,
+      "parent_child_fallback": null,
+      "search_corpus_and_ranking": null,
+      "relation_directions": null,
+      "action_and_evidence_routes": null,
+      "read_access_boundary": null
+    },
+    "A02": {
+      "status": "unknown",
+      "evidence_refs": [],
+      "view_and_output_digest": null,
+      "generator_template_digest": null,
+      "composition_digest": null,
+      "derivation_inputs": null,
+      "manual_generated_field_map": null,
+      "claim_input_rule_trace": null,
+      "rejected_missing_evidence": null,
+      "reproduction_observation": null
+    },
+    "A03": {
+      "status": "unknown",
+      "evidence_refs": [],
+      "pinned_packages": null,
+      "dependency_dag_and_domain_order": null,
+      "extension_schemas_and_owners": null,
+      "per_key_merge_operators": null,
+      "effective_grants_and_denials": null,
+      "conflict_receipts": null,
+      "effective_manifest_digest": null,
+      "compatibility_cases": null
+    },
+    "A04": {
+      "status": "unknown",
+      "evidence_refs": [],
+      "causal_invariant": null,
+      "removed_parameterized_assumptions": null,
+      "applicability_and_exclusions": null,
+      "counterexamples_and_falsifiers": null,
+      "project_domain_matrix": null,
+      "ancestry_fixture_independence": null,
+      "frozen_holdout": null,
+      "eligible_failures_and_uncertainty": null,
+      "scoped_decision_authority": null
+    },
+    "A05": {
+      "status": "unknown",
+      "evidence_refs": [],
+      "eligible_population_and_selection": null,
+      "cohorts_controls_exclusions": null,
+      "enrollment_and_emergency_authority": null,
+      "baseline_target_and_blast_radius": null,
+      "minimum_duration_and_work": null,
+      "maximum_deadline_and_budget": null,
+      "telemetry_and_delayed_effects": null,
+      "thresholds_and_decision_table": null,
+      "rollback_compensation_proof": null,
+      "per_project_withdrawal_receipts": null
+    },
+    "A06": {
+      "status": "unknown",
+      "evidence_refs": [],
+      "principal_roles_and_overlap": null,
+      "capability_grants_and_authority": null,
+      "frozen_candidate_eval_decision": null,
+      "gate_adapter_and_credential_boundary": null,
+      "dispatch_digest_revision_and_revocation": null,
+      "direct_bypass_denial_tests": null,
+      "enforcement_level_and_evidence": null,
+      "manual_or_autonomous_scope": null
+    },
+    "A07": {
+      "status": "unknown",
+      "evidence_refs": [],
+      "workload_strata_and_matched_inputs": null,
+      "pins_order_and_repetitions": null,
+      "metrics_units_and_all_attempts": null,
+      "hard_trust_results": null,
+      "margins_estimator_uncertainty": null,
+      "rule_text_and_complexity": null,
+      "total_context_across_attempts": null,
+      "human_count_time_and_rework": null,
+      "eval_migration_maintenance_recovery_cost": null,
+      "horizon_budgets_and_tradeoffs": null,
+      "comparison_decision_authority": null
+    }
+  }
+}

@@ -6,7 +6,7 @@
 
 ```powershell
 gh repo clone aedws/codex_evolutionary_harness C:/tools/evolutionary-harness
-git -C C:/tools/evolutionary-harness checkout v0.2.0
+git -C C:/tools/evolutionary-harness checkout v0.3.0
 python C:/tools/evolutionary-harness/scripts/seed.py check
 python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project --dry-run
 python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project
@@ -27,8 +27,8 @@ python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/m
 ## 3. ZIP 대안
 
 ```powershell
-gh release download v0.2.0 --repo aedws/codex_evolutionary_harness --pattern 'evolutionary-harness-seed-0.2.0.zip' --pattern 'SHA256SUMS.txt' --dir C:/downloads/harness-seed
-Get-FileHash C:/downloads/harness-seed/evolutionary-harness-seed-0.2.0.zip -Algorithm SHA256
+gh release download v0.3.0 --repo aedws/codex_evolutionary_harness --pattern 'evolutionary-harness-seed-0.3.0.zip' --pattern 'SHA256SUMS.txt' --dir C:/downloads/harness-seed
+Get-FileHash C:/downloads/harness-seed/evolutionary-harness-seed-0.3.0.zip -Algorithm SHA256
 ```
 
 출력 hash를 SHA256SUMS.txt와 비교한다. ZIP에는 seed payload와 설치 영수증만 들어 있다. 새 빈 디렉터리에만 푼다. 기존 프로젝트 위로 압축을 풀면 압축 프로그램의 덮어쓰기 동작이 적용되므로 안전한 init를 대신하지 못한다. 일반 GitHub 소스 ZIP은 개발 기록을 포함하므로 seed 전용 자산과 구분한다.
@@ -65,3 +65,11 @@ contract 2는 작업 경계의 자가피드백 검토와 세부 운영 의무를
 공통 파일의 검토된 diff만 적용하고 overlay의 base contract 변경은 호환성 판단 뒤 기록한다. 기존 설치 영수증은 과거 설치 사실로 보존하며 migration 영수증에 이전/새 원본 manifest, 적용 diff·결정·검사·복구 범위를 남긴다. 새 원본을 그대로 설치했다는 영수증으로 수동 병합을 가장하지 않는다. 전역 스킬 설치·캐시 수정·프로젝트 간 데이터 공유 권한을 이관하지 않는다.
 
 자가피드백 첫 사용에서는 상향 제출 대상, 제출/공유 권한, 로컬 평가 예산 중 필요한 미확정 항목만 인터뷰한다. 설정이 없어도 승인된 로컬 작업과 후보 준비는 계속할 수 있다. 자동 PR, 자동 merge, scheduler, canary, rollback controller는 제공하지 않는다.
+
+## 7. contract 1/2에서 v0.3.0 / contract 3로
+
+기존 v0.1.0/v0.2.0 태그와 설치 이력은 유지한다. v0.3.0은 일곱 영역의 필수 판정·기록 의무를 보강하므로 단순 버전 숫자 교체로 호환된다고 표시하지 않는다. contract 1이면 먼저 6절의 피드백/스킬 의무도 함께 검토한다.
+
+별도 checkout에서 기존 조항 V01/V03/E01/E02/E03/E04/X02의 diff, review-protocol, review-cases와 빈 assurance-review 예제를 확인한다. 현재 프로젝트의 records·overlay·스킬·인간 판단·권한은 보존한다. 영역별 적용/비적용 이유, 새로 필요한 근거, 호환/복구 계획을 먼저 기록한 후 승인된 범위만 적용한다. 과거 결과에 generator digest, 독립 평가자, Canary 관측량이나 비용을 추정해서 채우지 않는다.
+
+설치 도구는 manifest contract 1/2/3의 번호를 읽지만 이 지원이 의미 migration 검증은 아니다. 최신 check_contracts는 contract 3의 빈 배포 원본 전용이며 실제 프로젝트의 채워진 검토 패킷이나 과거 씨앗의 운영 검증기로 사용하지 않는다. 정책/Canary/최적화 runtime 테스트는 별도 구현 뒤 관측해야 한다.

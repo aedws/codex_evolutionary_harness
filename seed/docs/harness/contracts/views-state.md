@@ -1,4 +1,4 @@
-# Object views, derivation and context — contract 2
+# Object views, derivation and context — contract 3
 
 ## V01 — Whole-project OOP surface
 
@@ -7,6 +7,12 @@ Requirement, Task, Decision, Module, Test and Release views organize the whole p
 Every governed view exposes stable object ID/type, purpose, authority/source, responsible actor, acceptance class/criteria, derived state and reasons, target snapshot, rule version, observation watermark/as_of, unknowns/conflicts, related objects and next allowed action. Label unavailable information explicitly. Search and overview counts state their population and denominator; do not turn object counts into product completion percentages.
 
 Separate author-owned explanation/intent/human judgment from generated state sections. Editing prose cannot mark a test passed. Generated-region markers and expected hashes protect manual content; drift creates a conflict/diff instead of overwriting. Each state label links to its evidence and exposes stale/missing evidence in accessible text, not color alone. Empty search or removed objects must not retain a prior selected object's status as if current.
+
+Document-first navigation is part of this contract, not just an object console. Maintain a versioned navigation inventory covering onboarding, product/features, design/data, architecture/modules, tools/workflows, verification/troubleshooting, decisions, release/history and role workspaces. Project categories may differ; record included, excluded and not-applicable populations with reasons. Model document/collection/source/role references alongside the six governed object views without forcing each document to be a Task.
+
+Provide overview → topic/collection → detail, parent/breadcrumb return, in-page sections, related-topic links and direct object/source links. A graph is optional supplemental navigation. Core explanation and parent/child links remain usable when graph/search scripting fails; otherwise disclose that limitation and provide a fallback index. Search declares corpus, aliases, ranking/filter version and exclusions; it preserves selection context appropriately and clears invalid selections. Unindexed/orphan documents are counted against the declared inventory, not silently omitted.
+
+For each authorized role, exercise a journey from purpose → object → incoming/outgoing relation and provenance → action/preconditions → supporting or missing evidence → return to context. Separate final decision authority from role labels. Apply read permissions to generated HTML, search snippets/indexes, graph edges, downloads and raw evidence too; hidden buttons are not access control. Restricted relations may show an authorized redacted boundary, never leak protected titles/content through counts or caches. Do not copy a reference project's accounts, category names or authorization into the seed.
 
 ## V02 — Object action interface
 
@@ -33,6 +39,10 @@ Keep intent, progress, verification, delivery, acceptance and blockers separate.
 | Machine pass with subjective acceptance outstanding | human/mixed acceptance remains pending |
 
 Order attempts/events by declared monotonic sequence/attempt lineage, not wall-clock arrival. Where the seed has no sequencer, serialize writers and record explicit predecessor/attempt links; ambiguity becomes conflict. An accepted no-test exception requires its own authority and rationale. Corrections/invalidation append new evidence; no history rewriting.
+
+Each generated View has an explanation manifest: view/object ID, view schema, generator/template digest, effective Core/Domain/Project composition digest, derivation input tuple, generated output digest, generated/manual field ownership map, and claim-level lineage. Each claim names exact input records/digests and transformation/rule IDs, accepted and rejected/missing evidence with reasons, intermediate dependencies, result and limitations. The manifest binds the output digest without making the output embed its own hash. Intent/manual prose cites its authoritative source instead of pretending it was derived.
+
+Explainability has two depths: a short human-readable reason with target/as_of and uncertainty, and a resolvable input → rule → claim trace. A rule/template/overlay change invalidates dependent materializations even if the displayed label is unchanged. A missing generator or unreadable input yields explanation_incomplete, not verified reproducibility. Reproduce from pinned inputs in isolation and compare canonical claims; renderer byte differences need a declared normalization. Access-redacted evidence remains unavailable to that viewer and does not become independently inspected proof.
 
 ## V04 — Relations and test selection
 

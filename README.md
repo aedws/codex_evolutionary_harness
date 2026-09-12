@@ -4,7 +4,7 @@
 
 모든 프로젝트가 공통 코어에서 시작하고 Overlay로 특화한다. 실제 실패·마찰·검증에서 얻은 개선은 Project → Domain → Universal Core로 평가·승격하고, 상위 변경은 호환성 검증·Canary·Rollback을 통해 다시 전파한다.
 
-현재 배포물은 **v0.2.0 계약 씨앗**이다. 전체 위키 UI, 자동 상태 계산기, 정책 집행 엔진, 자기개선·승격·Canary 실행기는 아직 구현하지 않았다. V2/V3/V4는 목표 능력이며 배포 버전과 다르다.
+현재 배포물은 **v0.3.0 계약 씨앗**이다. 전체 위키 UI, 자동 상태 계산기, 정책 집행 엔진, 자기개선·승격·Canary 실행기는 아직 구현하지 않았다. V2/V3/V4는 목표 능력이며 배포 버전과 다르다.
 
 ## 먼저 읽기
 
@@ -17,13 +17,15 @@
 
 오류 개선·스킬 사용/추가/수정/제거는 작업 종료 시 한 번 검토한다. 일반화 근거가 있으면 로컬 후보를 만들고, 승인된 제출 → 범위별 평가 → 새 씨앗 릴리스 → 프로젝트의 명시적 적용 → 효과 재관측으로 연결한다. 초기 설정은 외부 제출 권한이 없는 local-only다. 자세한 계약은 필요한 항목만 읽는다.
 
+[일곱 핵심 계약 재감사 RFC-0004](docs/rfcs/RFC-0004-seven-area-assurance-audit.md)는 전체 위키 탐색, View 생성 계보, 계층 조합, 일반화, Canary, 역할 강제, 신뢰 유지 비용 비교의 세부 의무를 보완한다. contract 3에는 7영역 검토 패킷과 21개 계획 시나리오가 포함된다.
+
 ## 새 프로젝트에 가져오기
 
 GitHub 인증이 된 환경에서 실행한다. Python 3.10 이상, Git, GitHub CLI가 필요하다. 전체 하네스 저장소를 대상 프로젝트 안에 clone하지 않는다.
 
 ```powershell
 gh repo clone aedws/codex_evolutionary_harness C:/tools/evolutionary-harness
-git -C C:/tools/evolutionary-harness checkout v0.2.0
+git -C C:/tools/evolutionary-harness checkout v0.3.0
 python C:/tools/evolutionary-harness/scripts/seed.py check
 python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project --dry-run
 python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project

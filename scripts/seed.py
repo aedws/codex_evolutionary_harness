@@ -52,7 +52,7 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     no_links(manifest_path)
     raw = manifest_path.read_bytes()
     manifest = json.loads(raw)
-    if manifest.get("schema_version") != 1 or manifest.get("contract_version") not in (1, 2):
+    if manifest.get("schema_version") != 1 or manifest.get("contract_version") not in (1, 2, 3):
         raise SeedError(2, "Unsupported seed manifest/contract version; use a compatible distributor")
     files = manifest.get("files")
     if not isinstance(files, dict) or not files:

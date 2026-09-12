@@ -231,5 +231,53 @@
     ],
     "observed_at": "2026-09-12T18:01:41.630645+00:00",
     "applicable_snapshot": "59c4cc828e5bdf8ca7fc4daea153699e2f253b33"
+  },
+  {
+    "relation_id": "REL-20260913-ASSURANCE-001",
+    "from": "TASK-20260913-ASSURANCE-001",
+    "to": "EXE-20260913-ASSURANCE-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_code",
+    "source_refs": [
+      "EVD-20260913-ASSURANCE-BASELINE"
+    ],
+    "observed_at": "2026-09-12T18:14:13.859207+00:00",
+    "applicable_snapshot": "b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087"
+  },
+  {
+    "relation_id": "REL-20260913-ASSURANCE-002",
+    "from": "TASK-20260913-ASSURANCE-001",
+    "to": "EVD-20260913-ASSURANCE-VALIDATION",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-ASSURANCE-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T18:14:13.859207+00:00",
+    "applicable_snapshot": "b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087"
+  },
+  {
+    "relation_id": "REL-20260913-ASSURANCE-003",
+    "from": "HARNESS-CHANGE-20260913-005",
+    "to": "HARNESS-REQ-20260913-005",
+    "type": "addresses",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "docs/rfcs/RFC-0004-seven-area-assurance-audit.md"
+    ],
+    "observed_at": "2026-09-12T18:14:13.859207+00:00",
+    "applicable_snapshot": "b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087"
+  },
+  {
+    "relation_id": "REL-20260913-ASSURANCE-004",
+    "from": "HARNESS-CHANGE-20260913-005",
+    "to": "DEC-20260913-ASSURANCE-001",
+    "type": "authorized_by",
+    "basis": "confirmed_by_user",
+    "source_refs": [
+      "user:seven-architecture-areas"
+    ],
+    "observed_at": "2026-09-12T18:14:13.859207+00:00",
+    "applicable_snapshot": "b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087"
   }
 ]

@@ -5,3 +5,5 @@ These examples are not executable schemas, live observations or proof. For autho
 Use [feedback clauses F02–F07](../contracts/feedback.md) for eligibility and required stage gates. `feedback-candidate.example.json` follows a candidate from observation through release and return observation; `skill-observation.example.json` records skill selection/use/change without inventing execution.
 
 For related Policy, Eval, Compatibility, Rollout and Migration records, use the field obligations in [execution](../contracts/execution.md) and [evolution](../contracts/evolution.md). A JSON shape is not a substitute for applying those semantic gates.
+
+`assurance-review.example.json` records the seven architecture review areas with empty provenance, composition, generalization, rollout, authority and comparison fields. Follow the [review protocol](../contracts/review-protocol.md). Use only relevant areas for a scoped change; a whole-architecture review must account for all seven. No result, approver or operating evidence is inherited.
