@@ -21,11 +21,11 @@ Projection only; consult version-bound evidence and events.
 
 ## Evidence / Events / External Actions
 - Baseline, exact-command validation and documentation checks under EXE-20260913-ADOPTION-001.
-- EVT-20260913-ADOPTION-001 through 003: started, inspected/verified, private documentation push intent.
-- Private source tag was read for smoke checks; documentation push is prepared, not yet observed.
+- EVT-20260913-ADOPTION-001 through 004: started, inspected/verified, private documentation push intent, verified publication and delivery.
+- EVD-20260913-ADOPTION-PUBLISHED: private main README and docs/ADOPTION.md readback match commit 834b6b3fb88d3c7b1212ea4bba4a408dfadf89ab. Seed tags/assets remain unchanged.
 
 ## Harness Friction / Improvement
 - Feedback linked to HARNESS-REQ-20260913-005: distinguish contract/install coverage from operating outcomes. No new common-rule candidate from this usage-layout change.
 
 ## Next Allowed Action
-- Publish verified usage documentation to private main and inspect it. User-selected project bootstrap or actual V2 implementation requires its appropriate task scope; downloading alone starts neither.
+- Follow README to install pinned v0.3.0, then explicitly request bootstrap in a user-selected project. Actual V2 implementation needs its own scoped work; the final runtime goal is not achieved by installation alone.

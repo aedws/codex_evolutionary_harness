@@ -339,5 +339,17 @@
     ],
     "observed_at": "2026-09-12T18:22:45.133357+00:00",
     "applicable_snapshot": "b558dbde32995a2fd6e75d0080395a19689441e685a12181892aa7e825962817"
+  },
+  {
+    "relation_id": "REL-20260913-ADOPTION-004",
+    "from": "TASK-20260913-ADOPTION-001",
+    "to": "EVD-20260913-ADOPTION-PUBLISHED",
+    "type": "supported_by",
+    "basis": "confirmed_by_runtime",
+    "source_refs": [
+      "EVD-20260913-ADOPTION-PUBLISHED"
+    ],
+    "observed_at": "2026-09-12T18:24:05.226535+00:00",
+    "applicable_snapshot": "834b6b3fb88d3c7b1212ea4bba4a408dfadf89ab"
   }
 ]

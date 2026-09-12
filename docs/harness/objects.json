@@ -850,7 +850,8 @@
     "relation_refs": [
       "REL-20260913-ADOPTION-001",
       "REL-20260913-ADOPTION-002",
-      "REL-20260913-ADOPTION-003"
+      "REL-20260913-ADOPTION-003",
+      "REL-20260913-ADOPTION-004"
     ],
     "unknowns": [
       "Real project outcomes and V2/V3/V4 runtime remain unverified"
@@ -935,6 +936,25 @@
     "tags": [
       "documentation",
       "synthetic_installation"
+    ]
+  },
+  {
+    "id": "EVD-20260913-ADOPTION-PUBLISHED",
+    "type": "evidence",
+    "name": "Private main README and adoption guide readback",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ADOPTION-001/publication.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-ADOPTION-004"
+    ],
+    "unknowns": [
+      "No final runtime capability claimed"
+    ],
+    "tags": [
+      "private",
+      "documentation"
     ]
   }
 ]

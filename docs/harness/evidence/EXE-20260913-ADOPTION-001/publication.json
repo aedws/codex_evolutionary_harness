@@ -1,0 +1,25 @@
+{
+  "evidence_id": "EVD-20260913-ADOPTION-PUBLISHED",
+  "created_at": "2026-09-12T18:23:24.710963+00:00",
+  "result": "pass",
+  "operation_key": "adoption-guide-main-update-001",
+  "repo": {
+    "isPrivate": true,
+    "url": "https://github.com/aedws/codex_evolutionary_harness"
+  },
+  "published_commit": "834b6b3fb88d3c7b1212ea4bba4a408dfadf89ab",
+  "readback": [
+    {
+      "path": "README.md",
+      "remote_blob": "e5ed170445ee6ce22a4f18c85eab1f1d7bd745ec",
+      "local_blob": "e5ed170445ee6ce22a4f18c85eab1f1d7bd745ec"
+    },
+    {
+      "path": "docs/ADOPTION.md",
+      "remote_blob": "88dc72a67e375df077b26ce809aa3fe422220793",
+      "local_blob": "88dc72a67e375df077b26ce809aa3fe422220793"
+    }
+  ],
+  "release_payload": "v0.3.0 unchanged",
+  "scope": "Documentation present on private main; no runtime adoption or final-goal completion implied"
+}
