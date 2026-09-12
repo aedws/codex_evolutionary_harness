@@ -1,5 +1,66 @@
 # Evolutionary Harness — reusable contract seed
 
+<!-- SEED-USAGE:START — keep this usage block immediately after the title. -->
+## 씨앗 사용법 — 여기서 시작
+
+**현재 씨앗: v0.3.0 / contract 3.** 아래 순서로 설치한 뒤 대상 프로젝트에서 bootstrap을 요청한다. 내려받기만으로 자기개선·승격·Canary가 자동 실행되지는 않는다.
+
+### 1. 고정 버전 내려받기
+
+비공개 저장소 접근 권한과 인증된 Git, Python 3.10 이상이 필요하다. 아래는 PowerShell 예시다. 두 경로를 자신의 환경에 맞게 바꾸고, 배포 원본은 대상 프로젝트 밖의 **새 디렉터리**에 둔다. 기존 checkout이나 프로젝트 위에 전체 저장소를 복사하지 않는다.
+
+```powershell
+$SeedSource = "C:/tools/evolutionary-harness-v0.3.0"
+$ProjectPath = "C:/projects/my-project"
+git clone --branch v0.3.0 --depth 1 https://github.com/aedws/codex_evolutionary_harness.git "$SeedSource"
+if ($LASTEXITCODE -ne 0) { throw "씨앗 다운로드 실패: 다음 단계로 진행하지 마세요." }
+python "$SeedSource/scripts/seed.py" check
+if ($LASTEXITCODE -ne 0) { throw "씨앗 무결성 검사 실패" }
+python "$SeedSource/scripts/check_contracts.py"
+if ($LASTEXITCODE -ne 0) { throw "씨앗 계약 구조 검사 실패" }
+```
+
+### 2. 대상 프로젝트에 설치
+
+같은 터미널에서 먼저 예상 파일을 확인한다.
+
+```powershell
+python "$SeedSource/scripts/seed.py" init --target "$ProjectPath" --dry-run
+if ($LASTEXITCODE -ne 0) { throw "설치 사전 점검 실패: 충돌 또는 대상 경로를 확인하세요." }
+```
+
+예상 경로가 맞으면 설치한다.
+
+```powershell
+python "$SeedSource/scripts/seed.py" init --target "$ProjectPath"
+if ($LASTEXITCODE -ne 0) { throw "설치 실패: 기록된 부분 상태와 오류를 확인하세요." }
+```
+
+기존 `AGENTS.md` 등과 겹치면 설치는 중단된다. 이 경우 빈 임시 경로에 설치한 뒤 [기존 프로젝트 통합 절차](docs/REUSE.md#2-기존-프로젝트)를 따른다. 동일 원본·영수증·파일이면 재실행은 no-op이며, 작업으로 파일이 바뀌었다면 재설치 대신 [업데이트·복구 절차](docs/REUSE.md)를 사용한다.
+
+### 3. AI에게 첫 bootstrap 요청
+
+**대상 프로젝트 폴더**를 작업 공간으로 열고 아래 요청을 보낸다. 씨앗 파일이 존재하는 것만으로 자동 시작되지는 않는다.
+
+```text
+이 프로젝트의 AGENTS.md와 BOOTSTRAP_PROMPT.md를 읽고 bootstrap을 수행해라.
+기존 코드·문서·테스트·데이터·지침을 조사하고, 목표·원본 권위·필수 검사·수락 조건을 정리해라.
+확인된 사실만 Project Overlay에 반영하고 Task/Execution/Evidence/Event/checkpoint를 연결해라.
+불명확한 목표나 권한 충돌은 필요한 항목만 인터뷰해라.
+첫 실제 작업과 필요한 검증을 제시하되, 제품 구현·외부 쓰기는 해당 작업의 승인 범위에 따라 진행해라.
+```
+
+이후 실제 작업마다 근거를 기록하고 종료 시 오류·마찰·스킬 사용의 개선 후보를 검토한다. upstream 제출은 기본 비활성이고 제출·공유·merge·release·adopt 권한은 각각 확인한다. 제품별 빌드·테스트·배포 설정은 bootstrap에서 출처와 함께 연결해야 한다.
+
+### 4. 최종 목표 달성 여부
+
+**현재 씨앗만 설치해서 최종형 하네스가 완성되지는 않는다.** 공통 계약과 수동 증거 기반 운영을 시작할 수 있고, 최종 목표로 이어지는 단계와 수락 기준이 정의되어 있다. 자동 상태/정책 엔진, 프로젝트 adapter, 독립 평가, 승격·Canary 실행기와 실제 효과 관측은 추가로 필요하다.
+
+[범용 프로젝트 적용 범위·V2/V3/V4 도달 조건](docs/ADOPTION.md)에서 제공 기능, 프로젝트가 채울 내용, 아직 검증하지 못한 부분을 확인한다. 사용 순서는 **설치 → bootstrap → 첫 실제 작업의 증거 연결 → 로컬 피드백 → 승인된 상향 개선 → 검증된 재적용**이다.
+<!-- SEED-USAGE:END -->
+
+## 목표와 설계
+
 **View to OOP, Set up to DOP.** 사람은 객체와 목적을 다루고, 시스템은 데이터와 증거를 다룬다.
 
 모든 프로젝트가 공통 코어에서 시작하고 Overlay로 특화한다. 실제 실패·마찰·검증에서 얻은 개선은 Project → Domain → Universal Core로 평가·승격하고, 상위 변경은 호환성 검증·Canary·Rollback을 통해 다시 전파한다.
@@ -18,22 +79,6 @@
 오류 개선·스킬 사용/추가/수정/제거는 작업 종료 시 한 번 검토한다. 일반화 근거가 있으면 로컬 후보를 만들고, 승인된 제출 → 범위별 평가 → 새 씨앗 릴리스 → 프로젝트의 명시적 적용 → 효과 재관측으로 연결한다. 초기 설정은 외부 제출 권한이 없는 local-only다. 자세한 계약은 필요한 항목만 읽는다.
 
 [일곱 핵심 계약 재감사 RFC-0004](docs/rfcs/RFC-0004-seven-area-assurance-audit.md)는 전체 위키 탐색, View 생성 계보, 계층 조합, 일반화, Canary, 역할 강제, 신뢰 유지 비용 비교의 세부 의무를 보완한다. contract 3에는 7영역 검토 패킷과 21개 계획 시나리오가 포함된다.
-
-## 새 프로젝트에 가져오기
-
-GitHub 인증이 된 환경에서 실행한다. Python 3.10 이상, Git, GitHub CLI가 필요하다. 전체 하네스 저장소를 대상 프로젝트 안에 clone하지 않는다.
-
-```powershell
-gh repo clone aedws/codex_evolutionary_harness C:/tools/evolutionary-harness
-git -C C:/tools/evolutionary-harness checkout v0.3.0
-python C:/tools/evolutionary-harness/scripts/seed.py check
-python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project --dry-run
-python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project
-```
-
-대상 경로는 자신의 환경에 맞춘다. 기존 프로젝트에도 사용할 수 있지만 `AGENTS.md` 등을 포함한 설치 경로가 이미 있으면 전체 작업을 중단한다. 기존 파일을 자동 병합하거나 덮어쓰지 않는다. 같은 씨앗을 같은 대상에 다시 실행하면 설치 영수증과 파일 해시를 확인하여 no-op으로 끝난다. 이후 기록이나 계약이 바뀌었다면 재설치 대신 업데이트 절차를 사용한다.
-
-설치 후 대상 프로젝트의 `BOOTSTRAP_PROMPT.md`로 AI에게 첫 읽기·현황 조사·프로젝트 Overlay 설정을 요청한다. 목표가 불분명하거나 기존 정책과 충돌하면 필요한 항목만 인터뷰한다. 제품 구현, GitHub 배포, 외부 쓰기 권한을 씨앗이 자동으로 부여하지 않는다.
 
 ## 배포 경계
 

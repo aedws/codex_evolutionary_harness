@@ -1,0 +1,166 @@
+{
+  "evidence_id": "EVD-20260913-ADOPTION-VALIDATION",
+  "task_id": "TASK-20260913-ADOPTION-001",
+  "execution_id": "EXE-20260913-ADOPTION-001",
+  "created_at": "2026-09-12T18:21:25.265228+00:00",
+  "result": "pass",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "readme_sha256": "b558dbde32995a2fd6e75d0080395a19689441e685a12181892aa7e825962817",
+  "adoption_doc_sha256": "355adf3d858df6f7a1b141541d16459224bdfbbd96415fcbd556013655d92b99",
+  "tested_tag": "v0.3.0",
+  "tested_commit": "dcbb1705e3d91a5a29b8514ac784d6e4290073fe",
+  "synthetic_project_layouts": [
+    "python-app",
+    "javascript-app",
+    "data-project"
+  ],
+  "checks": [
+    "README PowerShell blocks executed successfully after only replacing sample paths",
+    "Original project files and mtimes preserved",
+    "Dry-run preserves existing targets",
+    "Same receipt and files replay unchanged",
+    "Existing AGENTS blocks both preflight and installation without writes",
+    "No project identity, evidence, runtime capability or external authority inherited"
+  ],
+  "runtime_goal_assessment": "Contract adoption possible; final V2/V3/V4 outcome not supplied or established by installation",
+  "prior_evidence_files_preserved": 38,
+  "payload_and_scripts_unchanged": true,
+  "commands": [
+    {
+      "case": "exact-readme-blocks",
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"checked\", \"version\": \"0.3.0\", \"files\": 26, \"manifest_sha256\": \"b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087\"}\n{\"result\": \"pass\", \"goals\": 17, \"clauses\": 23, \"links\": 20, \"review_areas\": 7, \"planned_review_scenarios\": 21, \"scope\": \"structural coverage and safe distribution defaults; not runtime goal verification\"}\n{\"outcome\": \"planned\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\python-app\", \"files\": [\"AGENTS.md\", \"BOOTSTRAP_PROMPT.md\", \"docs/harness/README.md\", \"docs/harness/checkpoint.md\", \"docs/harness/contract.md\", \"docs/harness/contracts/README.md\", \"docs/harness/contracts/coverage.json\", \"docs/harness/contracts/evolution.md\", \"docs/harness/contracts/execution.md\", \"docs/harness/contracts/feedback.md\", \"docs/harness/contracts/review-cases.json\", \"docs/harness/contracts/review-protocol.md\", \"docs/harness/contracts/views-state.md\", \"docs/harness/events.jsonl\", \"docs/harness/evidence/README.md\", \"docs/harness/feedback/config.json\", \"docs/harness/objects.json\", \"docs/harness/overlays/project.json\", \"docs/harness/policy.md\", \"docs/harness/relations.json\", \"docs/harness/releases/current-harness.json\", \"docs/harness/source-authority.md\", \"docs/harness/templates/README.md\", \"docs/harness/templates/assurance-review.example.json\", \"docs/harness/templates/feedback-candidate.example.json\", \"docs/harness/templates/skill-observation.example.json\"], \"dry_run\": true}\n{\"outcome\": \"installed\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\python-app\", \"files\": 26, \"manifest_sha256\": \"b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087\"}\n",
+      "stderr": "Cloning into 'C:/Users/uyess/Desktop/codex_evolutionary_harness/.local/adoption-smoke-v0.3.0/source'...\nwarning: refs/tags/v0.3.0 aefa96719fecac578dd39a6ceacd489270be72a7 is not a commit!\nNote: switching to 'dcbb1705e3d91a5a29b8514ac784d6e4290073fe'.\n\nYou are in 'detached HEAD' state. You can look around, make experimental\nchanges and commit them, and you can discard any commits you make in this\nstate without impacting any branches by switching back to a branch.\n\nIf you want to create a new branch to retain commits you create, you may\ndo so (now or later) by using -c with the switch command. Example:\n\n  git switch -c <new-branch-name>\n\nOr undo this operation with:\n\n  git switch -\n\nTurn off this advice by setting config variable advice.detachedHead to false\n\n",
+      "substitutions": "Only example source/target paths replaced with isolated scratch paths"
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\python-app"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"unchanged\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\python-app\", \"dry_run\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\javascript-app",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"planned\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\javascript-app\", \"files\": [\"AGENTS.md\", \"BOOTSTRAP_PROMPT.md\", \"docs/harness/README.md\", \"docs/harness/checkpoint.md\", \"docs/harness/contract.md\", \"docs/harness/contracts/README.md\", \"docs/harness/contracts/coverage.json\", \"docs/harness/contracts/evolution.md\", \"docs/harness/contracts/execution.md\", \"docs/harness/contracts/feedback.md\", \"docs/harness/contracts/review-cases.json\", \"docs/harness/contracts/review-protocol.md\", \"docs/harness/contracts/views-state.md\", \"docs/harness/events.jsonl\", \"docs/harness/evidence/README.md\", \"docs/harness/feedback/config.json\", \"docs/harness/objects.json\", \"docs/harness/overlays/project.json\", \"docs/harness/policy.md\", \"docs/harness/relations.json\", \"docs/harness/releases/current-harness.json\", \"docs/harness/source-authority.md\", \"docs/harness/templates/README.md\", \"docs/harness/templates/assurance-review.example.json\", \"docs/harness/templates/feedback-candidate.example.json\", \"docs/harness/templates/skill-observation.example.json\"], \"dry_run\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\javascript-app"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"installed\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\javascript-app\", \"files\": 26, \"manifest_sha256\": \"b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\javascript-app"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"unchanged\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\javascript-app\", \"dry_run\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\data-project",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"planned\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\data-project\", \"files\": [\"AGENTS.md\", \"BOOTSTRAP_PROMPT.md\", \"docs/harness/README.md\", \"docs/harness/checkpoint.md\", \"docs/harness/contract.md\", \"docs/harness/contracts/README.md\", \"docs/harness/contracts/coverage.json\", \"docs/harness/contracts/evolution.md\", \"docs/harness/contracts/execution.md\", \"docs/harness/contracts/feedback.md\", \"docs/harness/contracts/review-cases.json\", \"docs/harness/contracts/review-protocol.md\", \"docs/harness/contracts/views-state.md\", \"docs/harness/events.jsonl\", \"docs/harness/evidence/README.md\", \"docs/harness/feedback/config.json\", \"docs/harness/objects.json\", \"docs/harness/overlays/project.json\", \"docs/harness/policy.md\", \"docs/harness/relations.json\", \"docs/harness/releases/current-harness.json\", \"docs/harness/source-authority.md\", \"docs/harness/templates/README.md\", \"docs/harness/templates/assurance-review.example.json\", \"docs/harness/templates/feedback-candidate.example.json\", \"docs/harness/templates/skill-observation.example.json\"], \"dry_run\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\data-project"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"installed\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\data-project\", \"files\": 26, \"manifest_sha256\": \"b94a565401a9580f8d562ec17143dfc6086b875538a6b75628dc2e7e5bc29087\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\data-project"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"outcome\": \"unchanged\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\adoption-smoke-v0.3.0\\\\projects\\\\data-project\", \"dry_run\": false}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\existing-policy",
+        "--dry-run"
+      ],
+      "exit_code": 5,
+      "stdout": "{\"outcome\": \"error\", \"code\": 5, \"message\": \"Existing project files would be overwritten: AGENTS.md\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\source\\scripts\\seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\adoption-smoke-v0.3.0\\projects\\existing-policy"
+      ],
+      "exit_code": 5,
+      "stdout": "{\"outcome\": \"error\", \"code\": 5, \"message\": \"Existing project files would be overwritten: AGENTS.md\"}\n",
+      "stderr": ""
+    }
+  ],
+  "limitations": [
+    "Synthetic file layouts, not working application or cross-domain evaluations",
+    "Bootstrap instruction supplied but no real project bootstrap/task run performed",
+    "No final-goal automation, security enforcement or operating cost improvement verified",
+    "Windows only; broader OS/Python-version support not exercised"
+  ]
+}

@@ -1,32 +1,31 @@
 # Checkpoint
 
-Projection only; source evidence and events retain authority.
+Projection only; consult version-bound evidence and events.
 
 ## Current Work
-- TASK-20260913-ASSURANCE-001 / EXE-20260913-ASSURANCE-001.
-- User-authorized seven-area contract audit and private seed improvement, v0.3.0 / contract 3.
+- TASK-20260913-ADOPTION-001 / EXE-20260913-ADOPTION-001.
+- README usage pinned first; generic-project adoption and final-goal reachability assessed. Documentation only; immutable seed v0.3.0 / contract 3 retained.
 
 ## Verified
-- EVD-20260913-ASSURANCE-NEWGAME: 105 navigation targets and 105 Markdown files inventoried; no missing navigation target. Relevant source docs inspected; live UI not tested.
-- EVD-20260913-ASSURANCE-VALIDATION: 25 tests passed; 26 clean payload files; 17 goals / 23 clauses; 7 review areas / 21 planned scenarios; 47 local links; 32 historical evidence files preserved.
-- EVD-20260913-ASSURANCE-REMOTE: fresh private v0.3.0 clone passed 25 tests, dry-run/install/no-op; downloaded ZIP hash matched. Commit: dcbb1705e3d91a5a29b8514ac784d6e4290073fe.
-- Release: https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.3.0; v0.1.0 and v0.2.0 retained.
-- RFC-0004 records concrete gaps and corrections. Source review is not independent runtime evidence.
+- EVD-20260913-ADOPTION-VALIDATION: exact README PowerShell blocks run against a fresh v0.3.0 clone; three synthetic Python/JavaScript/data layouts install with existing files preserved; replay no-op; existing AGENTS conflict blocks without writes.
+- EVD-20260913-ADOPTION-DOCS: first-section position and local links checked.
+- Seed/scripts/tests/manifest unchanged; 38 previous evidence files preserved.
 
 ## Unverified / Stale
-- Runtime wiki journeys, generated replay, policy enforcement, independent cross-context evals, canary and recovery remain unverified.
-- Human design acceptance and statistical same-trust/cost improvement are unverified. More contract text is shipped; actual context savings are unmeasured.
-- Prior v0.2.0 evidence remains tied to its original source version.
+- No real product bootstrap or application execution, long-term improvement, cross-domain generalization, Linux/macOS or additional Python-version run performed.
+- Current seed supplies contracts and manual workflow starting points. Final V2/V3/V4 requires actual adapters, validator/reducer, policy gates, evaluations and rollout mechanisms plus evidence.
+- Prior v0.3.0 release verification remains valid for its unchanged payload; it does not verify new README prose or future runtime work.
 
 ## Blocked / Conflicts
-- No observed delivery blocker; private v0.3.0 publication and reuse are observed.
+- No blocker to documentation delivery. Final automated harness is not supplied by installation; missing runtime mechanisms remain a separate work scope.
 
-## Evidence / Events
-- EVD-20260913-ASSURANCE-BASELINE, NEWGAME, VALIDATION, INTENT, REMOTE (full IDs in object index).
-- EVT-20260913-ASSURANCE-001 through 005: start, local validation, release intent, publication verification and scoped delivery.
+## Evidence / Events / External Actions
+- Baseline, exact-command validation and documentation checks under EXE-20260913-ADOPTION-001.
+- EVT-20260913-ADOPTION-001 through 003: started, inspected/verified, private documentation push intent.
+- Private source tag was read for smoke checks; documentation push is prepared, not yet observed.
 
 ## Harness Friction / Improvement
-- HARNESS-REQ-20260913-005: goal/heading coverage cannot certify operational sufficiency. Seven-area records and allow/reject/inconclusive cases added; actual runtime gaps remain explicit.
+- Feedback linked to HARNESS-REQ-20260913-005: distinguish contract/install coverage from operating outcomes. No new common-rule candidate from this usage-layout change.
 
 ## Next Allowed Action
-- Reuse pinned v0.3.0 with docs/REUSE.md after project-specific bootstrap or reviewed contract-1/2 migration. Preserve project records and permissions; actual engine implementation and runtime evidence need their own scope.
+- Publish verified usage documentation to private main and inspect it. User-selected project bootstrap or actual V2 implementation requires its appropriate task scope; downloading alone starts neither.

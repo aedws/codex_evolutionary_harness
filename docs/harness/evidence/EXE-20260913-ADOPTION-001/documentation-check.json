@@ -1,0 +1,25 @@
+{
+  "evidence_id": "EVD-20260913-ADOPTION-DOCS",
+  "created_at": "2026-09-12T18:22:45.133357+00:00",
+  "result": "pass",
+  "readme_usage_is_first": true,
+  "local_links_checked": 13,
+  "payload_version": "0.3.0",
+  "payload_changed": false,
+  "target_hashes": {
+    "README.md": "b558dbde32995a2fd6e75d0080395a19689441e685a12181892aa7e825962817",
+    "docs\\ADOPTION.md": "355adf3d858df6f7a1b141541d16459224bdfbbd96415fcbd556013655d92b99"
+  },
+  "publication_intent": {
+    "operation_key": "adoption-guide-main-update-001",
+    "authority": "user:readme-top-usage-and-generic-adoption; existing private repository push authorization",
+    "destination": "aedws/codex_evolutionary_harness",
+    "expected_previous_main": "dec635bd1f035967c4b0eccf1d0ac7d5e94764e8",
+    "scope": "documentation and audit records; keep all release tags/assets unchanged"
+  },
+  "feedback_review": {
+    "outcome": "linked_existing_candidate",
+    "candidate": "HARNESS-REQ-20260913-005",
+    "reason": "Distinguish packaging/document coverage from operating goal completion; no new common rule or runtime capability claimed"
+  }
+}

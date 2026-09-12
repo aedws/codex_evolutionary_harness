@@ -838,5 +838,103 @@
       "private",
       "contract_seed"
     ]
+  },
+  {
+    "id": "TASK-20260913-ADOPTION-001",
+    "type": "task",
+    "name": "Put seed usage first and assess final-goal reachability",
+    "schema_version": 1,
+    "source_refs": [
+      "user:readme-top-usage-and-generic-adoption"
+    ],
+    "relation_refs": [
+      "REL-20260913-ADOPTION-001",
+      "REL-20260913-ADOPTION-002",
+      "REL-20260913-ADOPTION-003"
+    ],
+    "unknowns": [
+      "Real project outcomes and V2/V3/V4 runtime remain unverified"
+    ],
+    "acceptance_class": "mixed",
+    "tags": [
+      "project",
+      "documentation"
+    ]
+  },
+  {
+    "id": "EXE-20260913-ADOPTION-001",
+    "type": "execution",
+    "name": "Documentation and generic installation assessment",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-ADOPTION-BASELINE"
+    ],
+    "relation_refs": [
+      "REL-20260913-ADOPTION-001"
+    ],
+    "unknowns": [
+      "Real project outcomes and V2/V3/V4 runtime remain unverified"
+    ],
+    "acceptance_class": "mixed",
+    "tags": [
+      "project",
+      "documentation"
+    ]
+  },
+  {
+    "id": "EVD-20260913-ADOPTION-BASELINE",
+    "type": "evidence",
+    "name": "Pre-change source and preservation snapshot",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ADOPTION-001/baseline.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Real project outcomes and V2/V3/V4 runtime remain unverified"
+    ],
+    "acceptance_class": "mixed",
+    "tags": [
+      "project",
+      "documentation"
+    ]
+  },
+  {
+    "id": "EVD-20260913-ADOPTION-VALIDATION",
+    "type": "evidence",
+    "name": "Exact README example and synthetic project installation checks",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ADOPTION-001/validation.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-ADOPTION-002"
+    ],
+    "unknowns": [
+      "Real application and V2/V3/V4 outcomes unverified"
+    ],
+    "tags": [
+      "documentation",
+      "synthetic_installation"
+    ]
+  },
+  {
+    "id": "EVD-20260913-ADOPTION-DOCS",
+    "type": "evidence",
+    "name": "README position, links and scoped documentation publication intent",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-ADOPTION-001/documentation-check.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-ADOPTION-003"
+    ],
+    "unknowns": [
+      "Real application and V2/V3/V4 outcomes unverified"
+    ],
+    "tags": [
+      "documentation",
+      "synthetic_installation"
+    ]
   }
 ]

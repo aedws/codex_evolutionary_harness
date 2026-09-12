@@ -303,5 +303,41 @@
     ],
     "observed_at": "2026-09-12T18:16:45.410458+00:00",
     "applicable_snapshot": "dcbb1705e3d91a5a29b8514ac784d6e4290073fe"
+  },
+  {
+    "relation_id": "REL-20260913-ADOPTION-001",
+    "from": "TASK-20260913-ADOPTION-001",
+    "to": "EXE-20260913-ADOPTION-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_code",
+    "source_refs": [
+      "EVD-20260913-ADOPTION-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T18:22:45.133357+00:00",
+    "applicable_snapshot": "b558dbde32995a2fd6e75d0080395a19689441e685a12181892aa7e825962817"
+  },
+  {
+    "relation_id": "REL-20260913-ADOPTION-002",
+    "from": "TASK-20260913-ADOPTION-001",
+    "to": "EVD-20260913-ADOPTION-VALIDATION",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-ADOPTION-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T18:22:45.133357+00:00",
+    "applicable_snapshot": "b558dbde32995a2fd6e75d0080395a19689441e685a12181892aa7e825962817"
+  },
+  {
+    "relation_id": "REL-20260913-ADOPTION-003",
+    "from": "TASK-20260913-ADOPTION-001",
+    "to": "EVD-20260913-ADOPTION-DOCS",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-ADOPTION-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T18:22:45.133357+00:00",
+    "applicable_snapshot": "b558dbde32995a2fd6e75d0080395a19689441e685a12181892aa7e825962817"
   }
 ]
