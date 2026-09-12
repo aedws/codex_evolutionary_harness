@@ -967,7 +967,8 @@
     ],
     "relation_refs": [
       "REL-20260913-DECISION-001",
-      "REL-20260913-DECISION-002"
+      "REL-20260913-DECISION-002",
+      "REL-20260913-DECISION-005"
     ],
     "unknowns": [
       "Empirical final-goal outcomes, independent cross-domain evaluations and human acceptance remain unverified"
@@ -1130,6 +1131,26 @@
       "project",
       "seed-maintenance",
       "local_core_preview"
+    ]
+  },
+  {
+    "id": "EVD-20260913-DECISION-REMOTE",
+    "type": "evidence",
+    "name": "Private pinned v0.4.0 fresh-clone and asset validation",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-DECISION-001/remote-verification.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-DECISION-005"
+    ],
+    "unknowns": [
+      "Real-product and independent cross-domain outcomes remain unverified"
+    ],
+    "tags": [
+      "private",
+      "local_core_preview",
+      "fresh_clone"
     ]
   }
 ]

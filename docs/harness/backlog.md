@@ -1,9 +1,7 @@
 # Backlog
 
-## Prepared
-- TASK-20260913-DECISION-001: contract 4 and minimum local runtime, 59 tests passed; private publication readback pending.
-
 ## Delivered
+- TASK-20260913-DECISION-001: private v0.4.0 / contract 4; minimum local runtime and end-to-end contracts. EVD-20260913-DECISION-VALIDATION / REMOTE: 59 local and fresh-clone tests, exact assets, old tags preserved. Full V2/V3/V4 outcomes remain unverified.
 - TASK-20260913-ADOPTION-001: README usage pinned first; generic adoption/goal limitations documented and published. Exact README commands and 3 synthetic layouts plus existing-policy conflict checked. EVD-20260913-ADOPTION-VALIDATION / PUBLISHED. Seed payload unchanged.
 - TASK-20260913-ASSURANCE-001: seven-area contract gaps addressed in private v0.3.0 / contract 3. EVD-20260913-ASSURANCE-VALIDATION and REMOTE: 25 local/fresh-clone tests, 7 areas / 21 planned scenarios. Runtime verification is explicitly not claimed.
 - TASK-20260913-FEEDBACK-001: private v0.2.0 / contract 2 published. 17 goals linked to 23 operational clauses; feedback/skills, upper RFC and migration contracts completed. EVD-20260913-FEEDBACK-VALIDATION and EVD-20260913-FEEDBACK-REMOTE report 20 local/fresh-clone tests. Runtime and empirical optimization remain unverified.
