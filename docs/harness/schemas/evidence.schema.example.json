@@ -1,0 +1,11 @@
+{
+  "evidence_id": "EVD-001",
+  "type": "test_run",
+  "subject": "TEST-001",
+  "source": "local",
+  "version": "git-sha-or-data-version",
+  "created_at": "ISO-8601",
+  "hash_or_ref": "",
+  "producer": "codex-or-ci",
+  "confidence": "confirmed"
+}

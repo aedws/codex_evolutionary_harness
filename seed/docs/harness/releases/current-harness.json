@@ -1,0 +1,12 @@
+{
+  "harness_name": "Evolutionary Harness",
+  "distribution_version": "0.1.0",
+  "contract_version": 1,
+  "distribution_kind": "contract_seed",
+  "capability_level": "seed",
+  "target_capability_level": "v4",
+  "verified_capabilities": [],
+  "automated_enforcement": [],
+  "declared_principles": ["oop_view_dop_setup", "evidence_first", "overlay_specialization", "evaluated_promotion", "compatible_canary_rollout", "human_judgment_boundary"],
+  "limitations": ["No automatic state reducer, policy engine, wiki UI, sandbox evaluator or rollout controller is supplied."]
+}

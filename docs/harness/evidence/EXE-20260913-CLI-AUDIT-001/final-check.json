@@ -1,0 +1,47 @@
+{
+  "evidence_id": "EVD-20260913-CLI-FINAL-CHECK-001",
+  "type": "audit_record_integrity_check",
+  "subject": "TASK-20260913-CLI-RFC-001",
+  "execution_id": "EXE-20260913-CLI-AUDIT-001",
+  "created_at": "2026-09-12T17:11:11.324819+00:00",
+  "result": "pass",
+  "checks": {
+    "rfc_links": 41,
+    "unique_objects": 13,
+    "valid_relations": 7,
+    "material_events": 7,
+    "json_parse": "pass",
+    "record_references": "pass",
+    "raw_log_hashes": "pass",
+    "newgame_changed_tracked_files": [],
+    "newgame_git_status": "",
+    "evolutionary_changed_original_files": [
+      "docs/harness/backlog.md",
+      "docs/harness/checkpoint.md",
+      "docs/harness/decisions.md",
+      "docs/harness/events.jsonl",
+      "docs/harness/objects.json",
+      "docs/harness/relations.json"
+    ],
+    "protected_original_documents_schemas_and_release": "unchanged"
+  },
+  "version": {
+    "baseline_sha256": "44ac6797f6efa5f1a9f1de7dcf41649ac65750868fc3764e3ec626950c98d2ef",
+    "rfc_sha256": "9dc8d5f6887a8517c0ef99d367c848a469a08932d2fa700ff31878e3baa646f4",
+    "checked_output_hashes": {
+      "docs/rfcs/RFC-0001-evolutionary-harness-cli.md": "9dc8d5f6887a8517c0ef99d367c848a469a08932d2fa700ff31878e3baa646f4",
+      "docs/harness/objects.json": "5d3950d347ed5d64265b1bfdcc3ceb5f4d700712fef76249fe27d1b9fca14e98",
+      "docs/harness/relations.json": "4418204070f6a6a91cd034e9fda3f8687408002df129818eae1ca36d39c1e3ce",
+      "docs/harness/events.jsonl": "12968ce42296bc865be03968ddfbe3523058ded20aee2aa49546b7fdd45be237",
+      "docs/harness/checkpoint.md": "eebdcc489abc3f6c9f4f2fa20b05c9de9048b53074b8380200476805f18b5258",
+      "docs/harness/backlog.md": "40cfad14143b4001d53cafdc0f787d1fd4bfeed6ae09081bb3443b06e3447bee",
+      "docs/harness/decisions.md": "2affc469ece5ce50d47df2fd6673881aeb0f730787b9faf0d0d535c295851951",
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/review.json": "c4155543ce9c4f7149dd2c55c63f4129d9d31e9195f04ad23352f00477aa9e84"
+    }
+  },
+  "limitations": [
+    "Structural and source preservation checks only; not a schema-validator implementation or RFC approval.",
+    "Prior document-check.json applies to the pre-typo-correction RFC version and is retained as history.",
+    "Newgame ignored/untracked files are outside the tracked-file preservation assertion."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "contract_version": 1,
+  "distribution_version": "0.1.0",
+  "files": {
+    "AGENTS.md": "514fd2c82190dea1e56ee78f225235cf183f4b9a2b7dabe2745dad9243d200f4",
+    "BOOTSTRAP_PROMPT.md": "3f63067e7c59a8f9852c32dad5117985c62f9f8ea31b2047ede31b21aae0a817",
+    "docs/harness/README.md": "65ccefa1b8162c9c40697af610ed33043186cc63a0a7f8daab624263362f49da",
+    "docs/harness/checkpoint.md": "ac41715825b1e2533f80879fc3052203a3dcb046b3ecb048a536efae85db2bb6",
+    "docs/harness/contract.md": "b7b925160009ddc64b0474960def5667b8acf0fc34b728da4105f67a6013b46c",
+    "docs/harness/events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/harness/evidence/README.md": "553c59c3fc25c21ed40880986e28dc4138e9e654d3d021d424143221d7309853",
+    "docs/harness/objects.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "docs/harness/overlays/project.json": "05454843fb063dd078800080da53f26355d29b3046dc3043537775fd7f32f534",
+    "docs/harness/policy.md": "eaae6c0adf009ffab16e140f9a847c393f9f4e0a31c2db8a10ea95b155fdae87",
+    "docs/harness/relations.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "docs/harness/releases/current-harness.json": "1184727a32ace553967c2f86ff65ff48f53cf7f53c7f1eab0d28d135b5ab7d8d",
+    "docs/harness/source-authority.md": "f7802006da285fc1e7263bd4264b60c0787e458a8756643801820945e189cdb7"
+  },
+  "schema_version": 1,
+  "source_ref": "v0.1.0",
+  "source_repository": "https://github.com/aedws/codex_evolutionary_harness"
+}

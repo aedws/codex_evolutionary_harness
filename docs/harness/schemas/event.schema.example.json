@@ -1,0 +1,13 @@
+{
+  "event_id": "EVT-001",
+  "event_type": "TEST_PASSED",
+  "subject": "TEST-001",
+  "execution_id": "EXE-001",
+  "version": "git-sha-or-data-version",
+  "timestamp": "ISO-8601",
+  "actor": "codex-or-ci",
+  "evidence_refs": [
+    "EVD-001"
+  ],
+  "metadata": {}
+}

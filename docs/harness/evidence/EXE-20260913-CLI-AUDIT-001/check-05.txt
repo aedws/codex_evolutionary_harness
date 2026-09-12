@@ -1,0 +1,8 @@
+WIKI_WORKER_PACKAGE_OK
+WIKI_WORKER_PACKAGE_OK
+CLOUDFLARE_CANDIDATE_VERIFIED objects=1
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.270s
+
+OK

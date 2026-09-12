@@ -1,0 +1,10 @@
+{
+  "relation_id": "REL-001",
+  "from": "TASK-001",
+  "to": "TEST-001",
+  "type": "verified_by",
+  "basis": "confirmed_by_test",
+  "confidence": "confirmed",
+  "source_refs": [],
+  "observed_at": "ISO-8601"
+}

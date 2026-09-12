@@ -1,0 +1,370 @@
+[
+  {
+    "id": "TASK-20260913-CLI-RFC-001",
+    "type": "task",
+    "name": "CLI product audit and comparative RFC; documentation only",
+    "schema_version": 1,
+    "source_refs": [
+      "user:2026-09-13:CLI-audit-RFC"
+    ],
+    "relation_refs": [
+      "REL-20260913-CLI-001",
+      "REL-20260913-CLI-002"
+    ],
+    "unknowns": [
+      "RFC acceptance and implementation authorization pending"
+    ],
+    "tags": [
+      "plan",
+      "audit",
+      "mixed_acceptance"
+    ]
+  },
+  {
+    "id": "EXE-20260913-CLI-AUDIT-001",
+    "type": "execution",
+    "name": "Local static reciprocal audit and RFC drafting",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-CLI-BASELINE-001"
+    ],
+    "relation_refs": [
+      "REL-20260913-CLI-001"
+    ],
+    "unknowns": [],
+    "tags": [
+      "plan",
+      "execution-local"
+    ]
+  },
+  {
+    "id": "RFC-0001",
+    "type": "document",
+    "name": "Evolutionary Harness CLI product contract and reciprocal audit",
+    "source_refs": [
+      "docs/rfcs/RFC-0001-evolutionary-harness-cli.md"
+    ],
+    "tags": [
+      "draft",
+      "human_review_pending"
+    ],
+    "schema_version": 1,
+    "relation_refs": [
+      "REL-20260913-CLI-002",
+      "REL-20260913-CLI-003",
+      "REL-20260913-CLI-004",
+      "REL-20260913-CLI-005",
+      "REL-20260913-CLI-007",
+      "REL-20260913-SEED-003"
+    ],
+    "unknowns": []
+  },
+  {
+    "id": "CONFLICT-20260913-001",
+    "type": "conflict",
+    "name": "Declared verified capabilities lack baseline verification evidence",
+    "source_refs": [
+      "EVD-20260913-CLI-BASELINE-001",
+      "EVD-20260913-CLI-REVIEW-001"
+    ],
+    "tags": [
+      "open",
+      "release_claim_unverified"
+    ],
+    "schema_version": 1,
+    "relation_refs": [
+      "REL-20260913-CLI-006"
+    ],
+    "unknowns": []
+  },
+  {
+    "id": "HARNESS-REQ-20260913-001",
+    "type": "requirement",
+    "name": "Require version-bound eval evidence for capability verification claims",
+    "source_refs": [
+      "CONFLICT-20260913-001",
+      "RFC-0001"
+    ],
+    "tags": [
+      "candidate",
+      "project",
+      "not_promoted"
+    ],
+    "schema_version": 1,
+    "relation_refs": [
+      "REL-20260913-CLI-006"
+    ],
+    "unknowns": []
+  },
+  {
+    "id": "HARNESS-REQ-20260913-002",
+    "type": "requirement",
+    "name": "Define CLI state, schema, ownership, compatibility, rollback and idempotency gates before implementation",
+    "source_refs": [
+      "RFC-0001",
+      "EVD-20260913-CLI-PROBES-001"
+    ],
+    "tags": [
+      "candidate",
+      "project",
+      "not_promoted"
+    ],
+    "schema_version": 1,
+    "relation_refs": [
+      "REL-20260913-CLI-007"
+    ],
+    "unknowns": []
+  },
+  {
+    "id": "EVD-20260913-CLI-BASELINE-001",
+    "type": "evidence",
+    "name": "source_snapshot",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/baseline.json"
+    ],
+    "tags": [
+      "local_audit",
+      "version_bound"
+    ],
+    "schema_version": 1,
+    "relation_refs": [],
+    "unknowns": []
+  },
+  {
+    "id": "EVD-20260913-CLI-CHECKS-001",
+    "type": "evidence",
+    "name": "test_run",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/checks.json"
+    ],
+    "tags": [
+      "local_audit",
+      "version_bound"
+    ],
+    "schema_version": 1,
+    "relation_refs": [
+      "REL-20260913-CLI-003"
+    ],
+    "unknowns": []
+  },
+  {
+    "id": "EVD-20260913-CLI-ENV-CHECK-001",
+    "type": "evidence",
+    "name": "test_run",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/environment-check.json"
+    ],
+    "tags": [
+      "local_audit",
+      "version_bound"
+    ],
+    "schema_version": 1,
+    "relation_refs": [
+      "REL-20260913-CLI-005"
+    ],
+    "unknowns": []
+  },
+  {
+    "id": "EVD-20260913-CLI-PROBES-001",
+    "type": "evidence",
+    "name": "local_behavior_probe",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/probes.json"
+    ],
+    "tags": [
+      "local_audit",
+      "version_bound"
+    ],
+    "schema_version": 1,
+    "relation_refs": [
+      "REL-20260913-CLI-004"
+    ],
+    "unknowns": []
+  },
+  {
+    "id": "EVD-20260913-CLI-DOCUMENT-CHECK-001",
+    "type": "evidence",
+    "name": "document_and_source_check",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/document-check.json"
+    ],
+    "tags": [
+      "local_audit",
+      "version_bound"
+    ],
+    "schema_version": 1,
+    "relation_refs": [],
+    "unknowns": []
+  },
+  {
+    "id": "EVD-20260913-CLI-REVIEW-001",
+    "type": "evidence",
+    "name": "static_audit",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/review.json"
+    ],
+    "tags": [
+      "local_audit",
+      "version_bound"
+    ],
+    "schema_version": 1,
+    "relation_refs": [],
+    "unknowns": []
+  },
+  {
+    "id": "EVD-20260913-CLI-FINAL-CHECK-001",
+    "type": "evidence",
+    "name": "Final document and audit record integrity check",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-CLI-AUDIT-001/final-check.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [],
+    "tags": [
+      "local_audit",
+      "version_bound"
+    ]
+  },
+  {
+    "id": "TASK-20260913-SEED-001",
+    "type": "task",
+    "name": "Document target architecture and distribute a private reusable contract seed",
+    "schema_version": 1,
+    "source_refs": [
+      "user:2026-09-13:seed-private-distribution"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-001",
+      "REL-20260913-SEED-004",
+      "REL-20260913-SEED-005"
+    ],
+    "unknowns": [
+      "Product quality remains human-verifiable"
+    ],
+    "tags": [
+      "execute",
+      "project",
+      "seed_only"
+    ]
+  },
+  {
+    "id": "EXE-20260913-SEED-001",
+    "type": "execution",
+    "name": "Seed packaging, local verification and private GitHub publication",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-SEED-BASELINE"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-004"
+    ],
+    "unknowns": [
+      "Product quality remains human-verifiable"
+    ],
+    "tags": [
+      "execute",
+      "project",
+      "seed_only"
+    ]
+  },
+  {
+    "id": "REQ-HARNESS-VISION-001",
+    "type": "requirement",
+    "name": "User-confirmed hierarchical evolutionary harness goals",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/requirements/HARNESS-GOALS.md"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-002"
+    ],
+    "unknowns": [],
+    "tags": [
+      "confirmed_by_user",
+      "mixed_acceptance"
+    ]
+  },
+  {
+    "id": "REQ-HARNESS-SEED-001",
+    "type": "requirement",
+    "name": "Private reusable minimal contract seed distribution",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/requirements/HARNESS-GOALS.md"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-001"
+    ],
+    "unknowns": [],
+    "tags": [
+      "confirmed_by_user",
+      "project"
+    ]
+  },
+  {
+    "id": "RFC-0002",
+    "type": "document",
+    "name": "Hierarchical architecture above CLI implementation choices",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0002-hierarchical-evolutionary-architecture.md"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-002",
+      "REL-20260913-SEED-003"
+    ],
+    "unknowns": [],
+    "tags": [
+      "seed_baseline_design",
+      "human_quality_pending"
+    ]
+  },
+  {
+    "id": "EVD-20260913-SEED-BASELINE",
+    "type": "evidence",
+    "name": "Pre-change baseline and authorization scope",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-SEED-001/baseline.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [],
+    "tags": [
+      "source_snapshot"
+    ]
+  },
+  {
+    "id": "EVD-20260913-SEED-VALIDATION",
+    "type": "evidence",
+    "name": "13 local seed tests, hashes, docs and history preservation",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-SEED-001/validation.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-005"
+    ],
+    "unknowns": [],
+    "tags": [
+      "confirmed_by_test"
+    ]
+  },
+  {
+    "id": "HARNESS-REQ-20260913-003",
+    "type": "requirement",
+    "name": "Keep hierarchy and whole-wiki OOP view above CLI implementation decisions",
+    "schema_version": 1,
+    "source_refs": [
+      "REQ-HARNESS-VISION-001",
+      "RFC-0002"
+    ],
+    "relation_refs": [],
+    "unknowns": [],
+    "tags": [
+      "project",
+      "user_correction",
+      "candidate"
+    ]
+  }
+]

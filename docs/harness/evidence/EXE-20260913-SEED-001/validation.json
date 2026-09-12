@@ -1,0 +1,83 @@
+{
+  "evidence_id": "EVD-20260913-SEED-VALIDATION",
+  "type": "test_run_and_document_check",
+  "execution_id": "EXE-20260913-SEED-001",
+  "subject": "TASK-20260913-SEED-001",
+  "created_at": "2026-09-12T17:32:49.353030+00:00",
+  "result": "pass",
+  "commands": [
+    {
+      "name": "payload",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "check"
+      ],
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-SEED-001/payload.txt",
+      "sha256": "4b04c6e52b7a02822093ad11e53e9426f1e6cf66491a980ee11f3a45fd9c6ad8"
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-SEED-001/tests.txt",
+      "sha256": "e2bb6d6910c567d65230c32fae4975a2e520499804468c3f71241d69a3fefe22"
+    },
+    {
+      "name": "archive",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "pack",
+        "--out",
+        "dist/evolutionary-harness-seed-0.1.0.zip"
+      ],
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-SEED-001/archive.txt",
+      "sha256": "480b7cca272c8b62da4ee4e48e707858cd28a078c83112eb1d86d160cca22fd6"
+    }
+  ],
+  "tests": 13,
+  "new_doc_links": 12,
+  "preserved_historical_evidence_files": 14,
+  "seed_payload_files": 13,
+  "zip_sha256": "bc8eb3b6f90838ef0c9dc10aa1b5fe23479f6db58bd56929c06acea72c73f661",
+  "source_sha256": {
+    "scripts/seed.py": "7481c3be1f96ecaba53011a5cb8a0a07e0caebbd83ea1d2981b879cc18129165",
+    "tests/test_seed.py": "f58ea1797ce6f7a5d699b37aaa7ff8e2cab74d2f8c0854afc143c358e500bf81",
+    "seed-manifest.json": "745bb9339e37b688e7ba2c702d5e602c6b24714b01b248809b7dbd9e37e12f74",
+    "README.md": "f63725834d7705cc354f40ba355168ca162e40fda309826efd63767d8bd55ec1",
+    "docs/REUSE.md": "5490365219726294a8e1cbc88d22dc330ef3075858135fab441ebb61c09e4e52",
+    "docs/requirements/HARNESS-GOALS.md": "428c0bc191c69636fcfc28e0a0100edba34d95e36f767b60ee21108c0c5b418d",
+    "docs/rfcs/RFC-0002-hierarchical-evolutionary-architecture.md": "d948ab30414448c5f08dda41c6d9e0265e6f78875b3b304c40807a878d0b8461",
+    "seed/AGENTS.md": "514fd2c82190dea1e56ee78f225235cf183f4b9a2b7dabe2745dad9243d200f4",
+    "seed/BOOTSTRAP_PROMPT.md": "3f63067e7c59a8f9852c32dad5117985c62f9f8ea31b2047ede31b21aae0a817",
+    "seed/docs/harness/checkpoint.md": "ac41715825b1e2533f80879fc3052203a3dcb046b3ecb048a536efae85db2bb6",
+    "seed/docs/harness/contract.md": "b7b925160009ddc64b0474960def5667b8acf0fc34b728da4105f67a6013b46c",
+    "seed/docs/harness/policy.md": "eaae6c0adf009ffab16e140f9a847c393f9f4e0a31c2db8a10ea95b155fdae87",
+    "seed/docs/harness/README.md": "65ccefa1b8162c9c40697af610ed33043186cc63a0a7f8daab624263362f49da",
+    "seed/docs/harness/source-authority.md": "f7802006da285fc1e7263bd4264b60c0787e458a8756643801820945e189cdb7",
+    "seed/docs/harness/evidence/README.md": "553c59c3fc25c21ed40880986e28dc4138e9e654d3d021d424143221d7309853",
+    "seed/docs/harness/events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "seed/docs/harness/objects.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "seed/docs/harness/overlays/project.json": "05454843fb063dd078800080da53f26355d29b3046dc3043537775fd7f32f534",
+    "seed/docs/harness/relations.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "seed/docs/harness/releases/current-harness.json": "1184727a32ace553967c2f86ff65ff48f53cf7f53c7f1eab0d28d135b5ab7d8d"
+  },
+  "limitations": [
+    "No full eh runtime, automatic policy enforcement, V2/V3/V4, real power-loss/concurrency stress or subjective product acceptance verified.",
+    "Windows reparse rejection is unit-tested with mocked file metadata; no adversarial filesystem race claim."
+  ]
+}

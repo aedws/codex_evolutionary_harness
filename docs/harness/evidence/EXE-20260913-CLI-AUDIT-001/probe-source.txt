@@ -1,0 +1,21 @@
+import sys,json,tempfile,copy
+from pathlib import Path
+from unittest.mock import patch
+sys.path.insert(0,str(Path.cwd()/"scripts"))
+import generate_project_ontology as g
+with tempfile.TemporaryDirectory() as d:
+ p=Path(d)/"milestone.md"
+ p.write_text("| P1-01 · 완료 | synthetic work | boundary | acceptance | gate |\n",encoding="utf-8")
+ row=g.milestone_work_items(p)[0]
+ print(json.dumps({"probe":"P01-document-completion-with-no-run","status":row["status"],"certainty":row["certainty"],"relations":row["relations"]},ensure_ascii=False))
+original=g.load_json
+def future(path):
+ data=original(path)
+ if path==g.REGISTRY: data["schema_version"]=999
+ return data
+with patch.object(g,"load_json",side_effect=future):
+ result=g.generate()
+ print(json.dumps({"probe":"P02-unsupported-input-version","input_schema_version":999,"output_schema_version":result["schema_version"]}))
+snapshot=original(g.NOTION_SNAPSHOT); tracker=original(g.NOTION_TRACKER)
+item=g.enrich_source_systems([{"id":"source:notion"}],snapshot,tracker)[0]
+print(json.dumps({"probe":"P03-observation-time","root_last_edited_time":snapshot["root_last_edited_time"],"captured_at":snapshot.get("captured_at"),"derived_observed_at":item["freshness"]["observed_at"]}))

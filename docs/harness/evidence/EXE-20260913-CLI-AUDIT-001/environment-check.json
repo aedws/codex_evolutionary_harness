@@ -1,0 +1,17 @@
+{
+  "evidence_id": "EVD-20260913-CLI-ENV-CHECK-001",
+  "type": "test_run",
+  "subject": "TASK-20260913-CLI-RFC-001",
+  "execution_id": "EXE-20260913-CLI-AUDIT-001",
+  "created_at": "2026-09-12T17:00:23.841637+00:00",
+  "source_manifest_sha256": "44ac6797f6efa5f1a9f1de7dcf41649ac65750868fc3764e3ec626950c98d2ef",
+  "command": [
+    "C:\\Users\\uyess\\Desktop\\Newgame\\.venv\\Scripts\\python.exe",
+    "-B",
+    "scripts/test_cloudflare_release.py"
+  ],
+  "exit_code": 0,
+  "log": "check-05.txt",
+  "log_sha256": "e1bfe2f8746dc5dae745497bb6b1005d908f4094f009e30a4a657548afa4740a",
+  "reason": "Default Python lacks yaml; use existing project environment without installing packages."
+}

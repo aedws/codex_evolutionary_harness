@@ -1,0 +1,67 @@
+{
+  "evidence_id": "EVD-20260913-CLI-CHECKS-001",
+  "type": "test_run",
+  "subject": "TASK-20260913-CLI-RFC-001",
+  "execution_id": "EXE-20260913-CLI-AUDIT-001",
+  "created_at": "2026-09-12T16:59:29.508072+00:00",
+  "version": "EVD-20260913-CLI-BASELINE-001",
+  "source_manifest_sha256": "44ac6797f6efa5f1a9f1de7dcf41649ac65750868fc3764e3ec626950c98d2ef",
+  "checks": [
+    {
+      "id": "CHECK-01",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/generate_project_ontology.py",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\Newgame",
+      "exit_code": 0,
+      "elapsed_seconds": 0.183,
+      "log": "check-01.txt",
+      "log_sha256": "5753cb16fc6da1417b7d2a8286ce6027952aa37c968bf18771a5a1ff2bd6624c"
+    },
+    {
+      "id": "CHECK-02",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/check_notion_audit.py"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\Newgame",
+      "exit_code": 0,
+      "elapsed_seconds": 0.375,
+      "log": "check-02.txt",
+      "log_sha256": "c996732403fd166bffd26d5c3699b35297c27ee2fdbe648b92412bddb15c6d22"
+    },
+    {
+      "id": "CHECK-03",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/test_cloudflare_release.py"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\Newgame",
+      "exit_code": 1,
+      "elapsed_seconds": 0.649,
+      "log": "check-03.txt",
+      "log_sha256": "3fee3c95b925dcccbfe1b266c8d4182ece50ebfd824cdd2761df3c8d0f65462c"
+    },
+    {
+      "id": "CHECK-04",
+      "command": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/test_windows_release_retention.py"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\Newgame",
+      "exit_code": 0,
+      "elapsed_seconds": 0.283,
+      "log": "check-04.txt",
+      "log_sha256": "45c108b8354c88b4b75a885633d9a4026be8f62a24cda87bc0aec560d0c6edab"
+    }
+  ],
+  "limitations": [
+    "Local checks and mocked remote operations only; no live deployment or E2E certification."
+  ]
+}

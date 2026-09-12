@@ -1,0 +1,3 @@
+{"probe": "P01-document-completion-with-no-run", "status": "implemented", "certainty": "confirmed", "relations": [{"to": "document:design/current-milestone-workline", "type": "documented_by"}, {"to": "source:git", "type": "implemented_by"}, {"to": "source:e2e", "type": "verified_by"}, {"to": "source:notion", "type": "informed_by"}]}
+{"probe": "P02-unsupported-input-version", "input_schema_version": 999, "output_schema_version": 999}
+{"probe": "P03-observation-time", "root_last_edited_time": 1788685789265, "captured_at": "2026-09-07T13:43:20+00:00", "derived_observed_at": "2026-09-06T09:09:49.265000Z"}

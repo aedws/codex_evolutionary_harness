@@ -1,0 +1,25 @@
+{
+  "evidence_id": "EVD-20260913-CLI-DOCUMENT-CHECK-001",
+  "type": "document_and_source_check",
+  "subject": "TASK-20260913-CLI-RFC-001",
+  "execution_id": "EXE-20260913-CLI-AUDIT-001",
+  "created_at": "2026-09-12T17:08:18.933185+00:00",
+  "rfc": {
+    "path": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\docs\\rfcs\\RFC-0001-evolutionary-harness-cli.md",
+    "sha256": "53191d841c86848207e2d4f5d7ef75927c845c34ab7b535e4f657e2cf00b0b6a",
+    "line_count": 369,
+    "link_count": 41,
+    "broken_links": []
+  },
+  "newgame_changed_tracked_files": [],
+  "newgame_git_status": "",
+  "evolutionary_changes_before_final_projections": [
+    "docs/harness/events.jsonl",
+    "docs/harness/objects.json"
+  ],
+  "release_manifest_unchanged": true,
+  "limitations": [
+    "Document links and source preservation checked; RFC design quality awaits human review.",
+    "No CLI product implementation exists or was exercised."
+  ]
+}

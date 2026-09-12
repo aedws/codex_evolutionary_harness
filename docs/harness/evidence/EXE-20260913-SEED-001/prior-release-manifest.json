@@ -1,0 +1,17 @@
+{
+  "harness_name": "Evolutionary Harness",
+  "core_version": "v2.0.0",
+  "verified_capabilities": [
+    "evidence-first",
+    "event-log",
+    "derived-state",
+    "source-authority",
+    "execution-identity",
+    "relation-provenance",
+    "policy-boundary",
+    "eval-ready",
+    "harness-lifecycle"
+  ],
+  "target_capability_level": "v4",
+  "mode": "greenfield"
+}

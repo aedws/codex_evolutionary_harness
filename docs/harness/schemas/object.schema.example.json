@@ -1,0 +1,10 @@
+{
+  "id": "TASK-001",
+  "type": "task",
+  "name": "Example task",
+  "schema_version": 1,
+  "source_refs": [],
+  "relation_refs": [],
+  "unknowns": [],
+  "tags": []
+}

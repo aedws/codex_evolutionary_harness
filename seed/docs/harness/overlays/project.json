@@ -1,0 +1,12 @@
+{
+  "id": null,
+  "version": 1,
+  "scope": "project",
+  "base_contract_version": 1,
+  "domain_overlay": null,
+  "source_refs": [],
+  "additions": {"source_authorities": [], "rules": [], "tools": [], "evals": []},
+  "restrictions": [],
+  "compatibility_refs": [],
+  "unknowns": ["Project identity, domain, sources and required tests have not been inspected."]
+}

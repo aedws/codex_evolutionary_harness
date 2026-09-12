@@ -1,0 +1,16 @@
+WIKI_WORKER_PACKAGE_OK
+WIKI_WORKER_PACKAGE_OK
+CLOUDFLARE_CANDIDATE_VERIFIED objects=1
+....E
+======================================================================
+ERROR: test_workflow_candidate_gate_before_promotion_and_retention (__main__.ReleaseTests.test_workflow_candidate_gate_before_promotion_and_retention)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\Newgame\scripts\test_cloudflare_release.py", line 60, in test_workflow_candidate_gate_before_promotion_and_retention
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.236s
+
+FAILED (errors=1)

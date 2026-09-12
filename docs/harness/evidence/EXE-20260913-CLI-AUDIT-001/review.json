@@ -1,0 +1,55 @@
+{
+  "evidence_id": "EVD-20260913-CLI-REVIEW-001",
+  "type": "static_audit",
+  "subject": "TASK-20260913-CLI-RFC-001",
+  "execution_id": "EXE-20260913-CLI-AUDIT-001",
+  "created_at": "2026-09-12T17:10:05.734802+00:00",
+  "version": {
+    "rfc_sha256": "9dc8d5f6887a8517c0ef99d367c848a469a08932d2fa700ff31878e3baa646f4",
+    "baseline_sha256": "44ac6797f6efa5f1a9f1de7dcf41649ac65750868fc3764e3ec626950c98d2ef"
+  },
+  "acceptance_class": "mixed",
+  "review_method": "Same author applied both systems operating criteria reciprocally; not independent reviewers.",
+  "findings": [
+    {
+      "id": "CONFLICT-20260913-001",
+      "refs": [
+        "EH-01"
+      ],
+      "basis": "confirmed_by_code",
+      "finding": "Release manifest claims verified capabilities without supporting executable/eval evidence in the baseline.",
+      "dependent_claim": "Evolutionary v2.0.0 capability verification is unverified; original manifest retained."
+    },
+    {
+      "id": "NG-01",
+      "basis": "confirmed_by_test",
+      "evidence_ref": "EVD-20260913-CLI-PROBES-001",
+      "finding": "Synthetic completed document row yields implemented/confirmed without a TestRun."
+    },
+    {
+      "id": "NG-02",
+      "basis": "confirmed_by_test",
+      "evidence_ref": "EVD-20260913-CLI-PROBES-001",
+      "finding": "Generator accepts schema_version 999; wrapper version gate exists."
+    },
+    {
+      "id": "NG-04",
+      "basis": "confirmed_by_test",
+      "evidence_ref": "EVD-20260913-CLI-PROBES-001",
+      "finding": "GDD observation timestamp derives from source modification time."
+    },
+    {
+      "id": "NG-08",
+      "basis": "inferred_by_static_analysis",
+      "finding": "Promotion effect with failed response may bypass success-gated rollback; not fault-injected."
+    }
+  ],
+  "recommendation": {
+    "status": "proposed",
+    "current_project_operations": "Newgame has stronger observed operational maturity.",
+    "generic_cli_direction": "Evolutionary principles plus transactional CLI contracts and opt-in Newgame adapters.",
+    "benchmark": "not_performed"
+  },
+  "implementation_authorized": false,
+  "human_acceptance": "pending"
+}

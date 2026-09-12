@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.zip binary
+seed/** -text
+seed-manifest.json -text
+docs/harness/evidence/** -text

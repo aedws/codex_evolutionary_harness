@@ -1,0 +1,15 @@
+{
+  "evidence_id": "EVD-20260913-CLI-PROBES-001",
+  "type": "local_behavior_probe",
+  "subject": "TASK-20260913-CLI-RFC-001",
+  "execution_id": "EXE-20260913-CLI-AUDIT-001",
+  "created_at": "2026-09-12T17:00:23.257248+00:00",
+  "source_manifest_sha256": "44ac6797f6efa5f1a9f1de7dcf41649ac65750868fc3764e3ec626950c98d2ef",
+  "exit_code": 0,
+  "script_sha256": "ee8af1c05db20114f4505315f7d35e2e7c3ba606a24201ef7a931b99c40c3d99",
+  "log_sha256": "a892f5bf27ae3e7ba1a92ab8fa26cce9139207096ea28f066bc979438767edb4",
+  "limitations": [
+    "Synthetic inputs in memory and temporary directories; no source modifications.",
+    "Probe confirms conversion behavior, not falsity of existing Newgame accomplishments."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "HARNESS-CHANGE-001",
+  "scope": "project",
+  "origin": "project:example",
+  "promotion_target": null,
+  "problem_refs": [],
+  "evidence_refs": [],
+  "eval_refs": [],
+  "compatibility_refs": [],
+  "rollback_ref": null,
+  "status": "candidate"
+}

@@ -1,0 +1,141 @@
+[
+  {
+    "relation_id": "REL-20260913-CLI-001",
+    "from": "TASK-20260913-CLI-RFC-001",
+    "to": "EXE-20260913-CLI-AUDIT-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_code",
+    "confidence": "confirmed",
+    "source_refs": [
+      "EVD-20260913-CLI-BASELINE-001"
+    ],
+    "observed_at": "2026-09-12T17:10:05.734802+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-CLI-002",
+    "from": "TASK-20260913-CLI-RFC-001",
+    "to": "RFC-0001",
+    "type": "produces",
+    "basis": "confirmed_by_code",
+    "confidence": "confirmed",
+    "source_refs": [
+      "EVD-20260913-CLI-REVIEW-001"
+    ],
+    "observed_at": "2026-09-12T17:10:05.734802+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-CLI-003",
+    "from": "RFC-0001",
+    "to": "EVD-20260913-CLI-CHECKS-001",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "confidence": "confirmed",
+    "source_refs": [
+      "EVD-20260913-CLI-CHECKS-001"
+    ],
+    "observed_at": "2026-09-12T17:10:05.734802+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-CLI-004",
+    "from": "RFC-0001",
+    "to": "EVD-20260913-CLI-PROBES-001",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "confidence": "confirmed",
+    "source_refs": [
+      "EVD-20260913-CLI-PROBES-001"
+    ],
+    "observed_at": "2026-09-12T17:10:05.734802+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-CLI-005",
+    "from": "RFC-0001",
+    "to": "EVD-20260913-CLI-ENV-CHECK-001",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "confidence": "confirmed",
+    "source_refs": [
+      "EVD-20260913-CLI-ENV-CHECK-001"
+    ],
+    "observed_at": "2026-09-12T17:10:05.734802+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-CLI-006",
+    "from": "HARNESS-REQ-20260913-001",
+    "to": "CONFLICT-20260913-001",
+    "type": "motivated_by",
+    "basis": "inferred_by_static_analysis",
+    "confidence": "inferred",
+    "source_refs": [
+      "EVD-20260913-CLI-REVIEW-001"
+    ],
+    "observed_at": "2026-09-12T17:10:05.734802+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-CLI-007",
+    "from": "HARNESS-REQ-20260913-002",
+    "to": "RFC-0001",
+    "type": "proposed_in",
+    "basis": "confirmed_by_code",
+    "confidence": "confirmed",
+    "source_refs": [
+      "EVD-20260913-CLI-REVIEW-001"
+    ],
+    "observed_at": "2026-09-12T17:10:05.734802+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-SEED-001",
+    "from": "TASK-20260913-SEED-001",
+    "to": "REQ-HARNESS-SEED-001",
+    "type": "implements",
+    "basis": "confirmed_by_code",
+    "source_refs": [
+      "EVD-20260913-SEED-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T17:34:19.179038+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-SEED-002",
+    "from": "RFC-0002",
+    "to": "REQ-HARNESS-VISION-001",
+    "type": "addresses",
+    "basis": "confirmed_by_code",
+    "source_refs": [
+      "EVD-20260913-SEED-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T17:34:19.179038+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-SEED-003",
+    "from": "RFC-0001",
+    "to": "RFC-0002",
+    "type": "subordinate_to",
+    "basis": "confirmed_by_code",
+    "source_refs": [
+      "EVD-20260913-SEED-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T17:34:19.179038+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-SEED-004",
+    "from": "TASK-20260913-SEED-001",
+    "to": "EXE-20260913-SEED-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_code",
+    "source_refs": [
+      "EVD-20260913-SEED-BASELINE"
+    ],
+    "observed_at": "2026-09-12T17:34:19.179038+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-SEED-005",
+    "from": "TASK-20260913-SEED-001",
+    "to": "EVD-20260913-SEED-VALIDATION",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-SEED-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T17:34:19.179038+00:00"
+  }
+]
