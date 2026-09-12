@@ -207,5 +207,29 @@
     ],
     "observed_at": "2026-09-12T17:59:11.178775+00:00",
     "applicable_snapshot": "96ef8e1e036af8450c153b124b05401f1b9ea825460e429e728543d4a5b8655c"
+  },
+  {
+    "relation_id": "REL-20260913-FEEDBACK-005",
+    "from": "TASK-20260913-FEEDBACK-001",
+    "to": "EVD-20260913-FEEDBACK-REMOTE",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-FEEDBACK-REMOTE"
+    ],
+    "observed_at": "2026-09-12T18:01:41.630645+00:00",
+    "applicable_snapshot": "59c4cc828e5bdf8ca7fc4daea153699e2f253b33"
+  },
+  {
+    "relation_id": "REL-20260913-FEEDBACK-006",
+    "from": "HARNESS-RELEASE-0.2.0",
+    "to": "EVD-20260913-FEEDBACK-REMOTE",
+    "type": "observed_by",
+    "basis": "confirmed_by_runtime",
+    "source_refs": [
+      "EVD-20260913-FEEDBACK-REMOTE"
+    ],
+    "observed_at": "2026-09-12T18:01:41.630645+00:00",
+    "applicable_snapshot": "59c4cc828e5bdf8ca7fc4daea153699e2f253b33"
   }
 ]

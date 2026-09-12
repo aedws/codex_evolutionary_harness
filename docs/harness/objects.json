@@ -418,7 +418,8 @@
     ],
     "relation_refs": [
       "REL-20260913-FEEDBACK-001",
-      "REL-20260913-FEEDBACK-002"
+      "REL-20260913-FEEDBACK-002",
+      "REL-20260913-FEEDBACK-005"
     ],
     "unknowns": [
       "Runtime controllers and subjective design acceptance remain unverified"
@@ -427,7 +428,8 @@
       "project",
       "execute",
       "contract_seed"
-    ]
+    ],
+    "acceptance_class": "mixed"
   },
   {
     "id": "EXE-20260913-FEEDBACK-001",
@@ -573,5 +575,48 @@
       "contract-2"
     ],
     "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-FEEDBACK-REMOTE",
+    "type": "evidence",
+    "name": "Fresh private tag clone, installation and asset verification",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-FEEDBACK-001/remote-verification.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-005",
+      "REL-20260913-FEEDBACK-006"
+    ],
+    "unknowns": [
+      "Runtime capability, real-project improvement and human design acceptance unverified"
+    ],
+    "tags": [
+      "private",
+      "contract_seed",
+      "seed-maintenance"
+    ]
+  },
+  {
+    "id": "HARNESS-RELEASE-0.2.0",
+    "type": "release",
+    "name": "Published private contract seed v0.2.0",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-FEEDBACK-REMOTE",
+      "HARNESS-CHANGE-20260913-004",
+      "seed-manifest.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-006"
+    ],
+    "unknowns": [
+      "Runtime capability, real-project improvement and human design acceptance unverified"
+    ],
+    "tags": [
+      "private",
+      "contract_seed",
+      "seed-maintenance"
+    ]
   }
 ]
