@@ -2,7 +2,7 @@
 
 - 상태: seed baseline design; 사용자 목표는 확인됨. 아키텍처 전 기능의 구현·검증·인간 수락 선언은 아님.
 - 기준: [REQ-HARNESS-VISION-001과 G01–G17](../requirements/HARNESS-GOALS.md)
-- 이번 산출물: contract seed v0.1.0. V2/V3/V4와 배포 SemVer를 구분한다.
+- 이번 산출물: contract seed v0.2.0 / contract 2. V2/V3/V4와 배포 SemVer를 구분한다.
 - 범위: 공통 seed 설계, 최초 project 검증. 여러 프로젝트·도메인에서 검증된 core 승격으로 표현하지 않는다.
 - 하위 문서: [RFC-0001 CLI 제품 계약](RFC-0001-evolutionary-harness-cli.md). 그 문서의 DB·단일 writer·명령 이름은 후속 제안이며 이번 씨앗의 필수 구현이 아니다.
 
@@ -122,7 +122,7 @@ Canary 계획에는 대상과 제외 이유, baseline, 기간/작업 수, 신뢰
 
 ## 11. 버전·재시도·복구의 씨앗 범위
 
-배포 SemVer와 contract_version, V2/V3/V4 capability level을 분리한다. 최초 v0.1.0의 contract_version은 1이며 자동 강제 능력은 없다. unsupported manifest/version은 복사 전에 거부한다.
+배포 SemVer와 contract_version, V2/V3/V4 capability level을 분리한다. 현행 v0.2.0의 contract_version은 2이며 자동 강제 능력은 없다. unsupported manifest/version은 복사 전에 거부한다.
 
 init는 전체 사전 점검 후 allowlist 파일만 신규 생성한다. 기존 대상 파일은 덮지 않는다. 같은 요청은 설치 영수증과 원본 파일 해시가 모두 일치할 때만 no-op이다. 부분 설치나 이후 프로젝트 변경은 conflict로 표시하고 재설치로 지우지 않는다. dry-run은 쓰기를 하지 않는다. 복사 중 OS 장애는 부분 상태로 명시하며 디렉터리 전체를 삭제하는 자동 rollback은 제공하지 않는다.
 
@@ -142,3 +142,46 @@ V3/V4의 자동 실행은 나중에 구현하지만 관련 레코드의 ID·scop
 ## 13. 인터뷰와 남은 선택
 
 이미 명시된 목표와 private 배포 권한은 재질문하지 않는다. 대상 프로젝트의 원본 권위·필수 검사·도메인·기존 AGENTS 충돌은 bootstrap 때 필요한 범위만 묻는다. 실제 runtime DB, wiki 구현, 자동 승격 범위, Canary 수치·기간은 후속 구현 시 결정하며 이번 씨앗이 임의로 확정하지 않는다.
+
+## 14. 목표와 운영 계약의 연결
+
+상위 설계의 원칙을 실행 시 판단 가능한 의무로 구체화한 규범 원본은 `seed/docs/harness/contracts/`다. 이 RFC는 책임·구조를 정의하고 세부 조항을 연결한다. RFC-0001의 명령/저장 구현 제안은 이 구조와 호환되어야 한다. 문서끼리 충돌하면 임의의 최신 문장을 선택하지 말고 사용자 목표·원본 권위에 따라 Decision으로 해소한다.
+
+| 보완 영역 | 구체화한 계약 | 연결 목표 |
+|---|---|---|
+| 전체 위키 객체 표면 | 수동/생성 필드 소유권, 상태의 이유·버전·접근 가능한 표시, 객체 행동 입력 | G01/G04: V01–V02 |
+| 파생 상태·관계·컨텍스트 | 결정적 입력 묶음, 실패/진행 중 시도, 테스트 정의와 Run 분리, 관계 불확실성, 재개 시 최신성 | G02–G07/G15: V03–V05 |
+| 증거와 실행의 소유권 | dirty/data/tool/skill 버전, 단일 writer, 부분 쓰기, 증거 보존과 경로 경계 | G02/G10/G12: X01 |
+| 행동 권한·블랙박스 | actor/target/effect 계약, 승인 범위, 정책 집행 수준, tool/skill 교체 검증 | G06/G11–G13/G16: X02–X03 |
+| 재시도·복구 | logical operation key와 payload, 불명 효과, bounded retry, 이후 기록을 보존하는 복구 | G05/G12/G17: X04–X05 |
+| 오류·스킬 피드백 | 작업 경계 검토, 사용 단계·소유권·의존 파일 digest, 분류·후보 중복 방지 | G06/G10/G14/G15: F01–F04 |
+| 상향 전송과 씨앗 반영 | 최소 공유 묶음, exact export 권한, 제출/승격 분리, 원 프로젝트 효과 관측 | G10/G14: F05–F07 |
+| 계층과 버전 | pin된 effective overlay, 확장 충돌, 읽기 호환, reviewed migration | G08/G14: E01/E05 |
+| 평가·승격·단순화 | frozen grader와 반례, 독립성, 신뢰 하한, 복잡도 비용, 유지보수와 경험적 승격 구분 | G09–G12/G15/G17: E02–E03 |
+| 하향 배포와 능력 주장 | 사전 canary 중단 조건, 회수 실패, 인간 수락, 문서/구현/관측 능력 구분 | G10/G12/G14/G16/G17: E04–E06 |
+
+표는 영역 탐색용이다. 정확한 G01–G17의 개별 연결과 수락 시나리오는 [coverage.json](../../seed/docs/harness/contracts/coverage.json)에 둔다. 모든 23개 세부 조항이 적어도 한 목표에 연결된다. `scripts/check_contracts.py`는 연결·배포 기본값만 검사하며 시나리오의 실행 결과를 만들지 않는다. 모든 runtime 시나리오는 현재 planned_not_executed다.
+
+- [객체·파생 상태·관계·컨텍스트 V01–V05](../../seed/docs/harness/contracts/views-state.md)
+- [실행·권한·증거·복구 X01–X05](../../seed/docs/harness/contracts/execution.md)
+- [자가피드백·스킬 F01–F07](../../seed/docs/harness/contracts/feedback.md)
+- [호환·평가·승격·하향 전파 E01–E06](../../seed/docs/harness/contracts/evolution.md)
+
+## 15. 닫힌 자가피드백 루프와 기본값
+
+```text
+Project error fix / skill observation
+ → bounded task-boundary review → classify / no_candidate
+ → stable candidate + baseline/candidate eval
+ → exact authorized sanitized submission
+ → upstream intake → scoped decision → immutable seed release
+ → pinned Project → compatibility / recovery / canary where applicable
+ → explicit adoption → observe original failure and cost again
+ → linked follow-up / regression / rollback candidate
+```
+
+절차와 대안 비교는 [RFC-0003](RFC-0003-feedback-common-contract.md)에 정의한다. 후보를 받아 두는 것과 배포 seed를 바꾸는 것은 별도 행동이다. submit, export, merge, release, adopt의 권한을 분리하며 새 프로젝트의 설정에는 어떤 외부 권한도 상속하지 않는다. private 저장소 접근 가능성만으로 다른 프로젝트의 자료를 전송하지 않는다.
+
+자동 hook이 없는 씨앗에서는 AGENTS의 작업 종료 의무와 사람이 실행 가능한 기록 절차로 시작한다. 스킬은 그 방법을 도울 수 있지만 호출 여부를 보장하는 실행 엔진이 아니다. 실제 hook/collector/submitter는 후속 V2/V3 기능이다. 이미 승인된 로컬 개선과 후보 준비는 불필요한 인터뷰 없이 진행하며, 필요한 외부 경계가 미정일 때만 묻는다.
+
+이번 contract 2는 사용자가 요청한 설계 공백의 유지보수 릴리스다. 교차 도메인 운영에서 검증된 Core 승격이나 성능 최적화 완료로 주장하지 않는다. 모든 목표에 계약과 수락 시나리오를 연결했지만, 알려지지 않은 운영 failure mode까지 완전히 열거했다는 주장은 하지 않는다.

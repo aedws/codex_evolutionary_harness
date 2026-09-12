@@ -1,0 +1,25 @@
+test_all_goals_and_clauses_resolve_without_runtime_claim (test_contracts.ContractDistributionTests.test_all_goals_and_clauses_resolve_without_runtime_claim) ... ok
+test_dangling_clause_rejected (test_contracts.ContractDistributionTests.test_dangling_clause_rejected) ... ok
+test_duplicate_goal_rejected (test_contracts.ContractDistributionTests.test_duplicate_goal_rejected) ... ok
+test_fake_runtime_verification_rejected (test_contracts.ContractDistributionTests.test_fake_runtime_verification_rejected) ... ok
+test_inherited_submission_authority_rejected (test_contracts.ContractDistributionTests.test_inherited_submission_authority_rejected) ... ok
+test_missing_goal_rejected (test_contracts.ContractDistributionTests.test_missing_goal_rejected) ... ok
+test_origin_evidence_not_shipped_in_example (test_contracts.ContractDistributionTests.test_origin_evidence_not_shipped_in_example) ... ok
+test_changed_project_records_are_not_reinstalled (test_seed.SeedTests.test_changed_project_records_are_not_reinstalled) ... ok
+test_conflict_checks_all_files_before_writing (test_seed.SeedTests.test_conflict_checks_all_files_before_writing) ... ok
+test_dry_run_does_not_create_target (test_seed.SeedTests.test_dry_run_does_not_create_target) ... ok
+test_install_preserves_unrelated_file_and_replay_is_noop (test_seed.SeedTests.test_install_preserves_unrelated_file_and_replay_is_noop) ... ok
+test_installation_inside_distributor_is_rejected (test_seed.SeedTests.test_installation_inside_distributor_is_rejected) ... ok
+test_non_directory_ancestor_does_not_write (test_seed.SeedTests.test_non_directory_ancestor_does_not_write) ... ok
+test_partial_write_remains_visible_and_retry_is_blocked (test_seed.SeedTests.test_partial_write_remains_visible_and_retry_is_blocked) ... ok
+test_pending_installation_blocks_competing_writer (test_seed.SeedTests.test_pending_installation_blocks_competing_writer) ... ok
+test_receipt_mismatch_cannot_overwrite_installation (test_seed.SeedTests.test_receipt_mismatch_cannot_overwrite_installation) ... ok
+test_reparse_point_is_rejected_before_writing (test_seed.SeedTests.test_reparse_point_is_rejected_before_writing) ... ok
+test_seed_is_clean_and_archive_contains_only_seed_and_receipt (test_seed.SeedTests.test_seed_is_clean_and_archive_contains_only_seed_and_receipt) ... ok
+test_source_tamper_and_unsupported_manifest_are_rejected (test_seed.SeedTests.test_source_tamper_and_unsupported_manifest_are_rejected) ... ok
+test_unsafe_paths_are_rejected (test_seed.SeedTests.test_unsafe_paths_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.510s
+
+OK

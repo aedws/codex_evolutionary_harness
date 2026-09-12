@@ -1,0 +1,95 @@
+{
+  "evidence_id": "EVD-20260913-FEEDBACK-VALIDATION",
+  "execution_id": "EXE-20260913-FEEDBACK-001",
+  "task_id": "TASK-20260913-FEEDBACK-001",
+  "producer": "local Python subprocess tests and structural inspection",
+  "created_at": "2026-09-12T17:57:21.731561+00:00",
+  "baseline_commit": "8612026c3b5bea078f6c4fbd3467dd482633769f",
+  "target_snapshot": {
+    ".github/PULL_REQUEST_TEMPLATE/feedback.md": "cec4315d16dc721fff430b30201cc34413f587b0faa1835530b2ba74a7113ad3",
+    "AGENTS.md": "23a52c5d7e3a091e04e14b4c6974ef14e29ac99ccc3dbaadf572693ac5f63d97",
+    "docs/requirements/HARNESS-GOALS.md": "4143bee4adbded0241c09d61dee8069354549ac2872586c566404eb95e62f8c5",
+    "docs/REUSE.md": "da8c29dbd8f9a415ebba42b51bb56133c8d0aeb4c015dd2f982dc4b7b0c47a99",
+    "docs/rfcs/RFC-0001-evolutionary-harness-cli.md": "d1872f898355c0b0e8c4cf43aa0b1eb80ab08235b00e9ab3ab0858b8045f9d40",
+    "docs/rfcs/RFC-0002-hierarchical-evolutionary-architecture.md": "48e38f6972e9c9e7d39bde95f5699aa9192defdebfa603becd8b03afb0841431",
+    "docs/rfcs/RFC-0003-feedback-common-contract.md": "b06cfcae6830400e757428f1eff4087f66476309dac470af81556868487123fa",
+    "proposals/README.md": "85ec9827421ad187b36d3dcd119db495a5e1277b944c09e39e49a247b834e903",
+    "README.md": "8a63dcd14c804dad310f86515d5e3ed13ff4691c1a528e044cdb94c6f0a70282",
+    "scripts/check_contracts.py": "72cd1d3a4d417293d30731212e9d73158a063e8b098ab38a5cf1462816c05981",
+    "scripts/seed.py": "301c23eb82770769b9bba269bc85c4e168865e7a33f13ce166a97743cab13b9a",
+    "seed/AGENTS.md": "2e21701d213ab95b52e8f9f0244d0977731f81e5d0407474a28c7c1a5c7988fb",
+    "seed/BOOTSTRAP_PROMPT.md": "91c8b2eb507d8969c3ed1cfc92d7a212080c1478a1e06ab61e17f90974486c82",
+    "seed/docs/harness/checkpoint.md": "ac41715825b1e2533f80879fc3052203a3dcb046b3ecb048a536efae85db2bb6",
+    "seed/docs/harness/contract.md": "1148035acc1e68a3454f7f4ef326f2e5fcbcc23464a2ef2d06574f4e4002e5dc",
+    "seed/docs/harness/contracts/coverage.json": "b90f4471c7d9869f30a3f0086f319b56385cebacf5b2dc194a7b04306148b7c7",
+    "seed/docs/harness/contracts/evolution.md": "ab755237f31cfcbdd3c0e1758d1b351f990a17840d5a416b06fbcdba7fc254c3",
+    "seed/docs/harness/contracts/execution.md": "7af75f5d1e2d0c32e3e361f2e29299d79ce42fe1aa438c745307c9c144133791",
+    "seed/docs/harness/contracts/feedback.md": "524bb469871b1c64bb7fd3722e18a227c8af4f7cca851844f6ec66befa2bbade",
+    "seed/docs/harness/contracts/README.md": "0bbf57f1ef540eb19e1605ef9ab7a59a97a27dba2bcc1af1ae1e42cbba47178a",
+    "seed/docs/harness/contracts/views-state.md": "13297e6c7e8cf71f1dd1ec719eda959884df02c085fa2b9011f40452cd5fbecd",
+    "seed/docs/harness/events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "seed/docs/harness/evidence/README.md": "553c59c3fc25c21ed40880986e28dc4138e9e654d3d021d424143221d7309853",
+    "seed/docs/harness/feedback/config.json": "a15ef8d9678ec6fc052d376013d002dd2c4bb5370fbb4d160a05f2da6d03845e",
+    "seed/docs/harness/objects.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "seed/docs/harness/overlays/project.json": "e0bcbd87a78822c20c6f9626b7162fe7c4c7e253042b9738603d6fa04641f550",
+    "seed/docs/harness/policy.md": "eaae6c0adf009ffab16e140f9a847c393f9f4e0a31c2db8a10ea95b155fdae87",
+    "seed/docs/harness/README.md": "57c19ef803045989ac3230b720883e3cd243bd9508ba11133f663a2503ba181b",
+    "seed/docs/harness/relations.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "seed/docs/harness/releases/current-harness.json": "4555c06c2cdbc4b69a37441f33a28cc1ccf3e97f723a2e72c4eee183d16e552a",
+    "seed/docs/harness/source-authority.md": "f7802006da285fc1e7263bd4264b60c0787e458a8756643801820945e189cdb7",
+    "seed/docs/harness/templates/feedback-candidate.example.json": "b01a9c99dd94ca2ed6c5b2cb9ab0fa771f45404037b94ce17e354c3365a786bf",
+    "seed/docs/harness/templates/README.md": "8fa3c457c01222640ee8e1b61b29d5555e8f41bb665ce51cd54b606f186047a7",
+    "seed/docs/harness/templates/skill-observation.example.json": "f386ace374bdb1bd0a2864e0e89a96d1c9e35edbfb60532f08b609716001da46",
+    "seed-manifest.json": "96ef8e1e036af8450c153b124b05401f1b9ea825460e429e728543d4a5b8655c",
+    "tests/test_contracts.py": "e4ee3cb54a8a2618c2896f6850392edccc3fe017d391926f67f5e4d354ab8c9f",
+    "tests/test_seed.py": "f58ea1797ce6f7a5d699b37aaa7ff8e2cab74d2f8c0854afc143c358e500bf81"
+  },
+  "environment": {
+    "python": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "commands": [
+    {
+      "command": "python -B scripts/seed.py check",
+      "exit_code": 0,
+      "output": "docs/harness/evidence/EXE-20260913-FEEDBACK-001/payload.txt",
+      "sha256": "ce5463e4a2f4c230ca7963b4863fcfa8c9e3947956443e74f8bdc3f2121fcfdf"
+    },
+    {
+      "command": "python -B scripts/check_contracts.py",
+      "exit_code": 0,
+      "output": "docs/harness/evidence/EXE-20260913-FEEDBACK-001/coverage.txt",
+      "sha256": "c98db2e62a2ad615f69771f0a76b36d068ddfdcb9c0599efc58c5886f5edd489"
+    },
+    {
+      "command": "python -B -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "output": "docs/harness/evidence/EXE-20260913-FEEDBACK-001/tests.txt",
+      "sha256": "b9d0d468aeb5a0f80028178f73d421aaa920b7440261fd8bf8b6ba8991012793"
+    },
+    {
+      "command": "python -B scripts/seed.py pack --out dist/evolutionary-harness-seed-0.2.0.zip",
+      "exit_code": 0,
+      "output": "docs/harness/evidence/EXE-20260913-FEEDBACK-001/archive.txt",
+      "sha256": "a343e9047089935fdf78deac4a0ad276cc7ce3c5dc7170802d2796e0b2326c57"
+    }
+  ],
+  "result": "pass",
+  "tests_passed": 20,
+  "goals": 17,
+  "clauses": 23,
+  "seed_files": 23,
+  "document_links_checked": 81,
+  "historical_evidence_files_preserved": 23,
+  "zip_sha256": "4d148ce18eb328cf9d4ea14654c1ce03744a3e95d95acf318d96055a79407a84",
+  "acceptance_class": "mixed",
+  "inspection_attempts": [
+    "docs/harness/evidence/EXE-20260913-FEEDBACK-001/inspection-attempt1.json"
+  ],
+  "limitations": [
+    "Structural coverage is not semantic completeness or runtime verification",
+    "No policy engine/reducer/feedback collector/submitter/canary/rollback controller implemented",
+    "No real project improvement metrics or independent cross-domain eval",
+    "Subjective design acceptance remains pending human judgment"
+  ]
+}

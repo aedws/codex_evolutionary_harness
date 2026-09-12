@@ -70,6 +70,8 @@ Do not immediately rewrite the harness. When evidence is sufficient, create a `H
 All harness changes declare scope: `execution-local`, `project`, `domain`, or `core`.
 Higher-scope promotion requires broader evidence.
 
+At the boundary of an authorized mutable task, review relevant errors, corrections and skill use/change once against `seed/docs/harness/contracts/feedback.md`. Reuse existing evidence; record a justified candidate or `no_candidate`. Query/analysis stay read-only. Local preparation, export, submission, merge, release and adoption have distinct authority boundaries. This repository's distribution authorization does not transfer to projects using the seed.
+
 ## Stability Anchors
 Do not automatically rewrite/delete historical evidence, disable event/audit history, change root source authority, expand destructive capabilities or credential scope, remove rollback, weaken eval integrity, or redefine human-verifiable acceptance as machine-verifiable.
 

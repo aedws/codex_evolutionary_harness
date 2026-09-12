@@ -6,7 +6,7 @@
 
 ```powershell
 gh repo clone aedws/codex_evolutionary_harness C:/tools/evolutionary-harness
-git -C C:/tools/evolutionary-harness checkout v0.1.0
+git -C C:/tools/evolutionary-harness checkout v0.2.0
 python C:/tools/evolutionary-harness/scripts/seed.py check
 python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project --dry-run
 python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/my-project
@@ -27,8 +27,8 @@ python C:/tools/evolutionary-harness/scripts/seed.py init --target C:/projects/m
 ## 3. ZIP 대안
 
 ```powershell
-gh release download v0.1.0 --repo aedws/codex_evolutionary_harness --pattern 'evolutionary-harness-seed-0.1.0.zip' --pattern 'SHA256SUMS.txt' --dir C:/downloads/harness-seed
-Get-FileHash C:/downloads/harness-seed/evolutionary-harness-seed-0.1.0.zip -Algorithm SHA256
+gh release download v0.2.0 --repo aedws/codex_evolutionary_harness --pattern 'evolutionary-harness-seed-0.2.0.zip' --pattern 'SHA256SUMS.txt' --dir C:/downloads/harness-seed
+Get-FileHash C:/downloads/harness-seed/evolutionary-harness-seed-0.2.0.zip -Algorithm SHA256
 ```
 
 출력 hash를 SHA256SUMS.txt와 비교한다. ZIP에는 seed payload와 설치 영수증만 들어 있다. 새 빈 디렉터리에만 푼다. 기존 프로젝트 위로 압축을 풀면 압축 프로그램의 덮어쓰기 동작이 적용되므로 안전한 init를 대신하지 못한다. 일반 GitHub 소스 ZIP은 개발 기록을 포함하므로 seed 전용 자산과 구분한다.
@@ -55,3 +55,13 @@ CLI 출력은 JSON이며 인자 파싱 오류는 argparse의 표준 usage/exit 2
 적용 전 입력 snapshot, 현재 seed/overlay versions, 변경 계획, 검사·rollback 범위를 기록한다. 계약 호환과 필요한 검사를 확인한 뒤 명시적으로 적용한다. 실제 controller가 없는 현재는 수동 계획·기록 단계다. 자동 migration이나 Canary가 실행됐다고 주장하지 않는다.
 
 되돌리기는 이전 계약과 현재 기록의 호환성을 확인한 뒤 수행한다. 설치 이후의 증거·이벤트를 과거 snapshot으로 덮어 없애지 않는다. 호환되지 않으면 pin/blocked로 유지하고 forward repair를 계획한다.
+
+## 6. v0.1.0 / contract 1에서 v0.2.0 / contract 2로
+
+contract 2는 작업 경계의 자가피드백 검토와 세부 운영 의무를 추가한다. 원본 v0.1.0 태그는 유지한다. 새 설치 도구는 두 manifest contract 번호를 읽지만, 이것은 기존 프로젝트의 의미 호환이나 자동 업그레이드를 증명하지 않는다.
+
+새 버전을 별도 빈 경로에 설치하여 `AGENTS.md`, `BOOTSTRAP_PROMPT.md`, `contract.md`, `contracts/` 변경을 검토한다. 프로젝트가 소유한 객체·이벤트·증거·checkpoint·스킬·overlay와 기존 결정은 보존한다. `feedback/config.json`은 외부 권한 없이 추가하고 필요한 프로젝트 정보만 출처와 함께 설정한다. `templates/` 예제를 실제 사건이나 실행 증거로 등록하지 않는다.
+
+공통 파일의 검토된 diff만 적용하고 overlay의 base contract 변경은 호환성 판단 뒤 기록한다. 기존 설치 영수증은 과거 설치 사실로 보존하며 migration 영수증에 이전/새 원본 manifest, 적용 diff·결정·검사·복구 범위를 남긴다. 새 원본을 그대로 설치했다는 영수증으로 수동 병합을 가장하지 않는다. 전역 스킬 설치·캐시 수정·프로젝트 간 데이터 공유 권한을 이관하지 않는다.
+
+자가피드백 첫 사용에서는 상향 제출 대상, 제출/공유 권한, 로컬 평가 예산 중 필요한 미확정 항목만 인터뷰한다. 설정이 없어도 승인된 로컬 작업과 후보 준비는 계속할 수 있다. 자동 PR, 자동 merge, scheduler, canary, rollback controller는 제공하지 않는다.

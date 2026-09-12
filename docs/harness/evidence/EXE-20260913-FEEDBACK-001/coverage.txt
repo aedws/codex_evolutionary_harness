@@ -1,0 +1,1 @@
+{"result": "pass", "goals": 17, "clauses": 23, "links": 16, "scope": "structural coverage and safe distribution defaults; not runtime goal verification"}

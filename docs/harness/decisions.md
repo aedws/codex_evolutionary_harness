@@ -26,3 +26,13 @@ Each decision should include: Decision ID, Status, Context, Decision, Alternativ
 - Evidence: EVD-20260913-SEED-BASELINE, EVD-20260913-SEED-VALIDATION.
 - Supersedes: no historical evidence. RFC-0001 remains a subordinate proposal; DEC-20260913-CLI-001 is not adopted as a required DB implementation.
 - Effective version: seed contract version 1 / distribution 0.1.0.
+
+## DEC-20260913-FEEDBACK-001 — Complete contracts before runtime automation
+
+- Status: authorized seed maintenance; subjective design acceptance and empirical generality unverified.
+- Context/authority: user requested completion of self-feedback common contracts and missing upper-design contracts; prior private distribution scope persists.
+- Decision: release contract 2 / distribution 0.2.0 with bounded feedback review, skill provenance/ownership, local-only upstream defaults, operational state/policy/recovery/evolution clauses and 17-goal traceability. Keep controllers unimplemented and runtime capability lists empty.
+- Alternatives: principles only; immediate automatic submission/promotion. RFC-0003 compares costs and goal fit; no benchmark superiority claimed.
+- Evidence: EVD-20260913-FEEDBACK-BASELINE; local validation and remote publication evidence are recorded separately when observed.
+- Scope: project seed-maintenance baseline; no cross-domain-proven promotion and no root authority/stability-anchor weakening.
+- Supersedes: contract-1 distribution default for new users only. Old tags, evidence and installed projects remain intact.

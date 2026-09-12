@@ -159,5 +159,53 @@
       "EVD-20260913-SEED-REMOTE"
     ],
     "observed_at": "2026-09-12T17:37:39.538581+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-FEEDBACK-001",
+    "from": "TASK-20260913-FEEDBACK-001",
+    "to": "EXE-20260913-FEEDBACK-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_code",
+    "source_refs": [
+      "EVD-20260913-FEEDBACK-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T17:59:11.178775+00:00",
+    "applicable_snapshot": "96ef8e1e036af8450c153b124b05401f1b9ea825460e429e728543d4a5b8655c"
+  },
+  {
+    "relation_id": "REL-20260913-FEEDBACK-002",
+    "from": "TASK-20260913-FEEDBACK-001",
+    "to": "EVD-20260913-FEEDBACK-VALIDATION",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-FEEDBACK-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T17:59:11.178775+00:00",
+    "applicable_snapshot": "96ef8e1e036af8450c153b124b05401f1b9ea825460e429e728543d4a5b8655c"
+  },
+  {
+    "relation_id": "REL-20260913-FEEDBACK-003",
+    "from": "HARNESS-CHANGE-20260913-004",
+    "to": "HARNESS-REQ-20260913-004",
+    "type": "addresses",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "EVD-20260913-FEEDBACK-VALIDATION"
+    ],
+    "observed_at": "2026-09-12T17:59:11.178775+00:00",
+    "applicable_snapshot": "96ef8e1e036af8450c153b124b05401f1b9ea825460e429e728543d4a5b8655c"
+  },
+  {
+    "relation_id": "REL-20260913-FEEDBACK-004",
+    "from": "HARNESS-CHANGE-20260913-004",
+    "to": "DEC-20260913-FEEDBACK-001",
+    "type": "authorized_by",
+    "basis": "confirmed_by_user",
+    "source_refs": [
+      "user:self-feedback-and-architecture-contracts"
+    ],
+    "observed_at": "2026-09-12T17:59:11.178775+00:00",
+    "applicable_snapshot": "96ef8e1e036af8450c153b124b05401f1b9ea825460e429e728543d4a5b8655c"
   }
 ]

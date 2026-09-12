@@ -13,6 +13,10 @@ Modes: query/analysis inspect without repository mutation; plan may register aut
 
 For mutable work: establish stable Task ID and new Execution ID, inspect evidence/relations, preserve unrelated files, define machine/human/mixed acceptance, make the scoped change, run sufficient checks, record version-bound evidence, append material events, derive claims and update the checkpoint.
 
+At the end of authorized mutable work, review error fixes, material skill use/failure/addition/change, repeated friction and user corrections under `docs/harness/contracts/feedback.md`. Reuse existing evidence; record a candidate, a linked duplicate, a deferral or a concise no_candidate reason. Query/analysis remain read-only. Consult only relevant clauses through `docs/harness/contracts/README.md`.
+
+Feedback is local by default. `docs/harness/feedback/config.json` separates export/submit/merge/release/adopt authority. Origin information in the seed receipt grants no upstream write permission. Never automatically edit shared seed contracts, global/third-party skills or ship raw project data. A candidate may be submitted before broad generality is proven, but adoption/promotion needs its scoped gates.
+
 Treat unknown, unverified, stale, conflicted and blocked as normal. Test source existence is not a passed TestRun. A release file is not deployment evidence. Human-verifiable acceptance requires an explicit human decision.
 
 Do not expand external permissions. Commit/push/merge, deployment, destructive writes, public publishing, paid resources, credential changes and external deletion require explicit authorization unless already granted for this task. Preserve that authorization across turns. For ambiguous side effects, inspect actual state before retrying; retain one logical operation key.

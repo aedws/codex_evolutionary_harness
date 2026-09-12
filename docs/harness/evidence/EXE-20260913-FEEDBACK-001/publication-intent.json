@@ -1,0 +1,31 @@
+{
+  "evidence_id": "EVD-20260913-FEEDBACK-PUBLISH-INTENT",
+  "execution_id": "EXE-20260913-FEEDBACK-001",
+  "created_at": "2026-09-12T17:59:11.178775+00:00",
+  "authority_ref": "user:private-github-seed-distribution-and-contract-completion",
+  "destination": "aedws/codex_evolutionary_harness",
+  "visibility_observed": "private",
+  "target_tag": "v0.2.0",
+  "expected_previous_main": "8612026c3b5bea078f6c4fbd3467dd482633769f",
+  "manifest_sha256": "96ef8e1e036af8450c153b124b05401f1b9ea825460e429e728543d4a5b8655c",
+  "zip_sha256": "4d148ce18eb328cf9d4ea14654c1ce03744a3e95d95acf318d96055a79407a84",
+  "release_notes_sha256": "641cad8636ac65c8ce8b991e6f91bfb93423b6ef222cf9e9375f796a41a1a626",
+  "operations": [
+    {
+      "key": "seed-v0.2.0-source-push",
+      "phase": "prepared",
+      "recovery": "Inspect remote refs; do not force or move an existing tag."
+    },
+    {
+      "key": "seed-v0.2.0-private-prerelease",
+      "phase": "prepared",
+      "recovery": "Read existing tag release and asset digests before retry; conflict if content differs."
+    }
+  ],
+  "limits": [
+    "No other-project upstream submissions or messages",
+    "No public publishing",
+    "No tag replacement",
+    "No runtime capability promotion"
+  ]
+}

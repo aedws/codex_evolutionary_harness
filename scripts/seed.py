@@ -52,7 +52,7 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     no_links(manifest_path)
     raw = manifest_path.read_bytes()
     manifest = json.loads(raw)
-    if manifest.get("schema_version") != 1 or manifest.get("contract_version") != 1:
+    if manifest.get("schema_version") != 1 or manifest.get("contract_version") not in (1, 2):
         raise SeedError(2, "Unsupported seed manifest/contract version; use a compatible distributor")
     files = manifest.get("files")
     if not isinstance(files, dict) or not files:
@@ -83,11 +83,11 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
         raise SeedError(2, "Seed must not contain project events")
     release = json.loads(payload["docs/harness/releases/current-harness.json"])
     if (release.get("distribution_version") != manifest.get("distribution_version")
-            or release.get("contract_version") != 1 or release.get("capability_level") != "seed"
+            or release.get("contract_version") != manifest["contract_version"] or release.get("capability_level") != "seed"
             or release.get("verified_capabilities") != [] or release.get("automated_enforcement") != []):
         raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
-               "contract_version": 1, "source_repository": manifest["source_repository"],
+               "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}
     return manifest, payload, receipt
 

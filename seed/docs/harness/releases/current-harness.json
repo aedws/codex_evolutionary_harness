@@ -1,12 +1,25 @@
 {
   "harness_name": "Evolutionary Harness",
-  "distribution_version": "0.1.0",
-  "contract_version": 1,
+  "distribution_version": "0.2.0",
+  "contract_version": 2,
   "distribution_kind": "contract_seed",
   "capability_level": "seed",
   "target_capability_level": "v4",
   "verified_capabilities": [],
   "automated_enforcement": [],
-  "declared_principles": ["oop_view_dop_setup", "evidence_first", "overlay_specialization", "evaluated_promotion", "compatible_canary_rollout", "human_judgment_boundary"],
-  "limitations": ["No automatic state reducer, policy engine, wiki UI, sandbox evaluator or rollout controller is supplied."]
+  "declared_principles": [
+    "oop_view_dop_setup",
+    "evidence_first",
+    "overlay_specialization",
+    "evaluated_promotion",
+    "compatible_canary_rollout",
+    "human_judgment_boundary",
+    "task_boundary_feedback",
+    "skill_provenance_and_ownership",
+    "scoped_upstream_submission",
+    "traceable_contract_coverage"
+  ],
+  "limitations": [
+    "No automatic state reducer, policy engine, wiki UI, sandbox evaluator or rollout controller is supplied."
+  ]
 }

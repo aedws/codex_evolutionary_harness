@@ -1,35 +1,29 @@
 # Checkpoint
 
-Projection only; consult the linked evidence and event history.
+Projection only; consult evidence and event history.
 
 ## Current Work
-- Task: TASK-20260913-SEED-001
-- Execution: EXE-20260913-SEED-001
-- Authorized: goal/architecture documentation, minimal reusable seed, local tests and private GitHub distribution.
-- Scope delivered: contract seed v0.1.0; full eh runtime is not part of this implementation.
-- Release: https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.1.0 (private prerelease).
+- Task: TASK-20260913-FEEDBACK-001; Execution: EXE-20260913-FEEDBACK-001.
+- Scope: user-authorized feedback and upper-architecture contract completion; private contract seed v0.2.0 / contract 2.
 
 ## Verified
-- EVD-20260913-SEED-VALIDATION: 13 local tests passed; 13 seed files checked; clean archive and historical evidence preservation checked.
-- REQ-HARNESS-VISION-001 records the user-confirmed goal and all 17 principles. RFC-0002 defines upper architecture; RFC-0001 remains a lower-level proposal.
-
-- EVD-20260913-SEED-REMOTE: private repository/release verified; fresh tagged clone passes 13 tests, dry-run/install/no-op; downloaded asset digest matches.
-- Tested release commit: db0a0e2924723f4f9544292b64a44726d038c58b
+- EVD-20260913-FEEDBACK-VALIDATION: 20 tests passed; 23 clean seed files; 17 goals linked to 23 clauses; 81 documentation file links checked; 23 prior evidence files preserved byte-for-byte.
+- Upper RFC and detailed clauses cross-checked; design reasoning is not independent runtime evidence.
 
 ## Unverified / Stale
-- V2/V3/V4 engines, automatic policy enforcement, wiki UI, actual canary/rollback orchestration and subjective architecture quality are unverified.
-- Earlier audit evidence retains its original versions; it does not verify changed documents.
+- Policy/reducer/collector/submitter/canary/rollback engines, actual project improvement, cross-domain generality and human design acceptance remain unverified.
+- Prior v0.1.0 evidence retains its original version scope.
 
-## Blocked / Conflicted
-- Prior CONFLICT-20260913-001 remains historically visible. Its unsupported active v2 verified declaration has been replaced with an explicit contract_seed manifest with no verified runtime capabilities.
-- No blocker to private seed distribution has been observed.
+## Blocked / Conflicts
+- No observed blocker to private release. Publication is prepared, not yet observed for v0.2.0.
 
-## Human Decisions
-- User authorized private GitHub distribution of a minimal seed.
-- Runtime database, full CLI, wiki UI and automatic promotion policy details remain future design choices.
+## Evidence / Events
+- EVD-20260913-FEEDBACK-BASELINE, EVD-20260913-FEEDBACK-VALIDATION, EVD-20260913-FEEDBACK-PUBLISH-INTENT.
+- EVT-20260913-FEEDBACK-001 through 003 record start, local validation and release intent.
 
-## Harness Friction
-- HARNESS-REQ-20260913-003: user corrected CLI-centric framing; upper architecture and full OOP View reference are now explicit. No cross-domain promotion claimed.
+## Harness Friction / Improvement
+- HARNESS-REQ-20260913-004: user-identified missing feedback/skill/operational clauses addressed as seed maintenance; broader outcome validation deferred.
+- Additional link-inspection script initially misread a Windows :line suffix; inspection recovery recorded. No common-contract candidate justified by this single tooling mistake.
 
 ## Next Allowed Action
-- Reuse pinned v0.1.0 with docs/REUSE.md in a user-selected project; interview only for missing project facts or genuine instruction conflicts. Future engine implementation requires its own scope.
+- Publish immutable private v0.2.0; verify from a fresh tag clone and downloaded seed assets, then record observed outcomes. No unrelated project submission is authorized by the seed.

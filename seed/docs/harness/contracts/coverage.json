@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "contract_version": 2,
+  "coverage_kind": "documented_contract",
+  "runtime_status": "unverified",
+  "goals": [
+    {
+      "goal_id": "G01",
+      "clauses": [
+        {
+          "id": "V01",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V02",
+          "path": "views-state.md"
+        }
+      ],
+      "acceptance_scenario": "A wiki task view shows purpose, evidence links and next action without making its label authoritative.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G02",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "X01",
+          "path": "execution.md"
+        }
+      ],
+      "acceptance_scenario": "An agent says done without an applicable TestRun: verification remains unverified.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G03",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        }
+      ],
+      "acceptance_scenario": "An old pass for different data cannot verify the current snapshot.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G04",
+      "clauses": [
+        {
+          "id": "V02",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        }
+      ],
+      "acceptance_scenario": "Editing an object status or wiki sentence cannot create a passing TestRun.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G05",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "X04",
+          "path": "execution.md"
+        }
+      ],
+      "acceptance_scenario": "Conflicting results and unobservable remote effects stay conflicted/unknown.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G06",
+      "clauses": [
+        {
+          "id": "X03",
+          "path": "execution.md"
+        },
+        {
+          "id": "F03",
+          "path": "feedback.md"
+        }
+      ],
+      "acceptance_scenario": "Replace a skill/tool and recheck its input/output/failure boundary before trusting outcomes.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G07",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V04",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V05",
+          "path": "views-state.md"
+        }
+      ],
+      "acceptance_scenario": "Resume a task and reconstruct the state from the exact inputs, watermark and rule digest.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G08",
+      "clauses": [
+        {
+          "id": "E01",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "A project overlay attempting to widen protected permissions produces a conflict.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G09",
+      "clauses": [
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E03",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "One local pass permits a candidate submission but not domain/core promotion.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G10",
+      "clauses": [
+        {
+          "id": "F04",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F07",
+          "path": "feedback.md"
+        },
+        {
+          "id": "E03",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E04",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "Trace a harness change from observed failure to scoped decision, eval, release and return observation.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G11",
+      "clauses": [
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E03",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "A proposing agent cannot approve a high-risk change or change its grader to manufacture a pass.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G12",
+      "clauses": [
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "X04",
+          "path": "execution.md"
+        },
+        {
+          "id": "E04",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "Autonomous submission requires explicit scope and unknown effects prevent duplicate retries.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G13",
+      "clauses": [
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "X03",
+          "path": "execution.md"
+        }
+      ],
+      "acceptance_scenario": "Documented policy is displayed as documented_only until a real enforcement test exists.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G14",
+      "clauses": [
+        {
+          "id": "F01",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F02",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F04",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F05",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F06",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F07",
+          "path": "feedback.md"
+        },
+        {
+          "id": "E04",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E05",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E06",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "After skill/error feedback is adopted, observe the originating problem again; do not close on PR status alone.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G15",
+      "clauses": [
+        {
+          "id": "F01",
+          "path": "feedback.md"
+        },
+        {
+          "id": "V05",
+          "path": "views-state.md"
+        },
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "A rule/context reduction is considered improvement only with unchanged trust gates.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G16",
+      "clauses": [
+        {
+          "id": "V02",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "E06",
+          "path": "evolution.md"
+        }
+      ],
+      "acceptance_scenario": "Machine tests pass but subjective acceptance stays pending until an authorized human decision.",
+      "runtime_eval_status": "planned_not_executed"
+    },
+    {
+      "goal_id": "G17",
+      "clauses": [
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E05",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E06",
+          "path": "evolution.md"
+        },
+        {
+          "id": "X05",
+          "path": "execution.md"
+        }
+      ],
+      "acceptance_scenario": "Measure reproducibility, intervention and rollback evidence rather than counting automation steps.",
+      "runtime_eval_status": "planned_not_executed"
+    }
+  ]
+}

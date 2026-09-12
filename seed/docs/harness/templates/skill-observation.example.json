@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "template_only": true,
+  "observation_id": null,
+  "execution_id": null,
+  "skill_id": null,
+  "source_kind": "unknown",
+  "source_ref": null,
+  "owner": null,
+  "version_or_content_digest": null,
+  "used_bundle_manifest_ref": null,
+  "invocation_reason": null,
+  "observed_stage": "unknown",
+  "change_kind": null,
+  "before_digest": null,
+  "after_digest": null,
+  "observed_result": "unknown",
+  "evidence_refs": [],
+  "limitations": ["Installed, selected, read, executed and verified are different claims; absent telemetry stays unknown."]
+}

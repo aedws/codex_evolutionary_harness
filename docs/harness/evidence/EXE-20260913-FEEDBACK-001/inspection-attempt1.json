@@ -1,0 +1,6 @@
+{
+  "observed_at": "2026-09-12T17:57:21.616671+00:00",
+  "result": "inspection_tool_failure",
+  "detail": "Additional documentation link checker misparsed an existing absolute Windows file link with :3 line suffix in RFC-0001. Payload, coverage, tests and archive commands passed. No product file failure inferred.",
+  "recovery": "Inspect line-suffix-aware file targets; reuse prior successful command logs without rerunning tests."
+}

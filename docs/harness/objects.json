@@ -407,5 +407,171 @@
       "private",
       "contract_seed"
     ]
+  },
+  {
+    "id": "TASK-20260913-FEEDBACK-001",
+    "type": "task",
+    "name": "Complete self-feedback and upper architecture contracts",
+    "schema_version": 1,
+    "source_refs": [
+      "user:self-feedback-and-architecture-contracts"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-001",
+      "REL-20260913-FEEDBACK-002"
+    ],
+    "unknowns": [
+      "Runtime controllers and subjective design acceptance remain unverified"
+    ],
+    "tags": [
+      "project",
+      "execute",
+      "contract_seed"
+    ]
+  },
+  {
+    "id": "EXE-20260913-FEEDBACK-001",
+    "type": "execution",
+    "name": "Contract coverage, reusable templates, tests and private v0.2.0 release",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-FEEDBACK-BASELINE"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-001"
+    ],
+    "unknowns": [
+      "Runtime controllers and subjective design acceptance remain unverified"
+    ],
+    "tags": [
+      "project",
+      "execute",
+      "contract_seed"
+    ]
+  },
+  {
+    "id": "EVD-20260913-FEEDBACK-BASELINE",
+    "type": "evidence",
+    "name": "Pre-change source manifest",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-FEEDBACK-001/baseline.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Runtime controllers and subjective design acceptance remain unverified"
+    ],
+    "tags": [
+      "project",
+      "execute",
+      "contract_seed"
+    ]
+  },
+  {
+    "id": "HARNESS-REQ-20260913-004",
+    "type": "harness_requirement",
+    "name": "Complete feedback and upper-design operational gaps",
+    "schema_version": 1,
+    "source_refs": [
+      "user:self-feedback-and-architecture-contracts",
+      "docs/requirements/HARNESS-GOALS.md"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-003"
+    ],
+    "unknowns": [
+      "Runtime capability, real-project improvement and human design acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-2"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "HARNESS-CHANGE-20260913-004",
+    "type": "harness_change",
+    "name": "Contract 2 seed-maintenance change",
+    "schema_version": 1,
+    "source_refs": [
+      "HARNESS-REQ-20260913-004",
+      "DEC-20260913-FEEDBACK-001",
+      "seed-manifest.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-003",
+      "REL-20260913-FEEDBACK-004"
+    ],
+    "unknowns": [
+      "Runtime capability, real-project improvement and human design acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-2"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "DEC-20260913-FEEDBACK-001",
+    "type": "decision",
+    "name": "Authorized contract seed maintenance",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/decisions.md"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-004"
+    ],
+    "unknowns": [
+      "Runtime capability, real-project improvement and human design acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-2"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-FEEDBACK-VALIDATION",
+    "type": "evidence",
+    "name": "Local seed and contract distribution validation",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-FEEDBACK-001/validation.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-FEEDBACK-002"
+    ],
+    "unknowns": [
+      "Runtime capability, real-project improvement and human design acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-2"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-FEEDBACK-PUBLISH-INTENT",
+    "type": "evidence",
+    "name": "Scoped private release operation intent",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-FEEDBACK-001/publication-intent.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Runtime capability, real-project improvement and human design acceptance unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance",
+      "contract-2"
+    ],
+    "acceptance_class": "mixed"
   }
 ]
