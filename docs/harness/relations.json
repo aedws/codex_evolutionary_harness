@@ -137,5 +137,27 @@
       "EVD-20260913-SEED-VALIDATION"
     ],
     "observed_at": "2026-09-12T17:34:19.179038+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-SEED-006",
+    "from": "TASK-20260913-SEED-001",
+    "to": "EVD-20260913-SEED-REMOTE",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-SEED-REMOTE"
+    ],
+    "observed_at": "2026-09-12T17:37:39.538581+00:00"
+  },
+  {
+    "relation_id": "REL-20260913-SEED-007",
+    "from": "HARNESS-RELEASE-0.1.0",
+    "to": "EVD-20260913-SEED-REMOTE",
+    "type": "observed_by",
+    "basis": "confirmed_by_runtime",
+    "source_refs": [
+      "EVD-20260913-SEED-REMOTE"
+    ],
+    "observed_at": "2026-09-12T17:37:39.538581+00:00"
   }
 ]

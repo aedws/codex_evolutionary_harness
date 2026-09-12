@@ -1,7 +1,7 @@
 # Backlog
 
-## Current
-- TASK-20260913-SEED-001: local contract seed verified; private remote distribution and fresh-clone check pending.
+## Delivered
+- TASK-20260913-SEED-001: private v0.1.0 contract seed published; local and fresh-clone checks passed. Evidence: EVD-20260913-SEED-VALIDATION and EVD-20260913-SEED-REMOTE. Human product-quality acceptance remains separate.
 
 ## Deferred
 - Full CLI implementation from RFC-0001; V2 reducer/validator/policy enforcement; V3/V4 controllers.

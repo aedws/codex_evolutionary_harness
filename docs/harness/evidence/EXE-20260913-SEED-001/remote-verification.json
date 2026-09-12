@@ -1,0 +1,186 @@
+{
+  "evidence_id": "EVD-20260913-SEED-REMOTE",
+  "type": "private_distribution_and_fresh_clone_test",
+  "subject": "TASK-20260913-SEED-001",
+  "execution_id": "EXE-20260913-SEED-001",
+  "created_at": "2026-09-12T17:36:35.467264+00:00",
+  "result": "pass",
+  "tested_commit": "db0a0e2924723f4f9544292b64a44726d038c58b",
+  "tag": "v0.1.0",
+  "repository": {
+    "default_branch": "main",
+    "full_name": "aedws/codex_evolutionary_harness",
+    "html_url": "https://github.com/aedws/codex_evolutionary_harness",
+    "private": true,
+    "visibility": "private"
+  },
+  "release": {
+    "assets": [
+      {
+        "digest": "sha256:bc8eb3b6f90838ef0c9dc10aa1b5fe23479f6db58bd56929c06acea72c73f661",
+        "name": "evolutionary-harness-seed-0.1.0.zip",
+        "size": 22344
+      },
+      {
+        "digest": "sha256:d2cfcdef5493145ae19889f5e886f17ae5cd09dea98531c54ac6653d31d63e30",
+        "name": "SHA256SUMS.txt",
+        "size": 102
+      }
+    ],
+    "draft": false,
+    "html_url": "https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.1.0",
+    "id": 387649524,
+    "prerelease": true,
+    "tag_name": "v0.1.0"
+  },
+  "zip_sha256": "bc8eb3b6f90838ef0c9dc10aa1b5fe23479f6db58bd56929c06acea72c73f661",
+  "seed_manifest_sha256": "745bb9339e37b688e7ba2c702d5e602c6b24714b01b248809b7dbd9e37e12f74",
+  "checks": [
+    "fresh remote tagged clone",
+    "13 tests on clone",
+    "no-write dry-run",
+    "install",
+    "same-install no-op",
+    "downloaded asset hash and clean inventory",
+    "private visibility",
+    "published prerelease assets"
+  ],
+  "limitations": [
+    "Contract distribution only; not V2/V3/V4 runtime verification."
+  ],
+  "commands": [
+    {
+      "argv": [
+        "gh",
+        "repo",
+        "clone",
+        "aedws/codex_evolutionary_harness",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source",
+        "--",
+        "--branch",
+        "v0.1.0"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "output": "Cloning into 'C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source'...\nwarning: refs/tags/v0.1.0 3ef4250dde6306c5261a41c72d056de5beb81646 is not a commit!\nNote: switching to 'db0a0e2924723f4f9544292b64a44726d038c58b'.\n\nYou are in 'detached HEAD' state. You can look around, make experimental\nchanges and commit them, and you can discard any commits you make in this\nstate without impacting any branches by switching back to a branch.\n\nIf you want to create a new branch to retain commits you create, you may\ndo so (now or later) by using -c with the switch command. Example:\n\n  git switch -c <new-branch-name>\n\nOr undo this operation with:\n\n  git switch -\n\nTurn off this advice by setting config variable advice.detachedHead to false\n\n"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source",
+      "exit_code": 0,
+      "output": "db0a0e2924723f4f9544292b64a44726d038c58b\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "check"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source",
+      "exit_code": 0,
+      "output": "{\"outcome\": \"checked\", \"version\": \"0.1.0\", \"files\": 13, \"manifest_sha256\": \"745bb9339e37b688e7ba2c702d5e602c6b24714b01b248809b7dbd9e37e12f74\"}\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source",
+      "exit_code": 0,
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.400s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\project",
+        "--dry-run"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source",
+      "exit_code": 0,
+      "output": "{\"outcome\": \"planned\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\remote-smoke\\\\project\", \"files\": [\"AGENTS.md\", \"BOOTSTRAP_PROMPT.md\", \"docs/harness/README.md\", \"docs/harness/checkpoint.md\", \"docs/harness/contract.md\", \"docs/harness/events.jsonl\", \"docs/harness/evidence/README.md\", \"docs/harness/objects.json\", \"docs/harness/overlays/project.json\", \"docs/harness/policy.md\", \"docs/harness/relations.json\", \"docs/harness/releases/current-harness.json\", \"docs/harness/source-authority.md\"], \"dry_run\": true}\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\project"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source",
+      "exit_code": 0,
+      "output": "{\"outcome\": \"installed\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\remote-smoke\\\\project\", \"files\": 13, \"manifest_sha256\": \"745bb9339e37b688e7ba2c702d5e602c6b24714b01b248809b7dbd9e37e12f74\"}\n"
+    },
+    {
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "init",
+        "--target",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\project"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\source",
+      "exit_code": 0,
+      "output": "{\"outcome\": \"unchanged\", \"target\": \"C:\\\\Users\\\\uyess\\\\Desktop\\\\codex_evolutionary_harness\\\\.local\\\\remote-smoke\\\\project\", \"dry_run\": false}\n"
+    },
+    {
+      "argv": [
+        "gh",
+        "release",
+        "download",
+        "v0.1.0",
+        "--repo",
+        "aedws/codex_evolutionary_harness",
+        "--pattern",
+        "evolutionary-harness-seed-0.1.0.zip",
+        "--pattern",
+        "SHA256SUMS.txt",
+        "--dir",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke\\downloads"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/aedws/codex_evolutionary_harness",
+        "--jq",
+        "{full_name: .full_name, private: .private, visibility: .visibility, html_url: .html_url, default_branch: .default_branch}"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "output": "{\"default_branch\":\"main\",\"full_name\":\"aedws/codex_evolutionary_harness\",\"html_url\":\"https://github.com/aedws/codex_evolutionary_harness\",\"private\":true,\"visibility\":\"private\"}\n"
+    },
+    {
+      "argv": [
+        "gh",
+        "api",
+        "repos/aedws/codex_evolutionary_harness/releases/tags/v0.1.0",
+        "--jq",
+        "{id: .id, html_url: .html_url, tag_name: .tag_name, draft: .draft, prerelease: .prerelease, assets: [.assets[] | {name: .name, size: .size, digest: .digest}]}"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "output": "{\"assets\":[{\"digest\":\"sha256:bc8eb3b6f90838ef0c9dc10aa1b5fe23479f6db58bd56929c06acea72c73f661\",\"name\":\"evolutionary-harness-seed-0.1.0.zip\",\"size\":22344},{\"digest\":\"sha256:d2cfcdef5493145ae19889f5e886f17ae5cd09dea98531c54ac6653d31d63e30\",\"name\":\"SHA256SUMS.txt\",\"size\":102}],\"draft\":false,\"html_url\":\"https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.1.0\",\"id\":387649524,\"prerelease\":true,\"tag_name\":\"v0.1.0\"}\n"
+    }
+  ]
+}

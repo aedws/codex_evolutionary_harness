@@ -237,7 +237,8 @@
     "relation_refs": [
       "REL-20260913-SEED-001",
       "REL-20260913-SEED-004",
-      "REL-20260913-SEED-005"
+      "REL-20260913-SEED-005",
+      "REL-20260913-SEED-006"
     ],
     "unknowns": [
       "Product quality remains human-verifiable"
@@ -365,6 +366,46 @@
       "project",
       "user_correction",
       "candidate"
+    ]
+  },
+  {
+    "id": "EVD-20260913-SEED-REMOTE",
+    "type": "evidence",
+    "name": "Private release and fresh tagged clone verification",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-SEED-001/remote-verification.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-006",
+      "REL-20260913-SEED-007"
+    ],
+    "unknowns": [
+      "No full V2/V3/V4 runtime capability implied"
+    ],
+    "tags": [
+      "private",
+      "contract_seed"
+    ]
+  },
+  {
+    "id": "HARNESS-RELEASE-0.1.0",
+    "type": "release",
+    "name": "Published private contract seed v0.1.0",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-SEED-REMOTE",
+      "seed-manifest.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-SEED-007"
+    ],
+    "unknowns": [
+      "No full V2/V3/V4 runtime capability implied"
+    ],
+    "tags": [
+      "private",
+      "contract_seed"
     ]
   }
 ]
