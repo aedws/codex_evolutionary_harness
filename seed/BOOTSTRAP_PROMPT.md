@@ -15,3 +15,5 @@ If the project will use the supplied local core, read docs/harness/runtime/READM
 Mandatory bootstrap: apply V01/V03 and `docs/harness/bootstrap/README.md` before selecting product work. Inspect/reuse or create the whole-project wiki first. A fixed `bootstrap.py` gate checks navigation, six object types, relations, sources and role journeys. `harness.py run` passed or installation alone is not `bootstrap_ready`. Missing wiki evidence must remain bootstrap_partial and block bootstrap completion.
 
 Owner interview is mandatory before wiki role/access setup. The seed has no fixed roles or accounts. Confirm project roles, document scope and read/edit/approve/execute boundaries, then bind the approved tree and authenticated adapter under bootstrap-wiki-2. Interview pending or untested access enforcement blocks completion.
+
+Authentication is a project exposure choice, not an unconditional seed requirement. If the owner explicitly selects offline loopback_read_only, omit login/account setup while retaining one local read scope, hierarchy, integrity, negative tests and no remote exposure. Shared/online access needs renewed owner decisions.

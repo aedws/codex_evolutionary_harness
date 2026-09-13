@@ -1,12 +1,12 @@
 {
   "contract_version": 6,
-  "distribution_version": "0.6.0",
+  "distribution_version": "0.6.1",
   "files": {
-    "AGENTS.md": "b2c289fb1f109a97789dbdcd67d03aafddb11195c15791656661c9aa7387ae3e",
-    "BOOTSTRAP_PROMPT.md": "f07d336c0cdd77ade473da806f37569876505174c90a93c6990fcf8c130ff575",
+    "AGENTS.md": "6c1870e457011c496dbc96a0e13aaea68bac68bc7e65c5a63af3295abc42b7a2",
+    "BOOTSTRAP_PROMPT.md": "2d6fc25e6fdefb1ae4cba6f8b0ff2e374e4924e1b849e4e9b97bf476f0a57a36",
     "bootstrap.py": "94056b9f711ff7feac0791e70fc841d0de53540229e6e24123de7a6bba228b1a",
-    "docs/harness/README.md": "c00b3fa29941a4a7239cc967373dd200494907a270126d8364753a4c6f135d40",
-    "docs/harness/bootstrap/README.md": "22c27f200ca83ec467b569fc93e89b1cb914af0ed332d7f461437657756d22f1",
+    "docs/harness/README.md": "6e6716be06b8949f59ded43ffe014d173118899a78a79b9c47a68243ddf89f4a",
+    "docs/harness/bootstrap/README.md": "8420e822b4563653dd4342a58212caee797788b13479cc48de73b69c67399ab3",
     "docs/harness/checkpoint.md": "ac41715825b1e2533f80879fc3052203a3dcb046b3ecb048a536efae85db2bb6",
     "docs/harness/contract.md": "9471f8cf72b0ad29e11e366d87849c1362dd463793f2abb169b34c7f8d4abb2d",
     "docs/harness/contracts/README.md": "6c2ee2842ff4b232e928c3acf19a2eae5b6dcc8a9425af27f2ce9729ca2111d5",
@@ -26,7 +26,7 @@
     "docs/harness/overlays/project.json": "a27568a6cb41653597c502b4b1ae5a80dffd576b0705c6ca34b2e64c2a8028e8",
     "docs/harness/policy.md": "1f32ba703ab5bef69cfa95d018f3d3a9fb91c7b9164cf4cf9fc54ef7439dd35c",
     "docs/harness/relations.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-    "docs/harness/releases/current-harness.json": "041abdb18ca4d79aa9e60c5172fb866102c0de38d708b1d33c96615eb5b25744",
+    "docs/harness/releases/current-harness.json": "a67523bb44854814f84154b9baeb9f9ea98c18c0af6c3c5dd566aedb8dd3c947",
     "docs/harness/runtime/README.md": "1b5113dcab6d4ad4fe0228a4d6c8024b66813ff963bd3632b3465abc90b89d83",
     "docs/harness/runtime/candidate.example.json": "c0ef5280bd3e5f2f1a5339d0919aa5caac43d6ef35bf5a118144da79a0b5a666",
     "docs/harness/runtime/policy.example.json": "5a43ebd5083591787db5320aa42fb49e685442a4bd2bfda6d4d33fafd7e50ef7",
@@ -38,9 +38,9 @@
     "docs/harness/templates/skill-observation.example.json": "a88ccf19dcb0a8bb11b826eff7cee5caec2b4964bed26f3bc96475a9e0330073",
     "harness.py": "ee1c46f57dc5fc98aabcd8b8939cb539bd647411c1e3e367fbbcf1a090f439ad",
     "wiki_access.py": "a682713812f85dce594950ea020fe0d4df265fc9a0c16265198b97543d9a55f8",
-    "wiki_core.py": "fcdae12f345c91a7185ba1f0411314ca2ba3161267ef96db90c6a442905ed47c"
+    "wiki_core.py": "0f7a44a72efa046c5c6d3007bb219926165dede86928b87c79311257004e6963"
   },
   "schema_version": 1,
-  "source_ref": "v0.6.0",
+  "source_ref": "v0.6.1",
   "source_repository": "https://github.com/aedws/codex_evolutionary_harness"
 }

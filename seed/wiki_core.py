@@ -30,7 +30,9 @@ def validate(contract):
         require(re.fullmatch(r'[a-z][a-z0-9_-]{0,31}', ident) and type(label) is str and label.strip(), 'Invalid project role')
     adapter = contract['adapter']
     require(type(adapter) is dict and set(adapter) == {'kind', 'source_paths', 'test_paths', 'required_tests'}, 'Access adapter binding missing')
-    require(adapter['kind'] == 'authenticated_read_only', 'Unimplemented access adapter; writes remain denied')
+    require(adapter['kind'] in {'authenticated_read_only', 'loopback_read_only'}, 'Unimplemented access adapter; writes remain denied')
+    if adapter['kind'] == 'loopback_read_only':
+        require(len(roles) == 1, 'Login-free local mode cannot claim identity-separated roles')
     for key in ['source_paths', 'test_paths', 'required_tests']:
         require(type(adapter[key]) is list and adapter[key] and all(type(p) is str and p for p in adapter[key]), 'Adapter sources/tests required')
     nodes = contract['nodes']

@@ -3,16 +3,16 @@
 <!-- SEED-USAGE:START — keep this usage block immediately after the title. -->
 ## 씨앗 사용법 — 여기서 시작
 
-**현재 씨앗: v0.6.0 / contract 6.** 아래 순서로 설치한 뒤 대상 프로젝트에서 bootstrap을 요청한다. 내려받기만으로 자기개선·승격·Canary가 자동 실행되지는 않는다.
+**현재 씨앗: v0.6.1 / contract 6.** 아래 순서로 설치한 뒤 대상 프로젝트에서 bootstrap을 요청한다. 내려받기만으로 자기개선·승격·Canary가 자동 실행되지는 않는다.
 
 ### 1. 고정 버전 내려받기
 
 비공개 저장소 접근 권한과 인증된 Git, Python 3.10 이상이 필요하다. 아래는 PowerShell 예시다. 두 경로를 자신의 환경에 맞게 바꾸고, 배포 원본은 대상 프로젝트 밖의 **새 디렉터리**에 둔다. 기존 checkout이나 프로젝트 위에 전체 저장소를 복사하지 않는다.
 
 ```powershell
-$SeedSource = "C:/tools/evolutionary-harness-v0.6.0"
+$SeedSource = "C:/tools/evolutionary-harness-v0.6.1"
 $ProjectPath = "C:/projects/my-project"
-git clone --branch v0.6.0 --depth 1 https://github.com/aedws/codex_evolutionary_harness.git "$SeedSource"
+git clone --branch v0.6.1 --depth 1 https://github.com/aedws/codex_evolutionary_harness.git "$SeedSource"
 if ($LASTEXITCODE -ne 0) { throw "씨앗 다운로드 실패: 다음 단계로 진행하지 마세요." }
 python "$SeedSource/scripts/seed.py" check
 if ($LASTEXITCODE -ne 0) { throw "씨앗 무결성 검사 실패" }
@@ -72,7 +72,7 @@ bootstrap에서 실제 검사 명령과 입력 파일을 확정한 뒤 [로컬 �
 
 모든 프로젝트가 공통 코어에서 시작하고 Overlay로 특화한다. 실제 실패·마찰·검증에서 얻은 개선은 Project → Domain → Universal Core로 평가·승격하고, 상위 변경은 호환성 검증·Canary·Rollback을 통해 다시 전파한다.
 
-현재 배포물은 **v0.6.0 계약 씨앗**이다. 최소 로컬 기록·검사·판정 코어를 포함한다. 전체 위키 UI, OS/인간 신원의 권한 강제, 자동 승격·Canary controller는 아직 구현하지 않았다. V2/V3/V4는 목표 능력이며 배포 버전과 다르다.
+현재 배포물은 **v0.6.1 계약 씨앗**이다. 최소 로컬 기록·검사·판정 코어를 포함한다. 전체 위키 UI, OS/인간 신원의 권한 강제, 자동 승격·Canary controller는 아직 구현하지 않았다. V2/V3/V4는 목표 능력이며 배포 버전과 다르다.
 
 ## 먼저 읽기
 
@@ -101,6 +101,6 @@ GitHub 저장소는 비공개로 운영한다. 재사용은 태그와 파일 해
 
 배포 원본 검사는 `python scripts/seed.py check`, `python scripts/check_contracts.py`, `python -m unittest discover -s tests -v`로 실행한다. 실제 프로젝트에서 설정·기록을 채운 뒤에는 빈 배포 원본 전용 검사를 프로젝트 검증기로 사용하지 않는다.
 
-고정된 [bootstrap 완료 검사](seed/docs/harness/bootstrap/README.md)는 v0.6.0에서 추가됐다. 기존 원장 engine은 변경하지 않으며, v0.4.0 프로젝트는 새 검사 파일과 로컬 binding을 명시적으로 추가 적용한다. 9개 분류/6개 객체/역할 경로의 누락은 bootstrap_partial이다.
+고정된 [bootstrap 완료 검사](seed/docs/harness/bootstrap/README.md)는 v0.6.1에서 추가됐다. 기존 원장 engine은 변경하지 않으며, v0.4.0 프로젝트는 새 검사 파일과 로컬 binding을 명시적으로 추가 적용한다. 9개 분류/6개 객체/역할 경로의 누락은 bootstrap_partial이다.
 
 Owner interview is mandatory before wiki role/access setup. The seed has no fixed roles or accounts. Confirm project roles, document scope and read/edit/approve/execute boundaries, then bind the approved tree and authenticated adapter under bootstrap-wiki-2. Interview pending or untested access enforcement blocks completion.

@@ -1,0 +1,31 @@
+{
+  "manifest_sha256": "f216373ea54e2a9a5a2d0451ad443e7915424965b62ddcdb8826cef7525d3814",
+  "assets": {
+    "evolutionary-harness-seed-0.6.1.zip": "260fb863366ce7b5e781defbd7efad6722eb80ecc190a5a9ff0bdde0281110ac",
+    "SHA256SUMS-v0.6.1.txt": "f7fd739a71aef1bc78b4c6241441502c0b3ff453b4c6deb1176ece8e1b2804c9"
+  },
+  "preserved_remote_tags": [
+    "3ef4250dde6306c5261a41c72d056de5beb81646\trefs/tags/v0.1.0",
+    "db0a0e2924723f4f9544292b64a44726d038c58b\trefs/tags/v0.1.0^{}",
+    "a7bc80e80088a6442a581089646f9a0ea23dc00b\trefs/tags/v0.2.0",
+    "59c4cc828e5bdf8ca7fc4daea153699e2f253b33\trefs/tags/v0.2.0^{}",
+    "aefa96719fecac578dd39a6ceacd489270be72a7\trefs/tags/v0.3.0",
+    "dcbb1705e3d91a5a29b8514ac784d6e4290073fe\trefs/tags/v0.3.0^{}",
+    "37e031a7e14bd26bbfc62fd7f32803c30fe2904c\trefs/tags/v0.4.0",
+    "ad05b958827050d16dae42479fbde5ff40c47fd8\trefs/tags/v0.4.0^{}",
+    "a35ee5a3b1c2e54e044f2211db7b37f869e8cf3d\trefs/tags/v0.5.0",
+    "4ce840fe7f942995f4fc2188f3170db05ff440f9\trefs/tags/v0.5.0^{}",
+    "471e80f9936b608928ecd5ccb49b2f335de54a4f\trefs/tags/v0.6.0",
+    "faa5c93d1a0bc9259c5407ebfacf48c7c147ca2d\trefs/tags/v0.6.0^{}"
+  ],
+  "repository": {
+    "isPrivate": true,
+    "url": "https://github.com/aedws/codex_evolutionary_harness"
+  },
+  "operation_keys": [
+    "seed-v0.6.1-source-push",
+    "seed-v0.6.1-private-prerelease"
+  ],
+  "authorization": "Owner requested offline without login; prior seed improvement/commit/private distribution scope persists",
+  "tests": 73
+}

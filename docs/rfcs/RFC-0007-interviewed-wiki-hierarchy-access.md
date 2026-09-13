@@ -27,3 +27,7 @@ Recover into a separate directory or restore reviewed code/config while preservi
 ## Tradeoff
 
 A shared tree/permission contract avoids copying Newgame's product-specific roles and hosting choices. It adds a local authentication adapter and tests, but makes hierarchy and access omissions observable. Compared with contract 5, it meets the owner's requested operating structure more closely; overall context, rule count and intervention savings are not yet measured. No financial analytics work is mixed into this wiki acceptance change.
+
+## v0.6.1 owner-directed offline mode
+
+Owner clarification: offline operation should omit separate login. Add explicit loopback_read_only with one local read scope and unchanged write/integrity/host boundaries. Keep authenticated_read_only for projects that select it. The initial contract was too prescriptive about authentication despite requiring project-specific interviews. Account/login presence is not a universal trust requirement.

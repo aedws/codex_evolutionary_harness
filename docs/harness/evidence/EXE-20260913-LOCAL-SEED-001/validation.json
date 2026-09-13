@@ -1,0 +1,8 @@
+{
+  "evidence_id": "EVD-20260913-LOCAL-SEED-VALIDATION",
+  "tests": 73,
+  "source_snapshot": "test-snapshot.json",
+  "historical_evidence_preserved": 79,
+  "event_prefix_preserved": true,
+  "scope": "Explicit single-scope loopback mode, not authenticated identity separation"
+}

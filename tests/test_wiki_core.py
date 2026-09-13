@@ -33,6 +33,18 @@ class WikiCoreTests(unittest.TestCase):
             value=copy.deepcopy(self.c);mutate(value)
             with self.assertRaises(ValueError):w.validate(value)
 
+    def test_explicit_local_no_login_mode_requires_one_role_and_new_interview(self):
+        c=copy.deepcopy(self.c);c['adapter']['kind']='loopback_read_only'
+        c['interview']['policy_digest']=w.policy_digest(c)
+        with self.assertRaises(ValueError):w.validate(c)
+        c['roles']={'local_owner':'Local workspace'};c['access']={'root_read':['local_owner'],'overrides':{}}
+        for node in c['nodes']:node['grants']['read']=['local_owner']
+        with self.assertRaises(ValueError):w.validate(c)
+        c['interview']['policy_digest']=w.policy_digest(c)
+        self.assertEqual(len(w.validate(c)),3)
+        c['interview']['status']='pending'
+        with self.assertRaises(ValueError):w.validate(c)
+
     def test_no_cycles_or_flat_hierarchy_or_broader_child_access(self):
         for mutate in [lambda c:c['nodes'][1].update(parent='detail'),lambda c:c['nodes'][2].update(parent='home'),lambda c:c['nodes'][2]['grants']['read'].append('auditor'),lambda c:c['nodes'][0]['grants']['edit'].append('lead')]:
             value=copy.deepcopy(self.c);mutate(value)

@@ -1386,5 +1386,72 @@
       "private",
       "project"
     ]
+  },
+  {
+    "id": "TASK-20260913-LOCAL-SEED-001",
+    "type": "task",
+    "name": "TASK-20260913-LOCAL-SEED-001",
+    "schema_version": 1,
+    "source_refs": [
+      "user:offline-without-login-and-continue"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Verification pending"
+    ],
+    "tags": [
+      "project"
+    ]
+  },
+  {
+    "id": "EXE-20260913-LOCAL-SEED-001",
+    "type": "execution",
+    "name": "EXE-20260913-LOCAL-SEED-001",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-LOCAL-SEED-BASELINE"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Verification pending"
+    ],
+    "tags": [
+      "project"
+    ]
+  },
+  {
+    "id": "EVD-20260913-LOCAL-SEED-BASELINE",
+    "type": "evidence",
+    "name": "EVD-20260913-LOCAL-SEED-BASELINE",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-LOCAL-SEED-001/baseline.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Verification pending"
+    ],
+    "tags": [
+      "project"
+    ]
+  },
+  {
+    "id": "EVD-20260913-LOCAL-SEED-VALIDATION",
+    "type": "evidence",
+    "name": "73 checks for owner-selected offline access",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-LOCAL-SEED-001/validation.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "No remote/IAM or human acceptance certification"
+    ],
+    "tags": [
+      "project"
+    ]
   }
 ]
