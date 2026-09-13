@@ -81,3 +81,7 @@ contract 2는 작업 경계의 자가피드백 검토와 세부 운영 의무를
 bootstrap 후 실제 policy와 task spec을 준비하고 [runtime 가이드](../seed/docs/harness/runtime/README.md)에 따라 명시적으로 초기화한다. 예제는 빈 ID·권한·검사 바인딩을 가진다. source 배포 검사는 설치 원본을 검사하고, `python harness.py check/status`는 초기화된 프로젝트 원장의 구조·판정을 검사한다.
 
 로컬 코어는 engine/policy를 pin한다. 새 버전으로 덮어쓰면 실행이 차단되므로 이전 runner·원장·policy·프로젝트 snapshot을 보존하고 reviewed migration을 계획한다. 자동 engine/storage migration, 권한 확대 또는 활성 원장 덮어쓰기 복구는 제공하지 않는다. 별도 경로 복원은 사건 보존 검증이며 원래 실행 권한을 새 경로에 전달하지 않는다.
+
+## v0.5.0 예방장치의 기존 프로젝트 적용
+
+기존 harness.py와 .harness 원장은 유지한다. bootstrap.py를 hash 확인 후 추가하고, 기존 위키에서 project-owned binding을 파생한다. 프로젝트 필수 검사에 artifacts-only Gate를 연결하고 종료 후 전체 Gate를 실행한다. 기존 설치 영수증을 덮어쓰지 않고 adoption 영수증에 새 component/version/hash·검증·되돌릴 파일을 남긴다. 로컬 증거와 수동 파일을 새 빈 seed로 덮어쓰지 않는다.

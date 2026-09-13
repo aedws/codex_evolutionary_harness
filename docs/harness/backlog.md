@@ -17,3 +17,5 @@
 - TASK-20260913-CLI-RFC-001: audit and RFC delivered. Evidence remains version-bound; not a current runtime verification.
 - HARNESS-REQ-20260913-001/002: original audit candidates retained.
 - HARNESS-REQ-20260913-003: architecture framing correction recorded; broader promotion unverified.
+
+- TASK-20260913-PREVENTION-001: 66-test bootstrap gate prepared for v0.5.0; private remote readback pending.

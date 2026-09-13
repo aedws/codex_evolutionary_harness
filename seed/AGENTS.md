@@ -30,3 +30,5 @@ Ask a concise interview question when intent, authoritative sources, required te
 This seed supplies contracts and a minimal local core; see docs/harness/runtime/README.md when using it. Its policy/input checks govern only its own configured run entry point. Record/full-state/identity/OS/external enforcement beyond that boundary remains unverified. Never use a test-process pass as full product or human acceptance.
 
 Completion report only: changed; verified; unverified/stale; blocked/conflicts; evidence created; events recorded; external actions; harness friction/improvement candidates; next allowed action.
+
+Mandatory bootstrap: apply V01/V03 and `docs/harness/bootstrap/README.md` before selecting product work. Inspect/reuse or create the whole-project wiki first. A fixed `bootstrap.py` gate checks navigation, six object types, relations, sources and role journeys. `harness.py run` passed or installation alone is not `bootstrap_ready`. Missing wiki evidence must remain bootstrap_partial and block bootstrap completion.

@@ -209,3 +209,7 @@ v0.2.0의 contract 2는 사용자가 요청한 설계 공백의 유지보수 릴
 수동 문서/기록 모드와 runtime-owned 원장 모드를 구분한다. 기존 수동 JSON/JSONL을 신뢰된 검사/승인으로 자동 이관하거나 전체 원본 권위를 대체하지 않는다. runtime이 관리하는 관측은 원장에 두고 문서는 그 근거를 설명하는 projection으로 연결한다.
 
 이 코어가 강제하는 것은 자신의 로컬 검사 진입점에 대한 argv·policy/input pin·pending 상태다. OS sandbox, 인간 신원 인증, 다른 shell/API 호출, 전체 위키 권한, 교차 도메인 평가나 외부 rollout을 자동 보장하지 않는다. 이 경계에 필요한 adapter와 독립 운영 증거 없이 전체 V2/V3/V4를 verified로 올리지 않는다.
+
+## Bootstrap 완료의 필수 위키 Gate
+
+[RFC-0006](RFC-0006-bootstrap-completion-gate.md)에서 전체 위키 탐색·객체·관계·출처를 bootstrap 선행조건으로 연결한다. 설치/명령 통과를 bootstrap 완료로 승격하지 않는다. v0.5.0은 기존 실행 원장을 유지하는 추가 component로 이 경계를 검사한다.

@@ -411,5 +411,29 @@
     ],
     "observed_at": "2026-09-12T19:18:22.931715+00:00",
     "applicable_snapshot": "ad05b958827050d16dae42479fbde5ff40c47fd8"
+  },
+  {
+    "relation_id": "REL-20260913-PREVENTION-001",
+    "from": "TASK-20260913-PREVENTION-001",
+    "to": "EVD-20260913-PREVENTION-VALIDATION",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "EVD-20260913-PREVENTION-VALIDATION"
+    ],
+    "observed_at": "2026-09-13T05:04:57.215105+00:00",
+    "applicable_snapshot": "5269f5358106f7c248e889775415c26b54d0b9f1328cbf6505132f5fd8ff20d8"
+  },
+  {
+    "relation_id": "REL-20260913-PREVENTION-002",
+    "from": "HCHANGE-20260913-PREVENTION-001",
+    "to": "HARNESS-REQ-20260913-PREVENTION-001",
+    "type": "addresses",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "EVD-20260913-PREVENTION-VALIDATION"
+    ],
+    "observed_at": "2026-09-13T05:04:57.215105+00:00",
+    "applicable_snapshot": "5269f5358106f7c248e889775415c26b54d0b9f1328cbf6505132f5fd8ff20d8"
   }
 ]

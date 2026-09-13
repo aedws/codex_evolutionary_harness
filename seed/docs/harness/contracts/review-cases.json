@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "contract_version": 4,
+  "contract_version": 5,
   "coverage_kind": "planned_review_scenarios",
   "runtime_status": "unverified",
   "areas": [

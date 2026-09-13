@@ -55,3 +55,7 @@ Each decision should include: Decision ID, Status, Context, Decision, Alternativ
 - Scope: project seed-maintenance. This does not authenticate human roles, sandbox child processes, promote itself or establish full V2/V3/V4 outcomes. Human acceptance remains separate.
 - Alternatives/tradeoffs: RFC-0005 section 6. Better fit for reproducible CLI decisions than document-only seed; increased code and operating setup. Net context/time/trust optimization remains unmeasured.
 - Recovery: preserve older tags and manual history; new runtime has its own explicit initialization; policy/engine migration is not automatic; restore never overwrites later active events or transfers authority to a new workspace.
+
+## Prevention gate decision
+
+RFC-0006 and EVD-20260913-PREVENTION-VALIDATION support contract 5. Scope: project seed maintenance. Keep engine/policy pins unchanged and adopt the extra component through a separate receipt. A structural gate improves omission detection; semantic quality and net effort savings remain unmeasured. Preserve previous releases for recovery.

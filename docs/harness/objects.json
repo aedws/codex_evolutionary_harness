@@ -1152,5 +1152,134 @@
       "local_core_preview",
       "fresh_clone"
     ]
+  },
+  {
+    "id": "TASK-20260913-PREVENTION-001",
+    "type": "task",
+    "name": "PREVENTION authorized work",
+    "schema_version": 1,
+    "source_refs": [
+      "user:prevention-and-continue"
+    ],
+    "relation_refs": [
+      "REL-20260913-PREVENTION-001"
+    ],
+    "unknowns": [
+      "Human quality acceptance pending; full V2/V3/V4 unverified"
+    ],
+    "tags": [
+      "project"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EXE-20260913-PREVENTION-001",
+    "type": "execution",
+    "name": "PREVENTION execution",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-PREVENTION-BASELINE"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Human quality acceptance pending; full V2/V3/V4 unverified"
+    ],
+    "tags": [
+      "project"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-PREVENTION-BASELINE",
+    "type": "evidence",
+    "name": "PREVENTION pre-change evidence",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-PREVENTION-001/baseline.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Implementation verification pending"
+    ],
+    "tags": [
+      "project"
+    ],
+    "acceptance_class": "mixed"
+  },
+  {
+    "id": "EVD-20260913-PREVENTION-VALIDATION",
+    "type": "evidence",
+    "name": "66 tests and actual project gate observation",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-PREVENTION-001/validation.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-PREVENTION-001"
+    ],
+    "unknowns": [
+      "Human quality and independent cross-domain results unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ]
+  },
+  {
+    "id": "EVD-20260913-PREVENTION-PUBLICATION-INTENT",
+    "type": "evidence",
+    "name": "Exact private v0.5.0 publication intent",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-PREVENTION-001/publication-intent.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Human quality and independent cross-domain results unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ]
+  },
+  {
+    "id": "HARNESS-REQ-20260913-PREVENTION-001",
+    "type": "harness_requirement",
+    "name": "Prevent bootstrap wiki omission",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0006-bootstrap-completion-gate.md",
+      "user:prevention-and-continue"
+    ],
+    "relation_refs": [
+      "REL-20260913-PREVENTION-002"
+    ],
+    "unknowns": [
+      "Human quality and independent cross-domain results unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ]
+  },
+  {
+    "id": "HCHANGE-20260913-PREVENTION-001",
+    "type": "harness_change",
+    "name": "Mandatory bootstrap artifact and current-run gate",
+    "schema_version": 1,
+    "source_refs": [
+      "HARNESS-REQ-20260913-PREVENTION-001",
+      "EVD-20260913-PREVENTION-VALIDATION"
+    ],
+    "relation_refs": [
+      "REL-20260913-PREVENTION-002"
+    ],
+    "unknowns": [
+      "Human quality and independent cross-domain results unverified"
+    ],
+    "tags": [
+      "project",
+      "seed-maintenance"
+    ]
   }
 ]

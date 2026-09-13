@@ -15,11 +15,13 @@ def check_lifecycle(payload: dict) -> int:
                 "feedback_candidate", "candidate_eval", "promotion", "release", "compatibility_recovery", "canary",
                 "adoption", "origin_followup", "optimization", "goal_assessment"}
     gates = profile.get("gates", [])
-    if (profile.get("schema_version") != 1 or profile.get("contract_version") != 4
+    if (profile.get("schema_version") != 1 or profile.get("contract_version") != 5
             or profile.get("profile_kind") != "normative_lifecycle_contract" or profile.get("runtime_status") != "unverified"
             or len(gates) != len(expected) or {g.get("id") for g in gates} != expected):
         raise SeedError(2, "Lifecycle must retain all 16 required gates without runtime-completion claims")
     by_id = {g["id"]: g for g in gates}
+    if "mandatory wiki bootstrap gate" not in by_id["project_bindings"]["required_inputs"]:
+        raise SeedError(2, "Mandatory wiki bootstrap dependency missing")
     for gate in gates:
         if (not gate.get("required_inputs") or gate.get("runtime_evidence_refs") != []
                 or any(not isinstance(gate.get(k), str) or not gate[k].strip()
@@ -57,12 +59,12 @@ def check_review_packet(payload: dict, declared: dict) -> tuple[int, int]:
     expected = {"A01": {"V01", "V02"}, "A02": {"V03"}, "A03": {"E01"},
                 "A04": {"E03"}, "A05": {"E04"}, "A06": {"X02"}, "A07": {"E02"}}
     areas = spec.get("areas", [])
-    if (spec.get("schema_version") != 1 or spec.get("contract_version") != 4
+    if (spec.get("schema_version") != 1 or spec.get("contract_version") != 5
             or spec.get("coverage_kind") != "planned_review_scenarios"
             or spec.get("runtime_status") != "unverified" or len(areas) != 7
             or {a.get("id") for a in areas} != set(expected)):
         raise SeedError(2, "Seven review areas must remain planned, complete and unique")
-    if (packet.get("schema_version") != 1 or packet.get("contract_version") != 4
+    if (packet.get("schema_version") != 1 or packet.get("contract_version") != 5
             or packet.get("template_only") is not True or packet.get("evidence_refs") != []
             or any(packet.get(k) is not None for k in
                    ("review_id", "execution_id", "change_digest", "reviewer_principal", "review_level"))
@@ -97,11 +99,11 @@ def check_review_packet(payload: dict, declared: dict) -> tuple[int, int]:
 
 def check(root: Path = ROOT) -> dict:
     manifest, payload, _ = load_seed(root)
-    if manifest["contract_version"] != 4:
-        raise SeedError(2, "Detailed coverage checks require contract 4")
+    if manifest["contract_version"] != 5:
+        raise SeedError(2, "Detailed coverage checks require contract 5")
     prefix = "docs/harness/contracts/"
     coverage = json.loads(payload[prefix + "coverage.json"])
-    if (coverage.get("schema_version") != 1 or coverage.get("contract_version") != 4
+    if (coverage.get("schema_version") != 1 or coverage.get("contract_version") != 5
             or coverage.get("coverage_kind") != "documented_contract"
             or coverage.get("runtime_status") != "unverified"):
         raise SeedError(2, "Coverage must not claim implemented/runtime-verified goals")
@@ -143,9 +145,9 @@ def check(root: Path = ROOT) -> dict:
         if draft.get("template_only") is not True or draft.get(id_key) is not None or draft.get("evidence_refs") != []:
             raise SeedError(2, "Record examples must not ship live identities or evidence")
     overlay = json.loads(payload["docs/harness/overlays/project.json"])
-    if (overlay["base_contract_version"] != 4 or overlay["id"] is not None
+    if (overlay["base_contract_version"] != 5 or overlay["id"] is not None
             or overlay["additions"]["skills"] != [] or overlay["eval_refs"] != []):
-        raise SeedError(2, "Overlay must start with contract-4-compatible empty skill/eval bindings")
+        raise SeedError(2, "Overlay must start with contract-5-compatible empty skill/eval bindings")
     # Check local Markdown links within the shipped payload; no network access.
     links = 0
     for name, data in payload.items():

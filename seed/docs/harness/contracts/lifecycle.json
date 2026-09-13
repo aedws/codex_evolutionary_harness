@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "contract_version": 4,
+  "contract_version": 5,
   "profile_id": "hierarchical-sdlc-v1",
   "profile_kind": "normative_lifecycle_contract",
   "runtime_status": "unverified",
@@ -37,11 +37,12 @@
         "authoritative sources",
         "acceptance classes",
         "tool/test bindings",
-        "scope and budget boundaries"
+        "scope and budget boundaries",
+        "mandatory wiki bootstrap gate"
       ],
       "owner_role": "project owner",
       "evaluator_contract": "bootstrap inspection",
-      "output": "versioned project bindings with explicit unknowns",
+      "output": "versioned bindings and bootstrap_ready from fixed wiki profile plus current validation run",
       "failure_or_unknown": "missing required binding -> unknown; interview only the missing fact",
       "downstream_consumer": "task planning",
       "runtime_evidence_refs": []

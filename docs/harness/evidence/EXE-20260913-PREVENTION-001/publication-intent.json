@@ -1,0 +1,35 @@
+{
+  "evidence_id": "EVD-20260913-PREVENTION-PUBLICATION-INTENT",
+  "at": "2026-09-13T05:04:57.215105+00:00",
+  "repository": {
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "isPrivate": true,
+    "nameWithOwner": "aedws/codex_evolutionary_harness",
+    "url": "https://github.com/aedws/codex_evolutionary_harness"
+  },
+  "version": "v0.5.0",
+  "contract_version": 5,
+  "operation_keys": [
+    "seed-v0.5.0-source-push",
+    "seed-v0.5.0-private-prerelease"
+  ],
+  "manifest_sha256": "5269f5358106f7c248e889775415c26b54d0b9f1328cbf6505132f5fd8ff20d8",
+  "assets": {
+    "evolutionary-harness-seed-0.5.0.zip": "afd0c73d6dc10c1b47b7f36d316f254790be47f2f01b932edafe75f3406d091c",
+    "SHA256SUMS-v0.5.0.txt": "790018ce0a5c5597bb030a5f6fe1fc9d62e629ff1c8b539aa101a7d5ec4e1520"
+  },
+  "preserved_remote_tags": [
+    "3ef4250dde6306c5261a41c72d056de5beb81646\trefs/tags/v0.1.0",
+    "db0a0e2924723f4f9544292b64a44726d038c58b\trefs/tags/v0.1.0^{}",
+    "a7bc80e80088a6442a581089646f9a0ea23dc00b\trefs/tags/v0.2.0",
+    "59c4cc828e5bdf8ca7fc4daea153699e2f253b33\trefs/tags/v0.2.0^{}",
+    "aefa96719fecac578dd39a6ceacd489270be72a7\trefs/tags/v0.3.0",
+    "dcbb1705e3d91a5a29b8514ac784d6e4290073fe\trefs/tags/v0.3.0^{}",
+    "37e031a7e14bd26bbfc62fd7f32803c30fe2904c\trefs/tags/v0.4.0",
+    "ad05b958827050d16dae42479fbde5ff40c47fd8\trefs/tags/v0.4.0^{}"
+  ],
+  "authorization": "User requested private reusable seed distribution and prevention repair followed by actual project work",
+  "release_kind": "private prerelease; bounded bootstrap gate"
+}

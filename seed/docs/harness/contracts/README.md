@@ -1,9 +1,10 @@
-# Contract routing — version 4
+# Contract routing — version 5
 
 Read only the clauses needed for the task; [coverage.json](coverage.json) maps all 17 goal IDs to these contracts and planned acceptance scenarios.
 
 | Task | Contract |
 |---|---|
+| Every project bootstrap (mandatory, not relevance-selected) | [V01/V03 views](views-state.md) and [fixed bootstrap gate](../bootstrap/README.md) |
 | Error improvement, skill use/change, feedback candidate or upstream submission | [F01–F07 feedback](feedback.md) |
 | Object/wiki view, state explanation, graph/test selection, context/resumption | [V01–V05 views and state](views-state.md) |
 | Mutation, policy, external effects, evidence integrity or recovery | [X01–X05 execution](execution.md) |

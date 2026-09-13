@@ -1,4 +1,4 @@
-# Minimum contract — version 4
+# Minimum contract — version 5
 
 Detailed operational obligations are routed through [contracts/README.md](contracts/README.md): feedback/skills, OOP views/state, execution/policy and overlays/evolution. [coverage.json](contracts/coverage.json) maps G01–G17 to clauses and planned acceptance scenarios. The detailed contracts are mandatory within the authorized task scope; their presence is not a claim that automation is implemented.
 
@@ -98,3 +98,5 @@ Distribution 0.4.0 / contract 4 supplies these contracts, a minimal local core, 
 Contract 3 strengthens the existing V01/V03/E01/E02/E03/E04/X02 obligations with field-level lineage, whole-wiki journeys, explicit composition operators, independent-context applicability, canary decision rules, principal/gate boundaries and comparable cost accounting. Contract 2 adopters also need reviewed migration. Seven-area review packets and planned cases support that review without pretending an automated engine or successful runtime eval exists.
 
 Contract 4 adds [D01–D08 decision composition](contracts/decision-system.md), the explicit [lifecycle graph](contracts/lifecycle.json), and [local runtime use/limits](runtime/README.md). Runtime-owned task/run observations live in .harness/ledger.sqlite3; legacy/manual records remain separate sources and may link to that evidence without duplicating its state authority. Engine/policy pins and storage versions require reviewed migration; no automatic import of historical approvals or passes.
+
+Contract 5 closes the bootstrap omission path: existing/new wiki inventory and V01/V03 are mandatory before product kickoff. `bootstrap.py` separates installed, bootstrap_partial, wiki_ready and bootstrap_ready. Generic process pass is narrower. See [bootstrap profile](bootstrap/README.md); execution ledger component bytes/version remain 0.4.0.
