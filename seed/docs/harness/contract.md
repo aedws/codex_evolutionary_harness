@@ -1,4 +1,4 @@
-# Minimum contract — version 5
+# Minimum contract — version 6
 
 Detailed operational obligations are routed through [contracts/README.md](contracts/README.md): feedback/skills, OOP views/state, execution/policy and overlays/evolution. [coverage.json](contracts/coverage.json) maps G01–G17 to clauses and planned acceptance scenarios. The detailed contracts are mandatory within the authorized task scope; their presence is not a claim that automation is implemented.
 

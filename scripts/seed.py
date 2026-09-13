@@ -53,7 +53,7 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     raw = manifest_path.read_bytes()
     manifest = json.loads(raw)
     if (type(manifest.get("schema_version")) is not int or manifest["schema_version"] != 1
-            or type(manifest.get("contract_version")) is not int or manifest["contract_version"] not in (1, 2, 3, 4, 5)):
+            or type(manifest.get("contract_version")) is not int or manifest["contract_version"] not in (1, 2, 3, 4, 5, 6)):
         raise SeedError(2, "Unsupported seed manifest/contract version; use a compatible distributor")
     files = manifest.get("files")
     if not isinstance(files, dict) or not files:
@@ -85,8 +85,10 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     release = json.loads(payload["docs/harness/releases/current-harness.json"])
     local_core = manifest["contract_version"] >= 4
     prevention = manifest["contract_version"] >= 5
+    governed_wiki = manifest["contract_version"] >= 6
     enforcement = ["configured_test_dispatch_within_local_cli"] if local_core else []
     if prevention: enforcement.append("bootstrap_readiness_gate")
+    if governed_wiki: enforcement.append("wiki_tree_and_access_binding")
     if (release.get("distribution_version") != manifest.get("distribution_version")
             or release.get("contract_version") != manifest["contract_version"]
             or release.get("capability_level") != ("local_core_preview" if local_core else "seed")
@@ -96,10 +98,12 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     if local_core and ("harness.py" not in payload or "docs/harness/runtime/README.md" not in payload
                        or release.get("distribution_kind") != "contract_seed_with_local_core"
                        or release.get("implemented_mechanisms") != ["strict_local_record_validation", "transactional_event_ledger",
-                           "pinned_test_process_capture", "version_bound_task_status", "local_feedback_candidate", "isolated_ledger_restore"] + (["mandatory_bootstrap_artifact_gate"] if prevention else [])):
+                           "pinned_test_process_capture", "version_bound_task_status", "local_feedback_candidate", "isolated_ledger_restore"] + (["mandatory_bootstrap_artifact_gate"] if prevention else []) + (["interview_bound_document_hierarchy", "local_authenticated_wiki_sessions"] if governed_wiki else [])):
         raise SeedError(2, "Local core files and declared scope must be supplied together")
     if prevention and ("bootstrap.py" not in payload or "docs/harness/bootstrap/README.md" not in payload):
         raise SeedError(2, "Mandatory bootstrap gate missing")
+    if governed_wiki and not {"wiki_core.py", "wiki_access.py"} <= set(payload):
+        raise SeedError(2, "Governed wiki components missing")
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}

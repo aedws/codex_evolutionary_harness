@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "contract_version": 5,
+  "contract_version": 6,
   "profile_id": "hierarchical-sdlc-v1",
   "profile_kind": "normative_lifecycle_contract",
   "runtime_status": "unverified",

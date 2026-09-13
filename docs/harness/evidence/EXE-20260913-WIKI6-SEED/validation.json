@@ -1,0 +1,11 @@
+{
+  "evidence_id": "EVD-20260913-WIKI6-SEED-VALIDATION",
+  "tests": 72,
+  "source_snapshot": "test-snapshot.json",
+  "source_hash_verified": true,
+  "historical_evidence_preserved": 66,
+  "historical_event_prefix_preserved": true,
+  "owner_requirement": "Roles vary per project; interview owner before access setup",
+  "actual_project_decision": "Owner only, login required; additional roles later",
+  "scope": "Local tree/session and bootstrap binding tests; HTTP adapter validated separately in actual project"
+}

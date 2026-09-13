@@ -213,3 +213,5 @@ v0.2.0의 contract 2는 사용자가 요청한 설계 공백의 유지보수 릴
 ## Bootstrap 완료의 필수 위키 Gate
 
 [RFC-0006](RFC-0006-bootstrap-completion-gate.md)에서 전체 위키 탐색·객체·관계·출처를 bootstrap 선행조건으로 연결한다. 설치/명령 통과를 bootstrap 완료로 승격하지 않는다. v0.5.0은 기존 실행 원장을 유지하는 추가 component로 이 경계를 검사한다.
+
+RFC-0007 requires an owner-interviewed, project-specific role policy and one document hierarchy driving navigation and access checks. Contract 6 must not ship fixed roles or equate role guidance with enforced authorization.

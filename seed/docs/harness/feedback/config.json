@@ -1,9 +1,28 @@
 {
   "schema_version": 1,
   "review_mode": "task_boundary",
-  "upstream": {"repository": null, "base_ref": null, "candidate_path": "proposals"},
-  "permissions": {"submit": false, "merge": false, "release": false, "adopt": false, "authorization_refs": []},
-  "sharing": {"allowed_paths": [], "export_authorization_refs": []},
-  "budgets": {"max_review_seconds": null, "max_eval_runs": null, "authority_refs": []},
-  "unknowns": ["Upstream destination, scoped authorization, export scope and evaluation budgets require project-specific evidence or an interview before external actions."]
+  "upstream": {
+    "repository": null,
+    "base_ref": null,
+    "candidate_path": "proposals"
+  },
+  "permissions": {
+    "submit": false,
+    "merge": false,
+    "release": false,
+    "adopt": false,
+    "authorization_refs": []
+  },
+  "sharing": {
+    "allowed_paths": [],
+    "export_authorization_refs": []
+  },
+  "budgets": {
+    "max_review_seconds": null,
+    "max_eval_runs": null,
+    "authority_refs": []
+  },
+  "unknowns": [
+    "Upstream destination, scoped authorization, export scope and evaluation budgets require project-specific evidence or an interview before external actions."
+  ]
 }

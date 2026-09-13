@@ -1,4 +1,4 @@
-# Feedback and skill lifecycle — contract 5
+# Feedback and skill lifecycle — contract 6
 
 ## F01 — Trigger and bounded review
 

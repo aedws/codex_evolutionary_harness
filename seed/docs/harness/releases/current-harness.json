@@ -1,14 +1,15 @@
 {
   "harness_name": "Evolutionary Harness",
-  "distribution_version": "0.5.0",
-  "contract_version": 5,
+  "distribution_version": "0.6.0",
+  "contract_version": 6,
   "distribution_kind": "contract_seed_with_local_core",
   "capability_level": "local_core_preview",
   "target_capability_level": "v4",
   "verified_capabilities": [],
   "automated_enforcement": [
     "configured_test_dispatch_within_local_cli",
-    "bootstrap_readiness_gate"
+    "bootstrap_readiness_gate",
+    "wiki_tree_and_access_binding"
   ],
   "declared_principles": [
     "oop_view_dop_setup",
@@ -23,9 +24,9 @@
     "traceable_contract_coverage"
   ],
   "limitations": [
-    "No full V2/V3/V4 capability certification.",
-    "No OS sandbox, authenticated human-role separation, external effects, upstream auto-promotion, full wiki UI or canary controller.",
-    "Configured tests and explicitly listed inputs only; local policy reference strings are not human authentication."
+    "No full V2/V3/V4 certification or OS/IAM isolation.",
+    "Local wiki account sessions govern only the explicitly integrated HTTP adapter; no remote deployment, human approval or external action controller.",
+    "Owner interview supplies project roles; source references are not cryptographic human identity."
   ],
   "implemented_mechanisms": [
     "strict_local_record_validation",
@@ -34,6 +35,8 @@
     "version_bound_task_status",
     "local_feedback_candidate",
     "isolated_ledger_restore",
-    "mandatory_bootstrap_artifact_gate"
+    "mandatory_bootstrap_artifact_gate",
+    "interview_bound_document_hierarchy",
+    "local_authenticated_wiki_sessions"
   ]
 }

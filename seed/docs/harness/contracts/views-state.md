@@ -1,4 +1,4 @@
-# Object views, derivation and context — contract 5
+# Object views, derivation and context — contract 6
 
 ## V01 — Whole-project OOP surface
 

@@ -1,4 +1,4 @@
-# Contract routing — version 5
+# Contract routing — version 6
 
 Read only the clauses needed for the task; [coverage.json](coverage.json) maps all 17 goal IDs to these contracts and planned acceptance scenarios.
 

@@ -8,7 +8,7 @@ import re
 import sys
 from urllib.parse import unquote, urlsplit
 
-PROFILE = "bootstrap-wiki-1"
+PROFILE = "bootstrap-wiki-2"
 CATEGORIES = {"onboarding", "product", "design_data", "architecture_modules", "tools_workflows",
               "verification_troubleshooting", "decisions", "release_history", "role_workspaces"}
 TYPES = {"requirement", "task", "decision", "module", "test", "release"}
@@ -57,7 +57,7 @@ class Links(HTMLParser):
 
 def artifacts(root, binding):
     root=Path(root).absolute()
-    required={'schema_version','profile','entrypoint','documents','categories','object_views','relations','journeys','input_sha256','validation_task'}
+    required={'schema_version','profile','entrypoint','documents','categories','object_views','relations','journeys','input_sha256','validation_task','wiki_contract'}
     need(type(binding) is dict and set(binding)==required, "Bootstrap binding fields missing/unsupported")
     need(type(binding['schema_version']) is int and binding['schema_version']==1 and binding['profile']==PROFILE, "Unsupported bootstrap profile")
     docs=binding['documents'];need(type(docs) is list and len(docs)>=3 and all(type(n) is str for n in docs), "Wiki document population required")
@@ -106,7 +106,11 @@ def artifacts(root, binding):
         need(type(r) is dict and set(r)=={'from','to','basis'}, "Relation fields missing")
         need(r['from'] in ids and r['to'] in ids, "Relation endpoint missing")
         need(r['basis'] in {'confirmed_by_code','confirmed_by_test','confirmed_by_runtime','confirmed_by_user','inferred_by_static_analysis','inferred_by_llm','unknown'}, "Unknown relation provenance")
-    journeys=binding['journeys'];need(type(journeys) is list and {j.get('role') for j in journeys}=={'owner','developer','reviewer'}, "Three role journeys required")
+    import importlib.util
+    spec=importlib.util.spec_from_file_location('bootstrap_wiki_core',Path(__file__).with_name('wiki_core.py'))
+    wiki=importlib.util.module_from_spec(spec);spec.loader.exec_module(wiki)
+    contract=wiki.inspect_artifacts(root,binding,path)
+    journeys=binding['journeys'];need(type(journeys) is list and all(type(j) is dict for j in journeys) and {j.get('role') for j in journeys}==set(contract['roles']), "Every interviewed project role needs a journey")
     for j in journeys:
         route=j['paths'];need(type(route) is list and len(route)>=3 and len(set(route))==len(route) and all(n in docs for n in route), "Journey must include three distinct documents")
         need(all(b in reachable(a) for a,b in zip(route,route[1:])), "Journey not navigable")
@@ -125,6 +129,11 @@ def evaluate(root, binding):
     try:state=runtime.Core(root).status(binding['validation_task'])
     except runtime.HarnessError as exc:raise BootstrapError(str(exc)) from exc
     need(state['verification']=='passed', 'Bootstrap validation task is not currently passed: '+state['verification'])
+    contract=strict(path(Path(root),binding['wiki_contract']).read_bytes())
+    snapshot=state['input_snapshot']
+    need(set(contract['adapter']['required_tests']) <= set(snapshot['commands']), 'Required access tests missing from current Run')
+    required_paths=[binding['wiki_contract'],contract['interview']['decision_ref'],*contract['adapter']['source_paths'],*contract['adapter']['test_paths']]
+    need(all(snapshot['files'].get(p)==binding['input_sha256'].get(p) for p in required_paths), 'Access policy, adapter and negative tests must be bound to current Run')
     result.update(state='bootstrap_ready',validation_task=binding['validation_task'],event_head=state['event_head'],human_acceptance=state['acceptance'])
     return result
 

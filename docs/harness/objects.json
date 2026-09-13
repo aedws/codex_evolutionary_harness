@@ -1301,5 +1301,72 @@
       "private",
       "fresh-clone"
     ]
+  },
+  {
+    "id": "TASK-20260913-WIKI6-SEED",
+    "type": "task",
+    "name": "TASK-20260913-WIKI6-SEED",
+    "schema_version": 1,
+    "source_refs": [
+      "user:wiki-hierarchy-permissions"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Verification pending"
+    ],
+    "tags": [
+      "project"
+    ]
+  },
+  {
+    "id": "EXE-20260913-WIKI6-SEED",
+    "type": "execution",
+    "name": "EXE-20260913-WIKI6-SEED",
+    "schema_version": 1,
+    "source_refs": [
+      "EVD-20260913-WIKI6-SEED-BASELINE"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Verification pending"
+    ],
+    "tags": [
+      "project"
+    ]
+  },
+  {
+    "id": "EVD-20260913-WIKI6-SEED-BASELINE",
+    "type": "evidence",
+    "name": "EVD-20260913-WIKI6-SEED-BASELINE",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-WIKI6-SEED/baseline.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Verification pending"
+    ],
+    "tags": [
+      "project"
+    ]
+  },
+  {
+    "id": "EVD-20260913-WIKI6-SEED-VALIDATION",
+    "type": "evidence",
+    "name": "72 seed tests for interviewed wiki hierarchy/access",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-WIKI6-SEED/validation.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Human usability and production identity not verified"
+    ],
+    "tags": [
+      "project"
+    ]
   }
 ]

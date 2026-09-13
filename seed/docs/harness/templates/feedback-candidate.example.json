@@ -2,8 +2,15 @@
   "schema_version": 1,
   "template_only": true,
   "candidate_id": null,
-  "origin": {"project_id": null, "execution_refs": []},
-  "seed_base": {"distribution_version": null, "contract_version": null, "manifest_sha256": null},
+  "origin": {
+    "project_id": null,
+    "execution_refs": []
+  },
+  "seed_base": {
+    "distribution_version": null,
+    "contract_version": null,
+    "manifest_sha256": null
+  },
   "classification": "unknown",
   "proposed_scope": null,
   "clause_refs": [],
@@ -13,8 +20,15 @@
   "hypothesis": null,
   "counterexamples": [],
   "project_assumptions": [],
-  "change": {"summary": null, "diff_sha256": null},
-  "fingerprint": {"normalization_version": 1, "canonical_input_sha256": null, "value": null},
+  "change": {
+    "summary": null,
+    "diff_sha256": null
+  },
+  "fingerprint": {
+    "normalization_version": 1,
+    "canonical_input_sha256": null,
+    "value": null
+  },
   "eval_refs": [],
   "complexity_budget_ref": null,
   "compatibility_refs": [],
@@ -25,5 +39,7 @@
   "release_refs": [],
   "adoption_observation_refs": [],
   "supersedes": [],
-  "unknowns": ["Draft example only. Populate from actual observations; do not submit or treat as a verified candidate."]
+  "unknowns": [
+    "Draft example only. Populate from actual observations; do not submit or treat as a verified candidate."
+  ]
 }

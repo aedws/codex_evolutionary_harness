@@ -16,5 +16,7 @@
   "after_digest": null,
   "observed_result": "unknown",
   "evidence_refs": [],
-  "limitations": ["Installed, selected, read, executed and verified are different claims; absent telemetry stays unknown."]
+  "limitations": [
+    "Installed, selected, read, executed and verified are different claims; absent telemetry stays unknown."
+  ]
 }

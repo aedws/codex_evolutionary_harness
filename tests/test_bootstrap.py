@@ -11,6 +11,8 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('bootstrap_gate',ROOT/'seed/bootstrap.py')
 b=importlib.util.module_from_spec(spec);spec.loader.exec_module(b)
+spec=importlib.util.spec_from_file_location('wiki_core_fixture',ROOT/'seed/wiki_core.py')
+w=importlib.util.module_from_spec(spec);spec.loader.exec_module(w)
 
 
 class BootstrapTests(unittest.TestCase):
@@ -24,6 +26,20 @@ class BootstrapTests(unittest.TestCase):
             'relations':[{'from':'REQ-1','to':'TASK-1','basis':'confirmed_by_user'}],
             'journeys':[{'role':r,'paths':['a.html','b.html','c.html']} for r in ['owner','developer','reviewer']],
             'input_sha256':{n:hashlib.sha256((self.root/n).read_bytes()).hexdigest() for n in ['a.html','b.html','c.html']},'validation_task':'TASK-1'}
+        self.contract={'schema_version':1,'profile':w.PROFILE,'roles':{'owner':'Fixture owner'},'access':{'root_read':['owner'],'overrides':{}},'root':'A','nodes':[],
+            'interview':{'status':'confirmed','decision_ref':'decision.json','policy_digest':''},
+            'adapter':{'kind':'authenticated_read_only','source_paths':['adapter.py'],'test_paths':['negative_tests.py'],'required_tests':['check']}}
+        for ident,parent,page in [('A',None,'a.html'),('B','A','b.html'),('C','B','c.html')]:
+            self.contract['nodes'].append({'id':ident,'parent':parent,'page':page,'title':ident,'grants':{'read':['owner'],'edit':[],'approve':[],'execute':[]}})
+        self.contract['interview']['policy_digest']=w.policy_digest(self.contract)
+        (self.root/'tree.json').write_text(json.dumps(self.contract))
+        for name in ['decision.json','adapter.py','negative_tests.py']:(self.root/name).write_text('{}')
+        self.binding.update(wiki_contract='tree.json',journeys=[{'role':'owner','paths':['a.html','b.html','c.html']}])
+        for node in self.contract['nodes']:
+            path=self.root/'docs/wiki/roles/owner'/node['page'];path.parent.mkdir(parents=True,exist_ok=True)
+            path.write_text(w.navigation(self.contract,node['id'],'owner'),encoding='utf-8')
+        for path in self.root.rglob('*'):
+            if path.is_file():self.binding['input_sha256'][path.relative_to(self.root).as_posix()]=hashlib.sha256(path.read_bytes()).hexdigest()
 
     def test_complete_artifacts_are_only_wiki_ready(self):
         self.assertEqual(b.artifacts(self.root,self.binding)['state'],'wiki_ready')
@@ -57,13 +73,21 @@ class BootstrapTests(unittest.TestCase):
         value=copy.deepcopy(self.binding);value['approved']=True
         with self.assertRaises(b.BootstrapError):b.artifacts(self.root,value)
 
+    def test_role_output_link_and_missing_interview_hash_rejected(self):
+        page=self.root/'docs/wiki/roles/owner/a.html'
+        page.write_text(page.read_text(encoding='utf-8')+'<a href="private-secret.html">secret</a>',encoding='utf-8')
+        value=copy.deepcopy(self.binding);value['input_sha256']['docs/wiki/roles/owner/a.html']=hashlib.sha256(page.read_bytes()).hexdigest()
+        with self.assertRaisesRegex(ValueError,'forbidden'):b.artifacts(self.root,value)
+        value=copy.deepcopy(self.binding);value['input_sha256'].pop('decision.json')
+        with self.assertRaises(ValueError):b.artifacts(self.root,value)
+
     def test_final_readiness_requires_current_real_run(self):
         shutil.copyfile(ROOT/'seed/harness.py',self.root/'harness.py')
         spec=importlib.util.spec_from_file_location('fixture_runtime',self.root/'harness.py')
         h=importlib.util.module_from_spec(spec);spec.loader.exec_module(h)
         policy={'schema_version':1,'project_id':'FIXTURE','authority_ref':'fixture-owner','commands':{'check':{'argv':[sys.executable,'-c','print("fixture check")'],'timeout_seconds':2}},'max_output_bytes':1024}
         (self.root/'policy.json').write_bytes(h.encoded(policy));core=h.Core(self.root);core.initialize(self.root/'policy.json')
-        core.define_task({'schema_version':1,'id':'TASK-1','title':'Bootstrap fixture','purpose':'Observe real run','acceptance_class':'mixed','criteria':['Fixture check'],'target_paths':['a.html'],'required_tests':['check']},'register')
+        core.define_task({'schema_version':1,'id':'TASK-1','title':'Bootstrap fixture','purpose':'Observe real run','acceptance_class':'mixed','criteria':['Fixture check'],'target_paths':['a.html','tree.json','decision.json','adapter.py','negative_tests.py'],'required_tests':['check']},'register')
         with self.assertRaisesRegex(b.BootstrapError,'not currently passed'):b.evaluate(self.root,self.binding)
         core.run('TASK-1','check-1')
         result=b.evaluate(self.root,self.binding)

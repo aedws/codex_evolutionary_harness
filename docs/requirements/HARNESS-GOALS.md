@@ -70,3 +70,5 @@ Universal Core → Domain → Project       호환성·Canary·Rollback을 거�
 `REQ-HARNESS-DECISION-001`: 전체 세부 판정의 입력·우선순위·시간/참조·권한 상속·단계 의존성·adapter·완료 단위를 재검토하고 목표 경로의 공백을 보완한다. 사용자는 인터뷰에서 최소 실행 코어 구현과 검증을 명시적으로 승인했다. [RFC-0005](../rfcs/RFC-0005-end-to-end-decision-system.md)에 계약 조합과 로컬 실행 경로를 정리한다. 이 승인은 기존 프로젝트의 원본 권위 변경, credential 변경, 외부 배포나 자동 승격 권한을 의미하지 않는다.
 
 REQ-HARNESS-PREVENTION-001: 사용자가 위키 누락 원인 감사 후 씨앗 예방장치 보완과 실제 프로젝트 작업 재개를 승인했다. 기존 V01/V03를 bootstrap 필수 Gate로 연결하고 API 검사만으로 완료하는 경로를 차단한다.
+
+RFC-0007 requires an owner-interviewed, project-specific role policy and one document hierarchy driving navigation and access checks. Contract 6 must not ship fixed roles or equate role guidance with enforced authorization.
