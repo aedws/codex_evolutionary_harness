@@ -1453,5 +1453,22 @@
     "tags": [
       "project"
     ]
+  },
+  {
+    "id": "EVD-20260913-LOCAL-SEED-REMOTE",
+    "type": "evidence",
+    "name": "Private v0.6.1 fresh download and exact assets",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-LOCAL-SEED-001/remote-verification.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Full V2/V3/V4 and real product acceptance not certified"
+    ],
+    "tags": [
+      "private",
+      "project"
+    ]
   }
 ]
