@@ -1,0 +1,31 @@
+{
+  "version": "v0.6.0",
+  "repository": {
+    "isPrivate": true,
+    "url": "https://github.com/aedws/codex_evolutionary_harness"
+  },
+  "manifest_sha256": "61609a60788cff31a62925e63d2f4a459a05d0e2564a3a3232df3f25f60f5cbe",
+  "assets": {
+    "evolutionary-harness-seed-0.6.0.zip": "9986ad7e9aff1dfc84b89d37455a2ed8988f89f8d526bf5a27c2b16a5ea5ad46",
+    "SHA256SUMS-v0.6.0.txt": "af25bc4425f42442f09bd83222cb1b8a2dc3f473459ec5f0a6af124586c5700c"
+  },
+  "preserved_remote_tags": [
+    "3ef4250dde6306c5261a41c72d056de5beb81646\trefs/tags/v0.1.0",
+    "db0a0e2924723f4f9544292b64a44726d038c58b\trefs/tags/v0.1.0^{}",
+    "a7bc80e80088a6442a581089646f9a0ea23dc00b\trefs/tags/v0.2.0",
+    "59c4cc828e5bdf8ca7fc4daea153699e2f253b33\trefs/tags/v0.2.0^{}",
+    "aefa96719fecac578dd39a6ceacd489270be72a7\trefs/tags/v0.3.0",
+    "dcbb1705e3d91a5a29b8514ac784d6e4290073fe\trefs/tags/v0.3.0^{}",
+    "37e031a7e14bd26bbfc62fd7f32803c30fe2904c\trefs/tags/v0.4.0",
+    "ad05b958827050d16dae42479fbde5ff40c47fd8\trefs/tags/v0.4.0^{}",
+    "a35ee5a3b1c2e54e044f2211db7b37f869e8cf3d\trefs/tags/v0.5.0",
+    "4ce840fe7f942995f4fc2188f3170db05ff440f9\trefs/tags/v0.5.0^{}"
+  ],
+  "operation_keys": [
+    "seed-v0.6.0-source-push",
+    "seed-v0.6.0-private-prerelease"
+  ],
+  "source_validation": "final-test-snapshot.json",
+  "tests": 72,
+  "authorization": "User requested seed improvement and commit; prior private distribution authorization persists"
+}

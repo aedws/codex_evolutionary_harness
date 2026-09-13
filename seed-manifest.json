@@ -4,7 +4,7 @@
   "files": {
     "AGENTS.md": "b2c289fb1f109a97789dbdcd67d03aafddb11195c15791656661c9aa7387ae3e",
     "BOOTSTRAP_PROMPT.md": "f07d336c0cdd77ade473da806f37569876505174c90a93c6990fcf8c130ff575",
-    "bootstrap.py": "7c227578c745a2d50670dad1af6a43586d55c3f3b0eb356b383ca3949f2a64b6",
+    "bootstrap.py": "94056b9f711ff7feac0791e70fc841d0de53540229e6e24123de7a6bba228b1a",
     "docs/harness/README.md": "c00b3fa29941a4a7239cc967373dd200494907a270126d8364753a4c6f135d40",
     "docs/harness/bootstrap/README.md": "22c27f200ca83ec467b569fc93e89b1cb914af0ed332d7f461437657756d22f1",
     "docs/harness/checkpoint.md": "ac41715825b1e2533f80879fc3052203a3dcb046b3ecb048a536efae85db2bb6",

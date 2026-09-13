@@ -114,6 +114,8 @@ def artifacts(root, binding):
     for j in journeys:
         route=j['paths'];need(type(route) is list and len(route)>=3 and len(set(route))==len(route) and all(n in docs for n in route), "Journey must include three distinct documents")
         need(all(b in reachable(a) for a,b in zip(route,route[1:])), "Journey not navigable")
+        by_page={n['page']:n for n in contract['nodes']}
+        need(all(j['role'] in by_page[PurePosixPath(p).name]['grants']['read'] for p in route), 'Role journey crosses forbidden document')
     text(binding['validation_task'])
     return {'profile':PROFILE,'state':'wiki_ready','documents':len(docs),'objects':len(views),
             'binding_digest':hashlib.sha256(json.dumps(binding,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),
