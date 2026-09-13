@@ -1,0 +1,19 @@
+Cloning into 'C:\Users\uyess\Desktop\codex_evolutionary_harness\.local\remote-smoke-v0.5.0\source'...
+warning: refs/tags/v0.5.0 a35ee5a3b1c2e54e044f2211db7b37f869e8cf3d is not a commit!
+Note: switching to '4ce840fe7f942995f4fc2188f3170db05ff440f9'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+

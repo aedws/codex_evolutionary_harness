@@ -435,5 +435,17 @@
     ],
     "observed_at": "2026-09-13T05:04:57.215105+00:00",
     "applicable_snapshot": "5269f5358106f7c248e889775415c26b54d0b9f1328cbf6505132f5fd8ff20d8"
+  },
+  {
+    "relation_id": "REL-20260913-PREVENTION-003",
+    "from": "TASK-20260913-PREVENTION-001",
+    "to": "EVD-20260913-PREVENTION-REMOTE",
+    "type": "supported_by",
+    "basis": "confirmed_by_runtime",
+    "source_refs": [
+      "EVD-20260913-PREVENTION-REMOTE"
+    ],
+    "observed_at": "2026-09-13T05:09:15.775949+00:00",
+    "applicable_snapshot": "4ce840fe7f942995f4fc2188f3170db05ff440f9"
   }
 ]

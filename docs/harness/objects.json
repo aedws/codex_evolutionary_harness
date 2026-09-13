@@ -1162,7 +1162,8 @@
       "user:prevention-and-continue"
     ],
     "relation_refs": [
-      "REL-20260913-PREVENTION-001"
+      "REL-20260913-PREVENTION-001",
+      "REL-20260913-PREVENTION-003"
     ],
     "unknowns": [
       "Human quality acceptance pending; full V2/V3/V4 unverified"
@@ -1280,6 +1281,25 @@
     "tags": [
       "project",
       "seed-maintenance"
+    ]
+  },
+  {
+    "id": "EVD-20260913-PREVENTION-REMOTE",
+    "type": "evidence",
+    "name": "Private v0.5.0 fresh clone and exact asset readback",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-PREVENTION-001/remote-verification.json"
+    ],
+    "relation_refs": [
+      "REL-20260913-PREVENTION-003"
+    ],
+    "unknowns": [
+      "Human quality and independent cross-domain results remain unverified"
+    ],
+    "tags": [
+      "private",
+      "fresh-clone"
     ]
   }
 ]

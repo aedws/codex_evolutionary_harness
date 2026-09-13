@@ -18,4 +18,4 @@
 - HARNESS-REQ-20260913-001/002: original audit candidates retained.
 - HARNESS-REQ-20260913-003: architecture framing correction recorded; broader promotion unverified.
 
-- TASK-20260913-PREVENTION-001: 66-test bootstrap gate prepared for v0.5.0; private remote readback pending.
+- TASK-20260913-PREVENTION-001: v0.5.0 private prerelease and 66-test fresh-clone readback verified.
