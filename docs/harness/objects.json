@@ -1313,7 +1313,7 @@
     "relation_refs": [],
     "acceptance_class": "mixed",
     "unknowns": [
-      "Verification pending"
+      "Human usability/identity and full V2/V3/V4 remain unverified"
     ],
     "tags": [
       "project"
@@ -1330,7 +1330,7 @@
     "relation_refs": [],
     "acceptance_class": "mixed",
     "unknowns": [
-      "Verification pending"
+      "Human usability/identity and full V2/V3/V4 remain unverified"
     ],
     "tags": [
       "project"
@@ -1366,6 +1366,24 @@
       "Human usability and production identity not verified"
     ],
     "tags": [
+      "project"
+    ]
+  },
+  {
+    "id": "EVD-20260913-WIKI6-SEED-REMOTE",
+    "type": "evidence",
+    "name": "Private v0.6.0 fresh source and asset readback",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260913-WIKI6-SEED/remote-verification.json",
+      "docs/harness/evidence/EXE-20260913-WIKI6-SEED/final-test-snapshot.json"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Human usability and remote IAM unverified"
+    ],
+    "tags": [
+      "private",
       "project"
     ]
   }

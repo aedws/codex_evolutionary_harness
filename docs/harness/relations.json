@@ -447,5 +447,17 @@
     ],
     "observed_at": "2026-09-13T05:09:15.775949+00:00",
     "applicable_snapshot": "4ce840fe7f942995f4fc2188f3170db05ff440f9"
+  },
+  {
+    "relation_id": "REL-20260913-WIKI6-SEED-001",
+    "from": "TASK-20260913-WIKI6-SEED",
+    "to": "EVD-20260913-WIKI6-SEED-REMOTE",
+    "type": "supported_by",
+    "basis": "confirmed_by_runtime",
+    "source_refs": [
+      "EVD-20260913-WIKI6-SEED-REMOTE"
+    ],
+    "observed_at": "2026-09-13T06:14:43.366615+00:00",
+    "applicable_snapshot": "faa5c93d1a0bc9259c5407ebfacf48c7c147ca2d"
   }
 ]

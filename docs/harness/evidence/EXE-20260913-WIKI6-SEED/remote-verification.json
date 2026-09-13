@@ -1,0 +1,132 @@
+{
+  "evidence_id": "EVD-20260913-WIKI6-SEED-REMOTE",
+  "execution_id": "EXE-20260913-WIKI6-SEED",
+  "created_at": "2026-09-13T06:13:20.122449+00:00",
+  "release_commit": "faa5c93d1a0bc9259c5407ebfacf48c7c147ca2d",
+  "repo": {
+    "isPrivate": true,
+    "url": "https://github.com/aedws/codex_evolutionary_harness"
+  },
+  "release": {
+    "assets": [
+      {
+        "apiUrl": "https://api.github.com/repos/aedws/codex_evolutionary_harness/releases/assets/560689020",
+        "contentType": "application/zip",
+        "createdAt": "2026-09-13T06:11:33Z",
+        "digest": "sha256:9986ad7e9aff1dfc84b89d37455a2ed8988f89f8d526bf5a27c2b16a5ea5ad46",
+        "downloadCount": 0,
+        "id": "RA_kwDOUYLum84ha298",
+        "label": "",
+        "name": "evolutionary-harness-seed-0.6.0.zip",
+        "size": 209201,
+        "state": "uploaded",
+        "updatedAt": "2026-09-13T06:11:33Z",
+        "url": "https://github.com/aedws/codex_evolutionary_harness/releases/download/v0.6.0/evolutionary-harness-seed-0.6.0.zip"
+      },
+      {
+        "apiUrl": "https://api.github.com/repos/aedws/codex_evolutionary_harness/releases/assets/560689019",
+        "contentType": "text/plain; charset=utf-8",
+        "createdAt": "2026-09-13T06:11:33Z",
+        "digest": "sha256:af25bc4425f42442f09bd83222cb1b8a2dc3f473459ec5f0a6af124586c5700c",
+        "downloadCount": 0,
+        "id": "RA_kwDOUYLum84ha297",
+        "label": "",
+        "name": "SHA256SUMS-v0.6.0.txt",
+        "size": 102,
+        "state": "uploaded",
+        "updatedAt": "2026-09-13T06:11:33Z",
+        "url": "https://github.com/aedws/codex_evolutionary_harness/releases/download/v0.6.0/SHA256SUMS-v0.6.0.txt"
+      }
+    ],
+    "isDraft": false,
+    "isPrerelease": true,
+    "tagName": "v0.6.0",
+    "url": "https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.6.0"
+  },
+  "checks": [
+    {
+      "name": "clone",
+      "argv": [
+        "git",
+        "clone",
+        "--branch",
+        "v0.6.0",
+        "--depth",
+        "1",
+        "https://github.com/aedws/codex_evolutionary_harness.git",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.6.0\\source"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-WIKI6-SEED/remote-clone.txt",
+      "sha256": "e73546d79465613163daf5280b46014a8e0a853ec0dfda63b9d5fc4686665116"
+    },
+    {
+      "name": "seed",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/seed.py",
+        "check"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.6.0\\source",
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-WIKI6-SEED/remote-seed.txt",
+      "sha256": "f9bdb9dfdedd8b9fc2cc0de62ab7e97ffbbc8f89c86a153e82579b058cf73b26"
+    },
+    {
+      "name": "contracts",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "scripts/check_contracts.py"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.6.0\\source",
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-WIKI6-SEED/remote-contracts.txt",
+      "sha256": "c9a519889ded72808adcc751a88a87bf62e6b25cc03073b617de1a66df9d4d59"
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "C:\\Users\\uyess\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.6.0\\source",
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-WIKI6-SEED/remote-tests.txt",
+      "sha256": "21953440f81baf97e87cd3d7a68fd6ec1387febf0f2c6c940c1f5137749402b2"
+    },
+    {
+      "name": "assets",
+      "argv": [
+        "gh",
+        "release",
+        "download",
+        "v0.6.0",
+        "--repo",
+        "aedws/codex_evolutionary_harness",
+        "--dir",
+        "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\remote-smoke-v0.6.0\\assets"
+      ],
+      "cwd": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness",
+      "exit_code": 0,
+      "log": "docs/harness/evidence/EXE-20260913-WIKI6-SEED/remote-assets.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "manifest_sha256": "61609a60788cff31a62925e63d2f4a459a05d0e2564a3a3232df3f25f60f5cbe",
+  "asset_hashes": {
+    "evolutionary-harness-seed-0.6.0.zip": "9986ad7e9aff1dfc84b89d37455a2ed8988f89f8d526bf5a27c2b16a5ea5ad46",
+    "SHA256SUMS-v0.6.0.txt": "af25bc4425f42442f09bd83222cb1b8a2dc3f473459ec5f0a6af124586c5700c"
+  },
+  "old_tags_preserved": true,
+  "fresh_clone_tests": 72,
+  "scope": "Fresh private pinned source, installed-seed runtime fixtures and exact ZIP payload; no new real-product or cross-domain claims"
+}

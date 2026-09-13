@@ -19,3 +19,5 @@
 - HARNESS-REQ-20260913-003: architecture framing correction recorded; broader promotion unverified.
 
 - TASK-20260913-PREVENTION-001: v0.5.0 private prerelease and 66-test fresh-clone readback verified.
+
+- TASK-20260913-WIKI6-SEED: v0.6.0 private release, 72 fresh-clone tests, owner-interviewed hierarchy/access applied to actual project. Human acceptance and broader domain evidence remain open.
