@@ -1470,5 +1470,53 @@
       "private",
       "project"
     ]
+  },
+  {
+    "id": "TASK-20260914-WIKI-DEFAULT-001",
+    "type": "task",
+    "name": "Newgame-style default wiki seed",
+    "schema_version": 1,
+    "source_refs": [
+      "user:default-newgame-wiki-in-seed"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Human readability and cross-project production adoption unverified"
+    ],
+    "tags": [
+      "core-presentation"
+    ]
+  },
+  {
+    "id": "EXE-20260914-WIKI-DEFAULT-001",
+    "type": "execution",
+    "name": "Reusable presentation layout and renderer",
+    "schema_version": 1,
+    "source_refs": [
+      "user:default-newgame-wiki-in-seed"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Human readability and cross-project production adoption unverified"
+    ],
+    "tags": [
+      "core-presentation"
+    ]
+  },
+  {
+    "id": "EVD-20260914-WIKI-DEFAULT-001",
+    "type": "evidence",
+    "name": "Default wiki distribution validation",
+    "schema_version": 1,
+    "source_refs": [
+      "user:default-newgame-wiki-in-seed"
+    ],
+    "relation_refs": [],
+    "unknowns": [
+      "Human readability and cross-project production adoption unverified"
+    ],
+    "tags": [
+      "core-presentation"
+    ]
   }
 ]

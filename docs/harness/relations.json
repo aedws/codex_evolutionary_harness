@@ -459,5 +459,17 @@
     ],
     "observed_at": "2026-09-13T06:14:43.366615+00:00",
     "applicable_snapshot": "faa5c93d1a0bc9259c5407ebfacf48c7c147ca2d"
+  },
+  {
+    "relation_id": "REL-20260914-WIKI-DEFAULT-001",
+    "from": "TASK-20260914-WIKI-DEFAULT-001",
+    "to": "EVD-20260914-WIKI-DEFAULT-001",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260914-WIKI-DEFAULT-001/validation.json"
+    ],
+    "observed_at": "2026-09-14T00:20:46.111357+00:00",
+    "applicable_snapshot": "seed-manifest.json digest in validation"
   }
 ]

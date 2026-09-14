@@ -57,3 +57,5 @@ Load the first-read contract and task-relevant objects/relations/evidence only. 
 Record observed_at separately from source_modified_at. Freshness rules state max age/invalidation conditions and explicit evaluation_time. Missing remote access yields unknown/stale with a reason, not a fresh claim. Conflicting source authorities block dependent claims while unrelated work continues.
 
 Measure context bytes/tokens, files loaded, repeated reads, manual corrections and restore time when proposing optimization. A summary that hides uncertainty or provenance fails even if smaller. Batch repeated observations into the execution's review; retain unique failures and references rather than copying all raw material into every view.
+
+Default presentation for new bootstraps: [wiki layout and renderer](../wiki/README.md) supplies overview, nine topics and dependency-ordered work details. Include its project-filled content/tree validation in the required checks. Empty templates or a flat list are incomplete. Existing bindings remain compatible but do not automatically certify presentation parity.

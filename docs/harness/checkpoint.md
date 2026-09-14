@@ -1,11 +1,11 @@
 # Checkpoint
 
-TASK-20260913-LOCAL-SEED-001 / EXE-20260913-LOCAL-SEED-001.
+TASK-20260914-WIKI-DEFAULT-001 / EXE-20260914-WIKI-DEFAULT-001.
 
-- Changed: v0.6.1 adds explicit owner-selected loopback_read_only without login. Exactly one local read scope; no identity separation claimed. Authenticated mode remains available when chosen.
-- Verified: 73 source-bound seed tests; prior evidence/event prefix preserved. Actual project applied no-login mode with 64 tests and synthetic Snapshot/Facts demo; evidence remains in that project.
-- Unverified: remote/IAM, human usability, full V2/V3/V4 and real market data/reporting.
-- Evidence/events: EXE-20260913-LOCAL-SEED-001, events 001/002/003.
-- External actions: private v0.6.1 released at 104ed27da85e82b43b19a4d2f4e7898fb379ab63; fresh download 73 tests and exact ZIP/manifest hashes verified. Previous tags preserved. Product public repository remains unpushed.
-- Friction: forcing authentication contradicted project-specific owner choice and added offline friction. Keep the hierarchy/access integrity checks while removing unnecessary login.
-- Next: continue the local product workflow toward Fact-based claim validation and separately reviewed data providers.
+- Changed: v0.7.0 / contract 6 adds Newgame-style default presentation, domain-neutral scaffold/renderer, overview and nine topics, ordered work details and source explanations. New bootstrap instructions require the presentation check. Prior ledger/bootstrap/access engines unchanged.
+- Verified: 80 tests; fresh install contains exact seed files, populated generic fixture builds and identical replay is unchanged. Two domain fixtures, role privacy, missing contracts/dependencies, escaped prose, immutable output ownership tested. Historical evidence/event prefix preserved.
+- Unverified: human readability, actual cross-project operation, full bootstrap/HTTP/state integration and V2/V3/V4. presentation_checked does not imply bootstrap_ready. Existing projects require explicit adoption/parity evidence.
+- Evidence/events: EXE-20260914-WIKI-DEFAULT-001 validation and commands; EVT-20260914-WIKI-DEFAULT-001/002.
+- External actions: private v0.7.0 release prepared; publication/readback pending. No downstream product or Newgame files changed.
+- Feedback: explicit user-authorized core presentation improvement; fixtures show structural reuse, not automatic promotion of product policies. No skills selected or changed. Shared owner/access/rollback boundaries retained.
+- Next: publish/read back the authorized private seed release; new projects fill project content and interview owner for access before bootstrap.

@@ -104,6 +104,12 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
         raise SeedError(2, "Mandatory bootstrap gate missing")
     if governed_wiki and not {"wiki_core.py", "wiki_access.py"} <= set(payload):
         raise SeedError(2, "Governed wiki components missing")
+    if manifest.get('wiki_presentation_profile') is not None or manifest['distribution_version']=='0.7.0':
+        if (manifest.get('wiki_presentation_profile')!='newgame-style-wiki-1'
+                or release.get('wiki_presentation_profile')!=manifest['wiki_presentation_profile']
+                or not {'wiki_template.py','docs/harness/wiki/README.md'}<=set(payload)
+                or any(b'wiki_template.py' not in payload[name] for name in ['AGENTS.md','BOOTSTRAP_PROMPT.md'])):
+            raise SeedError(2, 'Default wiki presentation and bootstrap instructions missing')
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}

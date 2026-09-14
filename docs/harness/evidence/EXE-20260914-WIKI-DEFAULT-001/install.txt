@@ -1,0 +1,1 @@
+{"outcome": "installed", "target": "C:\\Users\\uyess\\AppData\\Local\\Temp\\eh-default-wiki-o_mqwpxa", "files": 39, "manifest_sha256": "9ea199604b0715fa398ede02edc250438dab88c1c4bea5feabb5fc0b8deb573e"}
