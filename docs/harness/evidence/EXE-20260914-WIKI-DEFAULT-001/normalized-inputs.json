@@ -1,7 +1,7 @@
 {
-  "contract_version": 6,
-  "distribution_version": "0.7.0",
-  "files": {
+  "reason": "Normalize new seed documentation CRLF before release; prior evidence retained",
+  "seed_manifest_sha256": "143c68a99a823f838a2c07e02eba33673b72602addaa8cd51be551d780f74449",
+  "seed_files": {
     "AGENTS.md": "63236e16525da865f41bdf82fcc32589248c4ba427c00e5248d1f592798e2978",
     "bootstrap.py": "94056b9f711ff7feac0791e70fc841d0de53540229e6e24123de7a6bba228b1a",
     "BOOTSTRAP_PROMPT.md": "46f0ef719c0781b2695312d01368f28e51dee2bb2ae37eb385f31229613de788",
@@ -42,8 +42,6 @@
     "wiki_core.py": "0f7a44a72efa046c5c6d3007bb219926165dede86928b87c79311257004e6963",
     "wiki_template.py": "8884403e2e97fd72ad0385e2b9cfb6f5b08bd0bd8f11d8e7ef38a1e14cacaef4"
   },
-  "schema_version": 1,
-  "source_ref": "v0.7.0",
-  "source_repository": "https://github.com/aedws/codex_evolutionary_harness",
-  "wiki_presentation_profile": "newgame-style-wiki-1"
+  "tests": 80,
+  "previous_validation": "validation.json"
 }
