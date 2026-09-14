@@ -1509,7 +1509,9 @@
     "name": "Default wiki distribution validation",
     "schema_version": 1,
     "source_refs": [
-      "user:default-newgame-wiki-in-seed"
+      "docs/harness/evidence/EXE-20260914-WIKI-DEFAULT-001/validation.json",
+      "docs/harness/evidence/EXE-20260914-WIKI-DEFAULT-001/normalized-inputs.json",
+      "docs/harness/evidence/EXE-20260914-WIKI-DEFAULT-001/remote-verification.json"
     ],
     "relation_refs": [],
     "unknowns": [

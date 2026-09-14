@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "release": "https://github.com/aedws/codex_evolutionary_harness/releases/tag/v0.7.0",
+  "release_commit": "6b978ebd7d0be205634b5609e18f0b95f86f9dde",
+  "tests": 80,
+  "assets": {
+    "evolutionary-harness-v0.7.0.zip": "077e00ff366ec0681739541579c20215b3f3438a4037c3ee44389596770c7cba",
+    "seed-manifest.json": "143c68a99a823f838a2c07e02eba33673b72602addaa8cd51be551d780f74449"
+  },
+  "fresh_install": "C:\\Users\\uyess\\AppData\\Local\\Temp\\eh-v070-readback-chh_gep8\\project",
+  "v061_preserved": "104ed27da85e82b43b19a4d2f4e7898fb379ab63",
+  "readback_correction": "Initial check compared annotated tag object to release commit; peeled reference confirms preserved commit. No remote tag changed."
+}

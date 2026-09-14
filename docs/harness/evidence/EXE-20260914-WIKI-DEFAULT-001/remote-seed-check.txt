@@ -1,0 +1,1 @@
+{"outcome": "checked", "version": "0.7.0", "files": 39, "manifest_sha256": "143c68a99a823f838a2c07e02eba33673b72602addaa8cd51be551d780f74449"}
