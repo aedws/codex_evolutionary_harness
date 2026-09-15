@@ -1,0 +1,10 @@
+{
+  "version": "0.12.0",
+  "manifest_sha256": "4969116b30bad78521f4820cfb7edb9ba8dbcaa4c8fd4703b4ced0c39fe24a3f",
+  "files": 54,
+  "first": "installed",
+  "replay": "unchanged",
+  "bytes_and_mtime_preserved": true,
+  "zip_matches_install": true,
+  "zip_sha256": "8d9905505fa1d648cd68d8c21a02b6ff3e4ccecc6b9ed101e6a98b0cfc7cfb9f"
+}

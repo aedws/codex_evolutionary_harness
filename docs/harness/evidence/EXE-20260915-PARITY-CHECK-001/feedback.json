@@ -1,0 +1,32 @@
+{
+  "id": "HARNESS-REQ-20260915-DECLARATIVE-PARITY",
+  "scope": "core_candidate",
+  "classification": "locally_evaluated",
+  "problem": "Source/relationship semantics and navigation context were only partially implemented; labels were mistaken for parity coverage",
+  "improvement": "Declarative mapped identities, source-linked typed relations, contract invalidation, explicit differential oracle and preserved view context",
+  "evidence": [
+    "final-newgame-differential.json",
+    "final-tests-v2.log",
+    "optimization.json"
+  ],
+  "counterexamples": [
+    "Duplicate/missing mapping",
+    "Source declaration of accepted without Core evidence",
+    "Hidden relation endpoint",
+    "Conflicting/superseded decision",
+    "Changed inputs with reused key"
+  ],
+  "promotion": "not established",
+  "friction": [
+    {
+      "class": "release_metadata_mismatch",
+      "outcome": "distributor rejected inconsistent v0.12 manifest / v0.11 release; both identities corrected before final tests",
+      "evidence": "full-tests.log"
+    }
+  ],
+  "skill": {
+    "name": "computer-use:computer-use",
+    "used_for": "local UI visual inspection",
+    "modified": false
+  }
+}

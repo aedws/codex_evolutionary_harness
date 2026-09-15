@@ -1,0 +1,24 @@
+{
+  "fixture": "synthetic two-decision source mapping; not actual product acceptance",
+  "desktop": [
+    1280,
+    900
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "mobile_document_width": 375,
+  "observed": [
+    "Search and selected object preserved on lineage tab",
+    "Incoming/outgoing source and succession relationships",
+    "Source declared complete displayed separately from unverified state",
+    "Actual approved source link opens",
+    "No login or action authority in offline mode"
+  ],
+  "human_acceptance": "pending",
+  "screenshots": [
+    "lineage-desktop.png",
+    "lineage-mobile.png"
+  ]
+}

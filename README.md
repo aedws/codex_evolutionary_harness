@@ -3,14 +3,14 @@
 <!-- SEED-USAGE:START — keep this usage block immediately after the title. -->
 ## 씨앗 사용법 — 여기서 시작
 
-**현재 개발 후보: v0.11.0 / contract 6 / operating-workspace-1.** Newgame 기능 대응 운영 계층과 비교 검사를 포함합니다. 전체 기능 동등성과 실제 프로젝트 도입은 아직 수락되지 않았습니다. [설정·사용법](seed/docs/harness/workspace/README.md) · [기능 대응 RFC](docs/rfcs/RFC-0013-newgame-functional-parity.md). 안정 태그 v0.7.0과 구분합니다. 아래 순서로 설치한 뒤 대상 프로젝트에서 bootstrap을 요청한다. 내려받기만으로 자기개선·승격·Canary가 자동 실행되지는 않는다.
+**현재 개발 후보: v0.12.0 / contract 6 / operating-workspace-1.** 자동 객체·관계·결정 이력과 Newgame 기준 입력 비교 검사를 포함합니다. 전체 기능 동등성과 실제 프로젝트 도입은 아직 수락되지 않았습니다. [설정·사용법](seed/docs/harness/workspace/README.md) · [기능 대응 RFC](docs/rfcs/RFC-0013-newgame-functional-parity.md). 안정 태그 v0.7.0과 구분합니다. 아래 순서로 설치한 뒤 대상 프로젝트에서 bootstrap을 요청한다. 내려받기만으로 자기개선·승격·Canary가 자동 실행되지는 않는다.
 
 ### 1. 개발 후보 내려받고 commit 고정
 
 비공개 저장소 접근 권한과 인증된 Git, Python 3.10 이상이 필요하다. 아래는 PowerShell 예시다. 두 경로를 자신의 환경에 맞게 바꾸고, 배포 원본은 대상 프로젝트 밖의 **새 디렉터리**에 둔다. 기존 checkout이나 프로젝트 위에 전체 저장소를 복사하지 않는다.
 
 ```powershell
-$SeedSource = "C:/tools/evolutionary-harness-v0.11.0-candidate"
+$SeedSource = "C:/tools/evolutionary-harness-v0.12.0-candidate"
 $ProjectPath = "C:/projects/my-project"
 git clone --branch codex/wiki-auto-draft-20260915 --depth 1 https://github.com/aedws/codex_evolutionary_harness.git "$SeedSource"
 if ($LASTEXITCODE -ne 0) { throw "씨앗 다운로드 실패: 다음 단계로 진행하지 마세요." }

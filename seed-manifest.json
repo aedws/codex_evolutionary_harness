@@ -1,6 +1,6 @@
 {
   "contract_version": 6,
-  "distribution_version": "0.11.0",
+  "distribution_version": "0.12.0",
   "files": {
     "AGENTS.md": "34bf49a3097d9a981eb766d3a1234cd3a9a016ae5a31e5be7577d99fa0ea8c8e",
     "BOOTSTRAP_PROMPT.md": "832b838e8a8fc05f26adc77f48d560740c0ce69cc7bf8ea05fd06bf9493969bb",
@@ -27,7 +27,7 @@
     "docs/harness/overlays/project.json": "a27568a6cb41653597c502b4b1ae5a80dffd576b0705c6ca34b2e64c2a8028e8",
     "docs/harness/policy.md": "1f32ba703ab5bef69cfa95d018f3d3a9fb91c7b9164cf4cf9fc54ef7439dd35c",
     "docs/harness/relations.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-    "docs/harness/releases/current-harness.json": "20b6fc1c60bf12a41238e8de91dbee1092d13aafedfda507ddeb2579998b07a8",
+    "docs/harness/releases/current-harness.json": "4e708c21e67faa791e761fee1e91d51ee0a0bfaad7fc8c3574d737ee9f4354e2",
     "docs/harness/runtime/README.md": "1b5113dcab6d4ad4fe0228a4d6c8024b66813ff963bd3632b3465abc90b89d83",
     "docs/harness/runtime/candidate.example.json": "c0ef5280bd3e5f2f1a5339d0919aa5caac43d6ef35bf5a118144da79a0b5a666",
     "docs/harness/runtime/policy.example.json": "5a43ebd5083591787db5320aa42fb49e685442a4bd2bfda6d4d33fafd7e50ef7",
@@ -39,8 +39,9 @@
     "docs/harness/templates/skill-observation.example.json": "a88ccf19dcb0a8bb11b826eff7cee5caec2b4964bed26f3bc96475a9e0330073",
     "docs/harness/wiki/README.md": "992ed3d6da4732b4528030ed51e743459da3fabfae3a59c0037643e64279d969",
     "docs/harness/wiki/quality.md": "7b2bcbfa02cfd7539ce6fb3fbee2c6cbe438427fa957fcdd0ef78e3cf580702e",
-    "docs/harness/workspace/README.md": "409936f9d11bc189a67aff87bf742088e10d3b67cc3582e914b63118e6a4906a",
+    "docs/harness/workspace/README.md": "2cc644035f17a9bf552a09ab4dcaae7f1b629c1c742b175658273bb516854299",
     "docs/harness/workspace/delivery.example.json": "3ed7fe853e025c91ef5f51bb09760cd8c7eae05497705d919eb5f56835cc25a2",
+    "docs/harness/workspace/mapping.example.json": "b7634a7c383ecd5b573b2b57b9dcff8ba8a54c1b093f710733eb40c49b2d8434",
     "docs/harness/workspace/objects.example.json": "03ff2b27e5aca14f31e18f96818be4126362be9a31e0832d839ed6acc07b3576",
     "docs/harness/workspace/policy.example.json": "474fd49abd4d1346cbeb9e46ad8dff3fab7757dd6f2bc63758425a1c4713d31f",
     "docs/wiki/draft-input.json": "9c3fe61bf5ffc2844021b2820cda39cdd996956012e4f6950a34feadb8dc4c8c",
@@ -51,9 +52,10 @@
     "wiki_graph.py": "2166f96d27515ec046db82e78b7b4b9828d7adbf71fa1f62756186ea17b3ed41",
     "wiki_quality.py": "c6c77c9a66618de26cd0243a3a83c09084961e8ba93786c25bdebfcdb4d0a6c7",
     "wiki_template.py": "8884403e2e97fd72ad0385e2b9cfb6f5b08bd0bd8f11d8e7ef38a1e14cacaef4",
-    "workspace.py": "0df9f785a927f40a55b1bba94b0ea879381e6147b3b0803b4ce0c974b80adcef",
+    "workspace.py": "7bdf548498aea4a0f1018939c942225aaded78e3a152a1d2c3094c8b4bbbd7c8",
     "workspace_server.py": "e29f35303bd0b2e3b0a2d57c18cc72d489a9ace1d0eda701e75ef61c1cbf275a",
-    "workspace_view.py": "402fc6fa72c1aeafb7f747439cc0f23e725dd8ba4a3c4614b3b27d9e3c633d1f"
+    "workspace_sources.py": "83d538a20f8e252fd4dd4d531e708b37176d74418c60ee7a337c2b2ac20738b6",
+    "workspace_view.py": "0685727b8ff116135db15aaf88ef1519c0ae41749b2327d3fc505cd76e2e20aa"
   },
   "operating_workspace_profile": "operating-workspace-1",
   "schema_version": 1,
@@ -63,5 +65,6 @@
   "wiki_graph_profile": "object-node-map-1",
   "wiki_presentation_profile": "newgame-style-wiki-1",
   "wiki_quality_profile": "wiki-quality-1",
-  "wiki_state_profile": "state-object-view-1"
+  "wiki_state_profile": "state-object-view-1",
+  "workspace_registry_profile": "explicit-registry-2"
 }

@@ -1,0 +1,33 @@
+{
+  "scope": "same v2 graph fixture and source bytes; no full Newgame speed claim",
+  "cases": [
+    {
+      "expected_verification": "passed",
+      "measurements": {
+        "False": {
+          "calls": 24,
+          "sha256": "7add0a10d702f86897b31c15b89db382c59c97573a5e286a9d2c2ea03a9480ab"
+        },
+        "True": {
+          "calls": 1,
+          "sha256": "7add0a10d702f86897b31c15b89db382c59c97573a5e286a9d2c2ea03a9480ab"
+        }
+      },
+      "exact_projection_equal": true
+    },
+    {
+      "expected_verification": "stale",
+      "measurements": {
+        "False": {
+          "calls": 24,
+          "sha256": "c79bb7a14250c76dbdf946c10bccc7188d3fa064f1a6dcf5f87b83228c264849"
+        },
+        "True": {
+          "calls": 1,
+          "sha256": "c79bb7a14250c76dbdf946c10bccc7188d3fa064f1a6dcf5f87b83228c264849"
+        }
+      },
+      "exact_projection_equal": true
+    }
+  ]
+}

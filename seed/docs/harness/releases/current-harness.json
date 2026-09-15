@@ -1,6 +1,6 @@
 {
   "harness_name": "Evolutionary Harness",
-  "distribution_version": "0.11.0",
+  "distribution_version": "0.12.0",
   "contract_version": 6,
   "distribution_kind": "contract_seed_with_local_core",
   "capability_level": "local_core_preview",
@@ -55,6 +55,9 @@
     "event_derived_workflow",
     "authenticated_object_actions",
     "pinned_delivery_canary_rollback",
-    "inspection_only_audit_restore"
-  ]
+    "inspection_only_audit_restore",
+    "declarative_source_mapping",
+    "typed_relation_and_decision_lineage"
+  ],
+  "workspace_registry_profile": "explicit-registry-2"
 }

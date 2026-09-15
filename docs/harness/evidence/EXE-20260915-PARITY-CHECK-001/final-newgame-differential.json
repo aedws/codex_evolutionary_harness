@@ -1,0 +1,32 @@
+{
+  "reference_commit": "be23c7cad570c47e117d7521d998f5062ee23ec0",
+  "reference_sources": {
+    "scripts/generate_project_ontology.py": "014ee7243ea7b0aefb93f8f94760177b2516776c0a8ceedf8fec704eaab7facf",
+    "docs/assets/code-module-map.json": "f520a59dc36554822d5b41ea8e2ba0db9ae61a12c81451380ea75a95fa24ac55",
+    "docs/design/current-milestone-workline.md": "47bfbca126e2a026cce8d5a595cb1040924f43ff6dbdcb1e6cbe1550a57a8bb6"
+  },
+  "module_objects_equal": 61,
+  "work_objects_equal": 28,
+  "source_edges_complete": 89,
+  "compared_fields": [
+    "native identity",
+    "title",
+    "purpose/source path",
+    "player acceptance for work items",
+    "documented_by coverage"
+  ],
+  "intentional_differences": [
+    "OOP IDs are namespace + native-ID hash",
+    "Newgame documented implemented/confirmed statuses stay source declarations; candidate verification is unverified",
+    "Newgame E2E suffix remains in source, not inferred as a passing TestRun"
+  ],
+  "outcome": "declared_fields_equal",
+  "replay": "unchanged",
+  "not_proven": [
+    "Full Newgame ontology topology",
+    "External live data/CI/deployment",
+    "Whole functional equivalence",
+    "Human acceptance"
+  ],
+  "candidate_projection_sha256": "b9ceded7fc6c1ddbe002e7cf132f54c8d0161da96922629037ee088c4cf28809"
+}

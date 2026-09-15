@@ -19,10 +19,10 @@ def render(view,tab='overview',focus=None,query='',page=0,source_route='/source'
     objects=view['objects'];states=view['states'];esc=escape
     if focus and focus not in objects:raise ValueError('Forbidden/unknown focus')
     filters=view.get('filters',{})
-    def url(**kw):return '?'+urlencode(dict(tab=tab,query=query,kind=filters.get('kind',''),state=filters.get('state',''),**kw))
+    def url(**kw):return '?'+urlencode(dict(dict(tab=tab,query=query,kind=filters.get('kind',''),state=filters.get('state',''),page=page,**({'focus':focus} if focus else {})),**kw))
     def link(key):return '<a href="'+esc(url(focus=key))+'#object-detail">'+esc(objects[key]['title'])+'</a>'
     out=['<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>프로젝트 운영 위키</title><style>'+CSS+'</style><body><header><small>VIEW TO OOP · SET UP TO DOP</small><h1>프로젝트 운영 위키</h1><nav>']
-    out += ['<a href="?'+urlencode({'tab':k})+'">'+v+'</a>' for k,v in TABS.items()]
+    out += ['<a href="'+esc(url(tab=k))+'"'+(' aria-current="page"' if k==tab else '')+'>'+v+'</a>' for k,v in TABS.items()]
     out += ['</nav></header><main><h2>'+TABS[tab]+'</h2><p>업무 상태 · 검사 상태 · 인간 수락 · 배포를 따로 봅니다. 등록 건수는 목표 완성률이 아닙니다.</p>']
     if tab in {'overview','decisions','objects'}:
         out+=['<form method="get"><input type="hidden" name="tab" value="'+tab+'"><label>목적·객체 검색 <input name="query" value="'+esc(query)+'"></label>']
@@ -51,7 +51,16 @@ def render(view,tab='overview',focus=None,query='',page=0,source_route='/source'
         out+=['<section class="card" id="object-detail"><h2>'+esc(obj['title'])+'</h2><p>'+esc(obj['purpose'])+'</p><p>'+esc(LABELS[s['workflow']]+' / 검사 '+VALUES[s['verification']])+'</p><p>다음 행동: '+esc(s['next_action'])+'</p><h3>선행 조건</h3><ul>']
         out+=['<li>'+link(k)+'</li>' for k in obj['depends_on']]
         out+=['</ul><h3>원본과 판정 근거</h3><ul>']
-        out+=['<li>'+esc(p)+'<small>'+esc(view['sources'][p]['sha256'])+'</small></li>' for p in obj['sources']]
+        out+=['<li><a href="'+esc(source_route)+'?'+urlencode({'id':view['sources'][p]['id']})+'">'+esc(p)+'</a><small>'+esc(view['sources'][p]['sha256'])+'</small></li>' for p in obj['sources']]
+        contract=view.get('contracts',{}).get(focus)
+        if contract:out+=['</ul><h3>수락 계약 · 원문 선언</h3><p>담당 '+esc(contract['owner'])+' · 원문 ID '+esc(contract['native_id'])+'</p><p>원문 상태 선언: '+esc(contract['declared_state'])+' (실행·수락 판정 아님)</p><ul>'+''.join('<li>'+esc(c)+'</li>' for c in contract['acceptance'])]
+        out+=['</ul><h3>들어오는 관계 · 나가는 관계</h3><ul>']
+        sources_by_id={v['id']:v for v in view['sources'].values()}
+        for rel in view.get('relations',[]):
+            if focus not in {rel['from'],rel['to']}:continue
+            other=rel['to'] if rel['from']==focus else rel['from']
+            target=link(other) if other in objects else '<a href="'+esc(source_route)+'?'+urlencode({'id':other})+'">'+esc(sources_by_id[other]['path'])+'</a>'
+            out+=['<li>'+('나가는' if rel['from']==focus else '들어오는')+' · '+esc(rel['type'])+' → '+target+'<small>'+esc(rel['basis'])+' · '+esc(', '.join(rel['sources']))+'</small></li>']
         out+=['</ul><details><summary>Event → 규칙 → 상태 생성 경로</summary><p>운영 규칙 operating-workspace-1 · revision '+str(s['revision'])+'</p><p>이벤트 '+esc(str(s['events']))+'</p><p>현재 Snapshot '+esc(s['snapshot'])+'</p><p>원본 변경 '+str(s['source_stale'])+' · 선행 차단 '+str(s['dependency_blocked'])+'</p><p>Core 근거 '+esc(str(s['core_evidence']))+'</p></details>']
         actions={'propose':'제안 기록','authorize':'범위 승인','start':'착수 기록','submit':'검토 요청','accept':'수락 판단','defer':'보류','block':'차단','resume':'재개 검토'}
         if view.get('capabilities'):
@@ -59,7 +68,7 @@ def render(view,tab='overview',focus=None,query='',page=0,source_route='/source'
             for k,v in {'subject':focus,'key':'UI-'+secrets.token_hex(16),'expected_revision':str(s['revision']),'snapshot':s['snapshot']}.items():out+=['<input type="hidden" name="'+k+'" value="'+esc(v)+'">']
             out+=['<label>행동 <select name="action">'+''.join('<option value="'+k+'">'+actions[k]+'</option>' for k in view['capabilities'])+'</select></label><label>판단 근거 <input name="reason" required maxlength="4000"></label><button>기록 요청</button></form></details>']
         out+=['</section>']
-    elif tab=='lineage':out+=['<p>객체 탐색에서 대상을 선택하면 원본·선행 조건·검사·이벤트를 조회합니다.</p>']
+    elif tab=='lineage':out+=['<p>관계를 확인할 객체를 선택하세요.</p><ul>'+''.join('<li>'+link(k)+'</li>' for k in view['matches'][page*6:(page+1)*6])+'</ul>']
     if tab=='documents':
         groups=view['collections'];docs=view['documents']
         def children(parent):

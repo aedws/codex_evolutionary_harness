@@ -141,6 +141,11 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
         policy=json.loads(payload['docs/harness/workspace/policy.example.json']);delivery=json.loads(payload['docs/harness/workspace/delivery.example.json'])
         if policy['authority_ref'] is not None or policy['roles'] or policy['principals'] or policy['sources'] or delivery['authority_ref'] is not None or delivery['commands'] or json.loads(payload['docs/harness/workspace/objects.example.json'])['objects']:
             raise SeedError(2,'Workspace templates must not inherit project authority or facts')
+    if manifest.get('workspace_registry_profile') is not None or manifest['distribution_version']=='0.12.0':
+        if (manifest.get('workspace_registry_profile')!='explicit-registry-2'
+                or release.get('workspace_registry_profile')!=manifest['workspace_registry_profile']
+                or not {'workspace_sources.py','docs/harness/workspace/mapping.example.json'}<=set(payload)):
+            raise SeedError(2,'Registry compiler profile/components missing')
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}

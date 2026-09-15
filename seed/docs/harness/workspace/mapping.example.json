@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "inputs": [
+    {
+      "path": "docs/approved/work-items.json",
+      "format": "json_records",
+      "selector": "items",
+      "prefix": "TASK-",
+      "type": "task",
+      "fields": {
+        "id": "id",
+        "title": "title",
+        "purpose": "purpose",
+        "acceptance": "acceptance",
+        "owner": null,
+        "declared_state": null
+      },
+      "row_prefixes": []
+    }
+  ],
+  "relations": []
+}

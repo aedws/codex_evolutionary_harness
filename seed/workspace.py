@@ -46,7 +46,7 @@ def local(root,name):
 def component(name):
     s=importlib.util.spec_from_file_location('workspace_'+name,Path(__file__).with_name(name+'.py'));m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 def engine_pins():
-    return {name:sha(Path(__file__).with_name(name+'.py').read_bytes()) for name in ['workspace','workspace_view','workspace_server','delivery','harness','wiki_access']}
+    return {name:sha(Path(__file__).with_name(name+'.py').read_bytes()) for name in ['workspace','workspace_view','workspace_server','workspace_sources','delivery','harness','wiki_access']}
 
 
 def policy(value):
@@ -91,7 +91,16 @@ def inventory(root,config):
 
 
 def registry(root,config,records):
-    value=strict(local(root,config['registry']).read_bytes());need(type(value) is dict and set(value)=={'schema_version','objects'} and type(value['schema_version']) is int and value['schema_version']==1,'Registry schema differs')
+    return registry_bundle(root,config,records)[0]
+
+
+def registry_bundle(root,config,records):
+    return validate_registry(strict(local(root,config['registry']).read_bytes()),records)
+
+
+def validate_registry(value,records):
+    need(type(value) is dict and type(value.get('schema_version')) is int and value['schema_version'] in {1,2},'Registry schema differs')
+    need(set(value)==({'schema_version','objects'} if value['schema_version']==1 else {'schema_version','objects','relations','contracts'}),'Registry fields differ')
     need(type(value['objects']) is list and 1<=len(value['objects'])<=1000,'Bounded object registry required')
     objects={}
     for obj in value['objects']:
@@ -110,7 +119,35 @@ def registry(root,config,records):
         for dep in objects[key]['depends_on']:visit(dep,ancestors|{key})
         visited.add(key)
     for key in objects:visit(key,set())
-    return objects
+    relations=value.get('relations',[]);contracts=value.get('contracts',{})
+    need(type(relations) is list and len(relations)<=5000 and type(contracts) is dict and set(contracts)<=set(objects),'Relation/contract budget or target differs')
+    for contract in contracts.values():
+        need(type(contract) is dict and set(contract)=={'native_id','owner','acceptance','source_revision','declared_state'},'Intent contract fields differ')
+        need(all(text(contract[k]) for k in ['native_id','owner','source_revision','declared_state']) and type(contract['acceptance']) is list and contract['acceptance'] and all(text(x) for x in contract['acceptance']),'Explicit intent contract required')
+    endpoints=set(objects)|{r['id'] for r in records.values()};seen=set();edges=set()
+    types={'informs','implements','verifies','configures','affects','blocks','depends_on','supersedes','conflicts_with','part_of','documented_by'}
+    bases={'confirmed_by_code','confirmed_by_test','confirmed_by_runtime','confirmed_by_user','inferred_by_static_analysis','inferred_by_llm','unknown'}
+    for rel in relations:
+        need(type(rel) is dict and set(rel)=={'id','from','to','type','basis','sources'},'Relation fields differ')
+        need(ident(rel['id']) and rel['id'] not in seen and type(rel['from']) is str and type(rel['to']) is str and rel['from'] in endpoints and rel['to'] in endpoints and rel['from']!=rel['to'],'Dangling/duplicate relation')
+        need(type(rel['type']) is str and type(rel['basis']) is str and rel['type'] in types and rel['basis'] in bases,'Unknown relation meaning/provenance')
+        need(type(rel['sources']) is list and rel['sources'] and len(rel['sources'])==len(set(rel['sources'])) and all(p in records for p in rel['sources']),'Relation evidence missing')
+        edge=(rel['from'],rel['to'],rel['type']);need(edge not in edges,'Duplicate typed edge');edges.add(edge);seen.add(rel['id'])
+        if rel['type'] in {'blocks','depends_on','supersedes','conflicts_with'}:need(rel['from'] in objects and rel['to'] in objects,'Lifecycle edge requires objects')
+        if rel['type']=='depends_on':need(rel['to'] in objects[rel['from']]['depends_on'],'Dependency must match execution prerequisite')
+        if rel['type']=='supersedes':need(objects[rel['from']]['type']==objects[rel['to']]['type']=='decision','Only decision succession supported')
+    for edge_type in ['supersedes','part_of']:
+        graph={}
+        for rel in relations:
+            if rel['type']==edge_type:graph.setdefault(rel['from'],[]).append(rel['to'])
+        visited=set()
+        def walk(key,trail):
+            need(key not in trail and len(trail)<100,'Cyclic/deep '+edge_type)
+            if key in visited:return
+            for target in graph.get(key,[]):walk(target,trail|{key})
+            visited.add(key)
+        for key in graph:walk(key,set())
+    return objects,relations,contracts
 
 
 class Workspace:
@@ -155,8 +192,10 @@ class Workspace:
     def collect(self,key):
         need(ident(key),'Stable collection key required')
         with closing(self.connect(True)) as db,db:
-            db.execute('BEGIN IMMEDIATE');config=self.config(db);records=inventory(self.root,config);objects=registry(self.root,config,records)
-            content={'sources':records,'objects':objects};digest=sha(encoded(content));rows=self.events(db)
+            db.execute('BEGIN IMMEDIATE');config=self.config(db);records=inventory(self.root,config);objects,relations,contracts=registry_bundle(self.root,config,records)
+            content={'sources':records,'objects':objects}
+            if relations or contracts:content.update(relations=relations,contracts=contracts)
+            digest=sha(encoded(content));rows=self.events(db)
             old=next((e for e in rows if e['key']==key),None)
             if old:need(old['kind']=='collection' and old['digest']==digest,'Idempotency conflict');return {'outcome':'unchanged','seq':old['seq'],'digest':digest}
             seq=self.append(db,dict(kind='collection',key=key,digest=digest,content=content,observed_at=datetime.now(timezone.utc).isoformat()))
@@ -222,8 +261,10 @@ class Workspace:
             if p.is_file():
                 need(p.stat().st_size<=4_000_000,'Source budget exceeded');bodies[path]=p.read_bytes();current[path]=sha(bodies[path])
             else:current[path]=None
-        try:declarations=registry(self.root,config,sources)
-        except (ValueError,OSError):declarations={}
+        relations=content.get('relations',[]);contracts=content.get('contracts',{})
+        try:declarations,current_relations,current_contracts=registry_bundle(self.root,config,sources)
+        except (ValueError,OSError):declarations={};current_relations=[];current_contracts={}
+        relation_index={key:[rel for rel in relations if key in {rel['from'],rel['to']}] for key in objects}
         def derive(key):
             if key in states:return states[key]
             obj=objects[key];deps={d:derive(d) for d in obj['depends_on']}
@@ -234,8 +275,11 @@ class Workspace:
                     observed=core_cache[obj['task_id']]
                 except (OSError,ValueError,sqlite3.Error,core.HarnessError):pass
             core_contract={'revision':observed['task_revision'],'inputs':observed.get('input_snapshot')} if observed else None
-            fingerprint=sha(encoded({'intent':obj,'sources':{p:current[p] for p in obj['sources']},'core_contract':core_contract,'dependencies':{d:v['snapshot'] for d,v in deps.items()}}))
+            snapshot={'intent':obj,'sources':{p:current[p] for p in obj['sources']},'core_contract':core_contract,'dependencies':{d:v['snapshot'] for d,v in deps.items()}}
+            if relations or contracts:snapshot.update(relations=relation_index[key],contract=contracts.get(key),relation_sources={p:current[p] for rel in relation_index[key] for p in rel['sources']})
+            fingerprint=sha(encoded(snapshot))
             stale=declarations.get(key)!=obj or any(current[p]!=sources[p]['sha256'] for p in obj['sources'])
+            if relations or contracts or current_relations or current_contracts:stale=stale or contracts.get(key)!=current_contracts.get(key) or relation_index[key]!=[rel for rel in current_relations if key in {rel['from'],rel['to']}] or any(current[p]!=sources[p]['sha256'] for rel in relation_index[key] for p in rel['sources'])
             actions=action_index.get(key,[]);applicable=[e for e in actions if e['snapshot']==fingerprint]
             revision=actions[-1]['revision'] if actions else 0;last=applicable[-1] if applicable else None
             workflow={'propose':'needs_decision','authorize':'ready','start':'in_progress','submit':'review_pending','accept':'accepted','defer':'deferred','block':'blocked','resume':'needs_decision'}.get(last['action'] if last else '', 'needs_decision')
@@ -259,6 +303,26 @@ class Workspace:
                 delivery=deliveries[key];states[key]['delivery']=delivery['outcome'] if delivery['snapshot']==fingerprint and not stale else 'stale'
             return states[key]
         for key in objects:derive(key)
+        if relations or contracts:
+            accepted={key for key,s in states.items() if s['workflow']=='accepted' and not s['source_stale']}
+            for key in objects:states[key]['decision_status']='current';states[key]['relation_blocked']=False
+            for rel in relations:
+                a,b=rel['from'],rel['to']
+                if rel['type']=='conflicts_with':
+                    for key in [a,b]:states[key].update(decision_status='conflicted',relation_blocked=True)
+                if rel['type']=='supersedes' and a in accepted:
+                    states[b].update(decision_status='superseded',relation_blocked=True)
+                if rel['type']=='blocks' and a not in accepted:states[b]['relation_blocked']=True
+            # Propagate effective blocking along the already validated prerequisite DAG.
+            for _ in range(len(objects)):
+                changed=False
+                for key,obj in objects.items():
+                    if not states[key]['relation_blocked'] and any(states[d]['relation_blocked'] for d in obj['depends_on']):states[key]['relation_blocked']=True;changed=True
+                if not changed:break
+            for state in states.values():
+                if state['relation_blocked']:
+                    state['dependency_blocked']=True;state['next_action']='관계 충돌·선행 조건·대체 결정 확인'
+                    if state['workflow'] not in {'needs_decision','deferred'}:state['workflow']='blocked'
         visible={k:o for k,o in objects.items() if all(role in sources[p]['roles'] for p in o['sources'])}
         safe_states={}
         for k in visible:
@@ -273,7 +337,13 @@ class Workspace:
             body=bodies.get(path,b'').decode('utf-8',errors='replace')
             heading=next((line.lstrip('#').strip() for line in body.splitlines() if line.startswith('# ')),Path(path).name)
             documents[s['id']]={'id':s['id'],'title':heading if s['kind']=='documents' else Path(path).name,'path':path,'kind':s['kind'],'parent':parent,'sha256':current[path],'stale':current[path]!=s['sha256']}
-        return config,objects,states,dict(profile=PROFILE,objects={k:{**o,'depends_on':[d for d in o['depends_on'] if d in visible]} for k,o in visible.items()},states=safe_states,sources=source_view,documents=documents,collections=collections_view)
+        view=dict(profile=PROFILE,objects={k:{**o,'depends_on':[d for d in o['depends_on'] if d in visible]} for k,o in visible.items()},states=safe_states,sources=source_view,documents=documents,collections=collections_view)
+        if relations or contracts:
+            allowed=set(visible)|{s['id'] for s in source_view.values()}
+            view['relations']=[rel for rel in relations if rel['from'] in allowed and rel['to'] in allowed and all(p in source_view for p in rel['sources'])]
+            view['contracts']={k:v for k,v in contracts.items() if k in visible}
+            view['history']={k:[{'collection':e['ref'],'intent_sha256':sha(encoded(e['content']['objects'][k]))} for e in collections if k in e['content']['objects'] and all(p in source_view for p in e['content']['objects'][k]['sources'])] for k in visible}
+        return config,objects,states,view
     def view(self,token,query='',kind=None,state=None):
         with closing(self.connect()) as db:
             _,role=self.principal(db,token);config,_,_,view=self._project(db,role)

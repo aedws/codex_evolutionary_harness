@@ -1,5 +1,22 @@
 # Newgame 기능 대응 운영 계층 — operating-workspace-1
 
+## v0.12.0 후보: 자동 객체·관계와 동일 결과 검사
+
+`workspace_sources.py`는 승인된 JSON 레코드 또는 Markdown 표를 명시적 매핑으로 읽어 registry 2를 생성한다. [매핑 예제](mapping.example.json)는 미설정 템플릿이며 실제 원본과 오너 인터뷰를 대체하지 않는다. 매핑 파일도 policy의 승인된 data 디렉터리에 둔다. 원문 객체 ID는 namespace와 hash로 안정적으로 매핑되며 이름 변경·행 재배열로 ID를 바꾸지 않는다. 같은 ID의 중복은 실패한다. 상태 선언은 `contracts.declared_state`에 보존하고 `verified`나 `accepted`로 변환하지 않는다.
+
+```powershell
+python -B workspace_sources.py --policy workspace-policy.json --recipe docs/approved/mapping.json --out workspace-objects.json
+python -B workspace.py collect --key source-collection-001
+```
+
+명령이 실패하면 수집으로 넘어가지 않는다. 생성 파일이 이미 있으면 동일 내용만 no-op이다. 다른 내용은 소유권 충돌로 중단되므로 새 파일에서 diff와 변경된 입력을 검토하고 프로젝트 소유 레지스트리로 적용한다. 다음 수집에는 새로운 operation key를 쓴다. `--check --out ...`은 생성 결과와 현재 파일을 비교하며 CI에서 파일을 덮어쓰지 않는다. 이 수집기는 네트워크를 사용하지 않는다. 외부 snapshot은 실제 관측 시각·범위·권한을 별도로 확인해야 한다.
+
+registry 2는 기존 objects 외에 `contracts`와 `relations`를 가진다. 관계는 `id/from/to/type/basis/sources`를 반드시 기록한다. `documented_by`는 생성 원본으로 자동 연결되며 나머지 의미 관계는 명시적인 근거를 요구한다. `depends_on`은 실행 선행 조건과 일치해야 한다. `supersedes`는 결정끼리만 허용하고 새 결정의 독립 수락 뒤에만 기존 결정을 대체한다. `conflicts_with`는 실행을 막으며 단순한 날짜·역할·원문 완료 표기로 해소하지 않는다.
+
+관계·수락 계약과 그 원본 해시가 판단 snapshot에 포함된다. 변경된 계약은 이전 승인을 자동 승계하지 않는다. 과거 collection은 감사 이력으로 유지한다. 숨겨진 원본·관계는 조회자에게 공개하지 않는다. 역할명이나 contracts.owner는 인증된 principal과 동등하지 않다.
+
+v0.11.0의 활성 원장 엔진 핀을 바꾸지 않는다. 새 디렉터리에 설치해 검토하고, 기존 판단 이관은 별도 migration 계약을 요구한다. 이전 버전은 rollback 대상으로 보존한다.
+
 씨앗을 설치하면 먼저 미확인 객체 위키 초안이 생성된다. 이 문서는 그 초안을 실제 원본·업무 판단·검사·배포 관측과 연결하는 선택 가능한 운영 계층이다. `workspace.py`, `workspace_view.py`, `workspace_server.py`, `delivery.py`는 기존 local-core-1을 교체하지 않는다. 프로젝트마다 오너가 역할·공개 범위·검사·어댑터를 확정한다. 기본 계정, 배포 권한, 외부 연결, 승격 권한은 없다.
 
 ## 첫 실행

@@ -1994,5 +1994,99 @@
       "project",
       "core_candidate"
     ]
+  },
+  {
+    "id": "TASK-20260915-PARITY-CHECK-001",
+    "type": "task",
+    "schema_version": 1,
+    "name": "Newgame 대응 공백 보완과 동일 결과 검사",
+    "purpose": "자동 객체·관계·결정 이력·위키 문맥을 보완하고 기준 입력의 정상/실패 결과를 대조",
+    "source_refs": [
+      "docs/rfcs/RFC-0014-parity-result-contract.md",
+      "docs/requirements/PARITY-RESULTS-20260915.md",
+      "docs/harness/evidence/EXE-20260915-PARITY-CHECK-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Full Newgame topology and external adapters unverified",
+      "Owner visual acceptance pending",
+      "Current product remains v0.11 with partial adoption",
+      "Cross-project promotion and long-term canary pending"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
+  },
+  {
+    "id": "EXE-20260915-PARITY-CHECK-001",
+    "type": "execution",
+    "schema_version": 1,
+    "name": "Newgame 대응 공백 보완과 동일 결과 검사",
+    "purpose": "자동 객체·관계·결정 이력·위키 문맥을 보완하고 기준 입력의 정상/실패 결과를 대조",
+    "source_refs": [
+      "docs/rfcs/RFC-0014-parity-result-contract.md",
+      "docs/requirements/PARITY-RESULTS-20260915.md",
+      "docs/harness/evidence/EXE-20260915-PARITY-CHECK-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Full Newgame topology and external adapters unverified",
+      "Owner visual acceptance pending",
+      "Current product remains v0.11 with partial adoption",
+      "Cross-project promotion and long-term canary pending"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
+  },
+  {
+    "id": "EVD-20260915-PARITY-CHECK-001",
+    "type": "evidence",
+    "schema_version": 1,
+    "name": "Newgame 대응 공백 보완과 동일 결과 검사",
+    "purpose": "자동 객체·관계·결정 이력·위키 문맥을 보완하고 기준 입력의 정상/실패 결과를 대조",
+    "source_refs": [
+      "docs/rfcs/RFC-0014-parity-result-contract.md",
+      "docs/requirements/PARITY-RESULTS-20260915.md",
+      "docs/harness/evidence/EXE-20260915-PARITY-CHECK-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Full Newgame topology and external adapters unverified",
+      "Owner visual acceptance pending",
+      "Current product remains v0.11 with partial adoption",
+      "Cross-project promotion and long-term canary pending"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
+  },
+  {
+    "id": "HARNESS-REQ-20260915-DECLARATIVE-PARITY",
+    "type": "requirement",
+    "schema_version": 1,
+    "name": "선언형 객체·관계와 차등 결과 검증",
+    "purpose": "원문 상태의 거짓 승격을 차단하고 재사용 가능한 비교 계약을 확보",
+    "source_refs": [
+      "docs/rfcs/RFC-0014-parity-result-contract.md",
+      "docs/requirements/PARITY-RESULTS-20260915.md",
+      "docs/harness/evidence/EXE-20260915-PARITY-CHECK-001/validation.json",
+      "docs/harness/evidence/EXE-20260915-PARITY-CHECK-001/feedback.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Local evaluated candidate; broader promotion not approved"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
   }
 ]

@@ -1,0 +1,411 @@
+........EFFFFFFFFFFFFFFF............................EEEEEEEEEEEEEEE......E.E.E...................................................................
+======================================================================
+ERROR: test_all_goals_and_clauses_resolve_without_runtime_claim (test_contracts.ContractDistributionTests.test_all_goals_and_clauses_resolve_without_runtime_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 35, in test_all_goals_and_clauses_resolve_without_runtime_claim
+    result = check_contracts.check(self.root)
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\check_contracts.py", line 101, in check
+    manifest, payload, _ = load_seed(root)
+                           ~~~~~~~~~^^^^^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_installed_seed_failure_feedback_and_isolated_restore (test_runtime_cli.InstalledRuntimeTests.test_installed_seed_failure_feedback_and_isolated_restore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_runtime_cli.py", line 21, in setUp
+    _, payload, receipt = seed.load_seed(ROOT)
+                          ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_two_real_cli_processes_cannot_dispatch_concurrently (test_runtime_cli.InstalledRuntimeTests.test_two_real_cli_processes_cannot_dispatch_concurrently)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_runtime_cli.py", line 21, in setUp
+    _, payload, receipt = seed.load_seed(ROOT)
+                          ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_changed_project_records_are_not_reinstalled (test_seed.SeedTests.test_changed_project_records_are_not_reinstalled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_conflict_checks_all_files_before_writing (test_seed.SeedTests.test_conflict_checks_all_files_before_writing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_dry_run_does_not_create_target (test_seed.SeedTests.test_dry_run_does_not_create_target)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_install_preserves_unrelated_file_and_replay_is_noop (test_seed.SeedTests.test_install_preserves_unrelated_file_and_replay_is_noop)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_installation_inside_distributor_is_rejected (test_seed.SeedTests.test_installation_inside_distributor_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_non_directory_ancestor_does_not_write (test_seed.SeedTests.test_non_directory_ancestor_does_not_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_partial_write_remains_visible_and_retry_is_blocked (test_seed.SeedTests.test_partial_write_remains_visible_and_retry_is_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_pending_installation_blocks_competing_writer (test_seed.SeedTests.test_pending_installation_blocks_competing_writer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_receipt_mismatch_cannot_overwrite_installation (test_seed.SeedTests.test_receipt_mismatch_cannot_overwrite_installation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_reparse_point_is_rejected_before_writing (test_seed.SeedTests.test_reparse_point_is_rejected_before_writing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_seed_is_clean_and_archive_contains_only_seed_and_receipt (test_seed.SeedTests.test_seed_is_clean_and_archive_contains_only_seed_and_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_source_tamper_and_unsupported_manifest_are_rejected (test_seed.SeedTests.test_source_tamper_and_unsupported_manifest_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_unsafe_paths_are_rejected (test_seed.SeedTests.test_unsafe_paths_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_seed.py", line 22, in setUp
+    self.manifest, self.payload, self.receipt = seed.load_seed()
+                                                ~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_existing_draft_conflict_is_detected_before_installing_seed (test_wiki_draft.DraftTests.test_existing_draft_conflict_is_detected_before_installing_seed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_wiki_draft.py", line 101, in test_existing_draft_conflict_is_detected_before_installing_seed
+    _,payload,receipt=distributor.load_seed()
+                      ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+distributor.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_install_generates_draft_without_scaffold_and_preserves_empty_truth (test_wiki_draft.DraftTests.test_install_generates_draft_without_scaffold_and_preserves_empty_truth)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_wiki_draft.py", line 80, in test_install_generates_draft_without_scaffold_and_preserves_empty_truth
+    target=Path(folder)/'project';_,payload,receipt=distributor.load_seed()
+                                                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+distributor.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+ERROR: test_normal_python_install_does_not_pollute_distribution_inventory (test_wiki_draft.DraftTests.test_normal_python_install_does_not_pollute_distribution_inventory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_wiki_draft.py", line 89, in test_normal_python_install_does_not_pollute_distribution_inventory
+    _,payload,receipt=distributor.load_seed()
+                      ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\scripts\seed.py", line 98, in load_seed
+    raise SeedError(2, "Seed distribution identity or capability claims are inconsistent")
+distributor.SeedError: Seed distribution identity or capability claims are inconsistent
+
+======================================================================
+FAIL: test_dangling_clause_rejected (test_contracts.ContractDistributionTests.test_dangling_clause_rejected)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 52, in test_dangling_clause_rejected
+    with self.assertRaisesRegex(SeedError, "missing/mismatched"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "missing/mismatched" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_detached_promotion_path_rejected (test_contracts.ContractDistributionTests.test_detached_promotion_path_rejected)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 116, in test_detached_promotion_path_rejected
+    with self.assertRaisesRegex(SeedError, "reachability"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "reachability" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_duplicate_goal_rejected (test_contracts.ContractDistributionTests.test_duplicate_goal_rejected)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 46, in test_duplicate_goal_rejected
+    with self.assertRaisesRegex(SeedError, "17 goals"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "17 goals" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_fake_runtime_verification_rejected (test_contracts.ContractDistributionTests.test_fake_runtime_verification_rejected)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 64, in test_fake_runtime_verification_rejected
+    with self.assertRaisesRegex(SeedError, "runtime-verified"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "runtime-verified" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_inherited_submission_authority_rejected (test_contracts.ContractDistributionTests.test_inherited_submission_authority_rejected)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 58, in test_inherited_submission_authority_rejected
+    with self.assertRaisesRegex(SeedError, "authority"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "authority" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_lifecycle_cannot_drop_required_gate (test_contracts.ContractDistributionTests.test_lifecycle_cannot_drop_required_gate)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 104, in test_lifecycle_cannot_drop_required_gate
+    with self.assertRaisesRegex(SeedError, "16 required gates"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "16 required gates" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_lifecycle_dependency_cycle_rejected (test_contracts.ContractDistributionTests.test_lifecycle_dependency_cycle_rejected)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 110, in test_lifecycle_dependency_cycle_rejected
+    with self.assertRaisesRegex(SeedError, "dependency cycle"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "dependency cycle" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_missing_goal_rejected (test_contracts.ContractDistributionTests.test_missing_goal_rejected)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 40, in test_missing_goal_rejected
+    with self.assertRaisesRegex(SeedError, "17 goals"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "17 goals" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_origin_evidence_not_shipped_in_example (test_contracts.ContractDistributionTests.test_origin_evidence_not_shipped_in_example)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 70, in test_origin_evidence_not_shipped_in_example
+    with self.assertRaisesRegex(SeedError, "live identities or evidence"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "live identities or evidence" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_planned_review_cannot_claim_observed_runtime_success (test_contracts.ContractDistributionTests.test_planned_review_cannot_claim_observed_runtime_success)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 87, in test_planned_review_cannot_claim_observed_runtime_success
+    with self.assertRaisesRegex(SeedError, "planned accept"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "planned accept" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_review_area_cannot_be_omitted (test_contracts.ContractDistributionTests.test_review_area_cannot_be_omitted)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 75, in test_review_area_cannot_be_omitted
+    with self.assertRaisesRegex(SeedError, "Seven review areas"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "Seven review areas" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_review_rejection_case_cannot_be_removed (test_contracts.ContractDistributionTests.test_review_rejection_case_cannot_be_removed)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 81, in test_review_rejection_case_cannot_be_removed
+    with self.assertRaisesRegex(SeedError, "accept/reject/inconclusive"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "accept/reject/inconclusive" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_review_template_cannot_drop_uncertainty_field (test_contracts.ContractDistributionTests.test_review_template_cannot_drop_uncertainty_field)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 99, in test_review_template_cannot_drop_uncertainty_field
+    with self.assertRaisesRegex(SeedError, "unobserved fields unknown"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unobserved fields unknown" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_review_template_cannot_inherit_an_approver (test_contracts.ContractDistributionTests.test_review_template_cannot_inherit_an_approver)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 93, in test_review_template_cannot_inherit_an_approver
+    with self.assertRaisesRegex(SeedError, "unobserved fields unknown"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "unobserved fields unknown" does not match "Seed distribution identity or capability claims are inconsistent"
+
+======================================================================
+FAIL: test_runtime_example_cannot_inherit_command_grants (test_contracts.ContractDistributionTests.test_runtime_example_cannot_inherit_command_grants)
+----------------------------------------------------------------------
+seed.SeedError: Seed distribution identity or capability claims are inconsistent
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\uyess\Desktop\codex_evolutionary_harness\tests\test_contracts.py", line 122, in test_runtime_example_cannot_inherit_command_grants
+    with self.assertRaisesRegex(SeedError, "execution grants"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "execution grants" does not match "Seed distribution identity or capability claims are inconsistent"
+
+----------------------------------------------------------------------
+Ran 145 tests in 51.336s
+
+FAILED (failures=15, errors=19)
