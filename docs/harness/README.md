@@ -1,5 +1,7 @@
 # Evolutionary Harness
 
+Current goal reflection audit: [2026-09-15 initial goals versus local implementation](../requirements/GOAL-REFLECTION-20260915.md). Contract coverage, partial local mechanisms and whole-goal acceptance are counted separately; none is a product completion percentage.
+
 Repository documentation map: [user goals](../requirements/HARNESS-GOALS.md) → [architecture RFC-0002](../rfcs/RFC-0002-hierarchical-evolutionary-architecture.md) → [reusable seed contract](../../seed/docs/harness/contract.md). The current deliverable is a versioned contract seed; V2/V3/V4 below are capability targets, not verified implementation claims.
 
 Contract 2 adds [self-feedback RFC-0003](../rfcs/RFC-0003-feedback-common-contract.md) and [goal-to-clause coverage](../../seed/docs/harness/contracts/coverage.json). Route to relevant clauses only; original schema examples here remain development references, not executable contract-2 validators.

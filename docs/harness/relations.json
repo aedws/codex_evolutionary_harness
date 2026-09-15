@@ -537,5 +537,23 @@
     "source_refs": [
       "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
     ]
+  },
+  {
+    "from": "TASK-20260915-SEED-COVERAGE-001",
+    "to": "EXE-20260915-SEED-COVERAGE-001",
+    "type": "implemented_by",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-COVERAGE-001/validation.json"
+    ]
+  },
+  {
+    "from": "EXE-20260915-SEED-COVERAGE-001",
+    "to": "EVD-20260915-SEED-COVERAGE-001",
+    "type": "produces",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-COVERAGE-001/validation.json"
+    ]
   }
 ]

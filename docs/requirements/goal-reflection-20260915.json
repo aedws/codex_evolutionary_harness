@@ -1,0 +1,459 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-15",
+  "basis_commit": "97e8a831533b885727af7dcedff272a3b28f44ff",
+  "counts": {
+    "documented": 17,
+    "total": 17,
+    "local_slice": 14,
+    "contract_only": 3,
+    "whole_goal_acceptance_recorded": 0
+  },
+  "method": "Equal original sections; no weighted completion score. Local slice means bounded code/test mapping with version-bound test observation, never whole goal completion.",
+  "goals": [
+    {
+      "id": "G01",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "V01",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V02",
+          "path": "views-state.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "실제 새 프로젝트 화면 인간 수락",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G02",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "X01",
+          "path": "execution.md"
+        },
+        {
+          "id": "D01",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D03",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "외부 데이터 사실성의 독립 검증",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G03",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "D02",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "모든 상태·배포 adapter",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G04",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "V02",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "D02",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "전체 Acceptance Contract 실행",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G05",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "X04",
+          "path": "execution.md"
+        },
+        {
+          "id": "D01",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D02",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D08",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "모든 외부 충돌·불명 회복",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G06",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "X03",
+          "path": "execution.md"
+        },
+        {
+          "id": "F03",
+          "path": "feedback.md"
+        },
+        {
+          "id": "D06",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "OS 격리와 외부 도구 완전 관측",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G07",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V04",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V05",
+          "path": "views-state.md"
+        },
+        {
+          "id": "D03",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "전체 외부 계보",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G08",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "E01",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "Domain 조합의 실운영 충돌 평가",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G09",
+      "reflection": "contract_only",
+      "clauses": [
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E03",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "다중 프로젝트/도메인 독립 평가",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G10",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "F04",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F07",
+          "path": "feedback.md"
+        },
+        {
+          "id": "E03",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E04",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "외부 릴리스·호환성·Canary",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G11",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E03",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "인증된 제안자/평가자/승인자 분리",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G12",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "X04",
+          "path": "execution.md"
+        },
+        {
+          "id": "E04",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D08",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "자율 범위별 end-to-end 강제",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G13",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "X03",
+          "path": "execution.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D06",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "OS/credential/외부 권한 강제",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G14",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "F01",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F02",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F04",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F05",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F06",
+          "path": "feedback.md"
+        },
+        {
+          "id": "F07",
+          "path": "feedback.md"
+        },
+        {
+          "id": "E04",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E05",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E06",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "V3/V4 자율 진화 controller",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G15",
+      "reflection": "contract_only",
+      "clauses": [
+        {
+          "id": "F01",
+          "path": "feedback.md"
+        },
+        {
+          "id": "V05",
+          "path": "views-state.md"
+        },
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D08",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "동일 신뢰도에서 정량 복잡도 비교",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G16",
+      "reflection": "local_slice",
+      "clauses": [
+        {
+          "id": "V02",
+          "path": "views-state.md"
+        },
+        {
+          "id": "V03",
+          "path": "views-state.md"
+        },
+        {
+          "id": "X02",
+          "path": "execution.md"
+        },
+        {
+          "id": "E06",
+          "path": "evolution.md"
+        },
+        {
+          "id": "D01",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D04",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "인간 수락과 신원 확인",
+      "whole_goal_acceptance": "not_established"
+    },
+    {
+      "id": "G17",
+      "reflection": "contract_only",
+      "clauses": [
+        {
+          "id": "E02",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E05",
+          "path": "evolution.md"
+        },
+        {
+          "id": "E06",
+          "path": "evolution.md"
+        },
+        {
+          "id": "X05",
+          "path": "execution.md"
+        },
+        {
+          "id": "D05",
+          "path": "decision-system.md"
+        },
+        {
+          "id": "D07",
+          "path": "decision-system.md"
+        }
+      ],
+      "remaining": "장기 신뢰도/개입 감소 실측",
+      "whole_goal_acceptance": "not_established"
+    }
+  ],
+  "local_mechanism_evidence": [
+    "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+  ],
+  "limitations": "Local mechanisms only; mapping is reviewer analysis, not full G01-G17 test acceptance."
+}

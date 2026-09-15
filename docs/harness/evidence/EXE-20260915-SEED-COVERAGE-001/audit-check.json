@@ -1,0 +1,18 @@
+{
+  "history_preserved": true,
+  "arithmetic": "pass",
+  "counts": {
+    "documented": 17,
+    "total": 17,
+    "local_slice": 14,
+    "contract_only": 3,
+    "whole_goal_acceptance_recorded": 0
+  },
+  "source_refs_exist": true,
+  "limited_secret_pattern_scan": {
+    "blobs": 515,
+    "suspect_paths": [],
+    "limitations": "Known token/private-key patterns only; not an exhaustive credential audit"
+  },
+  "source_review_sha256": "7e66de472372913c1ff98668c4f3283d740a0933b32cf0ad85d30f977d0cc7ac"
+}

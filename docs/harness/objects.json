@@ -1835,5 +1835,68 @@
       "oop-state"
     ],
     "purpose": "기본 탐색은 증거에서 파생된 상태 아래 업무 객체를 한 번 표시한다. 보고서와 실행 기록은 상세 근거다."
+  },
+  {
+    "id": "TASK-20260915-SEED-COVERAGE-001",
+    "type": "task",
+    "name": "초기 17원칙 반영률 감사",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/requirements/GOAL-REFLECTION-20260915.md",
+      "docs/harness/evidence/EXE-20260915-SEED-COVERAGE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Partial mechanism linkage is not completion",
+      "No cross-project/Canary/independent authority acceptance"
+    ],
+    "tags": [
+      "project",
+      "goal-audit"
+    ],
+    "purpose": "계약 추적과 부분 구현을 전체 원칙 수락과 구분"
+  },
+  {
+    "id": "EXE-20260915-SEED-COVERAGE-001",
+    "type": "execution",
+    "name": "초기 17원칙 반영률 감사",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/requirements/GOAL-REFLECTION-20260915.md",
+      "docs/harness/evidence/EXE-20260915-SEED-COVERAGE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Partial mechanism linkage is not completion",
+      "No cross-project/Canary/independent authority acceptance"
+    ],
+    "tags": [
+      "project",
+      "goal-audit"
+    ],
+    "purpose": "계약 추적과 부분 구현을 전체 원칙 수락과 구분"
+  },
+  {
+    "id": "EVD-20260915-SEED-COVERAGE-001",
+    "type": "evidence",
+    "name": "초기 17원칙 반영률 감사",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/requirements/GOAL-REFLECTION-20260915.md",
+      "docs/harness/evidence/EXE-20260915-SEED-COVERAGE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Partial mechanism linkage is not completion",
+      "No cross-project/Canary/independent authority acceptance"
+    ],
+    "tags": [
+      "project",
+      "goal-audit"
+    ],
+    "purpose": "계약 추적과 부분 구현을 전체 원칙 수락과 구분"
   }
 ]
