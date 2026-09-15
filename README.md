@@ -1,4 +1,4 @@
-> **현재 로컬 후보 v0.9.0 — 객체 위키 자동 생성·품질 판정.** `python -B scripts/seed.py init --target <새 프로젝트 경로>`로 초안과 `quality.json`을 자동 생성합니다. 구조/링크/노드/계보 검사를 통과해야 설치됩니다. 실제 프로젝트는 화면 관찰 기록과 `wiki_quality.py gate`까지 통과해야 위키 품질 완료로 보고합니다. [사용·판정 계약](seed/docs/harness/wiki/quality.md) · [설계 RFC](docs/rfcs/RFC-0011-wiki-quality-automation.md). 인간 수락은 별도이며, 아래 v0.7.0 원격 배포판에는 이 새 기능이 없습니다.
+> **현재 로컬 후보 v0.10.0 — 상태별 OOP 위키 자동 생성·품질 판정.** `python -B scripts/seed.py init --target <새 프로젝트 경로>`로 초안과 `quality.json`을 자동 생성합니다. 상태별 업무 객체를 한 번씩 표시하고 보고서·실행·근거는 상세로 분리합니다. 구조/링크/상태 보기/계보 검사를 통과해야 설치됩니다. 실제 프로젝트는 화면 관찰 기록과 `wiki_quality.py gate`까지 통과해야 위키 품질 완료로 보고합니다. [사용·판정 계약](seed/docs/harness/wiki/quality.md) · [설계 RFC](docs/rfcs/RFC-0011-wiki-quality-automation.md). 인간 수락은 별도이며, 아래 v0.7.0 원격 배포판에는 이 새 기능이 없습니다.
 
 # Evolutionary Harness — reusable contract seed
 

@@ -67,3 +67,8 @@ Object node map default (object-node-map-1): new wiki generation must show a cli
 ## v0.9.0 local candidate — wiki-quality-1
 
 See docs/harness/wiki/quality.md: mandatory automatic structural/source-freshness audit, snapshot-bound visual observations and final wiki_quality.py gate. Static structure_passed is not visual acceptance; final human_pending remains. Existing bootstrap/authority engines are unchanged.
+
+
+## v0.10.0 — OOP 상태별 보기
+
+State-oriented OOP default (state-object-view-1) supersedes the former object-node-map-1 first-screen rule. State nodes group visible Requirement/Task/Decision/Module/Test/Release subjects once per stable ID. Reports/Execution/Evidence/Event/Run are DOP records, not peer business nodes. Open a record through its explicitly linked Task; ambiguous/missing ownership stays unknown. Use wiki_graph.py render_states with reducer results only; never infer state from authored status, names, report counts or graph connectivity. Keep verification, human acceptance and delivery separate. Preserve DOP history/relations under detail access; the old relation renderer is optional lineage tooling only. Quality checks must reject a report-relation map as the default state view.

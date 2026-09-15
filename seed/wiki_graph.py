@@ -3,6 +3,8 @@ from html import escape
 import re
 
 PROFILE = 'object-node-map-1'
+STATE_PROFILE = 'state-object-view-1'
+OOP_TYPES = {'requirement','task','planned_task','decision','module','test','release'}
 TYPES = {'requirement':'요구', 'task':'작업', 'decision':'결정', 'module':'모듈',
          'test':'검사', 'release':'릴리스', 'execution':'실행', 'evidence':'근거',
          'execution_report':'보고서', 'planned_task':'계획'}
@@ -32,6 +34,43 @@ def title(obj):
 def short(value,limit):
     value=' '.join(str(value).split())
     return value if len(value)<=limit else value[:limit-1]+'…'
+
+
+def render_states(objects, states=None, focus=None, limit=6):
+    """One state node per derived verification value; OOP identities occur once.
+
+    Reports/runs/evidence are not OOP subjects. Caller resolves record->Task ownership
+    explicitly before selecting a focus. No relation propagates verification.
+    """
+    if type(limit) is not int or not 1<=limit<=12:raise ValueError('Bounded state view required')
+    nodes={safe_id(k):v for k,v in objects.items() if v.get('type') in OOP_TYPES}
+    if focus is not None:
+        if focus not in nodes:raise ValueError('State focus must be a visible OOP subject')
+        nodes={focus:nodes[focus]}
+    states=states or {};groups={}
+    for ident,obj in sorted(nodes.items()):
+        reduced=states.get(ident,{})
+        if isinstance(reduced,str):reduced={'verification':reduced}
+        if not isinstance(reduced,dict):raise ValueError('Reducer result required')
+        state=reduced.get('verification','unverified')
+        if state not in STATES:state='unknown'
+        groups.setdefault(state,[]).append((ident,obj,reduced))
+    css='''.state-map{margin:20px 0;padding:22px;background:#f5f8f6;border:1px solid #d5dfdc;border-radius:12px}.state-map h2{margin:0;font-size:21px}.state-map>p{font-size:13px;color:#536b62}.state-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:16px}.state-node{border:1px solid #ccd9d0;border-top:4px solid #6c8073;border-radius:10px;background:#fff;padding:18px;margin:0;min-width:0}.state-node[data-state=passed]{border-top-color:#23734e}.state-node[data-state=failed],.state-node[data-state=blocked],.state-node[data-state=conflicted]{border-top-color:#a02d3d}.state-node[data-state=stale]{border-top-color:#aa7c2f}.state-node h3{margin:0 0 6px;font-size:18px}.state-node>p{font-size:12px;color:#607366}.state-items{list-style:none;padding:0;margin:0}.state-items li{padding:13px 0;border-bottom:1px solid #e2e9e4;overflow-wrap:anywhere;margin:0}.state-items a{color:#274f3a;font-weight:600}.state-items small{display:block;color:#536b62;font-size:11px}.state-items p{font-size:13px;margin:6px 0}.state-node details{margin:12px 0 0;padding:10px}.state-map a:focus-visible,.state-map summary:focus-visible{outline:3px solid #347458;outline-offset:3px}.state-map .state-empty{padding:20px}.state-map summary{cursor:pointer}@media(max-width:600px){.state-map{padding:16px}.state-grid{grid-template-columns:1fr}}'''
+    notes={'passed':'현재 버전의 검사 통과 · 인간 수락·출시는 별도','stale':'코드·자료·검사 조건 변경으로 이전 결과 재확인 필요','failed':'최근 필수 검사 실패 · 실패 근거에서 원인 확인','unverified':'이 객체에 적용되는 현재 검사 근거가 없음','unknown':'지원되지 않거나 확인되지 않은 판정','blocked':'판정기가 차단으로 기록한 상태','conflicted':'판정기가 충돌로 기록한 상태','running':'판정기가 검사 실행 중으로 기록한 상태'}
+    parts=['<section class="state-map" data-graph-profile="'+STATE_PROFILE+'"'+(' data-focus="'+escape(focus)+'"' if focus else '')+'><style>'+css+'</style><h2>상태별 객체</h2><p>상태가 탐색 노드입니다. 그 아래의 요구·작업 등은 한 번만 표시합니다. 보고서·실행·근거는 객체를 선택한 뒤 확인합니다.</p><div class="state-grid">']
+    def item(ident,obj,reduced):
+        acceptance=reduced.get('acceptance','human_pending');delivery=reduced.get('delivery','unobserved')
+        return '<li data-oop-id="'+ident+'"><small>'+escape(TYPES.get(obj['type'],obj['type'])+' · '+ident)+'</small><a href="'+ident+'.html">'+escape(title(obj))+'</a><p>'+escape(short(obj.get('purpose','목적 확인 필요'),160))+'</p><small>인간 수락: '+escape(str(acceptance))+' · 배포: '+escape(str(delivery))+'</small></li>'
+    for state in ('blocked','conflicted','failed','stale','running','unverified','unknown','passed'):
+        members=groups.get(state,[])
+        if not members:continue
+        parts+=['<section class="state-node" data-state="'+state+'"><h3>'+escape(STATES[state][0])+' · '+str(len(members))+'</h3><p>'+escape(notes[state])+'</p><ul class="state-items">']
+        parts += [item(*row) for row in members[:limit]]
+        parts+=['</ul>']
+        if len(members)>limit:parts+=['<details><summary>같은 상태의 객체 '+str(len(members)-limit)+'개 더 보기</summary><ul class="state-items">'+''.join(item(*row) for row in members[limit:])+'</ul></details>']
+        parts+=['</section>']
+    if not nodes:parts+=['<p class="state-empty">연결된 OOP 판정 대상 없음 · 근거 레코드에서 업무 객체를 임의 추정하지 않습니다.</p>']
+    return ''.join(parts+['</div><p>상태는 외부 판정 결과의 투영입니다. 상태 간 이동·완료율·승인 권한을 화살표나 관계에서 추정하지 않습니다.</p></section>'])
 
 
 def render(objects, relations, focus, states=None, limit=4):

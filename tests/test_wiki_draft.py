@@ -34,8 +34,8 @@ class DraftTests(unittest.TestCase):
                 page=pages[obj['id']+'.html'].decode()
                 for label in ['목적','다음 행동','관계','근거 조회','생성 근거']:self.assertIn(label,page)
             self.assertIn(b'DRAFT-TASK-001.html',pages['DRAFT-REQ-001.html'])
-            self.assertEqual(manifest['graph_profile'],'object-node-map-1')
-            self.assertIn(b'data-graph-profile="object-node-map-1"',pages['index.html'])
+            self.assertEqual(manifest['state_view_profile'],'state-object-view-1')
+            self.assertIn(b'data-graph-profile="state-object-view-1"',pages['index.html'])
             for obj in data['objects']:
                 self.assertIn(('data-focus="'+obj['id']+'"').encode(),pages[obj['id']+'.html'])
 

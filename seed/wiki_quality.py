@@ -63,7 +63,7 @@ class Page(HTMLParser):
         if tag=='h1':self.h1+=1
         if tag=='nav':self.nav+=1
         if tag=='details':self.details+=1
-        if a.get('data-graph-profile')=='object-node-map-1':self.graph=True
+        if a.get('data-graph-profile')=='state-object-view-1':self.graph=True
         if 'cards' in a.get('class','').split():self.cards=True
         if tag=='meta' and a.get('name')=='viewport' and 'width=device-width' in a.get('content',''):self.viewport=True
         if tag=='a':self.links.append(a.get('href',''))

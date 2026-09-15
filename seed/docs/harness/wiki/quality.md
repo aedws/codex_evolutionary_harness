@@ -32,3 +32,8 @@ python -B wiki_quality.py gate --site docs/wiki/site --contract docs/wiki/qualit
 wiki_template.py는 기존 호환성을 유지한다. 새 프로필에서는 그래프·계보·한국어 필수 표제 등 adapter 조건을 채워야 한다. 기존 프로젝트는 동등성 검사/오너 역할 인터뷰/호환성과 rollback을 확인해 별도로 채택한다. 정적 감사는 가독성의 일부 조건만 측정하고, 디자인의 적절성과 인간 수락은 human_pending으로 남긴다.
 
 필수 테스트 ID는 `wiki-quality`다. 고정 argv는 `[Python절대경로, "-B", "wiki_quality.py", "check", "--site", 사이트상대경로, "--contract", 계약상대경로]`다. `wiki_quality.py`, 품질 계약 파일, 모든 source_bindings 경로를 Task target_paths에 포함한다. 최종 gate는 그 Run과 명령·파일을 검사한다. 이미 pin된 policy를 자동 수정하지 말고 기존 프로젝트의 변경/재채택 절차를 따른다. bootstrap binding은 감사한 사이트의 모든 HTML을 정확히 같은 해시로 포함해야 한다. 다른 위키의 bootstrap 통과를 가져와 쓸 수 없다.
+
+
+## v0.10.0 — OOP 상태별 보기
+
+State-oriented OOP default (state-object-view-1) supersedes the former object-node-map-1 first-screen rule. State nodes group visible Requirement/Task/Decision/Module/Test/Release subjects once per stable ID. Reports/Execution/Evidence/Event/Run are DOP records, not peer business nodes. Open a record through its explicitly linked Task; ambiguous/missing ownership stays unknown. Use wiki_graph.py render_states with reducer results only; never infer state from authored status, names, report counts or graph connectivity. Keep verification, human acceptance and delivery separate. Preserve DOP history/relations under detail access; the old relation renderer is optional lineage tooling only. Quality checks must reject a report-relation map as the default state view.

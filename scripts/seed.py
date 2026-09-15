@@ -121,7 +121,7 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
         if (manifest['wiki_graph_profile']!='object-node-map-1'
                 or release.get('wiki_graph_profile')!=manifest['wiki_graph_profile']
                 or 'wiki_graph.py' not in payload
-                or b'graph.render(' not in payload.get('wiki_draft.py',b'')
+                or b'graph.render_states(' not in payload.get('wiki_draft.py',b'')
                 or any(b'object-node-map-1' not in payload[n] for n in ('AGENTS.md','BOOTSTRAP_PROMPT.md','docs/harness/contracts/views-state.md'))):
             raise SeedError(2, 'Object node map contract or renderer missing')
     if manifest.get('wiki_quality_profile') is not None or manifest['distribution_version']=='0.9.0':
@@ -131,6 +131,9 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
                 or b'quality.audit(' not in payload.get('wiki_draft.py',b'')
                 or any(b'wiki_quality.py gate' not in payload[n] for n in ('AGENTS.md','BOOTSTRAP_PROMPT.md'))):
             raise SeedError(2,'Automatic wiki quality gate or instructions missing')
+    if manifest.get('wiki_state_profile') is not None:
+        if manifest['wiki_state_profile']!='state-object-view-1' or release.get('wiki_state_profile')!=manifest['wiki_state_profile']:
+            raise SeedError(2,'State-oriented OOP presentation profile differs')
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}

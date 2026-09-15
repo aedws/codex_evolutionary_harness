@@ -510,5 +510,32 @@
     "source_refs": [
       "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
     ]
+  },
+  {
+    "from": "HARNESS-REQ-20260915-OOP-STATE-001",
+    "to": "TASK-20260915-SEED-STATE-001",
+    "type": "implemented_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+    ]
+  },
+  {
+    "from": "TASK-20260915-SEED-STATE-001",
+    "to": "EXE-20260915-SEED-STATE-001",
+    "type": "implemented_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+    ]
+  },
+  {
+    "from": "EXE-20260915-SEED-STATE-001",
+    "to": "EVD-20260915-SEED-STATE-001",
+    "type": "produces",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+    ]
   }
 ]

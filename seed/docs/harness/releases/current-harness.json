@@ -1,6 +1,6 @@
 {
   "harness_name": "Evolutionary Harness",
-  "distribution_version": "0.9.0",
+  "distribution_version": "0.10.0",
   "contract_version": 6,
   "distribution_kind": "contract_seed_with_local_core",
   "capability_level": "local_core_preview",
@@ -45,5 +45,6 @@
   "wiki_presentation_profile": "newgame-style-wiki-1",
   "wiki_draft_profile": "newgame-object-draft-1",
   "wiki_graph_profile": "object-node-map-1",
-  "wiki_quality_profile": "wiki-quality-1"
+  "wiki_quality_profile": "wiki-quality-1",
+  "wiki_state_profile": "state-object-view-1"
 }

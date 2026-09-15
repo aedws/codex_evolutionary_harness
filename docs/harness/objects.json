@@ -1739,5 +1739,101 @@
       "wiki-quality"
     ],
     "purpose": "새 위키를 구조·출처·화면 관찰·필수 Run으로 판정한다. 구조 통과와 인간 수락은 분리한다."
+  },
+  {
+    "id": "HARNESS-REQ-20260915-OOP-STATE-001",
+    "type": "harness_requirement",
+    "name": "상태별 업무 객체와 DOP 근거 분리",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0012-oop-state-dop-evidence.md",
+      "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Existing verification reducer, not invented business lifecycle or causal transitions",
+      "Missing project state remains unverified/unknown",
+      "Actual fresh seed visual review and owner acceptance pending",
+      "Local candidate; remote release/cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "oop-state"
+    ],
+    "purpose": "기본 탐색은 증거에서 파생된 상태 아래 업무 객체를 한 번 표시한다. 보고서와 실행 기록은 상세 근거다."
+  },
+  {
+    "id": "TASK-20260915-SEED-STATE-001",
+    "type": "task",
+    "name": "씨앗 기본 상태 노드 구성",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0012-oop-state-dop-evidence.md",
+      "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Existing verification reducer, not invented business lifecycle or causal transitions",
+      "Missing project state remains unverified/unknown",
+      "Actual fresh seed visual review and owner acceptance pending",
+      "Local candidate; remote release/cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "oop-state"
+    ],
+    "purpose": "기본 탐색은 증거에서 파생된 상태 아래 업무 객체를 한 번 표시한다. 보고서와 실행 기록은 상세 근거다."
+  },
+  {
+    "id": "EXE-20260915-SEED-STATE-001",
+    "type": "execution",
+    "name": "v0.10.0 상태 보기 구현·검증",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0012-oop-state-dop-evidence.md",
+      "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Existing verification reducer, not invented business lifecycle or causal transitions",
+      "Missing project state remains unverified/unknown",
+      "Actual fresh seed visual review and owner acceptance pending",
+      "Local candidate; remote release/cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "oop-state"
+    ],
+    "purpose": "기본 탐색은 증거에서 파생된 상태 아래 업무 객체를 한 번 표시한다. 보고서와 실행 기록은 상세 근거다."
+  },
+  {
+    "id": "EVD-20260915-SEED-STATE-001",
+    "type": "evidence",
+    "name": "105개 검사와 새 설치·재실행 근거",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0012-oop-state-dop-evidence.md",
+      "docs/harness/evidence/EXE-20260915-SEED-STATE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Existing verification reducer, not invented business lifecycle or causal transitions",
+      "Missing project state remains unverified/unknown",
+      "Actual fresh seed visual review and owner acceptance pending",
+      "Local candidate; remote release/cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "oop-state"
+    ],
+    "purpose": "기본 탐색은 증거에서 파생된 상태 아래 업무 객체를 한 번 표시한다. 보고서와 실행 기록은 상세 근거다."
   }
 ]

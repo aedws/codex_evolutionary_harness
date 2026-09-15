@@ -9,6 +9,31 @@ g=importlib.util.module_from_spec(spec);spec.loader.exec_module(g)
 class GraphTests(unittest.TestCase):
     def nodes(self):return {k:dict(id=k,type='task',title='객체 '+k,purpose='연결을 확인') for k in ['A','B','C']}
 
+    def test_state_nodes_exclude_dop_records_and_do_not_trust_authored_status(self):
+        nodes=self.nodes();nodes['A']['verification']='passed'
+        for kind in ('execution_report','execution','evidence','event','run'):
+            nodes[kind]=dict(id=kind,type=kind,title='동일한 작업 이름')
+        out=g.render_states(nodes,{'B':{'verification':'passed','acceptance':'human_pending','delivery':'unobserved'},'C':{'verification':'stale'}})
+        self.assertEqual(out.count('data-state="passed"'),1)
+        self.assertIn('data-state="unverified"',out)
+        for ident in ('A','B','C'):self.assertEqual(out.count('data-oop-id="'+ident+'"'),1)
+        for kind in ('execution_report','execution','evidence','event','run'):self.assertNotIn(kind+'.html',out)
+        self.assertIn('human_pending',out);self.assertNotIn('<svg',out)
+
+    def test_state_overflow_keeps_unique_identities_and_unknown_is_not_passed(self):
+        nodes=self.nodes();out=g.render_states(nodes,{'A':'unsupported'},limit=1)
+        self.assertIn('data-state="unknown"',out);self.assertIn('1개 더 보기',out)
+        self.assertEqual(out.count('data-oop-id="C"'),1)
+        with self.assertRaises(ValueError):g.render_states({'E':{'id':'E','type':'evidence'}},focus='E')
+        out=g.render_states({'A':nodes['A']},{'SECRET':'passed'})
+        self.assertNotIn('SECRET',out);self.assertNotIn('data-state="passed"',out)
+
+    def test_equal_titles_do_not_merge_distinct_business_identities(self):
+        nodes=self.nodes()
+        for node in nodes.values():node['title']='<script>same</script>'
+        out=g.render_states(nodes,{'A':'passed','B':'failed','C':'unverified'})
+        self.assertEqual(out.count('data-oop-id='),3);self.assertNotIn('<script>',out)
+
     def test_direction_provenance_and_state_are_separate(self):
         nodes=self.nodes();nodes['B']['verification']='passed'
         rel=[dict(**{'from':'A','to':'B'},type='depends_on',basis='unknown'),dict(**{'from':'B','to':'C'},type='produces',basis='confirmed_by_test')]

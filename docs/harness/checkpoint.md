@@ -1,11 +1,11 @@
-# Checkpoint — 2026-09-15 자동 위키 품질 판정
+# Checkpoint — 2026-09-15 상태별 OOP 보기
 
-TASK-20260915-SEED-QUALITY-001 / EXE-20260915-SEED-QUALITY-001
+TASK-20260915-SEED-STATE-001 / EXE-20260915-SEED-STATE-001
 
-- Changed: v0.9.0 local candidate, wiki-quality-1. 설치 구조 검사/quality.json, 출처 바인딩, 화면 증거 양식·검사, 현재 필수 Run과 동일 wiki bootstrap을 묶는 최종 gate.
-- Verified: 102개 검사, 17목표 계약 구조 검사, 새 설치/replay/ZIP 동일성, 기존5개 engine 바이트 보존. 합성 프로젝트의 실제 CLI/Run/bootstrap 통합 성공과 출처 변경 차단.
-- Unverified: 실제 새 씨앗 화면의 인간 가독성 수락·관찰자 신원·장기 교차 프로젝트 운영·외부 릴리스/Canary. 생성 초안은 visual pending이며 완료 인증이 아니다.
-- Evidence/events: EVD-20260915-SEED-QUALITY-001; START/VALIDATED/COMMIT intent; 과거 근거·이벤트 보존.
-- External: 새 로컬 설치·ZIP·승인된 로컬 커밋, push/키/유료 호출/권한 확대 없음.
-- Feedback: 사용자 요청의 core 표현 후보를 공통 검사로 구현, 실운영 일반화 승격은 보류. 스킬 변경 없음.
-- Next: 새 프로젝트는 필수 wiki-quality Run과 실제 브라우저 관찰 뒤 wiki_quality.py gate로 완료 판정한다. 기존 프로젝트는 pin을 유지하고 별도 채택한다.
+- Changed: v0.10.0 local candidate. 상태 → 고유 업무 객체 → DOP 근거. 보고서/실행/근거 레코드를 기본 노드에서 제외하고 출처와 이력은 보존.
+- Verified: 105개 검사, 17목표/31조항 구조 검사, 새 설치/replay/ZIP 동일성, 기존 5개 engine 바이트 보존.
+- Unverified: 실제 새 씨앗 화면의 인간 수락, 교차 프로젝트 장기 평가·Canary·외부 릴리스. 업무 생명주기는 기존 reducer 범위에 한정.
+- Evidence/events: EVD-20260915-SEED-STATE-001; START/VALIDATED/COMMIT intent; 과거 근거·이벤트 보존.
+- External: 로컬 설치·ZIP·커밋, push/유료 호출 없음.
+- Feedback: RFC-0012 core 표현 후보, 사용자 OOP/DOP 혼동 지적 반영. 스킬 변경 없음.
+- Next: 프로젝트별 현재 증거를 연결하고 인간 가독성을 검토. 범용 승격은 추가 평가 후 실시.

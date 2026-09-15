@@ -41,7 +41,7 @@ class QualityTests(unittest.TestCase):
         for replacement in [b'<script>bad</script>',b'<a href="missing.html">missing</a>',b'<p>'+b'x'*601+b'</p>',b'<svg><use href="https://example.test/x.svg"></use></svg>',b'<style>@import "external.css"</style>',b'<p>unclosed']:
             files=dict(self.files);files['index.html']+=replacement
             self.assertEqual(q.audit(files,self.contract)['state'],'blocked')
-        files=dict(self.files);files['DRAFT-TASK-001.html']=files['DRAFT-TASK-001.html'].replace(b'data-graph-profile="object-node-map-1"',b'data-disabled="true"')
+        files=dict(self.files);files['DRAFT-TASK-001.html']=files['DRAFT-TASK-001.html'].replace(b'data-graph-profile="state-object-view-1"',b'data-disabled="true"')
         self.assertIn('object_graph_missing',[f['code'] for f in q.audit(files,self.contract)['failures']])
     def test_inventory_kind_and_hierarchy_cannot_weaken_checks(self):
         for fault in ['topic','kind','parent','type']:

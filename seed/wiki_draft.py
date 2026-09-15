@@ -128,18 +128,18 @@ def bundle(data, renderer_digest=None):
             body += '</section><section><h2>근거 조회</h2>' + listing(obj['source_refs'] or ['근거 미연결']) + '<h2>미확인 사항</h2>' + listing(obj['unknowns']) + '</section>' + link('objects', '객체 탐색으로 돌아가기')
         if ident in objects or ident in ('index','objects','design'):
             focus=ident if ident in objects else default_focus
-            body=graph.render(objects,data['relations'],focus)+'<details><summary>목적 · 행동 · 문서와 생성 근거 펼치기</summary>'+body+'</details>'
-        claim = {'view': ident, 'rule': PROFILE, 'input_sha256': input_digest, 'graph_profile':graph.PROFILE, 'graph_renderer_sha256':graph_digest, 'verification': 'unverified', 'acceptance': 'human_pending', 'access': 'interview_pending', 'source_refs': objects.get(ident, {}).get('source_refs', []), 'limits': 'Authored draft only; no Run/Evidence reducer, authentication or source-content verification'}
+            body=graph.render_states(objects,focus=focus if ident in objects else None)+'<details><summary>목적 · 행동 · 문서와 생성 근거 펼치기</summary>'+body+'</details>'
+        claim = {'view': ident, 'rule': PROFILE, 'input_sha256': input_digest, 'graph_profile':graph.STATE_PROFILE, 'graph_renderer_sha256':graph_digest, 'verification': 'unverified', 'acceptance': 'human_pending', 'access': 'interview_pending', 'source_refs': objects.get(ident, {}).get('source_refs', []), 'limits': 'Authored draft only; no Run/Evidence reducer, authentication or source-content verification'}
         claims[ident] = claim
         body += '<details><summary>이 View의 생성 근거와 규칙</summary><pre>' + esc(json.dumps(claim, ensure_ascii=False, indent=2)) + '</pre></details>'
         pages[ident + '.html'] = ('<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; style-src &#39;unsafe-inline&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;"><title>' + esc(title) + '</title><style>' + CSS + '</style></head><body><main><h1>' + esc(title) + '</h1><section class="notice">자동 생성 초안 · 검증 미확인 · 권한 인터뷰 대기. 로컬 파일로만 확인하며 웹에 공개하지 않습니다.</section>' + body + '</main></body></html>').encode('utf-8')
-    manifest = {'profile': PROFILE, 'state': 'draft_generated', 'bootstrap_ready': False, 'input_sha256': input_digest, 'graph_profile':graph.PROFILE, 'graph_renderer_sha256':graph_digest, 'renderer_sha256': renderer_digest or sha(Path(__file__).read_bytes()), 'output_sha256': {k: sha(v) for k, v in pages.items()}, 'claims': claims}
+    manifest = {'profile': PROFILE, 'state': 'draft_generated', 'bootstrap_ready': False, 'input_sha256': input_digest, 'graph_profile':graph.STATE_PROFILE, 'graph_renderer_sha256':graph_digest, 'renderer_sha256': renderer_digest or sha(Path(__file__).read_bytes()), 'output_sha256': {k: sha(v) for k, v in pages.items()}, 'claims': claims}
     quality_path=Path(__file__).with_name('wiki_quality.py')
     quality_spec=importlib.util.spec_from_file_location('draft_quality',quality_path)
     quality=importlib.util.module_from_spec(quality_spec);quality_spec.loader.exec_module(quality)
     contract=quality.draft_contract(data);audit=quality.audit(pages,contract)
     need(audit['state']=='structure_passed','Wiki presentation quality blocked: '+str(audit['failures']))
-    manifest.update(quality_profile=quality.PROFILE,quality_renderer_sha256=sha(quality_path.read_bytes()),quality_snapshot=audit['snapshot'])
+    manifest.update(state_view_profile=graph.STATE_PROFILE,quality_profile=quality.PROFILE,quality_renderer_sha256=sha(quality_path.read_bytes()),quality_snapshot=audit['snapshot'])
     return {**pages, 'manifest.json': encoded(manifest), 'quality-contract.json':encoded(contract), 'quality.json':encoded(audit)}
 
 
