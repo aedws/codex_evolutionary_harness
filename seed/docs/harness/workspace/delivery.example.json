@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "authority_ref": null,
+  "commands": {},
+  "bindings": {},
+  "executables": {},
+  "timeout_seconds": 10,
+  "artifact_paths": [],
+  "canary": {"target":null,"checks":2,"interval_seconds":1}
+}

@@ -1,0 +1,37 @@
+{
+  "version": "0.11.0",
+  "manifest_sha256": "c5b89c9b99f59e2a991a3ff9439830c426b9221ba24b624a376aefd96f833fcb",
+  "first": {
+    "outcome": "installed",
+    "target": "C:\\Users\\uyess\\AppData\\Local\\Temp\\tmpp4qey7r1\\project",
+    "files": 73,
+    "manifest_sha256": "c5b89c9b99f59e2a991a3ff9439830c426b9221ba24b624a376aefd96f833fcb",
+    "wiki_draft": ".local/wiki-draft/index.html",
+    "wiki_quality": {
+      "state": "structure_passed",
+      "visual": "pending",
+      "report": ".local/wiki-draft/quality.json"
+    },
+    "bootstrap_ready": false
+  },
+  "replay": "unchanged",
+  "bytes_and_mtime_preserved": true,
+  "quality": {
+    "bootstrap_ready": false,
+    "failures": [],
+    "human_acceptance": "human_pending",
+    "limits": [
+      "Static layout thresholds are heuristics, not visual or semantic certification.",
+      "Source digests establish freshness against declared sources, not completeness or truth.",
+      "This checker does not supply access control or authenticate observer identity."
+    ],
+    "mode": "draft",
+    "profile": "wiki-quality-1",
+    "snapshot": "dcdb171ea7da712cd98bea125f8d03d92b3b69dac69333615768a64164d95089",
+    "state": "structure_passed",
+    "visual": "pending"
+  },
+  "zip_matches_install": true,
+  "zip_sha256": "fecec232fb33c902b780a2cf2d98be78aca0483e2b6ac2c040fb0d153ed8debc",
+  "operating_templates_unconfigured": true
+}

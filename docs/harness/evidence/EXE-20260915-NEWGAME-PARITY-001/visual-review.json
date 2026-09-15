@@ -1,0 +1,21 @@
+{
+  "reference_url": "https://sfh-dev-wiki.pages.dev/",
+  "reference_observed": [
+    "Public landing",
+    "Role login boundary"
+  ],
+  "protected_internal_pages": "not_authenticated_or_verified",
+  "synthetic_workspace": [
+    "six business objects in separate workflow groups",
+    "selected release links its prerequisite",
+    "source hierarchy docs/topic/sub/req.md",
+    "390px measured document scroll width 375 versus viewport 390"
+  ],
+  "screenshots": [
+    "workspace-final-1280.png",
+    "workspace-final-detail-390.png",
+    "workspace-tree-390.png"
+  ],
+  "scope": "Representative authenticated UI before additive offline adapter; no human acceptance or full Newgame visual parity claim",
+  "human_acceptance": "pending"
+}

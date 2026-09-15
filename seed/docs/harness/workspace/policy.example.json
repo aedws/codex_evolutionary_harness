@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "profile": "operating-workspace-1",
+  "project_id": null,
+  "authority_ref": null,
+  "roles": {},
+  "principals": {},
+  "sources": [],
+  "registry": "workspace-objects.json",
+  "accounts": ".local/workspace-accounts.sqlite3",
+  "access_mode": null
+}

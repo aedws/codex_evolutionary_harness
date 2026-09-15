@@ -52,6 +52,7 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.links=[];self.h1=0;self.nav=0;self.details=0;self.graph=False;self.cards=False;self.viewport=False
         self.text=[];self.stack=[];self.blocks=[];self.unsafe=False
+        self.elements=[];self.members=[];self.state_nodes=[];self.graph_count=0
         self.feed(raw.decode('utf-8'));self.close()
         if self.stack:self.unsafe=True
     def handle_starttag(self,tag,attrs):
@@ -63,7 +64,13 @@ class Page(HTMLParser):
         if tag=='h1':self.h1+=1
         if tag=='nav':self.nav+=1
         if tag=='details':self.details+=1
-        if a.get('data-graph-profile')=='state-object-view-1':self.graph=True
+        if a.get('data-graph-profile')=='state-object-view-1':self.graph=True;self.graph_count+=1
+        inside=any(x.get('data-graph-profile')=='state-object-view-1' for _,x in self.elements)
+        if inside and 'data-state' in a:self.state_nodes.append(a['data-state'])
+        if inside and 'data-oop-id' in a:
+            group=next((x['data-state'] for _,x in reversed(self.elements) if 'data-state' in x),None)
+            self.members.append((a['data-oop-id'],group))
+        if tag not in {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}:self.elements.append((tag,a))
         if 'cards' in a.get('class','').split():self.cards=True
         if tag=='meta' and a.get('name')=='viewport' and 'width=device-width' in a.get('content',''):self.viewport=True
         if tag=='a':self.links.append(a.get('href',''))
@@ -71,6 +78,7 @@ class Page(HTMLParser):
         if any(k in a for k in ('src','srcset')):self.unsafe=True
     def handle_endtag(self,tag):
         if self.stack and self.stack[-1][0]==tag:self.blocks.append(self.stack.pop())
+        if self.elements and self.elements[-1][0]==tag:self.elements.pop()
     def handle_data(self,data):
         self.text.append(data)
         for block in self.stack:block[1]+=data
@@ -113,7 +121,14 @@ def audit(files,contract,root=None):
         check(all(len(t.strip())<=(140 if tag in {'h1','summary'} else 600) for tag,t in p.blocks),ident,'oversized_prose_block')
         check(all(h.endswith('.html') and h in files for h in p.links),ident,'broken_or_external_link')
         if meta['parent']:check(meta['parent']+'.html' in p.links,ident,'parent_link_missing')
-        if meta['kind'] in {'overview','index','object'}:check(p.graph,ident,'object_graph_missing')
+        if meta['kind'] in {'overview','index','object'}:
+            check(p.graph,ident,'object_graph_missing')
+            expected_ids={ident} if meta['kind']=='object' else {k for k,v in pages.items() if v['kind']=='object'}
+            actual_ids=[k for k,s in p.members]
+            check(p.graph_count==1 and len(actual_ids)==len(set(actual_ids)) and set(actual_ids)==expected_ids,ident,'state_member_inventory_differs')
+            valid={'passed','failed','stale','blocked','conflicted','running','unknown','unverified'}
+            check(len(p.state_nodes)==len(set(p.state_nodes)) and set(p.state_nodes)=={s for k,s in p.members} and all(s in valid for k,s in p.members),ident,'state_group_membership_differs')
+            if contract['mode']=='draft':check(all(s=='unverified' for k,s in p.members),ident,'draft_state_fabricated')
         if meta['kind'] in {'overview','index','topic'}:check(p.cards,ident,'document_cards_missing')
         content=' '.join(p.text)
         check('생성 근거' in content,ident,'lineage_missing')

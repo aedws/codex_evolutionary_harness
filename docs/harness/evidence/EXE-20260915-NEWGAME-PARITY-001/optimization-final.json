@@ -1,0 +1,83 @@
+{
+  "scope": "Synthetic shared-task workload; no domain generality or whole-Newgame speed claim",
+  "status_call_reduction_percent": 95.83333333333334,
+  "results": [
+    {
+      "fixture": "game_fixture",
+      "expected_verification": "passed",
+      "measurements": {
+        "False": {
+          "calls": 24,
+          "seconds": 0.09096419997513294,
+          "projection_sha256": "92eef2bcb3f584a1a3881f151e62acb5dd9f153369b303c24e47e89276f2bd14"
+        },
+        "True": {
+          "calls": 1,
+          "seconds": 0.014806699997279793,
+          "projection_sha256": "92eef2bcb3f584a1a3881f151e62acb5dd9f153369b303c24e47e89276f2bd14"
+        }
+      },
+      "exact_projection_equal": true
+    },
+    {
+      "fixture": "game_fixture",
+      "expected_verification": "stale",
+      "measurements": {
+        "False": {
+          "calls": 24,
+          "seconds": 0.10201829997822642,
+          "projection_sha256": "3bd835284fcd341f953ee54cc50f9a94bfd2819e64390b4d9f1e6769ec50a0dc"
+        },
+        "True": {
+          "calls": 1,
+          "seconds": 0.015271399985067546,
+          "projection_sha256": "3bd835284fcd341f953ee54cc50f9a94bfd2819e64390b4d9f1e6769ec50a0dc"
+        }
+      },
+      "exact_projection_equal": true
+    },
+    {
+      "fixture": "logistics_fixture",
+      "expected_verification": "passed",
+      "measurements": {
+        "False": {
+          "calls": 24,
+          "seconds": 0.1095909999567084,
+          "projection_sha256": "8a9e056c6d5805657fbca4e781b38d99445213fe79fa9bd8e1f88acc50a7ed26"
+        },
+        "True": {
+          "calls": 1,
+          "seconds": 0.018823100021108985,
+          "projection_sha256": "8a9e056c6d5805657fbca4e781b38d99445213fe79fa9bd8e1f88acc50a7ed26"
+        }
+      },
+      "exact_projection_equal": true
+    },
+    {
+      "fixture": "logistics_fixture",
+      "expected_verification": "stale",
+      "measurements": {
+        "False": {
+          "calls": 24,
+          "seconds": 0.11726460000500083,
+          "projection_sha256": "a28555135835a67929fa2f7cfe69b37712462df1b0dbfb03da7d5b3cf9a481d0"
+        },
+        "True": {
+          "calls": 1,
+          "seconds": 0.018580299976747483,
+          "projection_sha256": "a28555135835a67929fa2f7cfe69b37712462df1b0dbfb03da7d5b3cf9a481d0"
+        }
+      },
+      "exact_projection_equal": true
+    }
+  ],
+  "engine_pins": {
+    "workspace": "0df9f785a927f40a55b1bba94b0ea879381e6147b3b0803b4ce0c974b80adcef",
+    "workspace_view": "402fc6fa72c1aeafb7f747439cc0f23e725dd8ba4a3c4614b3b27d9e3c633d1f",
+    "workspace_server": "e29f35303bd0b2e3b0a2d57c18cc72d489a9ace1d0eda701e75ef61c1cbf275a",
+    "delivery": "c06c1b9e8da9d0c6245c02f020dfca466c3121f243db011f629f4b02069fb9d1",
+    "harness": "ee1c46f57dc5fc98aabcd8b8939cb539bd647411c1e3e367fbbcf1a090f439ad",
+    "wiki_access": "a682713812f85dce594950ea020fe0d4df265fc9a0c16265198b97543d9a55f8"
+  },
+  "human_intervention": "unmeasured"
+}

@@ -1898,5 +1898,101 @@
       "goal-audit"
     ],
     "purpose": "계약 추적과 부분 구현을 전체 원칙 수락과 구분"
+  },
+  {
+    "id": "TASK-20260915-NEWGAME-PARITY-001",
+    "type": "task",
+    "schema_version": 1,
+    "name": "Newgame 대응 운영 씨앗 · 상태/권한/효과 계약",
+    "purpose": "OOP 업무 보기와 DOP 원본·판단·검사·배포의 분리 및 로컬 최적화",
+    "source_refs": [
+      "docs/rfcs/RFC-0013-newgame-functional-parity.md",
+      "docs/requirements/NEWGAME-PARITY-20260915.md",
+      "docs/harness/evidence/EXE-20260915-NEWGAME-PARITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Real project adoption (separate active task)",
+      "Independent owner acceptance",
+      "External source/CI/cloud adapters and operational recovery",
+      "Long-term multi-project/Domain evaluation and rollout"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
+  },
+  {
+    "id": "EXE-20260915-NEWGAME-PARITY-001",
+    "type": "execution",
+    "schema_version": 1,
+    "name": "Newgame 대응 운영 씨앗 · 상태/권한/효과 계약",
+    "purpose": "OOP 업무 보기와 DOP 원본·판단·검사·배포의 분리 및 로컬 최적화",
+    "source_refs": [
+      "docs/rfcs/RFC-0013-newgame-functional-parity.md",
+      "docs/requirements/NEWGAME-PARITY-20260915.md",
+      "docs/harness/evidence/EXE-20260915-NEWGAME-PARITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Real project adoption (separate active task)",
+      "Independent owner acceptance",
+      "External source/CI/cloud adapters and operational recovery",
+      "Long-term multi-project/Domain evaluation and rollout"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
+  },
+  {
+    "id": "EVD-20260915-NEWGAME-PARITY-001",
+    "type": "evidence",
+    "schema_version": 1,
+    "name": "Newgame 대응 운영 씨앗 · 상태/권한/효과 계약",
+    "purpose": "OOP 업무 보기와 DOP 원본·판단·검사·배포의 분리 및 로컬 최적화",
+    "source_refs": [
+      "docs/rfcs/RFC-0013-newgame-functional-parity.md",
+      "docs/requirements/NEWGAME-PARITY-20260915.md",
+      "docs/harness/evidence/EXE-20260915-NEWGAME-PARITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Real project adoption (separate active task)",
+      "Independent owner acceptance",
+      "External source/CI/cloud adapters and operational recovery",
+      "Long-term multi-project/Domain evaluation and rollout"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
+  },
+  {
+    "id": "HARNESS-REQ-20260915-NEWGAME-PARITY",
+    "type": "requirement",
+    "schema_version": 1,
+    "name": "Newgame 대응 운영 씨앗 · 상태/권한/효과 계약",
+    "purpose": "OOP 업무 보기와 DOP 원본·판단·검사·배포의 분리 및 로컬 최적화",
+    "source_refs": [
+      "docs/rfcs/RFC-0013-newgame-functional-parity.md",
+      "docs/requirements/NEWGAME-PARITY-20260915.md",
+      "docs/harness/evidence/EXE-20260915-NEWGAME-PARITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Real project adoption (separate active task)",
+      "Independent owner acceptance",
+      "External source/CI/cloud adapters and operational recovery",
+      "Long-term multi-project/Domain evaluation and rollout"
+    ],
+    "tags": [
+      "project",
+      "core_candidate"
+    ]
   }
 ]

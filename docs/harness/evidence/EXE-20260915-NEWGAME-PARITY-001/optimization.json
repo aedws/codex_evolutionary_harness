@@ -1,0 +1,77 @@
+{
+  "scope": "synthetic identical-workload parity; fixture names do not establish domain generality",
+  "status_call_reduction_percent": 95.83333333333334,
+  "results": [
+    {
+      "fixture": "game_fixture",
+      "expected_verification": "passed",
+      "measurements": {
+        "baseline": {
+          "calls": 24,
+          "seconds": 0.09532359999138862,
+          "projection_sha256": "3a17b959a48ee859bc6dc3972e9e4e663e74cb2e0573789d99ab094fa0c36cce"
+        },
+        "cached": {
+          "calls": 1,
+          "seconds": 0.015132099972106516,
+          "projection_sha256": "3a17b959a48ee859bc6dc3972e9e4e663e74cb2e0573789d99ab094fa0c36cce"
+        }
+      },
+      "exact_projection_equal": true
+    },
+    {
+      "fixture": "game_fixture",
+      "expected_verification": "stale",
+      "measurements": {
+        "baseline": {
+          "calls": 24,
+          "seconds": 0.10184349998598918,
+          "projection_sha256": "31102632dfa91d9bec96ff53b3c3526c43b8d34af7bb6ddf2c9daa6a9e0f0cf3"
+        },
+        "cached": {
+          "calls": 1,
+          "seconds": 0.015359300014097244,
+          "projection_sha256": "31102632dfa91d9bec96ff53b3c3526c43b8d34af7bb6ddf2c9daa6a9e0f0cf3"
+        }
+      },
+      "exact_projection_equal": true
+    },
+    {
+      "fixture": "logistics_fixture",
+      "expected_verification": "passed",
+      "measurements": {
+        "baseline": {
+          "calls": 24,
+          "seconds": 0.09731350000947714,
+          "projection_sha256": "7de1055481c0c8023959ed07d05f2f2b734c21499b2d0c6826b56a78abc0c416"
+        },
+        "cached": {
+          "calls": 1,
+          "seconds": 0.014983000000938773,
+          "projection_sha256": "7de1055481c0c8023959ed07d05f2f2b734c21499b2d0c6826b56a78abc0c416"
+        }
+      },
+      "exact_projection_equal": true
+    },
+    {
+      "fixture": "logistics_fixture",
+      "expected_verification": "stale",
+      "measurements": {
+        "baseline": {
+          "calls": 24,
+          "seconds": 0.10301309998612851,
+          "projection_sha256": "69913beda9b416664ec831b4781de680c45eee54f75a92923006ae413098a351"
+        },
+        "cached": {
+          "calls": 1,
+          "seconds": 0.014497999974992126,
+          "projection_sha256": "69913beda9b416664ec831b4781de680c45eee54f75a92923006ae413098a351"
+        }
+      },
+      "exact_projection_equal": true
+    }
+  ],
+  "user_intervention_reduction": "unmeasured",
+  "rule_reduction": "not_claimed",
+  "cross_project_generalization": "pending"
+}

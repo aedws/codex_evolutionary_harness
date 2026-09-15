@@ -134,6 +134,13 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
     if manifest.get('wiki_state_profile') is not None:
         if manifest['wiki_state_profile']!='state-object-view-1' or release.get('wiki_state_profile')!=manifest['wiki_state_profile']:
             raise SeedError(2,'State-oriented OOP presentation profile differs')
+    if manifest.get('operating_workspace_profile') is not None:
+        required={'workspace.py','workspace_view.py','workspace_server.py','delivery.py','docs/harness/workspace/README.md','docs/harness/workspace/policy.example.json','docs/harness/workspace/objects.example.json','docs/harness/workspace/delivery.example.json'}
+        if (manifest['operating_workspace_profile']!='operating-workspace-1' or release.get('operating_workspace_profile')!=manifest['operating_workspace_profile'] or not required<=set(payload) or any(b'operating-workspace-1' not in payload[n] for n in ['AGENTS.md','BOOTSTRAP_PROMPT.md'])):
+            raise SeedError(2,'Operating workspace contract/components missing')
+        policy=json.loads(payload['docs/harness/workspace/policy.example.json']);delivery=json.loads(payload['docs/harness/workspace/delivery.example.json'])
+        if policy['authority_ref'] is not None or policy['roles'] or policy['principals'] or policy['sources'] or delivery['authority_ref'] is not None or delivery['commands'] or json.loads(payload['docs/harness/workspace/objects.example.json'])['objects']:
+            raise SeedError(2,'Workspace templates must not inherit project authority or facts')
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}

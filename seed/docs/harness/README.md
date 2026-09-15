@@ -21,3 +21,6 @@ Mandatory bootstrap: apply V01/V03 and `docs/harness/bootstrap/README.md` before
 [Default project wiki](wiki/README.md): wiki_template.py supplies a domain-neutral overview, nine topics and ordered task details. New bootstrap uses this presentation by default; project evidence and HTTP access integration remain required.
 
 Installation automatically includes a local six-type object-wiki draft. Open .local/wiki-draft/index.html; edit docs/wiki/draft-input.json and generate into a new output directory with wiki_draft.py. This draft is not the live registry, owner authorization or bootstrap_ready.
+
+
+Optional [operating-workspace-1](workspace/README.md) connects approved sources, authenticated workflow decisions, current Core Runs, OOP navigation and an explicitly pinned delivery adapter. Installed templates retain no project authority.

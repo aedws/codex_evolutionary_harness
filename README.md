@@ -1,22 +1,22 @@
-> **현재 로컬 후보 v0.10.0 — 상태별 OOP 위키 자동 생성·품질 판정.** `python -B scripts/seed.py init --target <새 프로젝트 경로>`로 초안과 `quality.json`을 자동 생성합니다. 상태별 업무 객체를 한 번씩 표시하고 보고서·실행·근거는 상세로 분리합니다. 구조/링크/상태 보기/계보 검사를 통과해야 설치됩니다. 실제 프로젝트는 화면 관찰 기록과 `wiki_quality.py gate`까지 통과해야 위키 품질 완료로 보고합니다. [사용·판정 계약](seed/docs/harness/wiki/quality.md) · [설계 RFC](docs/rfcs/RFC-0011-wiki-quality-automation.md). 인간 수락은 별도이며, 아래 v0.7.0 원격 배포판에는 이 새 기능이 없습니다.
-
 # Evolutionary Harness — reusable contract seed
 
 <!-- SEED-USAGE:START — keep this usage block immediately after the title. -->
 ## 씨앗 사용법 — 여기서 시작
 
-**현재 씨앗: v0.7.0 / contract 6.** 아래 순서로 설치한 뒤 대상 프로젝트에서 bootstrap을 요청한다. 내려받기만으로 자기개선·승격·Canary가 자동 실행되지는 않는다.
+**현재 개발 후보: v0.11.0 / contract 6 / operating-workspace-1.** Newgame 기능 대응 운영 계층과 비교 검사를 포함합니다. 전체 기능 동등성과 실제 프로젝트 도입은 아직 수락되지 않았습니다. [설정·사용법](seed/docs/harness/workspace/README.md) · [기능 대응 RFC](docs/rfcs/RFC-0013-newgame-functional-parity.md). 안정 태그 v0.7.0과 구분합니다. 아래 순서로 설치한 뒤 대상 프로젝트에서 bootstrap을 요청한다. 내려받기만으로 자기개선·승격·Canary가 자동 실행되지는 않는다.
 
-### 1. 고정 버전 내려받기
+### 1. 개발 후보 내려받고 commit 고정
 
 비공개 저장소 접근 권한과 인증된 Git, Python 3.10 이상이 필요하다. 아래는 PowerShell 예시다. 두 경로를 자신의 환경에 맞게 바꾸고, 배포 원본은 대상 프로젝트 밖의 **새 디렉터리**에 둔다. 기존 checkout이나 프로젝트 위에 전체 저장소를 복사하지 않는다.
 
 ```powershell
-$SeedSource = "C:/tools/evolutionary-harness-v0.7.0"
+$SeedSource = "C:/tools/evolutionary-harness-v0.11.0-candidate"
 $ProjectPath = "C:/projects/my-project"
-git clone --branch v0.7.0 --depth 1 https://github.com/aedws/codex_evolutionary_harness.git "$SeedSource"
+git clone --branch codex/wiki-auto-draft-20260915 --depth 1 https://github.com/aedws/codex_evolutionary_harness.git "$SeedSource"
 if ($LASTEXITCODE -ne 0) { throw "씨앗 다운로드 실패: 다음 단계로 진행하지 마세요." }
-python "$SeedSource/scripts/seed.py" check
+git -C "$SeedSource" rev-parse HEAD
+git -C "$SeedSource" checkout --detach
+python -B "$SeedSource/scripts/seed.py" check
 if ($LASTEXITCODE -ne 0) { throw "씨앗 무결성 검사 실패" }
 python "$SeedSource/scripts/check_contracts.py"
 if ($LASTEXITCODE -ne 0) { throw "씨앗 계약 구조 검사 실패" }
@@ -62,7 +62,11 @@ bootstrap.py의 필수 위키·근거·검사 Gate를 통과하기 전에는 셋
 
 bootstrap에서 실제 검사 명령과 입력 파일을 확정한 뒤 [로컬 코어 사용법](seed/docs/harness/runtime/README.md)에 따라 policy/task 파일을 준비하고 `python harness.py init`, `task`, `run`, `status`, `view`를 사용한다. `.harness` 원장이 실제 검사 관측을 보존하며, 기존 수동 기록을 자동 이관하지 않는다. 예제의 빈 권한·ID를 사실로 채우기 전에는 실행을 시작하지 않는다.
 
-### 5. 최종 목표 달성 여부
+### 5. Newgame 대응 운영 위키
+
+[운영 계층 사용법](seed/docs/harness/workspace/README.md)에 따라 오너 인터뷰 → 원본/객체 연결 → collect → 운영 위키 → 현재 Run/독립 판단 → 승인된 배포 어댑터 순서로 진행한다. 문서 초안을 운영 완료로 취급하지 않는다. 기존 프로젝트는 덮어쓰지 말고 새 경로에서 도입을 평가한다.
+
+### 6. 최종 목표 달성 여부
 
 **현재 씨앗만 설치해서 최종형 하네스가 완성되지는 않는다.** 공통 계약에 더해 로컬 원장·검사 실행·상태 판정·Task View·로컬 후보·원장 복원 경로가 제공된다. 실제 프로젝트 바인딩, OS/인간 신원의 권한 경계, 독립 평가와 외부 승격·Canary 실행 및 효과 관측은 추가로 필요하다.
 
@@ -75,7 +79,7 @@ bootstrap에서 실제 검사 명령과 입력 파일을 확정한 뒤 [로컬 �
 
 모든 프로젝트가 공통 코어에서 시작하고 Overlay로 특화한다. 실제 실패·마찰·검증에서 얻은 개선은 Project → Domain → Universal Core로 평가·승격하고, 상위 변경은 호환성 검증·Canary·Rollback을 통해 다시 전파한다.
 
-현재 배포물은 **v0.7.0 계약 씨앗**이다. [기본 위키 생성기](seed/docs/harness/wiki/README.md)가 Newgame식 대문·주제·작업 상세를 제공한다. 최소 로컬 기록·검사·판정 코어를 포함한다. 전체 위키 상태/HTTP 통합, OS/인간 신원의 권한 강제, 자동 승격·Canary controller는 아직 구현하지 않았다. V2/V3/V4는 목표 능력이며 배포 버전과 다르다.
+안정 태그는 **v0.7.0**, 현재 개발 브랜치 후보는 **v0.11.0**이다. [기본 위키 생성기](seed/docs/harness/wiki/README.md)가 Newgame식 대문·주제·작업 상세를 제공한다. 최소 로컬 기록·검사·판정 코어를 포함한다. v0.11.0에는 선택적 업무 상태/HTTP/로컬 계정 경계와 지정 대상 Canary 어댑터가 추가됐다. OS 신원 격리·외부 수집·자동 승격·다중 프로젝트 확대는 미완료다. V2/V3/V4는 목표 능력이며 배포 버전과 다르다.
 
 ## 먼저 읽기
 
