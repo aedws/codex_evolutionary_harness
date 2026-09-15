@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import hashlib
 import html
 import json
@@ -81,6 +82,11 @@ CSS = '''*{box-sizing:border-box}body{margin:0;background:#f4f6f3;color:#243b32;
 def bundle(data, renderer_digest=None):
     """Pure projection. References are displayed, never opened or treated as evidence."""
     objects = validate(data); esc = html.escape
+    graph_path=Path(__file__).with_name('wiki_graph.py')
+    spec=importlib.util.spec_from_file_location('draft_graph',graph_path)
+    graph=importlib.util.module_from_spec(spec);spec.loader.exec_module(graph)
+    graph_digest=sha(graph_path.read_bytes())
+    default_focus=next(k for k,o in objects.items() if o['type']=='requirement')
     def listing(values): return '<ul>' + ''.join('<li>' + esc(v) + '</li>' for v in values) + '</ul>'
     def link(ident, title): return '<a href="' + ident + '.html">' + esc(title) + '</a>'
     def cards(items): return '<div class="cards">' + ''.join(link(i, t) for i, t in items) + '</div>'
@@ -120,11 +126,14 @@ def bundle(data, renderer_digest=None):
                     direction = '나 → 대상' if rel['from'] == ident else '원본 → 나'
                     body += '<p>' + esc(direction + ' · ' + rel['type'] + ' · ' + rel['basis']) + ' : ' + link(other, names[other]) + '</p>'
             body += '</section><section><h2>근거 조회</h2>' + listing(obj['source_refs'] or ['근거 미연결']) + '<h2>미확인 사항</h2>' + listing(obj['unknowns']) + '</section>' + link('objects', '객체 탐색으로 돌아가기')
-        claim = {'view': ident, 'rule': PROFILE, 'input_sha256': input_digest, 'verification': 'unverified', 'acceptance': 'human_pending', 'access': 'interview_pending', 'source_refs': objects.get(ident, {}).get('source_refs', []), 'limits': 'Authored draft only; no Run/Evidence reducer, authentication or source-content verification'}
+        if ident in objects or ident in ('index','objects','design'):
+            focus=ident if ident in objects else default_focus
+            body=graph.render(objects,data['relations'],focus)+'<details><summary>목적 · 행동 · 문서와 생성 근거 펼치기</summary>'+body+'</details>'
+        claim = {'view': ident, 'rule': PROFILE, 'input_sha256': input_digest, 'graph_profile':graph.PROFILE, 'graph_renderer_sha256':graph_digest, 'verification': 'unverified', 'acceptance': 'human_pending', 'access': 'interview_pending', 'source_refs': objects.get(ident, {}).get('source_refs', []), 'limits': 'Authored draft only; no Run/Evidence reducer, authentication or source-content verification'}
         claims[ident] = claim
         body += '<details><summary>이 View의 생성 근거와 규칙</summary><pre>' + esc(json.dumps(claim, ensure_ascii=False, indent=2)) + '</pre></details>'
         pages[ident + '.html'] = ('<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; style-src &#39;unsafe-inline&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;"><title>' + esc(title) + '</title><style>' + CSS + '</style></head><body><main><h1>' + esc(title) + '</h1><section class="notice">자동 생성 초안 · 검증 미확인 · 권한 인터뷰 대기. 로컬 파일로만 확인하며 웹에 공개하지 않습니다.</section>' + body + '</main></body></html>').encode('utf-8')
-    manifest = {'profile': PROFILE, 'state': 'draft_generated', 'bootstrap_ready': False, 'input_sha256': input_digest, 'renderer_sha256': renderer_digest or sha(Path(__file__).read_bytes()), 'output_sha256': {k: sha(v) for k, v in pages.items()}, 'claims': claims}
+    manifest = {'profile': PROFILE, 'state': 'draft_generated', 'bootstrap_ready': False, 'input_sha256': input_digest, 'graph_profile':graph.PROFILE, 'graph_renderer_sha256':graph_digest, 'renderer_sha256': renderer_digest or sha(Path(__file__).read_bytes()), 'output_sha256': {k: sha(v) for k, v in pages.items()}, 'claims': claims}
     return {**pages, 'manifest.json': encoded(manifest)}
 
 

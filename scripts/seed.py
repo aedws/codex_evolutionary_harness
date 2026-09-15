@@ -117,6 +117,13 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
                 or not {'wiki_draft.py', 'docs/wiki/draft-input.json'} <= set(payload)
                 or any(b'wiki_draft.py' not in payload[n] for n in ['AGENTS.md', 'BOOTSTRAP_PROMPT.md'])):
             raise SeedError(2, 'Automatic object draft or first-run instructions missing')
+    if manifest.get('wiki_graph_profile') is not None:
+        if (manifest['wiki_graph_profile']!='object-node-map-1'
+                or release.get('wiki_graph_profile')!=manifest['wiki_graph_profile']
+                or 'wiki_graph.py' not in payload
+                or b'graph.render(' not in payload.get('wiki_draft.py',b'')
+                or any(b'object-node-map-1' not in payload[n] for n in ('AGENTS.md','BOOTSTRAP_PROMPT.md','docs/harness/contracts/views-state.md'))):
+            raise SeedError(2, 'Object node map contract or renderer missing')
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}
@@ -137,12 +144,20 @@ def installation_bundle(payload: dict[str, bytes], receipt: dict) -> tuple[dict,
     path = ROOT / 'seed/wiki_draft.py'
     if path.read_bytes() != payload['wiki_draft.py']:
         raise SeedError(2, 'Draft renderer differs from verified distribution')
+    graph_path=ROOT/'seed/wiki_graph.py'
+    if graph_path.read_bytes()!=payload.get('wiki_graph.py'):
+        raise SeedError(2, 'Graph renderer differs from verified distribution')
     spec = importlib.util.spec_from_file_location('seed_wiki_draft', path)
-    draft = importlib.util.module_from_spec(spec); spec.loader.exec_module(draft)
+    draft = importlib.util.module_from_spec(spec)
+    previous_bytecode = sys.dont_write_bytecode
+    sys.dont_write_bytecode = True
     try:
+        spec.loader.exec_module(draft)
         generated = draft.bundle(json.loads(payload[draft.SOURCE]), sha(payload['wiki_draft.py']))
     except (ValueError, KeyError, TypeError) as exc:
         raise SeedError(2, f'Invalid default object draft: {exc}') from exc
+    finally:
+        sys.dont_write_bytecode = previous_bytecode
     files = {draft.OUTPUT + '/' + n: raw for n, raw in generated.items()}
     if set(files) & set(payload):
         raise SeedError(2, 'Generated draft overlaps seed-owned files')

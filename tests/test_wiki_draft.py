@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('draft', ROOT/'seed/wiki_draft.py')
@@ -33,6 +34,10 @@ class DraftTests(unittest.TestCase):
                 page=pages[obj['id']+'.html'].decode()
                 for label in ['목적','다음 행동','관계','근거 조회','생성 근거']:self.assertIn(label,page)
             self.assertIn(b'DRAFT-TASK-001.html',pages['DRAFT-REQ-001.html'])
+            self.assertEqual(manifest['graph_profile'],'object-node-map-1')
+            self.assertIn(b'data-graph-profile="object-node-map-1"',pages['index.html'])
+            for obj in data['objects']:
+                self.assertIn(('data-focus="'+obj['id']+'"').encode(),pages[obj['id']+'.html'])
 
     def test_missing_type_dangling_relation_and_authored_status_rejected(self):
         for fault in ['type','relation','status','duplicate']:
@@ -79,6 +84,15 @@ class DraftTests(unittest.TestCase):
             self.assertEqual(json.loads((target/'docs/harness/objects.json').read_bytes()),[])
             self.assertEqual((target/'docs/harness/events.jsonl').read_bytes(),b'')
             self.assertEqual(distributor.initialize(target,payload,receipt,False)['outcome'],'unchanged')
+
+    def test_normal_python_install_does_not_pollute_distribution_inventory(self):
+        _,payload,receipt=distributor.load_seed()
+        before={p.relative_to(ROOT/'seed').as_posix() for p in (ROOT/'seed').rglob('*') if p.is_file()}
+        with tempfile.TemporaryDirectory() as folder, patch.object(distributor.sys,'dont_write_bytecode',False):
+            distributor.initialize(Path(folder)/'project',payload,receipt,False)
+            self.assertFalse(distributor.sys.dont_write_bytecode)
+        self.assertEqual(before,{p.relative_to(ROOT/'seed').as_posix() for p in (ROOT/'seed').rglob('*') if p.is_file()})
+        distributor.load_seed()
 
     def test_existing_draft_conflict_is_detected_before_installing_seed(self):
         with tempfile.TemporaryDirectory() as folder:

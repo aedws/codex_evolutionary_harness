@@ -1,4 +1,4 @@
-> **현재 로컬 개발 후보: v0.8.0 — 설치 즉시 객체 위키 초안.** 현재 checkout의 `scripts/seed.py init --target <새 프로젝트 경로>`를 실행하면 `.local/wiki-draft/index.html`이 자동 생성됩니다. 먼저 로컬 파일을 열어 대문 → 주제 → 객체 → 관계·행동·근거를 확인하세요. 아래 v0.7.0 원격 다운로드 예시는 기존 배포판이며 새 기능은 아직 외부 릴리스되지 않았습니다. [자동 초안 계약](docs/rfcs/RFC-0009-install-time-object-wiki-draft.md).
+> **현재 로컬 개발 후보: v0.8.1 — 설치 즉시 노드형 객체 위키.** 현재 checkout의 `scripts/seed.py init --target <새 프로젝트 경로>`를 실행하면 `.local/wiki-draft/index.html`이 자동 생성됩니다. 먼저 로컬 파일을 열어 대문 → 클릭 가능한 객체 연결 지도 → 목적·행동·근거를 확인하세요. [노드 탐색 계약](docs/rfcs/RFC-0010-object-node-navigation.md). 아래 v0.7.0 원격 다운로드 예시는 기존 배포판이며 새 기능은 아직 외부 릴리스되지 않았습니다. [자동 초안 계약](docs/rfcs/RFC-0009-install-time-object-wiki-draft.md).
 
 # Evolutionary Harness — reusable contract seed
 

@@ -53,3 +53,8 @@ python wiki_template.py build --content docs/wiki/content.json --tree docs/wiki/
 초안은 역할·계정을 만들지 않습니다. unverified/human_pending/interview_pending을 유지하며 참조 파일의 내용도 자동 읽지 않습니다. `.local`은 프로젝트 Git 제외 대상으로 유지하고 초안 폴더를 서버에 통째로 노출하지 않습니다. 실제 프로젝트 원본, 관계, 오너 인터뷰, 권한 adapter, Run/Evidence와 기존 bootstrap gate를 연결해야 합니다. draft_generated는 bootstrap_ready가 아닙니다.
 
 기존 v0.7.0의 wiki_template.py와 계약은 유지됩니다. 완성된 프로젝트 위키를 덮어쓰지 말고 별도 초안에서 구조를 비교·통합하세요. 여섯 객체 초안은 docs/harness/objects.json의 실제 레코드가 아닙니다.
+
+
+## v0.8.1 — 노드 중심 기본 탐색
+
+대문·객체 탐색·객체 문서를 열면 object-node-map-1 지도가 먼저 나옵니다. 가운데 객체 → 방향선 → 이웃 노드를 클릭하여 이동하세요. 목적·행동·전체 관계·근거와 생성 계보는 아래 상세 영역에 있습니다. 방향별 네 이웃을 먼저 그리고 생략 수와 전체 연결 목록을 표시합니다. 검사 상태와 관계 근거는 별개이며 초안은 미검증입니다. 다른 프로젝트도 같은 표현 검사를 bootstrap 필수 검사에 포함합니다. 역할별 보이는 노드만 renderer에 전달하며 외부 네트워크나 스크립트를 추가하지 않습니다.

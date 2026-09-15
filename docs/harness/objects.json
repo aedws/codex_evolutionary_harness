@@ -1580,5 +1580,68 @@
       "draft",
       "project-independent"
     ]
+  },
+  {
+    "id": "TASK-20260915-SEED-GRAPH-001",
+    "type": "task",
+    "name": "객체 관계를 노드로 생성하는 기본 위키 규칙",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0010-object-node-navigation.md",
+      "docs/harness/evidence/EXE-20260915-SEED-GRAPH-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "오너의 가독성 수락과 장기 교차 프로젝트 운영 성과 미확인",
+      "v0.8.1은 로컬 후보, 외부 릴리스 아님"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "presentation"
+    ]
+  },
+  {
+    "id": "EXE-20260915-SEED-GRAPH-001",
+    "type": "execution",
+    "name": "객체 관계를 노드로 생성하는 기본 위키 규칙",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0010-object-node-navigation.md",
+      "docs/harness/evidence/EXE-20260915-SEED-GRAPH-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "오너의 가독성 수락과 장기 교차 프로젝트 운영 성과 미확인",
+      "v0.8.1은 로컬 후보, 외부 릴리스 아님"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "presentation"
+    ]
+  },
+  {
+    "id": "EVD-20260915-SEED-GRAPH-001",
+    "type": "evidence",
+    "name": "객체 관계를 노드로 생성하는 기본 위키 규칙",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0010-object-node-navigation.md",
+      "docs/harness/evidence/EXE-20260915-SEED-GRAPH-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "오너의 가독성 수락과 장기 교차 프로젝트 운영 성과 미확인",
+      "v0.8.1은 로컬 후보, 외부 릴리스 아님"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "presentation"
+    ]
   }
 ]

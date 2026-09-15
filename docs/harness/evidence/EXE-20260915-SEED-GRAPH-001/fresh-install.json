@@ -1,0 +1,17 @@
+{
+  "outcome": "passed",
+  "target": "C:\\Users\\uyess\\AppData\\Local\\Temp\\seed-node-map-x27lfrzp\\project",
+  "normal_python_no_cache_pollution": true,
+  "standalone_check": true,
+  "zip_parity": true,
+  "core_engines_unchanged": [
+    "harness.py",
+    "bootstrap.py",
+    "wiki_core.py",
+    "wiki_access.py",
+    "wiki_template.py"
+  ],
+  "empty_truth_preserved": true,
+  "graph_profile": "object-node-map-1",
+  "zip_sha256": "589dce9a475d2d606c6241e86ed30364199108907dce880bd842344bf5eddfcc"
+}
