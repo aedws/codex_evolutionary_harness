@@ -1,4 +1,4 @@
-> **현재 로컬 개발 후보: v0.8.1 — 설치 즉시 노드형 객체 위키.** 현재 checkout의 `scripts/seed.py init --target <새 프로젝트 경로>`를 실행하면 `.local/wiki-draft/index.html`이 자동 생성됩니다. 먼저 로컬 파일을 열어 대문 → 클릭 가능한 객체 연결 지도 → 목적·행동·근거를 확인하세요. [노드 탐색 계약](docs/rfcs/RFC-0010-object-node-navigation.md). 아래 v0.7.0 원격 다운로드 예시는 기존 배포판이며 새 기능은 아직 외부 릴리스되지 않았습니다. [자동 초안 계약](docs/rfcs/RFC-0009-install-time-object-wiki-draft.md).
+> **현재 로컬 후보 v0.9.0 — 객체 위키 자동 생성·품질 판정.** `python -B scripts/seed.py init --target <새 프로젝트 경로>`로 초안과 `quality.json`을 자동 생성합니다. 구조/링크/노드/계보 검사를 통과해야 설치됩니다. 실제 프로젝트는 화면 관찰 기록과 `wiki_quality.py gate`까지 통과해야 위키 품질 완료로 보고합니다. [사용·판정 계약](seed/docs/harness/wiki/quality.md) · [설계 RFC](docs/rfcs/RFC-0011-wiki-quality-automation.md). 인간 수락은 별도이며, 아래 v0.7.0 원격 배포판에는 이 새 기능이 없습니다.
 
 # Evolutionary Harness — reusable contract seed
 

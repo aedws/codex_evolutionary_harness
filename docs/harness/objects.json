@@ -1643,5 +1643,101 @@
       "local-candidate",
       "presentation"
     ]
+  },
+  {
+    "id": "HARNESS-REQ-20260915-WIKI-QUALITY-001",
+    "type": "harness_requirement",
+    "name": "위키 품질의 반복 가능한 자동 판정",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0011-wiki-quality-automation.md",
+      "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "No autonomous browser/screenshot engine; project agent must perform actual observations through available tools",
+      "Synthetic PNG receipts evaluate contract transport, never real visual quality",
+      "No authenticated observer identity, semantic correctness or owner acceptance",
+      "Local candidate only; remote release, cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "wiki-quality"
+    ],
+    "purpose": "새 위키를 구조·출처·화면 관찰·필수 Run으로 판정한다. 구조 통과와 인간 수락은 분리한다."
+  },
+  {
+    "id": "TASK-20260915-SEED-QUALITY-001",
+    "type": "task",
+    "name": "씨앗 자동 품질 검사와 화면 근거 gate",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0011-wiki-quality-automation.md",
+      "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "No autonomous browser/screenshot engine; project agent must perform actual observations through available tools",
+      "Synthetic PNG receipts evaluate contract transport, never real visual quality",
+      "No authenticated observer identity, semantic correctness or owner acceptance",
+      "Local candidate only; remote release, cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "wiki-quality"
+    ],
+    "purpose": "새 위키를 구조·출처·화면 관찰·필수 Run으로 판정한다. 구조 통과와 인간 수락은 분리한다."
+  },
+  {
+    "id": "EXE-20260915-SEED-QUALITY-001",
+    "type": "execution",
+    "name": "v0.9.0 품질 프로필 구현·검증",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0011-wiki-quality-automation.md",
+      "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "No autonomous browser/screenshot engine; project agent must perform actual observations through available tools",
+      "Synthetic PNG receipts evaluate contract transport, never real visual quality",
+      "No authenticated observer identity, semantic correctness or owner acceptance",
+      "Local candidate only; remote release, cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "wiki-quality"
+    ],
+    "purpose": "새 위키를 구조·출처·화면 관찰·필수 Run으로 판정한다. 구조 통과와 인간 수락은 분리한다."
+  },
+  {
+    "id": "EVD-20260915-SEED-QUALITY-001",
+    "type": "evidence",
+    "name": "102개 검사·새 설치·ZIP·실행 gate 근거",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/rfcs/RFC-0011-wiki-quality-automation.md",
+      "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "No autonomous browser/screenshot engine; project agent must perform actual observations through available tools",
+      "Synthetic PNG receipts evaluate contract transport, never real visual quality",
+      "No authenticated observer identity, semantic correctness or owner acceptance",
+      "Local candidate only; remote release, cross-project canary and adoption pending"
+    ],
+    "tags": [
+      "core",
+      "local-candidate",
+      "wiki-quality"
+    ],
+    "purpose": "새 위키를 구조·출처·화면 관찰·필수 Run으로 판정한다. 구조 통과와 인간 수락은 분리한다."
   }
 ]

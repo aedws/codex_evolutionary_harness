@@ -58,3 +58,8 @@ python wiki_template.py build --content docs/wiki/content.json --tree docs/wiki/
 ## v0.8.1 — 노드 중심 기본 탐색
 
 대문·객체 탐색·객체 문서를 열면 object-node-map-1 지도가 먼저 나옵니다. 가운데 객체 → 방향선 → 이웃 노드를 클릭하여 이동하세요. 목적·행동·전체 관계·근거와 생성 계보는 아래 상세 영역에 있습니다. 방향별 네 이웃을 먼저 그리고 생략 수와 전체 연결 목록을 표시합니다. 검사 상태와 관계 근거는 별개이며 초안은 미검증입니다. 다른 프로젝트도 같은 표현 검사를 bootstrap 필수 검사에 포함합니다. 역할별 보이는 노드만 renderer에 전달하며 외부 네트워크나 스크립트를 추가하지 않습니다.
+
+
+## v0.9.0 local candidate — wiki-quality-1
+
+See docs/harness/wiki/quality.md: mandatory automatic structural/source-freshness audit, snapshot-bound visual observations and final wiki_quality.py gate. Static structure_passed is not visual acceptance; final human_pending remains. Existing bootstrap/authority engines are unchanged.

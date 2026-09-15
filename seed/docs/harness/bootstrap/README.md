@@ -30,3 +30,8 @@ Migration from v0.4.0: the ledger engine harness.py is byte-identical and retain
 For an offline single-workspace project the owner may explicitly choose loopback_read_only, with no login/account dependency. Exactly one local read scope is allowed; it is not authenticated identity separation. Test literal loopback/Host enforcement, write denial, direct-file protection and no credential reads. Online/shared access requires a new owner decision and appropriate authentication; offline must not silently become public.
 
 Default presentation for new bootstraps: [wiki layout and renderer](../wiki/README.md) supplies overview, nine topics and dependency-ordered work details. Include its project-filled content/tree validation in the required checks. Empty templates or a flat list are incomplete. Existing bindings remain compatible but do not automatically certify presentation parity.
+
+
+## v0.9.0 local candidate — wiki-quality-1
+
+See docs/harness/wiki/quality.md: mandatory automatic structural/source-freshness audit, snapshot-bound visual observations and final wiki_quality.py gate. Static structure_passed is not visual acceptance; final human_pending remains. Existing bootstrap/authority engines are unchanged.

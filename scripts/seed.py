@@ -124,6 +124,13 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
                 or b'graph.render(' not in payload.get('wiki_draft.py',b'')
                 or any(b'object-node-map-1' not in payload[n] for n in ('AGENTS.md','BOOTSTRAP_PROMPT.md','docs/harness/contracts/views-state.md'))):
             raise SeedError(2, 'Object node map contract or renderer missing')
+    if manifest.get('wiki_quality_profile') is not None or manifest['distribution_version']=='0.9.0':
+        if (manifest.get('wiki_quality_profile')!='wiki-quality-1'
+                or release.get('wiki_quality_profile')!=manifest['wiki_quality_profile']
+                or 'wiki_quality.py' not in payload
+                or b'quality.audit(' not in payload.get('wiki_draft.py',b'')
+                or any(b'wiki_quality.py gate' not in payload[n] for n in ('AGENTS.md','BOOTSTRAP_PROMPT.md'))):
+            raise SeedError(2,'Automatic wiki quality gate or instructions missing')
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}
@@ -147,6 +154,9 @@ def installation_bundle(payload: dict[str, bytes], receipt: dict) -> tuple[dict,
     graph_path=ROOT/'seed/wiki_graph.py'
     if graph_path.read_bytes()!=payload.get('wiki_graph.py'):
         raise SeedError(2, 'Graph renderer differs from verified distribution')
+    quality_path=ROOT/'seed/wiki_quality.py'
+    if quality_path.read_bytes()!=payload.get('wiki_quality.py'):
+        raise SeedError(2,'Quality auditor differs from verified distribution')
     spec = importlib.util.spec_from_file_location('seed_wiki_draft', path)
     draft = importlib.util.module_from_spec(spec)
     previous_bytecode = sys.dont_write_bytecode
@@ -216,7 +226,8 @@ def initialize(target: Path, payload: dict[str, bytes], receipt: dict, dry_run: 
     return {"outcome": "installed", "target": str(target), "files": len(payload),
             "manifest_sha256": receipt["manifest_sha256"],
             "wiki_draft": ".local/wiki-draft/index.html" if 'draft_files' in receipt else None,
-            "bootstrap_ready": False}
+              "wiki_quality": {"state": "structure_passed", "visual": "pending", "report": ".local/wiki-draft/quality.json"} if 'draft_files' in receipt else None,
+              "bootstrap_ready": False}
 
 
 def archive(payload: dict[str, bytes], receipt: dict) -> bytes:

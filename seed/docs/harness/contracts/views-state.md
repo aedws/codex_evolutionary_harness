@@ -62,3 +62,8 @@ Default presentation for new bootstraps: [wiki layout and renderer](../wiki/READ
 
 
 Object node map default (object-node-map-1): new wiki generation must show a clickable node-and-direction map before long prose on the overview, object explorer and object pages. Use wiki_graph.py or an adapter with tested parity. Preserve type/ID/purpose, incoming/outgoing relation type and provenance, reducer-derived status, full source/lineage and next actions. Bound the one-hop diagram and disclose omitted visible neighbors; keep a complete accessible relation list. Filter by authorized visible nodes before layout, never infer missing edges, pass/approval or access from connectivity. No external scripts, CDN, or graph-driven execution. wiki_template.py alone does not satisfy this presentation rule without the graph adapter.
+
+
+## v0.9.0 local candidate — wiki-quality-1
+
+See docs/harness/wiki/quality.md: mandatory automatic structural/source-freshness audit, snapshot-bound visual observations and final wiki_quality.py gate. Static structure_passed is not visual acceptance; final human_pending remains. Existing bootstrap/authority engines are unchanged.

@@ -1,0 +1,41 @@
+{
+  "version": "0.9.0",
+  "manifest_sha256": "991db44e599550e8ecd61760f370842ed7cd296d3b8c178eb00ac4a0049294c0",
+  "fresh_path": "C:\\Users\\uyess\\AppData\\Local\\Temp\\seed-quality-mm0xtr_c\\project",
+  "first": {
+    "outcome": "installed",
+    "target": "C:\\Users\\uyess\\AppData\\Local\\Temp\\seed-quality-mm0xtr_c\\project",
+    "files": 65,
+    "manifest_sha256": "991db44e599550e8ecd61760f370842ed7cd296d3b8c178eb00ac4a0049294c0",
+    "wiki_draft": ".local/wiki-draft/index.html",
+    "wiki_quality": {
+      "state": "structure_passed",
+      "visual": "pending",
+      "report": ".local/wiki-draft/quality.json"
+    },
+    "bootstrap_ready": false
+  },
+  "replay": "unchanged",
+  "mtime_and_bytes_preserved": true,
+  "quality": {
+    "bootstrap_ready": false,
+    "failures": [],
+    "human_acceptance": "human_pending",
+    "limits": [
+      "Static layout thresholds are heuristics, not visual or semantic certification.",
+      "Source digests establish freshness against declared sources, not completeness or truth.",
+      "This checker does not supply access control or authenticate observer identity."
+    ],
+    "mode": "draft",
+    "profile": "wiki-quality-1",
+    "snapshot": "84a37fc557044f0db551cfe1e6ce423e96c0ee33218a413a138a772562f50461",
+    "state": "structure_passed",
+    "visual": "pending"
+  },
+  "draft_gate_exit": 2,
+  "empty_truth_preserved": true,
+  "old_five_engines_unchanged": true,
+  "zip_same_as_install": true,
+  "zip_sha256": "29bf6c6acd6fb1edc6c627c0250564caa5f2062529092de79a73748fcc113615",
+  "actual_visual_review": "pending; synthetic receipts test transport and gate only"
+}

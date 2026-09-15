@@ -483,5 +483,32 @@
       "docs/harness/evidence/EXE-20260915-WIKI-AUTO-001/fresh-install-final.json"
     ],
     "observed_at": "2026-09-15T01:13:37.505068+00:00"
+  },
+  {
+    "from": "HARNESS-REQ-20260915-WIKI-QUALITY-001",
+    "to": "TASK-20260915-SEED-QUALITY-001",
+    "type": "implemented_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
+    ]
+  },
+  {
+    "from": "TASK-20260915-SEED-QUALITY-001",
+    "to": "EXE-20260915-SEED-QUALITY-001",
+    "type": "implemented_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
+    ]
+  },
+  {
+    "from": "EXE-20260915-SEED-QUALITY-001",
+    "to": "EVD-20260915-SEED-QUALITY-001",
+    "type": "produces",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-SEED-QUALITY-001/validation.json"
+    ]
   }
 ]
