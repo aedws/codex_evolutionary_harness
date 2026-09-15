@@ -1,3 +1,5 @@
+> **현재 로컬 개발 후보: v0.8.0 — 설치 즉시 객체 위키 초안.** 현재 checkout의 `scripts/seed.py init --target <새 프로젝트 경로>`를 실행하면 `.local/wiki-draft/index.html`이 자동 생성됩니다. 먼저 로컬 파일을 열어 대문 → 주제 → 객체 → 관계·행동·근거를 확인하세요. 아래 v0.7.0 원격 다운로드 예시는 기존 배포판이며 새 기능은 아직 외부 릴리스되지 않았습니다. [자동 초안 계약](docs/rfcs/RFC-0009-install-time-object-wiki-draft.md).
+
 # Evolutionary Harness — reusable contract seed
 
 <!-- SEED-USAGE:START — keep this usage block immediately after the title. -->
@@ -40,7 +42,7 @@ if ($LASTEXITCODE -ne 0) { throw "설치 실패: 기록된 부분 상태와 오�
 
 ### 3. AI에게 첫 bootstrap 요청
 
-**대상 프로젝트 폴더**를 작업 공간으로 열고 아래 요청을 보낸다. 씨앗 파일이 존재하는 것만으로 자동 시작되지는 않는다.
+**대상 프로젝트 폴더**를 작업 공간으로 열고 아래 요청을 보낸다. v0.8.0에서는 객체 위키 초안이 설치 시 이미 생성됩니다. 실제 프로젝트의 의미·근거·역할 바인딩은 아래 bootstrap 요청으로 이어갑니다.
 
 ```text
 이 프로젝트의 AGENTS.md와 BOOTSTRAP_PROMPT.md를 읽고 bootstrap을 수행해라.

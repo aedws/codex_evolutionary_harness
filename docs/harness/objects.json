@@ -1520,5 +1520,65 @@
     "tags": [
       "core-presentation"
     ]
+  },
+  {
+    "id": "TASK-20260915-WIKI-AUTO-001",
+    "type": "task",
+    "name": "설치 시 Newgame식 객체 위키 초안 자동 생성",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-WIKI-AUTO-001/validation.json",
+      "docs/rfcs/RFC-0009-install-time-object-wiki-draft.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "인간 가독성·실제 권한 바인딩·bootstrap 수락 및 외부 릴리스 미확인"
+    ],
+    "tags": [
+      "core",
+      "draft",
+      "project-independent"
+    ]
+  },
+  {
+    "id": "EXE-20260915-WIKI-AUTO-001",
+    "type": "execution",
+    "name": "설치 시 Newgame식 객체 위키 초안 자동 생성",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-WIKI-AUTO-001/validation.json",
+      "docs/rfcs/RFC-0009-install-time-object-wiki-draft.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "인간 가독성·실제 권한 바인딩·bootstrap 수락 및 외부 릴리스 미확인"
+    ],
+    "tags": [
+      "core",
+      "draft",
+      "project-independent"
+    ]
+  },
+  {
+    "id": "EVD-20260915-WIKI-AUTO-001",
+    "type": "evidence",
+    "name": "설치 시 Newgame식 객체 위키 초안 자동 생성",
+    "schema_version": 1,
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-WIKI-AUTO-001/validation.json",
+      "docs/rfcs/RFC-0009-install-time-object-wiki-draft.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "인간 가독성·실제 권한 바인딩·bootstrap 수락 및 외부 릴리스 미확인"
+    ],
+    "tags": [
+      "core",
+      "draft",
+      "project-independent"
+    ]
   }
 ]

@@ -1,0 +1,1 @@
+{"outcome": "packed", "path": "C:\\Users\\uyess\\Desktop\\codex_evolutionary_harness\\.local\\seed-v0.8.0-final.zip", "sha256": "15f2c02387018e35cb684753e9bdfcf2bccfad261c66e66f434c82f625adbd57"}

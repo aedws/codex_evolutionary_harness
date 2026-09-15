@@ -1,0 +1,1 @@
+{"state": "draft_generated", "outcome": "unchanged", "entrypoint": ".local\\wiki-draft\\index.html", "bootstrap_ready": false}

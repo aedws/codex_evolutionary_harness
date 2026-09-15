@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import io
+import importlib.util
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -110,6 +111,12 @@ def load_seed(root: Path = ROOT) -> tuple[dict, dict[str, bytes], dict]:
                 or not {'wiki_template.py','docs/harness/wiki/README.md'}<=set(payload)
                 or any(b'wiki_template.py' not in payload[name] for name in ['AGENTS.md','BOOTSTRAP_PROMPT.md'])):
             raise SeedError(2, 'Default wiki presentation and bootstrap instructions missing')
+    if manifest.get('wiki_draft_profile') is not None or manifest['distribution_version']=='0.8.0':
+        if (manifest.get('wiki_draft_profile') != 'newgame-object-draft-1'
+                or release.get('wiki_draft_profile') != manifest['wiki_draft_profile']
+                or not {'wiki_draft.py', 'docs/wiki/draft-input.json'} <= set(payload)
+                or any(b'wiki_draft.py' not in payload[n] for n in ['AGENTS.md', 'BOOTSTRAP_PROMPT.md'])):
+            raise SeedError(2, 'Automatic object draft or first-run instructions missing')
     receipt = {"schema_version": 1, "distribution_version": manifest["distribution_version"],
                "contract_version": manifest["contract_version"], "source_repository": manifest["source_repository"],
                "manifest_sha256": sha(raw), "files": files}
@@ -123,7 +130,28 @@ def write_new(path: Path, data: bytes) -> None:
         stream.write(data)
 
 
+def installation_bundle(payload: dict[str, bytes], receipt: dict) -> tuple[dict, dict]:
+    """Plan draft bytes before touching the target; separate generated ownership."""
+    if 'wiki_draft.py' not in payload:
+        return payload, receipt
+    path = ROOT / 'seed/wiki_draft.py'
+    if path.read_bytes() != payload['wiki_draft.py']:
+        raise SeedError(2, 'Draft renderer differs from verified distribution')
+    spec = importlib.util.spec_from_file_location('seed_wiki_draft', path)
+    draft = importlib.util.module_from_spec(spec); spec.loader.exec_module(draft)
+    try:
+        generated = draft.bundle(json.loads(payload[draft.SOURCE]), sha(payload['wiki_draft.py']))
+    except (ValueError, KeyError, TypeError) as exc:
+        raise SeedError(2, f'Invalid default object draft: {exc}') from exc
+    files = {draft.OUTPUT + '/' + n: raw for n, raw in generated.items()}
+    if set(files) & set(payload):
+        raise SeedError(2, 'Generated draft overlaps seed-owned files')
+    return {**payload, **files}, {**receipt, 'draft_profile': draft.PROFILE,
+                                'draft_files': {n: sha(raw) for n, raw in files.items()}}
+
+
 def initialize(target: Path, payload: dict[str, bytes], receipt: dict, dry_run: bool) -> dict:
+    payload, receipt = installation_bundle(payload, receipt)
     target = Path(os.path.abspath(target.expanduser()))
     if target == ROOT or ROOT in target.parents:
         raise SeedError(5, "Install into a separate project, outside the distributor checkout")
@@ -171,10 +199,13 @@ def initialize(target: Path, payload: dict[str, bytes], receipt: dict, dry_run: 
         raise SeedError(9, f"Partial installation; preserve files and inspect {target / PENDING}; "
                         f"created={created}; error={exc}") from exc
     return {"outcome": "installed", "target": str(target), "files": len(payload),
-            "manifest_sha256": receipt["manifest_sha256"]}
+            "manifest_sha256": receipt["manifest_sha256"],
+            "wiki_draft": ".local/wiki-draft/index.html" if 'draft_files' in receipt else None,
+            "bootstrap_ready": False}
 
 
 def archive(payload: dict[str, bytes], receipt: dict) -> bytes:
+    payload, receipt = installation_bundle(payload, receipt)
     stream = io.BytesIO()
     with zipfile.ZipFile(stream, "w", compression=zipfile.ZIP_STORED) as bundle:
         for name, data in sorted({**payload, RECEIPT: encoded(receipt)}.items()):

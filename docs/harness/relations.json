@@ -471,5 +471,17 @@
     ],
     "observed_at": "2026-09-14T00:20:46.111357+00:00",
     "applicable_snapshot": "seed-manifest.json digest in validation"
+  },
+  {
+    "relation_id": "REL-20260915-WIKI-AUTO-001",
+    "from": "TASK-20260915-WIKI-AUTO-001",
+    "to": "EVD-20260915-WIKI-AUTO-001",
+    "type": "supported_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260915-WIKI-AUTO-001/tests-final.txt",
+      "docs/harness/evidence/EXE-20260915-WIKI-AUTO-001/fresh-install-final.json"
+    ],
+    "observed_at": "2026-09-15T01:13:37.505068+00:00"
   }
 ]

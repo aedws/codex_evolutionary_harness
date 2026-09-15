@@ -1,0 +1,1 @@
+{"outcome": "installed", "target": "C:\\Users\\uyess\\AppData\\Local\\Temp\\seed-v080-final-ib5bu_74\\project", "files": 60, "manifest_sha256": "3eb6aa5f50cf639b49e8362aae2c2ad573fa87dbf9105a775f921f36ec7a12cb", "wiki_draft": ".local/wiki-draft/index.html", "bootstrap_ready": false}

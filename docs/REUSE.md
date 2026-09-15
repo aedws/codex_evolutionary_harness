@@ -85,3 +85,7 @@ bootstrap 후 실제 policy와 task spec을 준비하고 [runtime 가이드](../
 ## v0.5.0 예방장치의 기존 프로젝트 적용
 
 기존 harness.py와 .harness 원장은 유지한다. bootstrap.py를 hash 확인 후 추가하고, 기존 위키에서 project-owned binding을 파생한다. 프로젝트 필수 검사에 artifacts-only Gate를 연결하고 종료 후 전체 Gate를 실행한다. 기존 설치 영수증을 덮어쓰지 않고 adoption 영수증에 새 component/version/hash·검증·되돌릴 파일을 남긴다. 로컬 증거와 수동 파일을 새 빈 seed로 덮어쓰지 않는다.
+
+## v0.8.0 로컬 후보의 자동 초안
+
+현재 checkout의 init/pack은 .local/wiki-draft 초안과 생성 파일 해시를 설치 영수증의 draft_files에 포함합니다. 새 프로젝트는 별도 scaffold 명령 없이 index.html을 로컬 파일로 확인합니다. 프로젝트 자료·역할·근거를 채우는 bootstrap은 여전히 필요합니다. 기존 출력/위키/영수증을 덮어쓰지 말고 다른 경로에서 비교합니다. 이 후보는 아직 외부 태그/릴리스로 게시되지 않았습니다. 공개된 이전 버전 예시와 혼동하지 마세요.

@@ -1,0 +1,530 @@
+{
+  "scope": "complete docs Markdown inventory; focused reading of navigation, overview and ontology, not semantic certification of every document",
+  "files": [
+    {
+      "path": "docs/access/account.md",
+      "sha256": "250c42275ad8824578816ead5c30dd06399f42cd11cd563e90609138a36c3c66",
+      "bytes": 1516
+    },
+    {
+      "path": "docs/access/developer.md",
+      "sha256": "1d5eab3b43184a3621787b420bf9f568573ddf4deeae931c5e3b200674b4fbd1",
+      "bytes": 16677
+    },
+    {
+      "path": "docs/access/login.md",
+      "sha256": "85094465c5e1247e89fdd1f046f61c1ae85f2fea9556ae4cb623dfd746d7e494",
+      "bytes": 1563
+    },
+    {
+      "path": "docs/access/planner.md",
+      "sha256": "5c3aaa645fe09099b8dee74d41b132cce86450c64022723c4739b321c683c0bb",
+      "bytes": 53487
+    },
+    {
+      "path": "docs/architecture/code-module-map.md",
+      "sha256": "6980eb57eee5b7c65709305ed1e3d85215413b05da1d8faf0c16dac616db0f71",
+      "bytes": 4514
+    },
+    {
+      "path": "docs/architecture/index.md",
+      "sha256": "f5abb3b7a182d48393942403878874d21e85221f780de4ef8a3bc1541f086398",
+      "bytes": 1515
+    },
+    {
+      "path": "docs/architecture/module-audit.md",
+      "sha256": "714fe5c231ed30a96bff50efb1c0f75ce261b5153875098f924d3e9387c55bd9",
+      "bytes": 205403
+    },
+    {
+      "path": "docs/architecture/module-rules.md",
+      "sha256": "5be477d47175894945ba2cd65854e2ab3bde65cb891ff0443b9fd5f5daf4f53d",
+      "bytes": 17928
+    },
+    {
+      "path": "docs/architecture/project-ontology.md",
+      "sha256": "25f55805e3817729427e227d453de4e538d7c5a0301393c33afe31e645bab771",
+      "bytes": 10467
+    },
+    {
+      "path": "docs/architecture/scene-tree.md",
+      "sha256": "a91fd08c91a052ee0e163b8c0995c4bb526714c1990142a0ce91ba2d45e57f27",
+      "bytes": 5348
+    },
+    {
+      "path": "docs/architecture/signals.md",
+      "sha256": "14ba7e32418d6793470f2cd3c93fea09db7d99b4c496ebee927cbda275975d20",
+      "bytes": 1561
+    },
+    {
+      "path": "docs/architecture/third-party-assets.md",
+      "sha256": "9818c09906e20804e704266e258c29295d65927563eff43192fb106b610ba091",
+      "bytes": 3487
+    },
+    {
+      "path": "docs/architecture/wiki-role-auth.md",
+      "sha256": "e40fa5e9c31aa62608cf78bd53609c1ad1645d6f0fbe84cdb5b6f194e6b579d4",
+      "bytes": 6653
+    },
+    {
+      "path": "docs/decisions/0001-technology-stack.md",
+      "sha256": "767393056d7dcb1ffa311537c05da40bdd0e86dd2f0d62851b8a799ba2da86b6",
+      "bytes": 909
+    },
+    {
+      "path": "docs/decisions/DEC-P4-04-field-replacement-policy.md",
+      "sha256": "efae2de06ed1cf4d9ede60b27a8278b49db728b6718ddaf7e02c2d723bb8e2ea",
+      "bytes": 1671
+    },
+    {
+      "path": "docs/decisions/index.md",
+      "sha256": "4e536a3a0180edaee114e48803f39c724ceef43f8057e79c35d570ea2491835c",
+      "bytes": 243
+    },
+    {
+      "path": "docs/design/current-milestone-workline.md",
+      "sha256": "47bfbca126e2a026cce8d5a595cb1040924f43ff6dbdcb1e6cbe1550a57a8bb6",
+      "bytes": 46213
+    },
+    {
+      "path": "docs/design/cyberpunk-visual-theme.md",
+      "sha256": "3b679d23955f48f3596147bd3c1b448bc04e0669213167248ff303823d421c40",
+      "bytes": 6943
+    },
+    {
+      "path": "docs/design/game-overview.md",
+      "sha256": "f6b57da470f6bcc9835dcfc1d7a9f4aebe9c57fecd234b877769c22509635607",
+      "bytes": 1213
+    },
+    {
+      "path": "docs/design/index.md",
+      "sha256": "9042988221dbdc3b75be051c3389e6621de29f18594d2e308146bcdc7d2c7a70",
+      "bytes": 812
+    },
+    {
+      "path": "docs/design/master-gdd-alignment.md",
+      "sha256": "710b065e7b39c027e835c12620449fd47d8016e66fdffeb96b487283c5df8a4a",
+      "bytes": 75703
+    },
+    {
+      "path": "docs/design/mvp-scope.md",
+      "sha256": "246100b1ad96e3b76f9afccf54997ca57f2d4b0db571ce866222df5e17c0bd7e",
+      "bytes": 749
+    },
+    {
+      "path": "docs/design/p5-p6-preimplementation.md",
+      "sha256": "3ab39b3b38642283054b87bb466e9e73a438654bed124f73e1d45fbcb1495bfb",
+      "bytes": 6728
+    },
+    {
+      "path": "docs/design/p7-plus-preimplementation.md",
+      "sha256": "e5d2b64c9db29b75f2b8132a57f93b129266efe8ef4cbfd733724e4bfc1a33d5",
+      "bytes": 13910
+    },
+    {
+      "path": "docs/design/planner-request-workflow.md",
+      "sha256": "2790eb480321cb190080d2eccd785b91b697e4ed98e3aaafe97ac65448f48b83",
+      "bytes": 6379
+    },
+    {
+      "path": "docs/design/wiki-collaboration-workflow.md",
+      "sha256": "a9a2010850fd3219a106ac1d2de3438ea0e6a351b7e604affa0f39c49642ccb9",
+      "bytes": 3485
+    },
+    {
+      "path": "docs/development-status.md",
+      "sha256": "c9f79c1141f73e043b3bc915603f5eea1357ba215aa19c1692a5c753f4f8c757",
+      "bytes": 390116
+    },
+    {
+      "path": "docs/features/armor-sets.md",
+      "sha256": "218756969c562542d29f0eafe917ff90785ef4d57e5d23ca3ac87184132bfc65",
+      "bytes": 6669
+    },
+    {
+      "path": "docs/features/blueprint-crafting.md",
+      "sha256": "081889528fc6c1b154cdbeb733a1aaa5ac8e5d34090b8cfd1ee0862e4d328af8",
+      "bytes": 4389
+    },
+    {
+      "path": "docs/features/character-equipment.md",
+      "sha256": "1b18ba2a9ff6ed921bd68059af28faaa86187437aad97bccea88e504997135c0",
+      "bytes": 8568
+    },
+    {
+      "path": "docs/features/character-selection.md",
+      "sha256": "a4c747c5559e039f027fc18241adaa8d61471fcea1857199ba02a78a72d4b322",
+      "bytes": 3427
+    },
+    {
+      "path": "docs/features/combat-resources.md",
+      "sha256": "3591712dcd81118bf0f2e2b44de63b75975d7169c7862d75917567da3e7db1fa",
+      "bytes": 5135
+    },
+    {
+      "path": "docs/features/combat-skills.md",
+      "sha256": "d1402a5fe48c28668848043a91296dc100fbad4c05797ad8832165826f8cce3c",
+      "bytes": 10589
+    },
+    {
+      "path": "docs/features/combat.md",
+      "sha256": "f753b80ba9d902715e446be3bc3353cc5d9149ba1a3df10993be0d0f42c86e60",
+      "bytes": 1508
+    },
+    {
+      "path": "docs/features/credit-loot.md",
+      "sha256": "a97de0a32e7a9d04a33edeb8e999a53d47f7540ebdbb429e418490bacbe893b6",
+      "bytes": 3927
+    },
+    {
+      "path": "docs/features/elite-pursuit.md",
+      "sha256": "c618ebd7419c59f260e58116a86bcd007da570bc1e05bab510039a85046f4fcb",
+      "bytes": 6843
+    },
+    {
+      "path": "docs/features/enemies.md",
+      "sha256": "58ffc47315f57b5aeb669c7a00eba558b12356a4fe869fcdb3135d8880f50655",
+      "bytes": 5915
+    },
+    {
+      "path": "docs/features/enemy-defense.md",
+      "sha256": "2301c2a148e2608753eb3b256d1d1ed251d99844e44ec24a8ff0da708aa6522e",
+      "bytes": 1521
+    },
+    {
+      "path": "docs/features/equipment-customization.md",
+      "sha256": "b8f93e23f1b0f2ace44767eb4fed475d27a7144f4449afd13535bec32d402480",
+      "bytes": 13899
+    },
+    {
+      "path": "docs/features/equipment-fixed-identity.md",
+      "sha256": "1d87eb94efab9572b4a6da5c994306f17db3c618d0654508a0408d1a192c7cc8",
+      "bytes": 6251
+    },
+    {
+      "path": "docs/features/equipment-upgrade-economy.md",
+      "sha256": "677238b78aa3898c3dcc8842186bb8a6f468b5288dfbe2438d8509de19bd84c7",
+      "bytes": 2244
+    },
+    {
+      "path": "docs/features/equipment.md",
+      "sha256": "a428e9db4d133c7a5947dda480db7abc70086d88711c63f876678aaa96cb7bf2",
+      "bytes": 1616
+    },
+    {
+      "path": "docs/features/extraction-defense-results.md",
+      "sha256": "4ace3cdb431daf8a89124f2722a8e60a63c6e60fe49c9e4bb2166291bce2d720",
+      "bytes": 5113
+    },
+    {
+      "path": "docs/features/extraction-district.md",
+      "sha256": "bbe07389b7bc4a783b81327279f969463c90629bb111e61919d67492dca88347",
+      "bytes": 19283
+    },
+    {
+      "path": "docs/features/field-loot-acquisition.md",
+      "sha256": "7e5897daec1ba0136b3fa6364ab7526df90cec64bb399f5e8fa3411c1e390888",
+      "bytes": 6702
+    },
+    {
+      "path": "docs/features/field-loot-immediate-equip.md",
+      "sha256": "b02f38499913cffc14a5a05f1d5141762aeb4cd5ab064f4c228ce8cc62315a08",
+      "bytes": 2451
+    },
+    {
+      "path": "docs/features/field-loot-skill-swap.md",
+      "sha256": "355a1c8aa8f464580daf67d36fcba7cdd463a3f85d543af9856a1398c279b0b9",
+      "bytes": 3271
+    },
+    {
+      "path": "docs/features/fog-of-war.md",
+      "sha256": "b9ca523ecc1084c33a8cd9e5437426b54e7729a1767f1481776dec58340aa014",
+      "bytes": 4380
+    },
+    {
+      "path": "docs/features/game-loop.md",
+      "sha256": "1c1bad0db080fbd0b4bd28a20f341777e39dc5bd5db9903d4eefc49a1b5daf9b",
+      "bytes": 4132
+    },
+    {
+      "path": "docs/features/grid-inventory.md",
+      "sha256": "641eda66073b2512cac71d9123276403f250b49d084d3ececdbf25b27174d5db",
+      "bytes": 16819
+    },
+    {
+      "path": "docs/features/growth-balance.md",
+      "sha256": "0edf85a7bb171227e1b30696e5a4e9c656048e3dadee4579fe58c7a72ed47c4b",
+      "bytes": 4280
+    },
+    {
+      "path": "docs/features/growth.md",
+      "sha256": "8babe558cff7de852673c280de8dd323837c41d38d4fce1a6ae3cad5735727c8",
+      "bytes": 1360
+    },
+    {
+      "path": "docs/features/health-recovery.md",
+      "sha256": "e18eadbea2811f8e555773eacdba79d219e7fd2aba63abbe9ca32442e30a28d0",
+      "bytes": 2856
+    },
+    {
+      "path": "docs/features/hit-feedback.md",
+      "sha256": "d0777a36096bce3512c8f54ed5137358c32f5c4c9643cea5c5442da6040dc6e3",
+      "bytes": 13471
+    },
+    {
+      "path": "docs/features/hub-economy.md",
+      "sha256": "a5362b56ccfba8efe96c8da779b2e3d2ad1c5e9dfb716ecf32c8f8ed47aa400f",
+      "bytes": 11861
+    },
+    {
+      "path": "docs/features/index.md",
+      "sha256": "ec5f3a1ab3a75bb129e29fd40431d8306ba7915c86e2922d5884461c0eb333a5",
+      "bytes": 3145
+    },
+    {
+      "path": "docs/features/key-mapping.md",
+      "sha256": "f1248f0f05f3e900faf4f3aaadcbaedd8be4a0770ed32174e8f3350102a9d501",
+      "bytes": 4516
+    },
+    {
+      "path": "docs/features/loadout-investment.md",
+      "sha256": "ab3cdfc829d490ccd457245d366cf9e448c5c417242e684495779048229977c2",
+      "bytes": 4152
+    },
+    {
+      "path": "docs/features/loot-lifecycle.md",
+      "sha256": "5df88a1927ab1ec33dbf124a646b3ca11baaa3ae9885a3a6f9f421724fd66841",
+      "bytes": 4823
+    },
+    {
+      "path": "docs/features/loot-tables.md",
+      "sha256": "65616494bd88490fc502c27f1e9d3d3d4fbc5dcc03c561e7d7e113af7f914f23",
+      "bytes": 4641
+    },
+    {
+      "path": "docs/features/loot.md",
+      "sha256": "e1819f8287b53b091d2cde73f91745cf8693ffcc5ad2ba0e18eb1adbff76c173",
+      "bytes": 1276
+    },
+    {
+      "path": "docs/features/map-generation.md",
+      "sha256": "4fd93df846a06f8d2bf96d1ebf37994fee64e2df2c5e4c524db219a367b4943d",
+      "bytes": 8366
+    },
+    {
+      "path": "docs/features/minimap.md",
+      "sha256": "1fd5b4a359f2ae265237530257b80af885989cfe690dfcc228654dca77ab881e",
+      "bytes": 3908
+    },
+    {
+      "path": "docs/features/mobile-hud-settings.md",
+      "sha256": "f935f19d2aa05e33a141a71b979e70bdb2e16fe897988f36be5af6df98a5dd13",
+      "bytes": 8557
+    },
+    {
+      "path": "docs/features/operation-contracts.md",
+      "sha256": "1200811d3d9058646479e9c6cc48d5a870ce85b2b2a32bf8ae0174be48a013f6",
+      "bytes": 4724
+    },
+    {
+      "path": "docs/features/operation-entry-wizard.md",
+      "sha256": "52f8adbb7f9736923374e9d323beaad2dfe7d20cc9ff31327f5c0284d5ffcc1a",
+      "bytes": 9028
+    },
+    {
+      "path": "docs/features/operation-launch-preflight.md",
+      "sha256": "5b2497b2534cfbadef67ae2fb921b139d06a881c9f6dbf32d20bff61b5ad23ea",
+      "bytes": 5274
+    },
+    {
+      "path": "docs/features/operations.md",
+      "sha256": "e3a912f792e83adb637e1c0e2fa60a9c832264aa9a7e0ff8bd5f28867bb10707",
+      "bytes": 1372
+    },
+    {
+      "path": "docs/features/p5-hub-progression.md",
+      "sha256": "6f5c1fd96c42f2b74226085e77769e18fb12f9ccff2f3753f336d4205e041dfa",
+      "bytes": 8866
+    },
+    {
+      "path": "docs/features/penalty-ranking.md",
+      "sha256": "da755eea09d8e5f7099e6ce6d29b67e5f8ec9266202a540bc0461daa813e53ae",
+      "bytes": 2910
+    },
+    {
+      "path": "docs/features/player.md",
+      "sha256": "877747fbe490f75ffc4ea7949f24e525062f43a3b565fc6eadcfcdee6776ee40",
+      "bytes": 6927
+    },
+    {
+      "path": "docs/features/progression.md",
+      "sha256": "df7128ab8753318f171bc89d2879e095b2225e50ea0ec1107a1bab2c9b96cd2e",
+      "bytes": 6133
+    },
+    {
+      "path": "docs/features/raid-setup-extraction.md",
+      "sha256": "22ea22b8e5df9125dca34984bdece4470362634d6bcd6d8afb608c315d470694",
+      "bytes": 9809
+    },
+    {
+      "path": "docs/features/ranking-provider.md",
+      "sha256": "5196d1fc9cd22ea39a92cb339b0c08f75207e22167e1a9c101f781d3cea64b8a",
+      "bytes": 12617
+    },
+    {
+      "path": "docs/features/room-encounters.md",
+      "sha256": "837f7700750d131168fb6daee9c58bd5071f085507623c65c5be0ce6f38aa7ff",
+      "bytes": 4635
+    },
+    {
+      "path": "docs/features/run-settlement.md",
+      "sha256": "db07587c65cda6ad9461d86c7231774474c68c0481ea2c62c4dfe16cbd658869",
+      "bytes": 4361
+    },
+    {
+      "path": "docs/features/session-sockets.md",
+      "sha256": "c1140fe915bb93a5b8aba84c02c9de871987c402bbaf72824fc07f1bd017f25c",
+      "bytes": 6983
+    },
+    {
+      "path": "docs/features/smart-targeting.md",
+      "sha256": "dc7e6e78098266187d935c3ca7db88ffe76a4dc05a90278dea804d2a466d2269",
+      "bytes": 6868
+    },
+    {
+      "path": "docs/features/start-hub.md",
+      "sha256": "2911d8796511e206a370468d797eaa6657c4ff1ee0cc9ea1bcddc199a69346e5",
+      "bytes": 5532
+    },
+    {
+      "path": "docs/features/tactical-skill-catalog.md",
+      "sha256": "576c171efcddfe6b06188390666c5f3d3fb6cf0234cb977864e8be362ee62c0a",
+      "bytes": 10755
+    },
+    {
+      "path": "docs/features/training-ground.md",
+      "sha256": "e98013a0be64682c78bf29b6133e4b226554a240a64b4e4ae1f865b173896594",
+      "bytes": 11796
+    },
+    {
+      "path": "docs/features/weapon-balance.md",
+      "sha256": "af54b5c31d1dc2f4b3082365f05bb9ae49c2db451d18f1b7fb6d04980064e92e",
+      "bytes": 8765
+    },
+    {
+      "path": "docs/features/weapon-distance.md",
+      "sha256": "d712535e61863cd338245733958c17c6481c78803eab2308afde41fbb0fd9984",
+      "bytes": 7710
+    },
+    {
+      "path": "docs/features/weapons.md",
+      "sha256": "06a41ab5c9179a46fc53bf7a20bd1d8ace0f4dace9bfdba482de93493c6f0e0a",
+      "bytes": 7881
+    },
+    {
+      "path": "docs/getting-started/edit-wiki-online.md",
+      "sha256": "6cd43157bcb70e8964e51a8e289ac2dbc4c6a9f943a249bf47c64473ced16595",
+      "bytes": 4699
+    },
+    {
+      "path": "docs/getting-started/editor-basics.md",
+      "sha256": "5b6779a4cefe61e6b55e45b3de40f49bba3d6bb806633d5930a1e085eafdaf45",
+      "bytes": 1044
+    },
+    {
+      "path": "docs/getting-started/index.md",
+      "sha256": "8a0c99c0d54f5527faf1e3bdfaa1c91fe0c2731e7c2e915cf7f06dc4a15c2d72",
+      "bytes": 970
+    },
+    {
+      "path": "docs/getting-started/install.md",
+      "sha256": "593e6cd7b88538005cea75ca9dad9647e22ee551692c445a0fe343464f3fc9e5",
+      "bytes": 1023
+    },
+    {
+      "path": "docs/getting-started/planner-item-balance-tutorial.md",
+      "sha256": "3d8fb37c97dba14e5d14c4085faf7f98acb6a1431aab17ed7352d5f402c229e4",
+      "bytes": 21005
+    },
+    {
+      "path": "docs/getting-started/run-project.md",
+      "sha256": "dcd6a96b1478c09db895fea02d9aced57ea0417c07d1ca5aad65fc1c8eddc3bf",
+      "bytes": 17671
+    },
+    {
+      "path": "docs/getting-started/search-wiki.md",
+      "sha256": "4103f0a5bdc175f107384532c07ccee6a7eb2d673c590c08f1ec8cddf3854927",
+      "bytes": 5932
+    },
+    {
+      "path": "docs/getting-started/source-control-and-cleanup.md",
+      "sha256": "46db77a81cc7f7993c93edd3ba06b71cdc69e7e6ad3bc129e49b9f0a38c9d12f",
+      "bytes": 22544
+    },
+    {
+      "path": "docs/index.md",
+      "sha256": "077ec6669041a2c3eeed762741d952de83d5b1246745a36793267b01889c06c7",
+      "bytes": 8016
+    },
+    {
+      "path": "docs/performance/minimum-requirements.md",
+      "sha256": "655ad570f12755d753fbfd8dcc46c34965188d57ba477645c50ded6c10a10c49",
+      "bytes": 18402
+    },
+    {
+      "path": "docs/quality/e2e-play-session.md",
+      "sha256": "3db03879a31947822e5efce1a9e796dbc23f3a3abc1d4a68bd82f07ed4b97aef",
+      "bytes": 108170
+    },
+    {
+      "path": "docs/quality/five-moment-fun-proposal.md",
+      "sha256": "e68e806584c25e765b54cdeb75ffe5f7eaba165579550d0afca284f4aca9cf8d",
+      "bytes": 22901
+    },
+    {
+      "path": "docs/quality/full-system-audit-20260909.md",
+      "sha256": "8701d409a2ca81303acc0b6787a72f5a8576693af8a8634a45da69be1a094eeb",
+      "bytes": 11673
+    },
+    {
+      "path": "docs/quality/game-ui-rematch.md",
+      "sha256": "2cb915db95f817806c2d3aca775558ca2dc5cc507180af1177b9c8d8f5ffa2b1",
+      "bytes": 16062
+    },
+    {
+      "path": "docs/quality/index.md",
+      "sha256": "6e35834e6a10ba249865cf3caf5b86b89f40e6c694754c69abee2a6488b9c348",
+      "bytes": 1783
+    },
+    {
+      "path": "docs/quality/player-perception-audit.md",
+      "sha256": "e944d13871120255fa9f4283cdaa40fb9d11400e79ae9f6b4db1db2dc5fabb01",
+      "bytes": 29494
+    },
+    {
+      "path": "docs/quality/wiki-responsive-e2e.md",
+      "sha256": "68409440cb583c9ce74b4b488ef6161b4fdef1841c9dc55e1a055129ad639c3a",
+      "bytes": 31175
+    },
+    {
+      "path": "docs/tools/balance-workbench.md",
+      "sha256": "38a2eeacdf746b41c004fe4e129530662f4244185a12fbd007e88778479bc5de",
+      "bytes": 9459
+    },
+    {
+      "path": "docs/tools/dps-lab.md",
+      "sha256": "06ee6c1789c6efe53a14ef6d2d3c58b28164b1420dfec7b67cdba2cd9bf24b44",
+      "bytes": 10587
+    },
+    {
+      "path": "docs/tools/effect-toolkit.md",
+      "sha256": "00f1981a11faa3278262bb5e23c159484f27971c9082421a7393f12c1b8cd9aa",
+      "bytes": 9163
+    },
+    {
+      "path": "docs/troubleshooting/index.md",
+      "sha256": "783dfdb42c7287b319e22d7cf5e7a24896dd367303f8e4da7a9f02fccd5561bc",
+      "bytes": 1869
+    }
+  ]
+}

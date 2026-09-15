@@ -1,6 +1,6 @@
 {
   "harness_name": "Evolutionary Harness",
-  "distribution_version": "0.7.0",
+  "distribution_version": "0.8.0",
   "contract_version": 6,
   "distribution_kind": "contract_seed_with_local_core",
   "capability_level": "local_core_preview",
@@ -27,7 +27,8 @@
     "No full V2/V3/V4 certification or OS/IAM isolation.",
     "Local wiki account sessions govern only the explicitly integrated HTTP adapter; no remote deployment, human approval or external action controller.",
     "Owner interview supplies project roles; source references are not cryptographic human identity.",
-    "Default wiki renderer validates authored content and planned work, not semantic truth, HTTP access or bootstrap completeness."
+    "Default wiki renderer validates authored content and planned work, not semantic truth, HTTP access or bootstrap completeness.",
+    "Install-time object draft is unverified/interview_pending; no automatic project discovery, live-state reduction or remote exposure."
   ],
   "implemented_mechanisms": [
     "strict_local_record_validation",
@@ -40,5 +41,6 @@
     "interview_bound_document_hierarchy",
     "local_authenticated_wiki_sessions"
   ],
-  "wiki_presentation_profile": "newgame-style-wiki-1"
+  "wiki_presentation_profile": "newgame-style-wiki-1",
+  "wiki_draft_profile": "newgame-object-draft-1"
 }

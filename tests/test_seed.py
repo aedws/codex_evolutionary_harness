@@ -25,7 +25,9 @@ class SeedTests(unittest.TestCase):
         data = seed.archive(self.payload, self.receipt)
         self.assertEqual(data, seed.archive(self.payload, self.receipt))
         with zipfile.ZipFile(io.BytesIO(data)) as archive:
-            self.assertEqual(set(archive.namelist()), set(self.payload) | {seed.RECEIPT})
+            installed, receipt = seed.installation_bundle(self.payload, self.receipt)
+            self.assertEqual(set(archive.namelist()), set(installed) | {seed.RECEIPT})
+            self.assertEqual(json.loads(archive.read(seed.RECEIPT)), receipt)
             for name in self.payload:
                 self.assertEqual(archive.read(name), self.payload[name])
             self.assertEqual(json.loads(archive.read("docs/harness/objects.json")), [])

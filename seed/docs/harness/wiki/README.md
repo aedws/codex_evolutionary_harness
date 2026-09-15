@@ -42,3 +42,14 @@ python wiki_template.py build --content docs/wiki/content.json --tree docs/wiki/
 이 생성기는 사람이 작성한 범위 설명과 계획을 표시합니다. verified/current/released를 직접 저장하거나 추론하지 않습니다. 실제 상태는 프로젝트가 Run/Evidence reducer에서 별도 연결합니다. 출처/규칙/입력 hash는 manifest에서 재현할 수 있으며 hash는 사실성이나 인간 승인 증명이 아닙니다.
 
 오프라인 로그인 생략은 오너가 선택한 단일 loopback 조회 모드에서만 가능합니다. 역할별 렌더링은 HTTP 인증·OS 파일 접근을 강제하지 않습니다. 서버·외부 공개·새 계정·권한 확장은 별도 구현/검증/승인 대상입니다.
+
+
+## v0.8.0 — 설치 즉시 객체 위키 초안
+
+`seed.py init`이 `.local/wiki-draft/index.html`과 대문/9개 주제/6종 객체/관계/근거 조회를 자동 생성합니다. 배포 ZIP에도 같은 초안이 포함됩니다. 별도 AI 호출·scaffold·키·네트워크가 필요하지 않습니다. 먼저 로컬 파일을 열어 초안을 확인하세요.
+
+편집 원본은 `docs/wiki/draft-input.json`입니다. 실제 프로젝트 목적·객체·원본 참조를 채운 뒤 `python wiki_draft.py build --input docs/wiki/draft-input.json --out .local/wiki-draft-002`로 새 출력에 생성하고 `python wiki_draft.py check --input docs/wiki/draft-input.json --out .local/wiki-draft-002`로 동일성을 확인합니다. 원래 출력/영수증은 보존합니다.
+
+초안은 역할·계정을 만들지 않습니다. unverified/human_pending/interview_pending을 유지하며 참조 파일의 내용도 자동 읽지 않습니다. `.local`은 프로젝트 Git 제외 대상으로 유지하고 초안 폴더를 서버에 통째로 노출하지 않습니다. 실제 프로젝트 원본, 관계, 오너 인터뷰, 권한 adapter, Run/Evidence와 기존 bootstrap gate를 연결해야 합니다. draft_generated는 bootstrap_ready가 아닙니다.
+
+기존 v0.7.0의 wiki_template.py와 계약은 유지됩니다. 완성된 프로젝트 위키를 덮어쓰지 말고 별도 초안에서 구조를 비교·통합하세요. 여섯 객체 초안은 docs/harness/objects.json의 실제 레코드가 아닙니다.

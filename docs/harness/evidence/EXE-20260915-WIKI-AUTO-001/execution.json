@@ -1,0 +1,10 @@
+{
+  "task_id": "TASK-20260915-WIKI-AUTO-001",
+  "execution_id": "EXE-20260915-WIKI-AUTO-001",
+  "title": "설치 시 Newgame식 객체 위키 초안 자동 생성",
+  "mode": "execute",
+  "scope": "core",
+  "acceptance_class": "mixed",
+  "authority": "user:include_seed_automatic_newgame_object_wiki_and_start_today",
+  "started_at": "2026-09-15T00:57:40.075038+00:00"
+}

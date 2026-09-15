@@ -8,7 +8,7 @@ Every project starts from a common core and specializes through overlays. Projec
 
 Read [source authority](source-authority.md), [policy](policy.md), [checkpoint](checkpoint.md), then the [minimum contract](contract.md). The empty registries contain no inherited project tasks or verification claims.
 
-The distribution version is 0.7.0, contract version 6. V2 evidence-driven execution, V3 project self-improvement and V4 hierarchical evolution are capability targets. This seed includes a minimal local ledger/test/state core, but does not implement the full capability levels, complete wiki HTTP/state integration, isolated human authority or external rollout controllers. Its tested checks mediate only its own configured run command.
+The distribution version is 0.8.0, contract version 6. V2 evidence-driven execution, V3 project self-improvement and V4 hierarchical evolution are capability targets. This seed includes a minimal local ledger/test/state core, but does not implement the full capability levels, complete wiki HTTP/state integration, isolated human authority or external rollout controllers. Its tested checks mediate only its own configured run command.
 
 [Contract routing](contracts/README.md) covers self-feedback and skill ownership, whole-project views/state, execution/policy/recovery and evaluated promotion/canary/adoption. Feedback starts local-only; fill its destination and permission references only within explicit project authority. Draft candidate/skill record shapes are available in [templates](templates/README.md).
 
@@ -19,3 +19,5 @@ The distribution version is 0.7.0, contract version 6. V2 evidence-driven execut
 Mandatory bootstrap: apply V01/V03 and `docs/harness/bootstrap/README.md` before selecting product work. Inspect/reuse or create the whole-project wiki first. A fixed `bootstrap.py` gate checks navigation, six object types, relations, sources and role journeys. `harness.py run` passed or installation alone is not `bootstrap_ready`. Missing wiki evidence must remain bootstrap_partial and block bootstrap completion.
 
 [Default project wiki](wiki/README.md): wiki_template.py supplies a domain-neutral overview, nine topics and ordered task details. New bootstrap uses this presentation by default; project evidence and HTTP access integration remain required.
+
+Installation automatically includes a local six-type object-wiki draft. Open .local/wiki-draft/index.html; edit docs/wiki/draft-input.json and generate into a new output directory with wiki_draft.py. This draft is not the live registry, owner authorization or bootstrap_ready.
