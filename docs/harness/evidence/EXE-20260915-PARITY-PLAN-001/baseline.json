@@ -1,0 +1,9 @@
+{
+  "seed_commit": "10c1dc77404629890f41bc65a01dbee9e29cc8c2",
+  "project_commit": "9da8890582b003a29acd49627f81e958155a13d3",
+  "reference_commit": "be23c7cad570c47e117d7521d998f5062ee23ec0",
+  "event_prefix_bytes": 33470,
+  "event_prefix_sha256": "e3b567243b7ba08eff8746b9c16deb7b65a7c1560fbda3bf2c1638022ff3a62b",
+  "seed_manifest_sha256": "4969116b30bad78521f4820cfb7edb9ba8dbcaa4c8fd4703b4ced0c39fe24a3f",
+  "scope": "planning documents and local planning records only"
+}

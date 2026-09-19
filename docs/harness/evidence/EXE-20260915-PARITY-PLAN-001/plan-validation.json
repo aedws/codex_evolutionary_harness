@@ -1,0 +1,17 @@
+{
+  "scope": "plan structure and reference integrity; not execution certification",
+  "audit_rows": 21,
+  "stages": 10,
+  "all_audit_rows_assigned": true,
+  "dag_order_valid": true,
+  "source_document_sha256": "aab51a0cbade7de841d9d16b29b35acb4372b770d22901a4c49cba5af6b8eecb",
+  "project_tested_inputs_unchanged": 239,
+  "seed_manifest_unchanged": true,
+  "runtime_tests_executed": false,
+  "external_actions": [],
+  "user_decision": "separate private validation project then selective adoption",
+  "feedback": {
+    "outcome": "no_candidate",
+    "reason": "Planning consolidates existing full-parity findings and owner environment choice; no new runtime failure or skill modification."
+  }
+}

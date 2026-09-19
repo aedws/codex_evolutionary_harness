@@ -609,5 +609,90 @@
     "source_refs": [
       "docs/harness/evidence/EXE-20260915-PARITY-CHECK-001/validation.json"
     ]
+  },
+  {
+    "from": "TASK-20260915-PARITY-PLAN-001",
+    "to": "EXE-20260915-PARITY-PLAN-001",
+    "type": "planned_by",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md",
+      "docs/requirements/newgame-parity-plan-20260915.json",
+      "docs/harness/evidence/EXE-20260915-PARITY-PLAN-001/plan-validation.json"
+    ]
+  },
+  {
+    "from": "EXE-20260915-PARITY-PLAN-001",
+    "to": "EVD-20260915-PARITY-PLAN-001",
+    "type": "produces",
+    "basis": "inferred_by_static_analysis",
+    "source_refs": [
+      "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md",
+      "docs/requirements/newgame-parity-plan-20260915.json",
+      "docs/harness/evidence/EXE-20260915-PARITY-PLAN-001/plan-validation.json"
+    ]
+  },
+  {
+    "from": "TASK-20260916-V2-REWRITE-001",
+    "to": "EXE-20260916-V2-REWRITE-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260916-V2-REWRITE-001/validation.json"
+    ]
+  },
+  {
+    "from": "EXE-20260916-V2-REWRITE-001",
+    "to": "EVD-20260916-V2-REWRITE-001",
+    "type": "produces",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260916-V2-REWRITE-001/validation.json"
+    ]
+  },
+  {
+    "from": "HARNESS-REQ-20260916-FIXED-TRANSITIONS",
+    "to": "TASK-20260916-V2-REWRITE-001",
+    "type": "implemented_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260916-V2-REWRITE-001/validation.json"
+    ]
+  },
+  {
+    "from": "TASK-20260916-SFH-EXTRACTION-001",
+    "to": "EXE-20260916-SFH-EXTRACTION-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260916-SFH-EXTRACTION-001/validation.json"
+    ]
+  },
+  {
+    "from": "EXE-20260916-SFH-EXTRACTION-001",
+    "to": "EVD-20260916-SFH-EXTRACTION-001",
+    "type": "produces",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260916-SFH-EXTRACTION-001/validation.json"
+    ]
+  },
+  {
+    "from": "TASK-20260920-ATP-SETUP-001",
+    "to": "EXE-20260920-ATP-SETUP-001",
+    "type": "executed_by",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260920-ATP-SETUP-001/validation.json"
+    ]
+  },
+  {
+    "from": "EXE-20260920-ATP-SETUP-001",
+    "to": "EVD-20260920-ATP-SETUP-001",
+    "type": "produces",
+    "basis": "confirmed_by_test",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260920-ATP-SETUP-001/validation.json"
+    ]
   }
 ]

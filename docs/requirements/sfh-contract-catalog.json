@@ -1,0 +1,907 @@
+{
+  "schema": 1,
+  "reference_commit": "be23c7cad570c47e117d7521d998f5062ee23ec0",
+  "completeness": "initial all-family extraction map; not all clauses semantically reviewed",
+  "families": [
+    {
+      "id": "SFH-GOVERNANCE",
+      "title": "권한·지시·범위",
+      "stage": "S03",
+      "source_refs": [
+        "AGENTS.md"
+      ],
+      "patterns": [
+        "AGENTS.md",
+        "docs/decisions/*"
+      ]
+    },
+    {
+      "id": "SFH-ONTOLOGY",
+      "title": "객체·인터페이스·행동·관계",
+      "stage": "S02",
+      "source_refs": [
+        "docs/architecture/project-ontology.md"
+      ],
+      "patterns": [
+        "docs/assets/*ontology*",
+        "docs/assets/owner-decision*",
+        "scripts/*ontology*",
+        "docs/architecture/project-ontology.md"
+      ]
+    },
+    {
+      "id": "SFH-REQUIREMENTS",
+      "title": "기획·우선순위·충돌",
+      "stage": "S03",
+      "source_refs": [
+        "docs/design/master-gdd-alignment.md"
+      ],
+      "patterns": [
+        "docs/design/*",
+        "docs/development-status.md",
+        "scripts/check_notion*"
+      ]
+    },
+    {
+      "id": "SFH-SOURCES",
+      "title": "원본 revision·전체성·최신성",
+      "stage": "S06",
+      "source_refs": [
+        "scripts/snapshot_notion_tracker.py"
+      ],
+      "patterns": [
+        "scripts/*notion*",
+        "docs/assets/notion*"
+      ]
+    },
+    {
+      "id": "SFH-WIKI-TREE",
+      "title": "문서 계층·자동 연결",
+      "stage": "S05",
+      "source_refs": [
+        "docs/architecture/index.md"
+      ],
+      "patterns": [
+        "mkdocs.yml",
+        "docs/assets/knowledge-map*",
+        "scripts/wiki_articles.py",
+        "scripts/test_wiki_articles.py",
+        "docs/features/*"
+      ]
+    },
+    {
+      "id": "SFH-WIKI-DISCOVERY",
+      "title": "검색·필터·관계 탐색",
+      "stage": "S05",
+      "source_refs": [
+        "docs/getting-started/search-wiki.md"
+      ],
+      "patterns": [
+        "docs/javascripts/*search*",
+        "docs/javascripts/*map*",
+        "docs/javascripts/owner-decision*",
+        "docs/assets/search*",
+        "scripts/*search*",
+        "docs/getting-started/search-wiki.md"
+      ]
+    },
+    {
+      "id": "SFH-MODULES",
+      "title": "모듈 경계·교체·확장",
+      "stage": "S04",
+      "source_refs": [
+        "docs/architecture/module-rules.md"
+      ],
+      "patterns": [
+        "docs/architecture/module*",
+        "docs/architecture/scene*",
+        "scripts/*modularity*",
+        "scripts/*module*",
+        "game/core/*"
+      ]
+    },
+    {
+      "id": "SFH-EVENTS",
+      "title": "사건·명령·관측 분리",
+      "stage": "S04",
+      "source_refs": [
+        "docs/architecture/signals.md"
+      ],
+      "patterns": [
+        "docs/architecture/signals.md",
+        "game/core/*signal*"
+      ]
+    },
+    {
+      "id": "SFH-PREFLIGHT",
+      "title": "불변 계획·실패 원자성",
+      "stage": "S04",
+      "source_refs": [
+        "docs/features/operation-launch-preflight.md"
+      ],
+      "patterns": [
+        "game/features/operation_launch*",
+        "game/tests/*transaction*",
+        "docs/features/operation-launch-preflight.md"
+      ]
+    },
+    {
+      "id": "SFH-DATA-LIFECYCLE",
+      "title": "후보·확정·컴파일·동등값",
+      "stage": "S06",
+      "source_refs": [
+        "docs/features/weapon-balance.md"
+      ],
+      "patterns": [
+        "scripts/sync_*",
+        "game/data/*",
+        "docs/tools/*balance*",
+        "game/tests/*catalog*",
+        "game/tests/*balance*"
+      ]
+    },
+    {
+      "id": "SFH-AUTOMATED-QA",
+      "title": "필수 검사·회귀·E2E",
+      "stage": "S04",
+      "source_refs": [
+        "docs/quality/e2e-play-session.md"
+      ],
+      "patterns": [
+        "game/tests/*",
+        "scripts/test-*",
+        "scripts/test_*",
+        "docs/quality/e2e*",
+        "docs/quality/full*"
+      ]
+    },
+    {
+      "id": "SFH-HUMAN-QA",
+      "title": "사용자 인식·인간 수락",
+      "stage": "S04",
+      "source_refs": [
+        "docs/quality/player-perception-audit.md"
+      ],
+      "patterns": [
+        "docs/quality/*fun*",
+        "docs/quality/player*",
+        "docs/quality/game-ui*",
+        "scripts/check_game_ui*"
+      ]
+    },
+    {
+      "id": "SFH-ACCESSIBILITY",
+      "title": "반응형·키보드·시각",
+      "stage": "S05",
+      "source_refs": [
+        "docs/quality/wiki-responsive-e2e.md"
+      ],
+      "patterns": [
+        "docs/stylesheets/*",
+        "scripts/*responsive*",
+        "scripts/*contrast*",
+        "docs/quality/wiki*",
+        "src/*"
+      ]
+    },
+    {
+      "id": "SFH-ACCESS",
+      "title": "역할·문서·서버 차단",
+      "stage": "S07",
+      "source_refs": [
+        "docs/architecture/wiki-role-auth.md"
+      ],
+      "patterns": [
+        "docs/access/*",
+        "cloudflare/*",
+        "docs/javascripts/role*",
+        "scripts/*auth*",
+        "scripts/*role-auth*"
+      ]
+    },
+    {
+      "id": "SFH-SECURITY",
+      "title": "자격증명·외부 쓰기·신뢰",
+      "stage": "S07",
+      "source_refs": [
+        "docs/architecture/wiki-role-auth.md"
+      ],
+      "patterns": [
+        "cloudflare/*",
+        "scripts/seed_wiki_auth*",
+        "scripts/prepare_wiki_worker*",
+        ".gitignore"
+      ]
+    },
+    {
+      "id": "SFH-CI",
+      "title": "CI 필수 gate·변경 분류",
+      "stage": "S08",
+      "source_refs": [
+        "scripts/ci_budget.py"
+      ],
+      "patterns": [
+        ".github/*",
+        "scripts/ci_*",
+        "scripts/test_ci_*"
+      ]
+    },
+    {
+      "id": "SFH-DELIVERY",
+      "title": "빌드·버전·전달·배포",
+      "stage": "S08",
+      "source_refs": [
+        "scripts/deploy_cloudflare_assets.py"
+      ],
+      "patterns": [
+        "scripts/*deploy*",
+        "scripts/*export*",
+        "export_presets.cfg",
+        "project.godot",
+        ".release-version",
+        ".godot-version"
+      ]
+    },
+    {
+      "id": "SFH-RECOVERY",
+      "title": "복구·백업·새 이력",
+      "stage": "S08",
+      "source_refs": [
+        "docs/getting-started/source-control-and-cleanup.md"
+      ],
+      "patterns": [
+        ".github/workflows/restore*",
+        "scripts/*backup*",
+        "docs/getting-started/source-control*"
+      ]
+    },
+    {
+      "id": "SFH-BUDGET",
+      "title": "비용·성능·중복 제거",
+      "stage": "S09",
+      "source_refs": [
+        "scripts/ci_transfer.py"
+      ],
+      "patterns": [
+        "scripts/ci_*",
+        "scripts/test_ci_*",
+        "docs/performance/*",
+        "scripts/*retention*"
+      ]
+    },
+    {
+      "id": "SFH-ASSETS",
+      "title": "자산 출처·라이선스",
+      "stage": "S09",
+      "source_refs": [
+        "docs/architecture/third-party-assets.md"
+      ],
+      "patterns": [
+        "game/assets/*",
+        "docs/architecture/third-party-assets.md",
+        "scripts/*audio*",
+        "outputs/*"
+      ]
+    },
+    {
+      "id": "SFH-FEEDBACK",
+      "title": "오류 환류·사용자 보정·확장",
+      "stage": "S10",
+      "source_refs": [
+        "docs/quality/full-system-audit-20260909.md"
+      ],
+      "patterns": [
+        "docs/quality/*",
+        "docs/troubleshooting/*"
+      ]
+    },
+    {
+      "id": "SFH-PACKAGING",
+      "title": "설치·도입·재현환경",
+      "stage": "S11",
+      "source_refs": [
+        "docs/getting-started/install.md"
+      ],
+      "patterns": [
+        "docs/getting-started/*",
+        "requirements-docs.txt",
+        "README.md",
+        ".editorconfig",
+        ".gitattributes"
+      ]
+    },
+    {
+      "id": "SFH-DOMAIN-REVIEW",
+      "title": "게임 고유 구현·데이터 전수 검토",
+      "stage": "S01",
+      "source_refs": [
+        "docs/features/index.md"
+      ],
+      "patterns": [
+        "game/features/*",
+        "game/**/*.uid",
+        "game/**/*.import",
+        "game/**/*.tres",
+        "game/**/*.tscn",
+        "build/*"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "id": "SFH-GOVERNANCE-001",
+      "family": "SFH-GOVERNANCE",
+      "stage": "S03",
+      "anchors": [
+        {
+          "path": "AGENTS.md",
+          "contains": "# SFH repository workflow"
+        }
+      ],
+      "generic_invariant": "명시적 오너 지시·판단과 제안을 구분하고 프로젝트별 권한을 다른 프로젝트로 전파하지 않는다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S03",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-ONTOLOGY-001",
+      "family": "SFH-ONTOLOGY",
+      "stage": "S02",
+      "anchors": [
+        {
+          "path": "docs/architecture/project-ontology.md",
+          "contains": "# 프로젝트 오너 운영 온톨로지"
+        }
+      ],
+      "generic_invariant": "안정 ID, 관계 type/origin, 판단자·수락 조건·다음 행동·행동 가드를 손실 없이 보존한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S02",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-REQUIREMENTS-001",
+      "family": "SFH-REQUIREMENTS",
+      "stage": "S03",
+      "anchors": [
+        {
+          "path": "docs/design/master-gdd-alignment.md",
+          "contains": "# Master GDD 구현 대조"
+        }
+      ],
+      "generic_invariant": "기획 선언과 실제 구현/검증을 분리하고 최신 원본·충돌·확정/임시 가중치의 근거를 보존한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S03",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-SOURCES-001",
+      "family": "SFH-SOURCES",
+      "stage": "S06",
+      "anchors": [
+        {
+          "path": "scripts/snapshot_notion_tracker.py",
+          "contains": "\"\"\"Read the public task tracker; never interpret planner status as code completion.\"\"\""
+        }
+      ],
+      "generic_invariant": "외부 원본을 읽기 전용 snapshot으로 수집하고 전체성·중복·revision·관측 시각을 검사한다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S06",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-WIKI-TREE-001",
+      "family": "SFH-WIKI-TREE",
+      "stage": "S05",
+      "anchors": [
+        {
+          "path": "docs/architecture/index.md",
+          "contains": "# 아키텍처"
+        }
+      ],
+      "generic_invariant": "목차에서 큰 문서→작은 문서와 역방향 연결을 생성하고 고아·깨진 링크·누락을 검사한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S05",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-WIKI-DISCOVERY-001",
+      "family": "SFH-WIKI-DISCOVERY",
+      "stage": "S05",
+      "anchors": [
+        {
+          "path": "docs/getting-started/search-wiki.md",
+          "contains": "# 위키 탐색과 검색 사용법"
+        }
+      ],
+      "generic_invariant": "목적·상태·원본·다음 행동을 검색/필터/선택 유지와 양방향 관계로 탐색한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S05",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-MODULES-001",
+      "family": "SFH-MODULES",
+      "stage": "S04",
+      "anchors": [
+        {
+          "path": "docs/architecture/module-rules.md",
+          "contains": "# 모듈 작성 규칙"
+        }
+      ],
+      "generic_invariant": "조립과 정책/데이터/상태 소유를 분리하고 비활성화·제거·대체·새 제공자 추가를 검사한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S04",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-EVENTS-001",
+      "family": "SFH-EVENTS",
+      "stage": "S04",
+      "anchors": [
+        {
+          "path": "docs/architecture/signals.md",
+          "contains": "# Signal 규칙"
+        }
+      ],
+      "generic_invariant": "명령 요청과 이미 발생한 사건을 구분하고 무분별한 전역 이벤트로 의존성을 숨기지 않는다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S04",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-PREFLIGHT-001",
+      "family": "SFH-PREFLIGHT",
+      "stage": "S04",
+      "anchors": [
+        {
+          "path": "docs/features/operation-launch-preflight.md",
+          "contains": "# 작전 투입 사전검증과 불변 계획"
+        }
+      ],
+      "generic_invariant": "부작용 전에 전제를 검사하고 불변 계획을 소비하며 실패 시 원본과 재화를 보존한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S04",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-DATA-LIFECYCLE-001",
+      "family": "SFH-DATA-LIFECYCLE",
+      "stage": "S06",
+      "anchors": [
+        {
+          "path": "docs/features/weapon-balance.md",
+          "contains": "# Q 무기 교체와 Google Sheets 밸런스"
+        }
+      ],
+      "generic_invariant": "라이브 후보와 확정 데이터·실행 payload를 구분하고 hash/version·실제 소비자 동등성을 검사한다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S06",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-AUTOMATED-QA-001",
+      "family": "SFH-AUTOMATED-QA",
+      "stage": "S04",
+      "anchors": [
+        {
+          "path": "docs/quality/e2e-play-session.md",
+          "contains": "# 실제 플레이 세션 E2E 검수"
+        }
+      ],
+      "generic_invariant": "필수 검사 집합과 정상·오류·복원·조합 사례를 수락 조건에 연결하고 일부 pass를 전체로 확대하지 않는다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S04",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-HUMAN-QA-001",
+      "family": "SFH-HUMAN-QA",
+      "stage": "S04",
+      "anchors": [
+        {
+          "path": "docs/quality/player-perception-audit.md",
+          "contains": "# 플레이어 인식 단위 E2E 감사"
+        }
+      ],
+      "generic_invariant": "자동 fixture와 실제 사용·재미·가독성 수락을 분리하고 안내·실제 결과·다음 행동의 일치를 확인한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S04",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-ACCESSIBILITY-001",
+      "family": "SFH-ACCESSIBILITY",
+      "stage": "S05",
+      "anchors": [
+        {
+          "path": "docs/quality/wiki-responsive-e2e.md",
+          "contains": "# 모바일 위키 반응형 E2E"
+        }
+      ],
+      "generic_invariant": "표시 계약·키보드 초점·텍스트 의미·작은 화면을 검사하고 색만으로 상태를 구분하지 않는다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S05",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-ACCESS-001",
+      "family": "SFH-ACCESS",
+      "stage": "S07",
+      "anchors": [
+        {
+          "path": "docs/architecture/wiki-role-auth.md",
+          "contains": "# 위키 역할 인증과 권한 경계"
+        }
+      ],
+      "generic_invariant": "프로젝트가 선택한 접근 profile에 따라 HTML·JSON·색인·API를 서버 경계에서 차단한다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S07",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-SECURITY-001",
+      "family": "SFH-SECURITY",
+      "stage": "S07",
+      "anchors": [
+        {
+          "path": "docs/architecture/wiki-role-auth.md",
+          "contains": "# 위키 역할 인증과 권한 경계"
+        }
+      ],
+      "generic_invariant": "자격증명과 프로젝트 권한을 payload로 복사하지 않고 CSRF·검증·조건부 저장과 외부 효과 범위를 유지한다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S07",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-CI-001",
+      "family": "SFH-CI",
+      "stage": "S08",
+      "anchors": [
+        {
+          "path": "scripts/ci_budget.py",
+          "contains": "\"\"\"Conservative CI routing: Git stores source, the private runner builds it."
+        }
+      ],
+      "generic_invariant": "명시적 문서 allowlist 외 변경은 필수 검사를 생략하지 않으며 불명 입력과 검사 실패를 보수적으로 처리한다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S08",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-DELIVERY-001",
+      "family": "SFH-DELIVERY",
+      "stage": "S08",
+      "anchors": [
+        {
+          "path": "scripts/deploy_cloudflare_assets.py",
+          "contains": "\"\"\"Upload verified SFH build artifacts to immutable Cloudflare R2 keys.\"\"\""
+        }
+      ],
+      "generic_invariant": "commit/tree/run과 파일 hash가 일치하는 검증 산출물만 전달하고 플랫폼별 동등성·운영 health를 구분한다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S08",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-RECOVERY-001",
+      "family": "SFH-RECOVERY",
+      "stage": "S08",
+      "anchors": [
+        {
+          "path": "docs/getting-started/source-control-and-cleanup.md",
+          "contains": "# 작업 폴더 정리와 Git 복구"
+        }
+      ],
+      "generic_invariant": "검증된 백업을 식별하고 새 검증 이력으로 복원하며 오래된 artifact로 검사 실패를 우회하지 않는다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S08",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-BUDGET-001",
+      "family": "SFH-BUDGET",
+      "stage": "S09",
+      "anchors": [
+        {
+          "path": "scripts/ci_transfer.py",
+          "contains": "\"\"\"Run-scoped, hash-verified handoff on ONE trusted self-hosted runner."
+        }
+      ],
+      "generic_invariant": "비용·캐시·전송 최적화는 필수 검사를 유지하고 같은 검증 신뢰 범위에서 측정한다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S09",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-ASSETS-001",
+      "family": "SFH-ASSETS",
+      "stage": "S09",
+      "anchors": [
+        {
+          "path": "docs/architecture/third-party-assets.md",
+          "contains": "# 외부 에셋 라이선스 원장"
+        }
+      ],
+      "generic_invariant": "자산의 출처/라이선스·변경·배포 권한과 실제 사용·검증 범위를 기록한다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S09",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-FEEDBACK-001",
+      "family": "SFH-FEEDBACK",
+      "stage": "S10",
+      "anchors": [
+        {
+          "path": "docs/quality/full-system-audit-20260909.md",
+          "contains": "# 전체 모듈·E2E 감사와 잔여 작업"
+        }
+      ],
+      "generic_invariant": "실제 실패·재현·수정·회귀를 구분하고 기존 검사 공백을 숨기지 않는다. V2/V3 승격은 추가 사용자 설계 계약이다.",
+      "disposition": "core",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S10",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-PACKAGING-001",
+      "family": "SFH-PACKAGING",
+      "stage": "S11",
+      "anchors": [
+        {
+          "path": "docs/getting-started/install.md",
+          "contains": "# Godot 설치"
+        }
+      ],
+      "generic_invariant": "프로젝트별 도구/환경/원본·도입 전제와 검증·복구를 문서화하고 설치를 제품 수락으로 간주하지 않는다.",
+      "disposition": "adapter",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S11",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    },
+    {
+      "id": "SFH-DOMAIN-REVIEW-001",
+      "family": "SFH-DOMAIN-REVIEW",
+      "stage": "S01",
+      "anchors": [
+        {
+          "path": "docs/features/index.md",
+          "contains": "# SFH 종합 문서"
+        }
+      ],
+      "generic_invariant": "게임 고유 동작을 범용 규칙으로 복사하지 않는다. 파일별 재사용 불변식·회귀·라이선스 추출 여부를 검토한 뒤 제외한다.",
+      "disposition": "project_only_pending_review",
+      "status": "extracted_proposal_requires_detailed_review",
+      "basis": "inferred_by_static_analysis",
+      "implementation_target": "seed common contracts + project adapter; phase S01",
+      "authority": "project owner, explicit scope; source project permissions never inherited",
+      "failure_retry": "preserve evidence, block dependent acceptance, inspect before effect retry",
+      "tests_required": [
+        "source clause preservation",
+        "positive and negative case",
+        "stale/conflict or failure/recovery case",
+        "no authority inheritance"
+      ],
+      "evidence_refs": []
+    }
+  ]
+}

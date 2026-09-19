@@ -1,0 +1,45 @@
+{
+  "task": "TASK-20260916-V2-REWRITE-001",
+  "execution": "EXE-20260916-V2-REWRITE-001",
+  "evidence": "EVD-20260916-V2-REWRITE-001",
+  "timestamp": "2026-09-16T11:03:20.733065+00:00",
+  "distribution_version": "2.0.0-dev.1",
+  "manifest_sha256": "25836f14841a2f08e4401a29cdff2c03e40c33621303d5a64e6774749c8371ab",
+  "tested_input_manifest_sha256": "e1d81f700fc51e388c5d02be180ee9c7eeee47db28ca618a7c1be105807f6422",
+  "source_note_sha256": "7f413aea84d7c897e3d8b468bd76b794c0a02855ed870600e0b91549f1f4abb0",
+  "unit_tests": {
+    "passed": 41,
+    "exit_code": 0,
+    "seconds": 33.275,
+    "log_sha256": "ebc5f42c63eae48c8c9781c860246d141c08523fa5469798049b8b3aa7f26214"
+  },
+  "installed_cli_synthetic_operations": 16,
+  "installed_cli_v2_and_v3_test_runs": "passed",
+  "in_flight_config_pin": "confirmed_by_runtime",
+  "fresh_v2_specialization_trials": 3,
+  "local_package": {
+    "path": "dist/fixed-v2-dev.zip",
+    "sha256": "25391050acb96a481f6bda46c91b018cf3461d1ab85f6f6f029cd08eb002f70c",
+    "includes_initial_object_wiki": true
+  },
+  "legacy_files_preserved": 71,
+  "legacy_distribution_check": "passed, 54 files unchanged",
+  "existing_product": {
+    "head": "9da8890582b003a29acd49627f81e958155a13d3",
+    "working_tree": "clean at preservation check",
+    "adopted_new_seed": false
+  },
+  "unverified": [
+    "actual LLM quality improvement",
+    "independent project/model specialization reliability",
+    "authenticated multi-user authority",
+    "OS/egress sandbox",
+    "external deployment/Canary and domain/core promotion",
+    "human visual acceptance",
+    "full Newgame functional parity"
+  ],
+  "external_actions": [],
+  "commit_or_push": false,
+  "feedback_candidate": "HARNESS-REQ-20260916-FIXED-TRANSITIONS",
+  "goal_acceptance": "local_contract_runtime_verified; real_world_quality_not_certified"
+}

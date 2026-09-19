@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "kind": "planning_manifest",
+  "plan_document": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md",
+  "plan_document_sha256": "aab51a0cbade7de841d9d16b29b35acb4372b770d22901a4c49cba5af6b8eecb",
+  "phase": "draft_ready_for_scope_review",
+  "selected_environment": {
+    "value": "separate_private_validation_project_then_selective_adoption",
+    "basis": "confirmed_by_user",
+    "authorization_scope": "planning target only; not account/deployment setup"
+  },
+  "reference_commit": "be23c7cad570c47e117d7521d998f5062ee23ec0",
+  "seed_commit": "10c1dc77404629890f41bc65a01dbee9e29cc8c2",
+  "project_commit": "9da8890582b003a29acd49627f81e958155a13d3",
+  "stages": [
+    {
+      "id": "P0",
+      "title": "범위·판정 기준 고정",
+      "depends_on": [],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P1",
+      "title": "비교 실행기·검증 프로젝트",
+      "depends_on": [
+        "P0"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P2",
+      "title": "로컬 기능 보완",
+      "depends_on": [
+        "P1"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P3",
+      "title": "권한·실행 경계",
+      "depends_on": [
+        "P1"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P4",
+      "title": "외부 원본 adapter",
+      "depends_on": [
+        "P2",
+        "P3"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P5",
+      "title": "PR·CI·배포",
+      "depends_on": [
+        "P3",
+        "P4"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P6",
+      "title": "복구·이관·회수",
+      "depends_on": [
+        "P5"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P7",
+      "title": "운영 Canary·C1",
+      "depends_on": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P8",
+      "title": "현 프로젝트 선택 적용·C2",
+      "depends_on": [
+        "P7"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    },
+    {
+      "id": "P9",
+      "title": "일반화·최적화·C3",
+      "depends_on": [
+        "P7",
+        "P8"
+      ],
+      "phase": "planned",
+      "acceptance_class": "mixed",
+      "criteria_source": "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md#4"
+    }
+  ],
+  "audit_coverage": {
+    "F01": [
+      "P1",
+      "P2",
+      "P4"
+    ],
+    "F02": [
+      "P2"
+    ],
+    "F03": [
+      "P0",
+      "P2"
+    ],
+    "F04": [
+      "P1",
+      "P2"
+    ],
+    "F05": [
+      "P0",
+      "P2",
+      "P3"
+    ],
+    "F06": [
+      "P2",
+      "P8"
+    ],
+    "F07": [
+      "P2",
+      "P3",
+      "P6"
+    ],
+    "F08": [
+      "P2",
+      "P4"
+    ],
+    "F09": [
+      "P3",
+      "P8"
+    ],
+    "F10": [
+      "P2",
+      "P3",
+      "P5"
+    ],
+    "F11": [
+      "P1",
+      "P5",
+      "P8"
+    ],
+    "F12": [
+      "P2",
+      "P7",
+      "P8"
+    ],
+    "F13": [
+      "P4"
+    ],
+    "F14": [
+      "P4",
+      "P8"
+    ],
+    "F15": [
+      "P5"
+    ],
+    "F16": [
+      "P5",
+      "P7"
+    ],
+    "F17": [
+      "P6"
+    ],
+    "F18": [
+      "P1",
+      "P6",
+      "P8"
+    ],
+    "F19": [
+      "P1",
+      "P7",
+      "P9"
+    ],
+    "F20": [
+      "P6",
+      "P9"
+    ],
+    "D01": [
+      "P0",
+      "P2",
+      "P9"
+    ]
+  },
+  "claims": {
+    "C1": "scoped common harness parity; P0-P7 and owner acceptance",
+    "C2": "project-selected adoption; applicable C1 claims and P8",
+    "C3": "hierarchical evolution and long-term optimization; P9"
+  },
+  "proposed_not_approved_thresholds": {
+    "canary_min_days": 7,
+    "canary_min_completed_work": 20,
+    "candidate_cost_improvement_percent": 10,
+    "other_cost_regression_margin_percent": 5,
+    "statistical_adequacy": "must be defined before run; these counts alone do not establish adequacy"
+  },
+  "owner_decisions_pending": [
+    "exact common-harness/domain scope and intentional differences",
+    "independent evaluator and decision authority",
+    "lab principal/access and source identifiers",
+    "CI/hosting target and resource budget",
+    "canary strata, sampling, thresholds and rollout authority"
+  ],
+  "not_created": [
+    "repository",
+    "accounts",
+    "credentials",
+    "automations",
+    "runtime_implementation",
+    "external_deployment"
+  ],
+  "protected_trust_gates": {
+    "max_observed_false_verified": 0,
+    "max_observed_duplicate_effects": 0,
+    "max_observed_unauthorized_mutations": 0,
+    "max_observed_history_loss": 0,
+    "max_observed_human_boundary_violations": 0,
+    "source": "seed/docs/harness/contracts/evolution.md#E02",
+    "scope": "Observed workload; not an absolute safety proof"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "bundle_sha256": "c36d544762a61e7d8f2659faac7d9dc74b56e479e06985a171ac651105630128",
+  "catalog_sha256": "a97da9811a5e9e773bf9008a815c22a3f51ad70c0267c6f2c969a990a24ce9e0",
+  "inventory_sha256": "5442793e63574291c61c53de439441791fb8707fdb547d4e690d4a1e151d42db",
+  "reference_mutated": false,
+  "schedule": {
+    "assigned_files": 1362,
+    "baseline_contracts": 23,
+    "exclusions_approved": 0,
+    "families": 23,
+    "files_semantically_completed": 0,
+    "functionality_certified": false,
+    "markdown_sections_queued": 1137,
+    "phases": 12,
+    "state": "schedule_coverage_verified",
+    "tracked_files": 1362,
+    "unassigned_files": 0
+  },
+  "seed_runtime_adoption": false,
+  "source_comparison": {
+    "actions": 5,
+    "interfaces": 3,
+    "lifecycle_stages": 5,
+    "object_types": 10,
+    "objects": 257,
+    "permissions_inherited": false,
+    "relations": 483,
+    "roundtrip": "all_fields_equal",
+    "runtime_verification": "unverified",
+    "semantic_sha256": "56411df7b2544be6107d8f6bab9df644b213d38dacb5eba9cf0af0e870eb1c76",
+    "state": "source_structure_verified"
+  }
+}

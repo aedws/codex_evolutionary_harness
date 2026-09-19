@@ -1,5 +1,7 @@
 * text=auto eol=lf
 *.zip binary
-seed/** -text
-seed-manifest.json -text
-docs/harness/evidence/** -text
+seed/** -text whitespace=cr-at-eol
+seed-manifest.json -text whitespace=cr-at-eol
+docs/harness/evidence/** -text whitespace=cr-at-eol
+
+legacy/** -text whitespace=cr-at-eol

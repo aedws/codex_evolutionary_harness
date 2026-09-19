@@ -1,0 +1,21 @@
+{
+  "seed/AGENTS.md": "4667702b6f545d4336a565408f16a1a04eb12e87a6b16e1494ec008d1f1f53f8",
+  "seed/core.py": "da60cd6ba69034032a1ae158e6c49569e75b6c41e9adea49793ddb93cb31b613",
+  "seed/docs/harness/checkpoint.md": "e501ac01b6df1ae318b3ddd711734cc30735827c5dc9018ffdf9955040757a8b",
+  "seed/docs/harness/contract.md": "9128a3d33e789b685a63d4c1f2a1f9a7c176b69da881917748a6bafa28828f57",
+  "seed/docs/harness/contracts/feedback.md": "81a53f703ddc3a46b343847a26aad8b69e70910e49ea604066c84956fa77cf85",
+  "seed/docs/harness/examples/setup.example.json": "7e9fb140f89efa79a0a41e64338580071057b3cd6ed2e8de3f6bc8e34830382c",
+  "seed/docs/harness/policy.md": "786e67c25e3507c481e6af329b3c2944eb8a3bb3be0cabeb0b24026ee633c2cc",
+  "seed/docs/harness/README.md": "874d59579cafcbca7b46ebba86713d0f3cdcc58e40eb0c2a24619774089a333b",
+  "seed/docs/harness/source-authority.md": "9aa96418502b0fa91d7b7aa12fb752326b05c1b8958619e9e0520ac9672c5ab6",
+  "seed/docs/harness/source-extraction.md": "1c65a56f43c17e080beffe086ca8e7dd06a24a099c58cc9d59443336d27a51c1",
+  "seed/harness.py": "780b2911f76bf9f0ba17a7984b9fc64d3f6341ffbfb7908effcb7fb0fe318bae",
+  "seed/source_catalog.py": "a446c5df42e25b3c360b94660c815287319ca64f51da10c3f199aee33f873b2a",
+  "seed/wiki.py": "b835a09bf108408cc312eea38007ac63d96659a02cad1fdde82e75591d06bae6",
+  "scripts/build_manifest.py": "1436b57316f4efc71db84b5575ecabf1483ce206fc587751f155fa79e203bb34",
+  "scripts/demo.py": "7ff70622ab8b8c8a72e7c1b701254766e0c616b8b771961ffc51f67b5aaec919",
+  "scripts/seed.py": "3b3b7f4c41b534b63d7f6895e437dec6b864088bcd9eb1a76e8817b49c90bab4",
+  "scripts/sfh_extraction.py": "d2a4d55b9522ec0a80ccdc5976f50a7a00ff6e012b3209089f45ad1986a4cc30",
+  "tests/test_fixed_v2.py": "d935c924b7aec69b7f0a76fa15b3f0874baafd26d37520212b1dac25b1312551",
+  "tests/test_source_catalog.py": "c243723ec1f966748fe7708136adc39bf6b281f61853a54533dc8398d65d4ad1"
+}

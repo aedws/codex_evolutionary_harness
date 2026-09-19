@@ -1,0 +1,23 @@
+{
+  "schema": 2,
+  "distribution_version": "2.0.0-dev.1",
+  "contract": "fixed-v2-1",
+  "operating_stages": [
+    "V2",
+    "V3_frozen"
+  ],
+  "compatibility": "fresh installation; no legacy ledger import",
+  "files": {
+    "AGENTS.md": "4667702b6f545d4336a565408f16a1a04eb12e87a6b16e1494ec008d1f1f53f8",
+    "core.py": "336af55ef4fcc8322bf06aea9cf1e5b955b64d4256a273a1990a9cfe3cd20154",
+    "docs/harness/checkpoint.md": "e501ac01b6df1ae318b3ddd711734cc30735827c5dc9018ffdf9955040757a8b",
+    "docs/harness/contract.md": "9128a3d33e789b685a63d4c1f2a1f9a7c176b69da881917748a6bafa28828f57",
+    "docs/harness/contracts/feedback.md": "81a53f703ddc3a46b343847a26aad8b69e70910e49ea604066c84956fa77cf85",
+    "docs/harness/examples/setup.example.json": "7e9fb140f89efa79a0a41e64338580071057b3cd6ed2e8de3f6bc8e34830382c",
+    "docs/harness/policy.md": "786e67c25e3507c481e6af329b3c2944eb8a3bb3be0cabeb0b24026ee633c2cc",
+    "docs/harness/README.md": "874d59579cafcbca7b46ebba86713d0f3cdcc58e40eb0c2a24619774089a333b",
+    "docs/harness/source-authority.md": "9aa96418502b0fa91d7b7aa12fb752326b05c1b8958619e9e0520ac9672c5ab6",
+    "harness.py": "780b2911f76bf9f0ba17a7984b9fc64d3f6341ffbfb7908effcb7fb0fe318bae",
+    "wiki.py": "b835a09bf108408cc312eea38007ac63d96659a02cad1fdde82e75591d06bae6"
+  }
+}

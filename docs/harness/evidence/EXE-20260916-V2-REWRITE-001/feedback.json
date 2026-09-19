@@ -1,0 +1,17 @@
+{
+  "candidate_id": "HARNESS-REQ-20260916-FIXED-TRANSITIONS",
+  "scope": "core_candidate",
+  "classification": "core_contract",
+  "basis": "explicit user design correction: fixed distributed runtime and bounded specialization, instead of project-by-project reinvention",
+  "implementation_scope": "local development seed 2.0.0-dev.1",
+  "evidence_refs": [
+    "EVD-20260916-V2-REWRITE-001"
+  ],
+  "generalization": "not_certified",
+  "external_submission": false,
+  "skill_review": {
+    "computer_use_skill": "instructions_read_only; native workflow not invoked",
+    "browser_runtime": "CUA used for local UI verification",
+    "additional_candidate": "no_candidate: no independent repeated skill friction observed"
+  }
+}

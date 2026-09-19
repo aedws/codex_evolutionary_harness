@@ -1,0 +1,21 @@
+{
+  "initial_suite": {
+    "tests": 37,
+    "passed": 37
+  },
+  "intermediate_suite": {
+    "tests": 40,
+    "failed": 1,
+    "case": "test_suite_cannot_weaken_hard_oracle",
+    "observed": "oracle expands authority",
+    "expected": "oracle mismatch",
+    "cause": "holdout IDs changed T1 to H1; malformed fixture rejected at earlier authority check",
+    "resolution": "corrected malicious fixture to remain in authorized H1 set so fixed-command oracle check is exercised"
+  },
+  "visual_corrections": [
+    "V3 active view no longer says V2 maintained",
+    "adopted candidate projects adopted/frozen status",
+    "Release explanation uses active-config event rule instead of Task run rule"
+  ],
+  "final_test_log": "tests-final-projection.txt"
+}

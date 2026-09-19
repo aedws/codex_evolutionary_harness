@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "execution": "EXE-20260920-ATP-SETUP-001",
+  "timestamp": "2026-09-19T17:36:36.677736+00:00",
+  "scope": "staged_setup_only",
+  "state": "setup_verified_runtime_not_activated",
+  "project": "aedws/ATP",
+  "visibility": "PRIVATE",
+  "merge_commit": "f3397189de0bef4c6499ae1c19d7b44ad23fde8a",
+  "pull_request": "https://github.com/aedws/ATP/pull/5",
+  "post_merge_checks": {
+    "setup_unit_tests": 5,
+    "product_tests": 11,
+    "typecheck": "passed",
+    "build": "passed",
+    "deploy_dry": "passed",
+    "exit_code": 0
+  },
+  "runtime_activated": false,
+  "production_deployed_by_this_execution": false,
+  "configured_remote_workflows": 0,
+  "backup_before": "backup/pre-main/0022f2daf44e537b52f763401664d92a83ea2d46",
+  "backup_verified": "backup/verified-main/f3397189de0bef4c6499ae1c19d7b44ad23fde8a",
+  "local_main_synchronized": true,
+  "preserved_concurrent_work": "Cloudflare deploy and closeout merged before setup PR; no overwrite",
+  "unverified": [
+    "human wiki acceptance",
+    "full SFH functionality parity",
+    "real ATP runtime adapter/adoption"
+  ],
+  "friction": [
+    {
+      "issue": "version-pinned CRLF payload flagged as trailing whitespace",
+      "resolution": "preserve bytes and declare cr-at-eol only for immutable payload paths"
+    },
+    {
+      "issue": "manual transcription of merge SHA rejected by Git before effects",
+      "resolution": "read full revision from Git and compare verified HEAD before backup/sync"
+    }
+  ],
+  "feedback": {
+    "candidate": "no_candidate",
+    "reason": "setup boundaries reused existing contracts; one-off git input correction recorded, no generalization or skill change claimed"
+  }
+}

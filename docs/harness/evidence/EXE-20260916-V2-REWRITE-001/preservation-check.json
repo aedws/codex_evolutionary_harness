@@ -1,0 +1,24 @@
+{
+  "preserved_files": 71,
+  "mismatches": [],
+  "current_distribution": {
+    "returncode": 0,
+    "stdout": "{\"files\":11,\"manifest\":\"b60ff6c6c890590e65569ecca06c08f55ed0d8a0e67bbafbdcd4e6ff61e2b8c3\",\"state\":\"checked\",\"version\":\"2.0.0-dev.1\"}\n",
+    "stderr": ""
+  },
+  "legacy_distribution": {
+    "returncode": 0,
+    "stdout": "{\"outcome\": \"checked\", \"version\": \"0.12.0\", \"files\": 54, \"manifest_sha256\": \"4969116b30bad78521f4820cfb7edb9ba8dbcaa4c8fd4703b4ced0c39fe24a3f\"}\n",
+    "stderr": ""
+  },
+  "product_status": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "product_head": {
+    "returncode": 0,
+    "stdout": "9da8890582b003a29acd49627f81e958155a13d3\n",
+    "stderr": ""
+  }
+}

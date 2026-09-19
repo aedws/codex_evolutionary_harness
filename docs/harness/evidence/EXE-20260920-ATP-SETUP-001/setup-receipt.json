@@ -1,0 +1,122 @@
+{
+  "check_results": "not_executed_by_setup",
+  "checker_sha256": "1d8d7578175c70d7d1dc58f6cdc9d0d5fadf7794ea8733e6d9be22863e49d98d",
+  "checks_to_run": [
+    "typecheck",
+    "test",
+    "build",
+    "deploy:dry"
+  ],
+  "effects": [],
+  "functional_parity": "unverified",
+  "manifest_sha256": "58a96151f3df318c290407697fc45a69f5326ac21b62d385606222f35a78a514",
+  "objects": [
+    {
+      "id": "REQ-ATP",
+      "purpose": "사용자가 확정한 요구와 제안을 구분합니다.",
+      "relations": [
+        "DEC-ATP",
+        "TASK-ATP"
+      ],
+      "rule": "draft_without_runtime_evidence",
+      "sources": [
+        "docs/planning-decisions.md"
+      ],
+      "state": "unverified",
+      "title": "ATP 고유 게임 목표",
+      "type": "Requirement"
+    },
+    {
+      "id": "TASK-ATP",
+      "purpose": "현재 작업은 원본 연결과 셋업 준비까지입니다.",
+      "relations": [
+        "MOD-ATP",
+        "TEST-ATP"
+      ],
+      "rule": "draft_without_runtime_evidence",
+      "sources": [
+        "docs/getting-started/evolutionary-harness-setup.md"
+      ],
+      "state": "unverified",
+      "title": "하네스 도입 준비",
+      "type": "Task"
+    },
+    {
+      "id": "DEC-ATP",
+      "purpose": "ATP 독자 설계와 오너의 판단 경계를 유지합니다.",
+      "relations": [
+        "REQ-ATP"
+      ],
+      "rule": "draft_without_runtime_evidence",
+      "sources": [
+        "AGENTS.md",
+        "docs/design/original-direction.md"
+      ],
+      "state": "unverified",
+      "title": "고유 방향과 권한",
+      "type": "Decision"
+    },
+    {
+      "id": "MOD-ATP",
+      "purpose": "개발 하네스가 제품 상태 소유권을 바꾸지 않습니다.",
+      "relations": [
+        "TEST-ATP"
+      ],
+      "rule": "draft_without_runtime_evidence",
+      "sources": [
+        "docs/architecture/module-rules.md",
+        "worker/domain/command-harness.ts"
+      ],
+      "state": "unverified",
+      "title": "서버 권위 명령",
+      "type": "Module"
+    },
+    {
+      "id": "TEST-ATP",
+      "purpose": "실행 결과가 연결되기 전에는 통과를 주장하지 않습니다.",
+      "relations": [
+        "MOD-ATP",
+        "REL-ATP"
+      ],
+      "rule": "draft_without_runtime_evidence",
+      "sources": [
+        "package.json",
+        "docs/getting-started/repository-workflow.md"
+      ],
+      "state": "unverified",
+      "title": "필수 검사 연결",
+      "type": "Test"
+    },
+    {
+      "id": "REL-ATP",
+      "purpose": "셋업 준비이며 ATP 런타임 채택과 운영 배포는 별도입니다.",
+      "relations": [
+        "TASK-ATP",
+        "TEST-ATP"
+      ],
+      "rule": "draft_without_runtime_evidence",
+      "sources": [
+        "docs/getting-started/evolutionary-harness-setup.md"
+      ],
+      "state": "unverified",
+      "title": "고정 씨앗 도입 후보",
+      "type": "Release"
+    }
+  ],
+  "profile_sha256": "ef6f942ecf387eee970aa4aea41e590f4be91401c83d0c898aee3d2c047d6ef7",
+  "runtime": "not_activated",
+  "schema": 1,
+  "source_hashes": {
+    "AGENTS.md": "646b1ac7156822136fc580a3682f82e02b7450163699e2394ffc2412c8202d4f",
+    "docs/architecture/module-rules.md": "2b53da0aeb614d341ee6df70ac0beede73233916227d33750a287d98f01ed9fe",
+    "docs/design/original-direction.md": "55a31ee99ad7ef10582f236055cf540d9105e0e090b795e6fe88ae0182663134",
+    "docs/getting-started/evolutionary-harness-setup.md": "2e5f65e46e9b5aaa127841c2c4dd77eb715214d4083b86bd4c0122e843c46d8b",
+    "docs/getting-started/repository-workflow.md": "1d0915c552578fb1329bafca1d5ee4f3a741fdd9f4c60b33750ca9696ddb2051",
+    "docs/planning-decisions.md": "caafe8b97b2c442a38af883d59ba73b00a4c68800b2bb4765a761ad197854d11",
+    "package.json": "8b97d8d30ac4cfa5ea3ae568c916bf729e9493710f381e3e5ba1ab3edf19af2d",
+    "worker/domain/command-harness.ts": "3545f6a8b3e594ff3699d79959da2edba54070664c05d59cbd00600c4554e3b2"
+  },
+  "state": "staged_setup_verified",
+  "version": "2.0.0-dev.2",
+  "wiki": "C:\\Users\\uyess\\Desktop\\ATP\\.local\\harness-setup\\b2e6dc0eeae3ec15d384e146038f48d6bc1cddc28ffd38b14a7b6fee3b16fff7\\index.html"
+}

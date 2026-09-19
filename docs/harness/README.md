@@ -1,3 +1,9 @@
+# Current: fixed V2 → frozen project V3
+
+2026-09-16 rewrite: [RFC-0016](../rfcs/RFC-0016-fixed-v2-specialized-v3.md), [usage](../../README.md), [goal coverage](../requirements/FIXED-V2-GOALS.md). New seed is the default. The following text is historical through v0.12; its seed references resolve under `legacy/v0.12.0/seed/`, and its capability labels do not certify the new runtime.
+
+---
+
 # Evolutionary Harness
 
 Latest implementation comparison: [seed v0.12 local parity results](../requirements/PARITY-RESULTS-20260915.md). Selected result fields pass; whole Newgame parity remains unverified.

@@ -2088,5 +2088,247 @@
       "project",
       "core_candidate"
     ]
+  },
+  {
+    "id": "TASK-20260915-PARITY-PLAN-001",
+    "type": "task",
+    "schema_version": 1,
+    "name": "Newgame 기능 동등성 확정 계획",
+    "purpose": "검증 대상·기능 대응·단계 의존성·수락/중단/복구·오너 판단을 사전 정의",
+    "source_refs": [
+      "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md",
+      "docs/requirements/newgame-parity-plan-20260915.json",
+      "docs/harness/evidence/EXE-20260915-PARITY-PLAN-001/plan-validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Scope and proposed thresholds require scoped owner decisions",
+      "C1/C2/C3 not certified by this planning task"
+    ],
+    "tags": [
+      "plan"
+    ]
+  },
+  {
+    "id": "EXE-20260915-PARITY-PLAN-001",
+    "type": "execution",
+    "schema_version": 1,
+    "name": "Newgame 기능 동등성 확정 계획",
+    "purpose": "검증 대상·기능 대응·단계 의존성·수락/중단/복구·오너 판단을 사전 정의",
+    "source_refs": [
+      "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md",
+      "docs/requirements/newgame-parity-plan-20260915.json",
+      "docs/harness/evidence/EXE-20260915-PARITY-PLAN-001/plan-validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Scope and proposed thresholds require scoped owner decisions",
+      "C1/C2/C3 not certified by this planning task"
+    ],
+    "tags": [
+      "plan"
+    ]
+  },
+  {
+    "id": "EVD-20260915-PARITY-PLAN-001",
+    "type": "evidence",
+    "schema_version": 1,
+    "name": "Newgame 기능 동등성 확정 계획",
+    "purpose": "검증 대상·기능 대응·단계 의존성·수락/중단/복구·오너 판단을 사전 정의",
+    "source_refs": [
+      "docs/rfcs/RFC-0015-newgame-parity-certification-plan.md",
+      "docs/requirements/newgame-parity-plan-20260915.json",
+      "docs/harness/evidence/EXE-20260915-PARITY-PLAN-001/plan-validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "Scope and proposed thresholds require scoped owner decisions",
+      "C1/C2/C3 not certified by this planning task"
+    ],
+    "tags": [
+      "plan"
+    ]
+  },
+  {
+    "id": "TASK-20260916-V2-REWRITE-001",
+    "type": "task",
+    "schema_version": 1,
+    "name": "고정 V2 → 평가된 V3 씨앗 재작성",
+    "purpose": "정리.txt 기반 고정 실행기와 제한된 특화 수명주기 구현",
+    "source_refs": [
+      "docs/rfcs/RFC-0016-fixed-v2-specialized-v3.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "실제 사용자 프로젝트 반복 품질은 미검증"
+    ]
+  },
+  {
+    "id": "EXE-20260916-V2-REWRITE-001",
+    "type": "execution",
+    "schema_version": 1,
+    "name": "고정 V2 → 평가된 V3 씨앗 재작성",
+    "purpose": "정리.txt 기반 고정 실행기와 제한된 특화 수명주기 구현",
+    "source_refs": [
+      "docs/rfcs/RFC-0016-fixed-v2-specialized-v3.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "실제 사용자 프로젝트 반복 품질은 미검증"
+    ]
+  },
+  {
+    "id": "EVD-20260916-V2-REWRITE-001",
+    "type": "evidence",
+    "schema_version": 1,
+    "name": "고정 V2/V3 재작성 검증 근거",
+    "purpose": "정리.txt 기반 새 실행 계약과 제한된 프로젝트 특화",
+    "source_refs": [
+      "docs/rfcs/RFC-0016-fixed-v2-specialized-v3.md",
+      "docs/harness/evidence/EXE-20260916-V2-REWRITE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "actual LLM quality improvement",
+      "independent project/model specialization reliability",
+      "authenticated multi-user authority",
+      "OS/egress sandbox",
+      "external deployment/Canary and domain/core promotion",
+      "human visual acceptance",
+      "full Newgame functional parity"
+    ]
+  },
+  {
+    "id": "HARNESS-REQ-20260916-FIXED-TRANSITIONS",
+    "type": "requirement",
+    "schema_version": 1,
+    "name": "실행 기반과 특화 전환의 고정",
+    "purpose": "정리.txt 기반 새 실행 계약과 제한된 프로젝트 특화",
+    "source_refs": [
+      "docs/rfcs/RFC-0016-fixed-v2-specialized-v3.md",
+      "docs/harness/evidence/EXE-20260916-V2-REWRITE-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "actual LLM quality improvement",
+      "independent project/model specialization reliability",
+      "authenticated multi-user authority",
+      "OS/egress sandbox",
+      "external deployment/Canary and domain/core promotion",
+      "human visual acceptance",
+      "full Newgame functional parity"
+    ]
+  },
+  {
+    "id": "TASK-20260916-SFH-EXTRACTION-001",
+    "type": "task",
+    "schema_version": 1,
+    "name": "SFH 전체 계약 추출과 씨앗 반영 착수",
+    "purpose": "전체 소스 범위와 단계별 수락 조건을 먼저 고정하고 출처를 보존하는 추출 기반 구현",
+    "source_refs": [
+      "docs/rfcs/RFC-0017-sfh-full-extraction-schedule.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "전체 계약의 실행 동등성은 단계별 검증 전 미확인"
+    ]
+  },
+  {
+    "id": "EXE-20260916-SFH-EXTRACTION-001",
+    "type": "execution",
+    "schema_version": 1,
+    "name": "SFH 전체 계약 추출과 씨앗 반영 착수",
+    "purpose": "전체 소스 범위와 단계별 수락 조건을 먼저 고정하고 출처를 보존하는 추출 기반 구현",
+    "source_refs": [
+      "docs/rfcs/RFC-0017-sfh-full-extraction-schedule.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "전체 계약의 실행 동등성은 단계별 검증 전 미확인"
+    ]
+  },
+  {
+    "id": "TASK-20260920-ATP-SETUP-001",
+    "type": "task",
+    "schema_version": 1,
+    "name": "ATP 도입 준비와 현재 하네스 작업 마감",
+    "purpose": "고정 배포본, 원본 연결 목록, 비활성 셋업 검사",
+    "source_refs": [
+      "docs/rfcs/RFC-0017-sfh-full-extraction-schedule.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "ATP 실제 런타임 채택과 전체 SFH 동등성은 이번 셋업 범위 밖"
+    ]
+  },
+  {
+    "id": "EXE-20260920-ATP-SETUP-001",
+    "type": "execution",
+    "schema_version": 1,
+    "name": "ATP 도입 준비와 현재 하네스 작업 마감",
+    "purpose": "고정 배포본, 원본 연결 목록, 비활성 셋업 검사",
+    "source_refs": [
+      "docs/rfcs/RFC-0017-sfh-full-extraction-schedule.md"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "ATP 실제 런타임 채택과 전체 SFH 동등성은 이번 셋업 범위 밖"
+    ]
+  },
+  {
+    "id": "EVD-20260916-SFH-EXTRACTION-001",
+    "type": "evidence",
+    "schema_version": 1,
+    "name": "SFH-EXTRACTION 검증 근거",
+    "purpose": "실행한 검사와 미확인 범위를 분리",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260916-SFH-EXTRACTION-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "전체 기능 동등성과 인간 수락은 미확인"
+    ]
+  },
+  {
+    "id": "EVD-20260920-ATP-SETUP-001",
+    "type": "evidence",
+    "schema_version": 1,
+    "name": "ATP-SETUP 검증 근거",
+    "purpose": "실행한 검사와 미확인 범위를 분리",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260920-ATP-SETUP-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "전체 기능 동등성과 인간 수락은 미확인"
+    ]
+  },
+  {
+    "id": "HARNESS-REQ-20260920-SOURCE-COVERAGE",
+    "type": "requirement",
+    "schema_version": 1,
+    "name": "전수 소스 배정과 기능 인증 분리",
+    "purpose": "일부 중요 공백 보완을 전체 추출·동등성으로 잘못 취급하지 않는다",
+    "source_refs": [
+      "docs/harness/evidence/EXE-20260916-SFH-EXTRACTION-001/validation.json"
+    ],
+    "relation_refs": [],
+    "acceptance_class": "mixed",
+    "unknowns": [
+      "상위 일반화는 미인증"
+    ]
   }
 ]

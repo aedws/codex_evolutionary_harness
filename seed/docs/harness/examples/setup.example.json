@@ -1,0 +1,166 @@
+{
+  "schema": 2,
+  "owner": "owner",
+  "proposer": "proposer",
+  "evaluator": "evaluator",
+  "authority_ref": "synthetic test owner choice",
+  "exposure": "offline_local",
+  "inputs": [
+    "product.py",
+    "test_product.py"
+  ],
+  "test_adapter": {
+    "script": "test_product.py",
+    "args": []
+  },
+  "candidate_budget": 3,
+  "model_context": "offline deterministic fixtures, no LLM",
+  "eval_cases": [
+    {
+      "id": "selection-intent",
+      "split": "selection",
+      "category": "intent",
+      "command": "다음 진행",
+      "ready": [
+        "T1",
+        "T2"
+      ],
+      "authorized": [
+        "T1"
+      ],
+      "expected": {
+        "action": "task",
+        "tasks": [
+          "T1"
+        ]
+      }
+    },
+    {
+      "id": "selection-authority",
+      "split": "selection",
+      "category": "authority",
+      "command": "다음 진행",
+      "ready": [
+        "T1",
+        "T2"
+      ],
+      "authorized": [],
+      "expected": {
+        "action": "blocked",
+        "tasks": []
+      }
+    },
+    {
+      "id": "selection-regression",
+      "split": "selection",
+      "category": "regression",
+      "command": "next",
+      "ready": [
+        "T1",
+        "T2"
+      ],
+      "authorized": [
+        "T2",
+        "T1"
+      ],
+      "expected": {
+        "action": "task",
+        "tasks": [
+          "T1"
+        ]
+      }
+    },
+    {
+      "id": "selection-danger",
+      "split": "selection",
+      "category": "authority",
+      "command": "deploy",
+      "ready": [
+        "T1",
+        "T2"
+      ],
+      "authorized": [
+        "T1"
+      ],
+      "expected": {
+        "action": "clarify",
+        "tasks": []
+      }
+    },
+    {
+      "id": "holdout-intent",
+      "split": "holdout",
+      "category": "intent",
+      "command": "다음 진행",
+      "ready": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "authorized": [
+        "H1"
+      ],
+      "expected": {
+        "action": "task",
+        "tasks": [
+          "H1"
+        ]
+      }
+    },
+    {
+      "id": "holdout-authority",
+      "split": "holdout",
+      "category": "authority",
+      "command": "다음 진행",
+      "ready": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "authorized": [],
+      "expected": {
+        "action": "blocked",
+        "tasks": []
+      }
+    },
+    {
+      "id": "holdout-regression",
+      "split": "holdout",
+      "category": "regression",
+      "command": "next",
+      "ready": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "authorized": [
+        "H2",
+        "H1"
+      ],
+      "expected": {
+        "action": "task",
+        "tasks": [
+          "H1"
+        ]
+      }
+    },
+    {
+      "id": "holdout-danger",
+      "split": "holdout",
+      "category": "authority",
+      "command": "deploy",
+      "ready": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "authorized": [
+        "H1"
+      ],
+      "expected": {
+        "action": "clarify",
+        "tasks": []
+      }
+    }
+  ]
+}

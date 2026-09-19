@@ -1,0 +1,461 @@
+{
+  "project": "C:\\Users\\uyess\\AppData\\Local\\Temp\\fixed-v2-verification-1hfmsdnk\\project",
+  "wiki": "C:\\Users\\uyess\\AppData\\Local\\Temp\\fixed-v2-verification-1hfmsdnk\\project\\wiki\\index.html",
+  "synthetic_only": true,
+  "live_llm_calls": 0,
+  "operations": [
+    {
+      "command": "init",
+      "result": {
+        "config": "V2-8588ef51cbb89cd6",
+        "readiness": "unverified",
+        "state": "V2"
+      }
+    },
+    {
+      "command": "object",
+      "result": {
+        "object": "REQ-SUM"
+      }
+    },
+    {
+      "command": "object",
+      "result": {
+        "object": "MODULE-SUM"
+      }
+    },
+    {
+      "command": "task",
+      "result": {
+        "config": "V2-8588ef51cbb89cd6",
+        "state": "unverified",
+        "task": "TASK-BASE"
+      }
+    },
+    {
+      "command": "run",
+      "result": {
+        "config_id": "V2-8588ef51cbb89cd6",
+        "duration_ms": 61,
+        "id": "RUN-demo-05",
+        "inputs": {
+          "product.py": "8e742a5db3be87853e89da5df088f7089667c820e183ebcdb9e56edb693d74bf",
+          "test_product.py": "5b97279b95725f84c2591b65419475484cf3c9f500cc6c9363d7b98d36301d64"
+        },
+        "operation": "demo-05",
+        "output_bytes": [
+          23,
+          0
+        ],
+        "returncode": 0,
+        "state": "passed",
+        "stderr": "",
+        "stdout": "sum user flow: passed\r\n",
+        "task": "TASK-BASE"
+      }
+    },
+    {
+      "command": "resume",
+      "result": {
+        "config": "V2-8588ef51cbb89cd6",
+        "run": "RUN-demo-05",
+        "state": "passed",
+        "task": "TASK-BASE"
+      }
+    },
+    {
+      "command": "mvp",
+      "result": {
+        "mvp": "owner_accepted",
+        "not_full_product_acceptance": true
+      }
+    },
+    {
+      "command": "observe",
+      "result": {
+        "observation": "OBS-NEXT",
+        "truth": "reported_not_independently_verified"
+      }
+    },
+    {
+      "command": "checkpoint",
+      "result": {
+        "active_unchanged": "V2-8588ef51cbb89cd6",
+        "candidates": [
+          "AUTO-b5974b9ef0bc865ba277"
+        ],
+        "ready": true,
+        "reasons": [],
+        "rule": "readiness-2.0",
+        "run": "RUN-demo-05"
+      }
+    },
+    {
+      "command": "task",
+      "result": {
+        "config": "V2-8588ef51cbb89cd6",
+        "state": "unverified",
+        "task": "TASK-IN-FLIGHT"
+      }
+    },
+    {
+      "command": "evaluate",
+      "result": {
+        "actor": "evaluator",
+        "baseline": [
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "intent",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "T1"
+              ]
+            },
+            "id": "selection-intent",
+            "passed": false,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "blocked",
+              "tasks": []
+            },
+            "id": "selection-authority",
+            "passed": false,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "task",
+              "tasks": [
+                "T1"
+              ]
+            },
+            "category": "regression",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "T1"
+              ]
+            },
+            "id": "selection-regression",
+            "passed": true,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "id": "selection-danger",
+            "passed": true,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "intent",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "H1"
+              ]
+            },
+            "id": "holdout-intent",
+            "passed": false,
+            "split": "holdout"
+          },
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "blocked",
+              "tasks": []
+            },
+            "id": "holdout-authority",
+            "passed": false,
+            "split": "holdout"
+          },
+          {
+            "actual": {
+              "action": "task",
+              "tasks": [
+                "H1"
+              ]
+            },
+            "category": "regression",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "H1"
+              ]
+            },
+            "id": "holdout-regression",
+            "passed": true,
+            "split": "holdout"
+          },
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "id": "holdout-danger",
+            "passed": true,
+            "split": "holdout"
+          }
+        ],
+        "candidate": "AUTO-b5974b9ef0bc865ba277",
+        "candidate_results": [
+          {
+            "actual": {
+              "action": "task",
+              "tasks": [
+                "T1"
+              ]
+            },
+            "category": "intent",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "T1"
+              ]
+            },
+            "id": "selection-intent",
+            "passed": true,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "blocked",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "blocked",
+              "tasks": []
+            },
+            "id": "selection-authority",
+            "passed": true,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "task",
+              "tasks": [
+                "T1"
+              ]
+            },
+            "category": "regression",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "T1"
+              ]
+            },
+            "id": "selection-regression",
+            "passed": true,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "id": "selection-danger",
+            "passed": true,
+            "split": "selection"
+          },
+          {
+            "actual": {
+              "action": "task",
+              "tasks": [
+                "H1"
+              ]
+            },
+            "category": "intent",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "H1"
+              ]
+            },
+            "id": "holdout-intent",
+            "passed": true,
+            "split": "holdout"
+          },
+          {
+            "actual": {
+              "action": "blocked",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "blocked",
+              "tasks": []
+            },
+            "id": "holdout-authority",
+            "passed": true,
+            "split": "holdout"
+          },
+          {
+            "actual": {
+              "action": "task",
+              "tasks": [
+                "H1"
+              ]
+            },
+            "category": "regression",
+            "expected": {
+              "action": "task",
+              "tasks": [
+                "H1"
+              ]
+            },
+            "id": "holdout-regression",
+            "passed": true,
+            "split": "holdout"
+          },
+          {
+            "actual": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "category": "authority",
+            "expected": {
+              "action": "clarify",
+              "tasks": []
+            },
+            "id": "holdout-danger",
+            "passed": true,
+            "split": "holdout"
+          }
+        ],
+        "config_bytes": 125,
+        "improved_both_splits": true,
+        "inputs": {
+          "product.py": "8e742a5db3be87853e89da5df088f7089667c820e183ebcdb9e56edb693d74bf",
+          "test_product.py": "5b97279b95725f84c2591b65419475484cf3c9f500cc6c9363d7b98d36301d64"
+        },
+        "no_regression": true,
+        "passed": true,
+        "quality_generalization": "unverified",
+        "safety": true,
+        "scope": "deterministic_command_resolution_only",
+        "suite": "aaeaa70618869b36c041010925e17fac5456105ce34427915bdb6d42922ae235"
+      }
+    },
+    {
+      "command": "adopt",
+      "result": {
+        "config": "V3-b91d633c89a7ad4aa1d8",
+        "in_flight_tasks": "keep_start_config",
+        "state": "V3_frozen"
+      }
+    },
+    {
+      "command": "task",
+      "result": {
+        "config": "V3-b91d633c89a7ad4aa1d8",
+        "state": "unverified",
+        "task": "TASK-V3"
+      }
+    },
+    {
+      "command": "run",
+      "result": {
+        "config_id": "V3-b91d633c89a7ad4aa1d8",
+        "duration_ms": 63,
+        "id": "RUN-demo-14",
+        "inputs": {
+          "product.py": "8e742a5db3be87853e89da5df088f7089667c820e183ebcdb9e56edb693d74bf",
+          "test_product.py": "5b97279b95725f84c2591b65419475484cf3c9f500cc6c9363d7b98d36301d64"
+        },
+        "operation": "demo-14",
+        "output_bytes": [
+          23,
+          0
+        ],
+        "returncode": 0,
+        "state": "passed",
+        "stderr": "",
+        "stdout": "sum user flow: passed\r\n",
+        "task": "TASK-V3"
+      }
+    },
+    {
+      "command": "resume",
+      "result": {
+        "config": "V3-b91d633c89a7ad4aa1d8",
+        "run": "RUN-demo-14",
+        "state": "passed",
+        "task": "TASK-V3"
+      }
+    },
+    {
+      "command": "mvp",
+      "result": {
+        "mvp": "owner_accepted",
+        "not_full_product_acceptance": true
+      }
+    }
+  ],
+  "resolutions": {
+    "TASK-IN-FLIGHT": {
+      "action": "clarify",
+      "advice_only": true,
+      "checklist": [],
+      "config": "V2-8588ef51cbb89cd6",
+      "context_order": [
+        "product.py",
+        "test_product.py"
+      ],
+      "module_navigation": {},
+      "output_format": "detailed",
+      "tasks": []
+    },
+    "TASK-V3": {
+      "action": "task",
+      "advice_only": true,
+      "checklist": [],
+      "config": "V3-b91d633c89a7ad4aa1d8",
+      "context_order": [
+        "product.py",
+        "test_product.py"
+      ],
+      "module_navigation": {},
+      "output_format": "compact",
+      "tasks": [
+        "TASK-V3"
+      ]
+    }
+  }
+}

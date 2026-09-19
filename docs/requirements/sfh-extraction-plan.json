@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "source_project": "SFH/Newgame",
+  "source_commit": "be23c7cad570c47e117d7521d998f5062ee23ec0",
+  "scope": "all_git_tracked_files",
+  "policy": "automatic classification is not semantic review; no completion from inventory counts",
+  "plan_document": "docs/rfcs/RFC-0017-sfh-full-extraction-schedule.md",
+  "plan_sha256": "e4a7531dd907f131a875d7b8b1ab032eb9d09377a654336bc2868dd5751edcf0",
+  "phases": [
+    {
+      "id": "S00",
+      "title": "기준선·전체 재고",
+      "scope": "모든 추적 파일, hash, 분류, 추출 담당 단계",
+      "acceptance": "누락/중복 0, 기준 commit 고정, 원본 무변경",
+      "depends_on": [],
+      "state": "inventory_verified",
+      "evidence_refs": [
+        "docs/harness/evidence/EXE-20260916-SFH-EXTRACTION-001/sfh-receipt.json"
+      ]
+    },
+    {
+      "id": "S01",
+      "title": "전체 계약 지도",
+      "scope": "모든 계약군, 문서/구현/검사 근거, 제외 사유",
+      "acceptance": "계약군별 원본·수락·후속 구현 위치 연결, 미검토 명시",
+      "depends_on": [
+        "S00"
+      ],
+      "state": "baseline_mapped_detailed_review_pending",
+      "evidence_refs": [
+        "docs/harness/evidence/EXE-20260916-SFH-EXTRACTION-001/sfh-receipt.json"
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "원본·객체·관계 추출 기반",
+      "scope": "전체 SFH ontology, 원본 상태/행동/interface/lifecycle/관계 origin",
+      "acceptance": "257 객체·483 관계 및 계약 metadata 손실 0; 원문 상태를 검증 통과로 승격하지 않음",
+      "depends_on": [
+        "S01"
+      ],
+      "state": "source_structure_verified",
+      "evidence_refs": [
+        "docs/harness/evidence/EXE-20260916-SFH-EXTRACTION-001/sfh-receipt.json"
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "요구·판단·상태·수락",
+      "scope": "결정 소유자, 의미별 관계, 우선순위/상충/대체, 혼합 수락",
+      "acceptance": "6 OOP 유형별 정상/미확인/차단/충돌/만료·인간 판단 경로",
+      "depends_on": [
+        "S02"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S04",
+      "title": "변경·모듈·검사 규율",
+      "scope": "모듈 확장/비활성화/교체/실패 복원, 필수 검사 집합·영향 분석",
+      "acceptance": "SFH 수락 조건을 범용 불변식으로 변환; 필수 검사 누락으로 pass 불가",
+      "depends_on": [
+        "S03"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S05",
+      "title": "전체 위키·탐색·접근성",
+      "scope": "대문/큰 문서/작은 문서, 검색/필터/관계/판단 대기/원본 건강도",
+      "acceptance": "실제 문서 지도 포함·고아/깨진 링크 0·키보드/반응형 검증·인간 가독성 별도",
+      "depends_on": [
+        "S04"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S06",
+      "title": "원본 수집·데이터 lifecycle",
+      "scope": "Notion/Sheet/CSV 역할, revision/전체성/충돌, live→locked, 컴파일러",
+      "acceptance": "로컬 snapshot replay, 누락/중복/만료/불일치 실패; 외부 쓰기 기본 금지",
+      "depends_on": [
+        "S05"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S07",
+      "title": "역할·행동·실행 경계",
+      "scope": "프로젝트별 오너 인터뷰, capability, 공개/내부 산출물 분리",
+      "acceptance": "오프라인/인증 profile 구분, 데이터·색인·API 우회 거절, 프로젝트 권한 비상속",
+      "depends_on": [
+        "S06"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S08",
+      "title": "CI·출시·배포·복구",
+      "scope": "필수 검사→artifact→승인→배포→관측, backup/restore/재시도",
+      "acceptance": "고정 버전·결과 동등성·부분 실패·중복 실행·실제 복원 검증; 원격 효과는 별도 승인",
+      "depends_on": [
+        "S07"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S09",
+      "title": "비용·성능·스킬·피드백",
+      "scope": "CI 예산, 캐시/전송, 문맥·개입 비용, 자산 출처, skill lifecycle",
+      "acceptance": "같은 신뢰 조건에서 비용 개선 비교; scope별 후보·반례·제출 경계",
+      "depends_on": [
+        "S08"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S10",
+      "title": "V2→V3 재결합·계층 진화",
+      "scope": "준비 trigger, 격리 후보, 독립 평가, immutable V3, 상향 일반화/Canary",
+      "acceptance": "S03~S09 계약을 특화가 약화하지 못함; 고정 V3 및 독립 특화 반복을 별도 평가",
+      "depends_on": [
+        "S09"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    },
+    {
+      "id": "S11",
+      "title": "패키지·종합 비교·선택 도입",
+      "scope": "신규 설치/복구/호환성, SFH 전 계약 대응, 독립 검증 프로젝트",
+      "acceptance": "모든 필수 계약 pass 또는 명시적 오너 예외; 실제 프로젝트 도입은 별도 receipt",
+      "depends_on": [
+        "S10"
+      ],
+      "state": "scheduled_not_started",
+      "evidence_refs": []
+    }
+  ],
+  "external_effects": "not_authorized_by_source_project_instructions",
+  "current_execution_scope": [
+    "S00",
+    "S01 baseline coverage",
+    "S02 extraction foundation"
+  ],
+  "remaining_stages": "retained and scheduled, not waived",
+  "background_automation": false,
+  "handoff": {
+    "date": "2026-09-20",
+    "target": "ATP",
+    "scope": "staged_setup_only",
+    "full_functional_parity": "unverified",
+    "followup_automation": false
+  }
+}

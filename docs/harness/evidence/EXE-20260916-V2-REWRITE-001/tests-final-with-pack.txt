@@ -1,0 +1,46 @@
+test_at_most_one_authorized_task (test_fixed_v2.BoundaryTests.test_at_most_one_authorized_task) ... ok
+test_candidate_budget_and_single_holdout (test_fixed_v2.BoundaryTests.test_candidate_budget_and_single_holdout) ... ok
+test_correction_categories_do_not_become_preferences (test_fixed_v2.BoundaryTests.test_correction_categories_do_not_become_preferences) ... ok
+test_duplicate_split_input_rejected (test_fixed_v2.BoundaryTests.test_duplicate_split_input_rejected) ... ok
+test_forbidden_overlay_and_danger_aliases (test_fixed_v2.BoundaryTests.test_forbidden_overlay_and_danger_aliases) ... ok
+test_no_proposal_before_ready (test_fixed_v2.BoundaryTests.test_no_proposal_before_ready) ... ok
+test_reserved_wiki_object_id_rejected (test_fixed_v2.BoundaryTests.test_reserved_wiki_object_id_rejected) ... ok
+test_roles_are_enforced_at_cli_boundary (test_fixed_v2.BoundaryTests.test_roles_are_enforced_at_cli_boundary) ... ok
+test_suite_cannot_weaken_hard_oracle (test_fixed_v2.BoundaryTests.test_suite_cannot_weaken_hard_oracle) ... ok
+test_suite_missing_holdout_rejected (test_fixed_v2.BoundaryTests.test_suite_missing_holdout_rejected) ... ok
+test_distribution_install_replay_and_auto_draft (test_fixed_v2.DistributionTests.test_distribution_install_replay_and_auto_draft) ... ok
+test_existing_files_not_overwritten (test_fixed_v2.DistributionTests.test_existing_files_not_overwritten) ... ok
+test_package_reproducible (test_fixed_v2.DistributionTests.test_package_reproducible) ... ok
+test_partial_install_blocks_retry (test_fixed_v2.DistributionTests.test_partial_install_blocks_retry) ... ok
+test_backup_digest_mismatch (test_fixed_v2.IntegrityTests.test_backup_digest_mismatch) ... ok
+test_backup_restore_exact_chain_no_overwrite (test_fixed_v2.IntegrityTests.test_backup_restore_exact_chain_no_overwrite) ... ok
+test_concurrent_idempotent_checkpoint (test_fixed_v2.IntegrityTests.test_concurrent_idempotent_checkpoint) ... ok
+test_corrupt_event_is_detected (test_fixed_v2.IntegrityTests.test_corrupt_event_is_detected) ... ok
+test_excess_output_fails (test_fixed_v2.IntegrityTests.test_excess_output_fails) ... ok
+test_idempotency_exactly_one_run (test_fixed_v2.IntegrityTests.test_idempotency_exactly_one_run) ... ok
+test_key_conflict (test_fixed_v2.IntegrityTests.test_key_conflict) ... ok
+test_readonly_inspection_preserves_ledger_bytes (test_fixed_v2.IntegrityTests.test_readonly_inspection_preserves_ledger_bytes) ... ok
+test_snapshot_change_during_run (test_fixed_v2.IntegrityTests.test_snapshot_change_during_run) ... ok
+test_timeout_is_unknown_not_retryable (test_fixed_v2.IntegrityTests.test_timeout_is_unknown_not_retryable) ... ok
+test_unknown_reservation_does_not_retry (test_fixed_v2.IntegrityTests.test_unknown_reservation_does_not_retry) ... ok
+test_dependent_task_gate_and_completed_task_not_next (test_fixed_v2.LifecycleTests.test_dependent_task_gate_and_completed_task_not_next) ... ok
+test_engine_drift_blocks (test_fixed_v2.LifecycleTests.test_engine_drift_blocks) ... ok
+test_failure_supersedes_old_pass (test_fixed_v2.LifecycleTests.test_failure_supersedes_old_pass) ... ok
+test_frozen_config_and_rollback_epoch (test_fixed_v2.LifecycleTests.test_frozen_config_and_rollback_epoch) ... ok
+test_full_lifecycle_fixed_v3_and_in_flight_pin (test_fixed_v2.LifecycleTests.test_full_lifecycle_fixed_v3_and_in_flight_pin) ... ok
+test_newer_run_invalidates_old_mvp_acceptance (test_fixed_v2.LifecycleTests.test_newer_run_invalidates_old_mvp_acceptance) ... ok
+test_no_improvement_stays_v2 (test_fixed_v2.LifecycleTests.test_no_improvement_stays_v2) ... ok
+test_no_mvp_blocks (test_fixed_v2.LifecycleTests.test_no_mvp_blocks) ... ok
+test_no_resume_blocks (test_fixed_v2.LifecycleTests.test_no_resume_blocks) ... ok
+test_readiness_does_not_adopt (test_fixed_v2.LifecycleTests.test_readiness_does_not_adopt) ... ok
+test_stale_input_blocks_adoption (test_fixed_v2.LifecycleTests.test_stale_input_blocks_adoption) ... ok
+test_three_fresh_v2_trials_produce_contract_compatible_v3 (test_fixed_v2.RepeatedSpecializationTests.test_three_fresh_v2_trials_produce_contract_compatible_v3) ... ok
+test_deterministic_state_replay (test_fixed_v2.WikiTests.test_deterministic_state_replay) ... ok
+test_html_escaped (test_fixed_v2.WikiTests.test_html_escaped) ... ok
+test_manual_wiki_edits_block_exploration (test_fixed_v2.WikiTests.test_manual_wiki_edits_block_exploration) ... ok
+test_wiki_hierarchy_objects_not_run_nodes (test_fixed_v2.WikiTests.test_wiki_hierarchy_objects_not_run_nodes) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 26.922s
+
+OK

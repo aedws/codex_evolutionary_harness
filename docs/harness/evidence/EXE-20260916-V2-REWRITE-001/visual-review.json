@@ -1,0 +1,14 @@
+{
+  "scope": "desktop browser AX and screenshots, not owner acceptance",
+  "url": "http://127.0.0.1:8876/index.html",
+  "source_project": "C:\\Users\\uyess\\AppData\\Local\\Temp\\fixed-v2-verification-1hfmsdnk\\project",
+  "verified": [
+    "large home to six topic pages",
+    "state grouped object cards",
+    "object relationship arrows and source paths",
+    "collapsible state derivation/evidence",
+    "candidate adoption status from real event"
+  ],
+  "human_visual_acceptance": "pending",
+  "mobile_visual_review": "not_run"
+}
